@@ -7,7 +7,7 @@ class BootStrap {
 
         if (!User.list()) {
             samples.each { userId ->
-                def user = new User(userId: userId, password: "password".encodeAsSha1())
+                def user = new User(userId: userId, password: "password".encodeAsSha1(), profile: new Profile(fullName: userId, homepage: "http://www.${userId}.com/${userId}", email: "${userId}@${userId}.com"))
                 if (user.validate()) {
                     println "Creating user ${userId}..."
                     def url = this.class.getResource("/${userId}.jpg")
@@ -16,9 +16,10 @@ class BootStrap {
                         println "Creatig With custom photo"
                         user.profile.photo = image
                     }
-                    user.save()
-                    def post = new Post(content: "A post from ${userId}")
-                    def tag = new Tag(name: "grails", user: user)
+                    user.save(flush:true)
+					def tag = new Tag(name: "grails", user: user).save()
+                    def post = new Post(content: "A post from ${userId}", user: user, tag: tag).save()
+                    
                     post.addToTags(tag)
                     user.addToPosts(post)
                 } else {
@@ -29,7 +30,9 @@ class BootStrap {
                 }
             }
             samples.each { userId ->
+                println "Searching for user ${userId}"
                 def user = User.findByUserId(userId)
+                println "User is ${user}"
                 def others = samples.findAll { it != userId }
                 others.each { otherId ->
                     def other = User.findByUserId(otherId)

@@ -11,5 +11,9 @@ class Post implements Comparable {
 	public int compareTo(Object obj) {
 		return created <=> obj.created
 	}
+
+    static mapping = {
+        tablePerHierarchy false
+    }
 	
 }

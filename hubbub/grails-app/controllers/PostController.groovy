@@ -65,6 +65,33 @@ class PostController {
 
     }
 
+	def tagCloud = {
+		
+		
+		
+	}
+	
+	def search = {
+		if (params.q) {
+			def profileProps = Profile.metaClass.properties*.name
+			def profiles = Profile.withCriteria {
+				"${params.queryType}" {
+					params.each { field, value -> 
+												
+						if (profileProps.grep(field) && value) {
+							println "Adding search for ${field} with value ${value}"
+							ilike(field, value)
+						}
+					}
+					
+				}
+				
+			}
+			println "searching.... ${profiles?.size()}"
+			return [ profiles : profiles ]
+		}
+	}
+
     def byTag = {
 
         def tag = params.id

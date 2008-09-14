@@ -3,7 +3,8 @@ class User {
 	String userId
 	String password
 	Date signupDate = new Date()
-	Profile profile = new Profile()
+	Profile profile
+	Map plugins
 	
 	static hasMany = [ posts : Post, tags : Tag, 
 				followers : User, following : User ]
@@ -21,9 +22,11 @@ class User {
 		password(size: 6..50, blank: false, 
 				 validator: { passwd, account -> 
 					return passwd != account.userId
-				}) 
-	 
-	}
+				})
+
+        profile(nullable: true)
+
+    }
 	
 
 	static transients = [ 'ipAddress' ]
@@ -33,10 +36,14 @@ class User {
 	static mapping = {
 		table 'account'
 		profile lazy:false
-	}
+        cache true
+        userId index:'User_Id_Idx'
+
+    }
 	
 	//def beforeInsert = { 
 	//	signupDate = new Date() 
 	//}
 
 }
+
