@@ -16,12 +16,13 @@ environments {
 		dataSource {
 			dbCreate = "create-drop" // one of 'create', 'create-drop','update'
 			//url = "jdbc:hsqldb:file:devDB;shutdown=true"
-			driverClassName = "com.p6spy.engine.spy.P6SpyDriver" // use this driver to enable p6spy logging
-			//url = "jdbc:hsqldb:mem:devDB"
+			//driverClassName = "com.p6spy.engine.spy.P6SpyDriver" // use this driver to enable p6spy logging
+			url = "jdbc:hsqldb:mem:devDB"
+
             //driverClassName = "org.postgresql.Driver"
-            url = "jdbc:postgresql://localhost/hubbub"
-            username = "glen"
-	        password = "password"
+            //url = "jdbc:postgresql://localhost/hubbub"
+            //username = "glen"
+	        //password = "password"
             logSql = false
         }
 	}

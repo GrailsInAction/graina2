@@ -7,14 +7,16 @@ class User {
 	Map plugins
 	
 	static hasMany = [ posts : Post, tags : Tag, 
-				followers : User, following : User ]
+				followers : User, following : User,
+                    messages : Message ]
 				
 				
 	
 	SortedSet posts
 	SortedSet tags
-	
-	static constraints = {
+    SortedSet messages
+
+    static constraints = {
 	
 		userId(size: 3..20, blank: false, unique: true)
 		

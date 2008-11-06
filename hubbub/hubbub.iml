@@ -23,7 +23,11 @@
       <sourceFolder url="file://$MODULE_DIR$/grails-app/domain" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/grails-app/services" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/grails-app/taglib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/plugins/jms-0.3/src/groovy" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/plugins/p6spy-0.4/grails-app/conf" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/plugins/quartz-0.4.1-SNAPSHOT/grails-app/conf" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/plugins/quartz-0.4.1-SNAPSHOT/src/groovy" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/plugins/quartz-0.4.1-SNAPSHOT/src/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/groovy" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/test/integration" isTestSource="true" />
@@ -36,11 +40,13 @@
         <CLASSES>
           <root url="file://$MODULE_DIR$/lib" />
           <root url="file://$MODULE_DIR$/plugins/p6spy-0.4/lib" />
+          <root url="file://$MODULE_DIR$/plugins/quartz-0.4.1-SNAPSHOT/lib" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
         <jarDirectory url="file://$MODULE_DIR$/lib" recursive="false" />
         <jarDirectory url="file://$MODULE_DIR$/plugins/p6spy-0.4/lib" recursive="false" />
+        <jarDirectory url="file://$MODULE_DIR$/plugins/quartz-0.4.1-SNAPSHOT/lib" recursive="false" />
       </library>
     </orderEntry>
     <orderEntry type="library" name="GRAILS" level="application" />

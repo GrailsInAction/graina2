@@ -10,6 +10,7 @@ class BootStrap {
                 def user = new User(userId: userId, password: "password".encodeAsSha1(), profile: new Profile(fullName: userId, homepage: "http://www.${userId}.com/${userId}", email: "${userId}@${userId}.com"))
                 if (user.validate()) {
                     println "Creating user ${userId}..."
+                    user.profile.jabberAddress = "${userId}@decaf.local"
                     def url = this.class.getResource("/${userId}.jpg")
                     if (url) {
                         def image = new File(url.toURI()).readBytes()

@@ -9,7 +9,7 @@ class UserController {
 	
 	def results = {
 		
-		def users = User.findAllByUserIdLike(params.userId)
+		def users = User.findAllByUserIdLike("%${params.userId}%")
 		return [ users: users, term : params.userId ]
 		
 	}
