@@ -29,7 +29,7 @@
     </class>
 
     <class name="Manager"
-           table="BK_MANAGER" mutable="false">
+           table="BK_MANAGER" >
         <cache usage="read-write"/>
         <id name="id" column="BRANCH_NM">
             <generator class="foreign">
@@ -47,7 +47,7 @@
 
 
     <class name="Location"
-           table="BK_LOCATION" mutable="false">
+           table="BK_LOCATION" >
         <cache usage="read-write"/>
         <id name="id" column="LOCATION_ID">
             <generator class="assigned"/>
@@ -56,7 +56,7 @@
     </class>
 
     <class name="Section"
-           table="BK_SECTION" mutable="false">
+           table="BK_SECTION" >
         <cache usage="read-write"/>
         <id name="id" column="SECTION_ID">
             <generator class="assigned"/>
@@ -115,7 +115,7 @@
 			
 	</class>
 
-    <class name="File" table="BK_FILE" mutable="false">
+    <class name="File" table="BK_FILE" >
         <cache usage="read-write"/>
          <id name="id" column="FILE_ID">
             <generator class="assigned"/>
@@ -147,7 +147,7 @@
     </class>
 
     <class name="FileType"
-           table="BK_FILE_TYPE" mutable="false">
+           table="BK_FILE_TYPE" >
         <cache usage="read-write"/>
         <id name="type" column="FILE_TYPE_CD" type="character">
             <generator class="assigned"/>
@@ -157,7 +157,7 @@
     </class>
 
     <class name="FileOwner"
-           table="BK_FILE_OWNER" mutable="false">
+           table="BK_FILE_OWNER" >
         <cache usage="read-write"/>
         <id name="id" column="FILE_OWNER_ID">
             <generator class="assigned"/>
