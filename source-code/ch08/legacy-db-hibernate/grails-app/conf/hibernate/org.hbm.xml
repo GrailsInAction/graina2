@@ -4,7 +4,7 @@
 
 
 <hibernate-mapping auto-import="true" default-lazy="false" package="com.grailsinaction.legacy.db">
-    <class name="com.grailsinaction.legacy.db.Branch"
+    <class name="Branch"
            table="BK_BRANCH" mutable="false">
         <cache usage="read-write"/>
         <id name="name" column="BRANCH_NM">
@@ -14,21 +14,21 @@
         <set name="sections" table="BK_BRANCH_TO_SECTION"
             cascade="save-update">
             <key column="BRANCH_NM"/>
-            <many-to-many class="com.grailsinaction.legacy.db.Section" column="SECTION_ID"/>
+            <many-to-many class="Section" column="SECTION_ID"/>
         </set>
 
         <set name="files" table="BK_BRANCH_TO_FILE"
             cascade="save-update">
             <key column="BRANCH_NM"/>
-            <many-to-many class="com.grailsinaction.legacy.db.File" column="FILE_ID" />
+            <many-to-many class="File" column="FILE_ID" />
         </set>
 
-        <one-to-one name="manager" class="com.grailsinaction.legacy.db.Manager" cascade="save-update"/>
+        <one-to-one name="manager" class="Manager" cascade="save-update"/>
 
 
     </class>
 
-    <class name="com.grailsinaction.legacy.db.Manager"
+    <class name="Manager"
            table="BK_MANAGER" mutable="false">
         <cache usage="read-write"/>
         <id name="id" column="BRANCH_NM">
@@ -39,14 +39,14 @@
         <property name="name" column="NAME"/>
         <property name="managementRating" column="MGMT_RATING_VAL"/>
 
-        <one-to-one name="branch" class="com.grailsinaction.legacy.db.Branch" constrained="true"/>
+        <one-to-one name="branch" class="Branch" constrained="true"/>
 
-        <many-to-one name="location" column="LOCATION_ID" class="com.grailsinaction.legacy.db.Location"
+        <many-to-one name="location" column="LOCATION_ID" class="Location"
                      not-null="true"/>
     </class>
 
 
-    <class name="com.grailsinaction.legacy.db.Location"
+    <class name="Location"
            table="BK_LOCATION" mutable="false">
         <cache usage="read-write"/>
         <id name="id" column="LOCATION_ID">
@@ -55,7 +55,7 @@
         <property name="name" column="LOCATION_NM"/>
     </class>
 
-    <class name="com.grailsinaction.legacy.db.Section"
+    <class name="Section"
            table="BK_SECTION" mutable="false">
         <cache usage="read-write"/>
         <id name="id" column="SECTION_ID">
@@ -68,15 +68,15 @@
         <set name="branches" table="BK_BRANCH_TO_SECTION"
             cascade="save-update">
             <key column="SECTION_ID"/>
-            <many-to-many class="com.grailsinaction.legacy.db.Branch" column="BRANCH_NM"/>
+            <many-to-many class="Branch" column="BRANCH_NM"/>
         </set>
 
         <set name="locations" table="BK_LOCATION_SECTION_MAP"
            cascade="save-update">
            <key column="SECTION_ID"/>
-            <composite-element class="com.grailsinaction.legacy.db.SectionToLocation">
+            <composite-element class="SectionToLocation">
                 <parent name="section"/>
-                <many-to-one name="location" column="LOCATION_ID" not-null="true" class="com.grailsinaction.legacy.db.Location"/>
+                <many-to-one name="location" column="LOCATION_ID" not-null="true" class="Location"/>
                 <property name="start" type="date" column="START_DT"/>
                 <property name="end" type="date" column="END_DT"/>
             </composite-element>
@@ -91,9 +91,9 @@
        <set name="files" table="BK_FILE_SECTION_MAP"
            cascade="save-update">
            <key column="SECTION_ID"/>
-           <composite-element class="com.grailsinaction.legacy.db.SectionToFile">
+           <composite-element class="SectionToFile">
                <parent name="section"/>
-               <many-to-one name="file" column="FILE_ID" not-null="true" class="com.grailsinaction.legacy.db.File"/>
+               <many-to-one name="file" column="FILE_ID" not-null="true" class="File"/>
                <property name="start" type="date" column="START_DT"/>
                <property name="end" type="date" column="END_DT"/>
            </composite-element>
@@ -102,7 +102,7 @@
         
     </class>
 
-    <class name="com.grailsinaction.legacy.db.SectionToFile" table="BK_FILE_SECTION_MAP">
+    <class name="SectionToFile" table="BK_FILE_SECTION_MAP">
 		<composite-id name="id" class="SectionToFileId">
 			<key-property name="sectionId" access="field" column="SECTION_ID"/>
 			<key-property name="fileId" access="field" column="FILE_ID"/>
@@ -115,7 +115,7 @@
 			
 	</class>
 
-    <class name="com.grailsinaction.legacy.db.File" table="BK_FILE" mutable="false">
+    <class name="File" table="BK_FILE" mutable="false">
         <cache usage="read-write"/>
          <id name="id" column="FILE_ID">
             <generator class="assigned"/>
@@ -127,20 +127,26 @@
         <property name="end" type="date" column="END_DT"/>
         <property name="securityRating" column="SECURITY_RATING_VAL"/>
 
-        <many-to-one name="resourceType" column="FILE_TYPE_CD" class="com.grailsinaction.legacy.db.FileType"
+        <many-to-one name="resourceType" column="FILE_TYPE_CD" class="FileType"
                      not-null="true"/>
 
-        <many-to-one name="owner" column="FILE_OWNER_ID" class="com.grailsinaction.legacy.db.FileOwner"
+        <many-to-one name="owner" column="FILE_OWNER_ID" class="FileOwner"
                      not-null="true"/>
 
 		<set name="sections" inverse="true">
 				<key column="FILE_ID"/>
 				<one-to-many class="SectionToFile"/>
 		</set>
+		
+		<set name="branches" table="BK_BRANCH_TO_FILE"
+            cascade="save-update">
+            <key column="FILE_ID"/>
+            <many-to-many class="Branch" column="BRANCH_NM" />
+        </set>
         
     </class>
 
-    <class name="com.grailsinaction.legacy.db.FileType"
+    <class name="FileType"
            table="BK_FILE_TYPE" mutable="false">
         <cache usage="read-write"/>
         <id name="type" column="FILE_TYPE_CD" type="character">
@@ -150,7 +156,7 @@
         <property name="description" column="FILE_TYPE_DESC"/>
     </class>
 
-    <class name="com.grailsinaction.legacy.db.FileOwner"
+    <class name="FileOwner"
            table="BK_FILE_OWNER" mutable="false">
         <cache usage="read-write"/>
         <id name="id" column="FILE_OWNER_ID">
