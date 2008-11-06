@@ -1,0 +1,113 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.grailsinaction</groupId>
+    <artifactId>legacy-db</artifactId>
+    <packaging>pom</packaging>
+    <version>0.1-SNAPSHOT</version>
+    <name>legacy-db</name>
+    <url>http://maven.apache.org</url>
+    <dependencies>
+    
+       
+        <dependency>
+            <groupId>hsqldb</groupId>
+            <artifactId>hsqldb</artifactId>
+            <version>1.7.2.2</version>
+            <scope>test</scope>
+        </dependency>
+        
+
+
+    </dependencies>
+    <build>
+        
+		
+        <plugins>
+
+			
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <executions>
+
+
+                    <execution>
+                        <id>delete-old-database</id>
+                        <phase>process-test-resources</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <tasks>
+                                <echo>
+                                    Deleting any existing HSQL Database files...
+                                </echo>
+                                <delete dir="${basedir}/target/db"/>
+                            </tasks>
+                        </configuration>
+                    </execution>
+
+                    
+                </executions>
+            </plugin>
+
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>sql-maven-plugin</artifactId>
+                <executions>
+
+                   
+                    <execution>
+                        <id>create-resource-db</id>
+                        <phase>process-test-resources</phase>
+                        <goals>
+                            <goal>execute</goal>
+                        </goals>
+                        <configuration>
+                            <autocommit>true</autocommit>
+                            <srcFiles>
+                                <srcFile>db/sql/legacy/setup.sql</srcFile>
+                                <srcFile>db/sql/legacy/BK_BRANCH.sql</srcFile>
+                                <srcFile>db/sql/legacy/BK_LOCATION.sql</srcFile>
+                                <srcFile>db/sql/legacy/BK_MANAGER.sql</srcFile>
+                                <srcFile>db/sql/legacy/BK_FILE_TYPE.sql</srcFile>
+                                <srcFile>db/sql/legacy/BK_FILE_OWNER.sql</srcFile>
+                                <srcFile>db/sql/legacy/BK_SECTION.sql</srcFile>
+                                <srcFile>db/sql/legacy/BK_BRANCH_TO_SECTION.sql</srcFile>
+                                <srcFile>db/sql/legacy/BK_LOCATION_SECTION_MAP.sql</srcFile>
+                                <srcFile>db/sql/legacy/BK_FILE.sql</srcFile>
+                                <srcFile>db/sql/legacy/BK_BRANCH_TO_FILE.sql</srcFile>
+                                <srcFile>db/sql/legacy/BK_FILE_SECTION_MAP.sql</srcFile>
+                                <srcFile>db/sql/legacy/release_connection.sql</srcFile>
+                            </srcFiles>
+                            <url>jdbc:hsqldb:${basedir}/target/db/hsqldb/legacy/legacy</url>
+                        </configuration>
+                    </execution>
+
+
+                </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>hsqldb</groupId>
+                        <artifactId>hsqldb</artifactId>
+                        <version>1.7.2.2</version>
+                    </dependency>
+                </dependencies>
+                <configuration>
+                    <username>sa</username>
+                    <password></password>
+                    <!--
+                    <url>jdbc:hsqldb:${basedir}/target/db/hsqldb/dsec/dsec</url>
+                    -->
+                    <driver>org.hsqldb.jdbcDriver</driver>
+                    <skip>${maven.test.skip}</skip>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+</project>
