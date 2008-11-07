@@ -50,7 +50,7 @@
            table="BK_LOCATION" >
         <cache usage="read-write"/>
         <id name="id" column="LOCATION_ID">
-            <generator class="assigned"/>
+            <generator class="increment"/>
         </id>
         <property name="name" column="LOCATION_NM"/>
     </class>
@@ -59,7 +59,7 @@
            table="BK_SECTION" >
         <cache usage="read-write"/>
         <id name="id" column="SECTION_ID">
-            <generator class="assigned"/>
+            <generator class="increment"/>
         </id>
         <property name="name" column="SECTION_NM"/>
         <property name="start" type="date" column="START_DT"/>
@@ -105,8 +105,7 @@
     <class name="SectionToFile" table="BK_FILE_SECTION_MAP">
 		<composite-id name="id" class="SectionToFileId">
 			<key-property name="sectionId" access="field" column="SECTION_ID"/>
-			<key-property name="fileId" access="field" column="FILE_ID"/>
-			
+			<key-property name="fileId" access="field" column="FILE_ID"/>			
 		</composite-id>
 		<property name="start" type="date" column="START_DT"/>
         <property name="end" type="date" column="END_DT"/>
@@ -118,7 +117,7 @@
     <class name="File" table="BK_FILE" >
         <cache usage="read-write"/>
          <id name="id" column="FILE_ID">
-            <generator class="assigned"/>
+            <generator class="increment"/>
         </id>
 
         <property name="name" column="FILE_NM"/>
@@ -160,7 +159,7 @@
            table="BK_FILE_OWNER" >
         <cache usage="read-write"/>
         <id name="id" column="FILE_OWNER_ID">
-            <generator class="assigned"/>
+            <generator class="increment"/>
         </id>
         <property name="name" column="OWNER_NM"/>
         <property name="description" column="OWNER_DESC"/>
