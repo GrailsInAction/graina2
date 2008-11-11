@@ -10,7 +10,7 @@ class BrowserController {
 	}
 	
 	def showDetails = {
-		def branch = Branch.findByName(params.id)
+		def branch = Branch.findById(params.id)
 		println "Branch is ${branch}"
 		
 		def writer = new StringWriter()
@@ -23,20 +23,22 @@ class BrowserController {
 						legend('Manager Details')
 						dl {
 							dt('Name:')
-							dd(branch.manager.name)
+							//dd(branch.manager.name)
 							dt('Rating:')
-							dd(branch.manager.managementRating)
+							//dd(branch.manager.managementRating)
 						}
 					}
 				}
 				
 				div(id: 'sections') { 
-					branch.sections.each { section ->
+					branch.sections.each { branchToSection ->
+						def section = branchToSection.section
 						fieldset {
 							legend('Section: ' + section.name)
 							dl {
 								dt('Start Date:')
 								dd(section.start)
+								
 								
 								dt('Files:')
 								dd(section.files.size())
@@ -53,11 +55,12 @@ class BrowserController {
 										dd(sectToFile.file.owner.name)
 									}
 								}
+								
 								dt('Locations:')
 								dd(section.locations.size())
 								ul {
-									section.locations.each { sectToLoc -> 
-										li(sectToLoc.location.name)		
+									section.locations.each { location -> 
+										li(location.name)		
 									}
 								}	
 								
@@ -70,6 +73,7 @@ class BrowserController {
 				
 			}
 		println writer.toString()
+		Manager.list().each { mgr -> println mgr.dump() }
 		render(writer.toString())
 		
 	}

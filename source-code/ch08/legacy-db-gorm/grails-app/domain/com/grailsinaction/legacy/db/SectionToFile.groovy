@@ -6,7 +6,7 @@ package com.grailsinaction.legacy.db
  * Time: 12:34:28
  * To change this template use File | Settings | File Templates.
  */
-class SectionToFile {
+class SectionToFile implements Serializable {
 
     Section section
     File file
@@ -17,9 +17,9 @@ class SectionToFile {
 		table 'BK_FILE_SECTION_MAP'
 		version false
 	
-		id column: 'NAME'
-		start column: 'START_DT'
-		end column: 'END_DT'
+		id composite:['file', 'section']
+		start column: 'START_DT', type: 'date'
+		end column: 'END_DT', type: 'date'
 		file column: 'FILE_ID'
 		section column: 'SECTION_ID'
 	}
