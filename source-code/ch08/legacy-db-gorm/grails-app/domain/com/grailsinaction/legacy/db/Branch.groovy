@@ -4,7 +4,7 @@ class Branch {
 
     String id
 	
-	static transients = ['name']
+	static transients = ['name', 'manager']
 
 	void setName(String name) {
 		id = name
@@ -13,18 +13,22 @@ class Branch {
 	String getName() {
 		return id
 	}
+	
+	Manager getManager() {
+		return Manager.get(id)
+	}
+	
+	void setManager(Manager manager) {
+		manager.id = id
+	}
 		
-    // Manager manager
-
-    static hasMany = [sections:BranchToSection] // sections:Section]
+    static hasMany = [sections:BranchToSection] 
 
     static mapping = {
         table 'BK_BRANCH'
 		version false
 
 		id generator:'assigned', column: "BRANCH_NM", type:'string'
-		// sections column:'SECTION_ID',joinTable:'BK_BRANCH_TO_SECTION'
-		//manager column: 'BRANCH_NM'
 		
     }
 

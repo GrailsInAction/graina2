@@ -6,8 +6,9 @@ class Manager {
     Location location
     String name
     short managementRating
-	Branch branch
-	/*
+	
+	static transients = ['branch']
+	
 	Branch getBranch() {
 		return Branch.get(id)
 	}
@@ -15,16 +16,14 @@ class Manager {
 	void setBranch(Branch branch) {
 		id = branch.id
 	}
-	*/
+	
 	static mapping = {
         table 'BK_MANAGER'
 		version false
 		
-		id generator: 'foreign', params:[property: 'branch'], column: 'BRANCH_NM'
-		branch column: 'BRANCH_NM'
+		id column: 'BRANCH_NM', generator: 'assigned'
 		name column: 'NAME'
 		managementRating column: 'MGMT_RATING_VAL'
-		// branch column: 'BRANCH_NM'
 		location column: 'LOCATION_ID'
     }
 

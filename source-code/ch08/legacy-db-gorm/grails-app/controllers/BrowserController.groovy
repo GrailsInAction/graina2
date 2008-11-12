@@ -23,9 +23,9 @@ class BrowserController {
 						legend('Manager Details')
 						dl {
 							dt('Name:')
-							//dd(branch.manager.name)
+							dd(branch.manager.name)
 							dt('Rating:')
-							//dd(branch.manager.managementRating)
+							dd(branch.manager.managementRating)
 						}
 					}
 				}
