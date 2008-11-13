@@ -5,8 +5,7 @@ class BrowserController {
     def index = {  redirect(action: 'list') }
 
 	def list = {
-		
-		
+		// Pass through to AJAX browser form	
 	}
 	
 	def showDetails = {

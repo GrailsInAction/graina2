@@ -17,11 +17,13 @@
             <many-to-many class="Section" column="SECTION_ID"/>
         </set>
 
+		<!--
         <set name="files" table="BK_BRANCH_TO_FILE"
             cascade="save-update">
             <key column="BRANCH_NM"/>
             <many-to-many class="File" column="FILE_ID" />
         </set>
+		-->
 
         <one-to-one name="manager" class="Manager" cascade="save-update"/>
 
@@ -137,11 +139,13 @@
 				<one-to-many class="SectionToFile"/>
 		</set>
 		
+		<!--
 		<set name="branches" table="BK_BRANCH_TO_FILE"
             cascade="save-update">
             <key column="FILE_ID"/>
             <many-to-many class="Branch" column="BRANCH_NM" />
         </set>
+		-->
         
     </class>
 
