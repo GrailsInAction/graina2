@@ -1,5 +1,5 @@
 package com.grailsinaction.legacy.db
 
-def constraints = {
+constraints = {
 	name(size: 4..30)
 }
