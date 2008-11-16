@@ -7,21 +7,20 @@ class Section {
     Date start = new Date()
     Date end = new Date()
 
-	static hasMany = [ branches: Branch, files: SectionToFile, locations: SectionToLocation ]
+	static hasMany = [files: SectionToFile, locations: Location, branches: BranchToSection ] 
 	
 	def belongsTo = [ Branch ]
 
 	static mapping = {
         table 'BK_SECTION'
 		version false
-		
-		id column: 'SECTION_ID'
-		start column: 'START_DT'
-		end column: 'END_DT'
-		branch column: 'BRANCH_NM', joinTable: 'BK_BRANCH_TO_SECTION'
+	
+		id column: 'SECTION_ID', generator: 'increment', type:'integer'
+		name column: 'SECTION_NM'
+		start column: 'START_DT', type: 'date'
+		end column: 'END_DT', type: 'date'
+		locations column:'SECTION_ID', joinTable:'BK_LOCATION_SECTION_MAP' // LOCATION_ID
 		
     }
 	
-
-
 }

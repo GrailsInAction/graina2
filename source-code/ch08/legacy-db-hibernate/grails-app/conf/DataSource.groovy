@@ -21,8 +21,8 @@ environments {
 	}
 	test {
 		dataSource {
-			dbCreate = "update"
-			url = "jdbc:hsqldb:mem:testDb"
+			dbCreate = "validate"
+			url = "jdbc:hsqldb:file:target/db/hsqldb/legacy/legacy;shutdown=true"
 		}
 	}
 	production {

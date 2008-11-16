@@ -9,7 +9,7 @@ class Location {
     	table 'BK_LOCATION'
 		version false
 		
-		id column: 'LOCATION_ID'
+		id column: 'LOCATION_ID', generator: 'increment'
 		name column: 'LOCATION_NM'
 	}
 

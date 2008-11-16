@@ -7,14 +7,12 @@ class FileOwner {
     String description
 
 	static mapping = {
-    	table 'BK_MANAGER'
+    	table 'BK_FILE_OWNER'
 		version false
 		
-		id column: 'NAME'
-		name column: 'MGMT_RATING_VAL'
-		description column: 'BRANCH_NM'
+		id column: 'FILE_OWNER_ID', generator: 'increment'
+		name column: 'OWNER_NM'
+		description column: 'OWNER_DESC'
 	}
-
-
 
 }
