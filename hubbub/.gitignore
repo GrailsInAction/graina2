@@ -1,0 +1,6 @@
+.gradle
+docs
+hubbub*
+stacktrace.log
+web-app/plugins
+WEB-INF
