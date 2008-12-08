@@ -1,0 +1,9 @@
+println "Configuration phase"
+
+createTask("callGrails", type: org.grails.gradle.Grails) {
+    println "Stuff"
+}
+
+createTask("hello") {
+    println "Hello world!"
+}
