@@ -13,8 +13,8 @@ hibernate {
 environments {
 	development {
 		dataSource {
-			dbCreate = "create-drop" // one of 'create', 'create-drop','update'
-			url = "jdbc:hsqldb:mem:devDB"
+			dbCreate = "update" // one of 'create', 'create-drop','update'
+			url = "jdbc:hsqldb:file:devDB;shutdown=true"
 		}
 	}
 	test {
@@ -26,7 +26,10 @@ environments {
 	production {
 		dataSource {
 			dbCreate = "update"
-			url = "jdbc:hsqldb:file:prodDb;shutdown=true"
+			driverClassName = "org.postgresql.Driver"
+			username="glen"
+			password="password"
+			url = "jdbc:postgresql://localhost/ch14"
 		}
 	}
 }
