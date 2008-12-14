@@ -1,6 +1,6 @@
 .gradle
 docs
-hubbub*
+hubbub.iws
 stacktrace.log
+test/reports
 web-app/plugins
-WEB-INF

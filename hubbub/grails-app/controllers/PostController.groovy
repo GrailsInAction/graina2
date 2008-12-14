@@ -1,4 +1,5 @@
 class PostController {
+    def postService
 
     def index = { }
 
@@ -52,17 +53,23 @@ class PostController {
     }
 
     def add = {
-
         def content = params.postContent
         if (content) {
-            def user = User.get(session.user.id)
-            if (user) {
-                user.addToPosts(new Post(content: content))
+            def post = null
+            try {
+                post = postService.createPost(session.user.id, content)
+            }
+            catch (Exception ex) {
+            }
+
+            if (post) {
                 flash.message = "Added new post"
+            }
+            else {
+                flash.message = "Failed to add new post"
             }
         }
         redirect(action: 'list')
-
     }
 
 	def tagCloud = {
