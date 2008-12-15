@@ -8,6 +8,12 @@ public class Grails extends DefaultTask {
 
     public Grails(Project project, String name) {
         super(project, name);
+
+        doFirst(new TaskAction() {
+            public void execute(Task task) {
+                callGrails();
+            }
+        });
     }
 
     public String getCommand() {
@@ -16,5 +22,9 @@ public class Grails extends DefaultTask {
 
     public void setCommand(String command) {
         this.command = command;
+    }
+
+    protected void callGrails() {
+        
     }
 }

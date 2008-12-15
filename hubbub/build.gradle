@@ -7,3 +7,10 @@ createTask("callGrails", type: org.grails.gradle.Grails) {
 createTask("hello") {
     println "Hello world!"
 }
+
+
+createTask("compile", dependsOn: ["callGrails"]) {
+    callGrails.doFirst {
+        script = "Compile"
+    }
+}
