@@ -1,0 +1,20 @@
+<project name="Post Service Remote Client" default="compile">
+    <property name="src.dir" value="src" />
+    <property name="classes.dir" value="build/classes" />
+    <property name="message" value=""/>
+
+    <target name="clean" description="Deletes the compiled classes.">
+        <delete dir="${classes.dir}"/>
+    </target>
+
+    <target name="compile" description="Compiles the Java source code.">
+        <mkdir dir="${classes.dir}" />
+        <javac srcdir="${src.dir}" destdir="${classes.dir}" debug="true" />
+    </target>
+
+    <target name="run" depends="compile" description="Runs the RMI client.">
+        <java classname="MainApp" classpath="${classes.dir}">
+            <arg value="${message}"/>
+        </java>
+    </target>
+</project>
