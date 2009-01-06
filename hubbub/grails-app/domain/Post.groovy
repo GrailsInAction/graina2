@@ -14,6 +14,10 @@ class Post implements Comparable {
 
     static mapping = {
         tablePerHierarchy false
+        user lazy: false
     }
-	
+
+    static constraints = {
+        content(nullable: false, blank: false)
+    }
 }
