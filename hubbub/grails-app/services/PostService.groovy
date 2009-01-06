@@ -1,13 +1,22 @@
-/**
- * Created by IntelliJ IDEA.
- * User: pal20
- * Date: 09-Dec-2008
- * Time: 16:40:52
- * To change this template use File | Settings | File Templates.
- */
+import com.manning.graina.hubbub.RemotePostService
 
-class PostService {
-    static transactional = false
+class PostService implements RemotePostService {
+    static expose = [ "rmi" ]
+
+    long createPost(String username, String content) {
+        def user = User.findByUserId(username)
+        if (!user) {
+            throw new RuntimeException("User not found.")
+        }
+
+        def post = createPost(user?.id, content)
+        if (!post) {
+            throw new RuntimeException("Create failed: ${post.errors}")
+        }
+        else {
+            return post.id
+        }
+    }
 
     Post createPost(long userId, String content) {
         def user = User.get(userId)
@@ -15,7 +24,7 @@ class PostService {
         if (user) {
             post = new Post(content: content)
             user.addToPosts(post)
-            user.save()
+            user.save(flush: true)
 
             def m = content =~ /@(\w+)/
             if (m) {
