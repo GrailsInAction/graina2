@@ -13,7 +13,7 @@ class BootStrap {
                     def url = this.class.getResource("/${userId}.jpg")
                     if (url) {
                         def image = new File(url.toURI()).readBytes()
-                        println "Creatig With custom photo"
+                        println "Creating With custom photo"
                         user.profile.photo = image
                     }
                     user.save(flush:true)
