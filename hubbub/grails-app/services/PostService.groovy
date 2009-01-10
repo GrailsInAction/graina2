@@ -1,9 +1,10 @@
 import com.manning.graina.hubbub.RemotePostService
+import javax.jws.WebParam
 
 class PostService implements RemotePostService {
-    static expose = [ "rmi" ]
+    static expose = [ "rmi", "axis2" ]
 
-    long createPost(String username, String content) {
+    long createPost(@WebParam(name="user") String username, String content) {
         def user = User.findByUserId(username)
         if (!user) {
             throw new RuntimeException("User not found.")
