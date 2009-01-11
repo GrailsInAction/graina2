@@ -16,5 +16,5 @@
     </aop:config>
 
     <bean id="profileInterceptor" class="com.manning.gria.ProfilingInterceptor"/>
-    -->
+-->
 </beans>
