@@ -48,7 +48,6 @@ log4j = {
          'org.codehaus.groovy.grails.commons',
          'org.codehaus.groovy.grails.plugins',
          'org.codehaus.groovy.grails.orm.hibernate',
+         'org.hibernate',
          'org.springframework'
-
-    debug 'org.hibernate'
 }
