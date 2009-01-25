@@ -5,7 +5,10 @@
 
             <dl>
                 <dt>User</dt>
-                <dd>${session.user.userId}</dd>
+                <dd>
+                  <g:loggedInUserInfo field="userId">Guest</g:loggedInUserInfo><g:isLoggedIn>
+                  (<g:link controller="logout" action="index">sign out</g:link>)</g:isLoggedIn>
+                </dd>
             </dl>
 
 
@@ -13,12 +16,12 @@
 
             <!-- Follower counts -->
             <dl>
-                <dt><a href="<g:createLink action="following" controller="friend" id="${session.user.userId}"/>">
+                <dt><a href="<g:createLink action="following" controller="friend" id="${loggedInUserInfo(field: 'userId')}"/>">
                     Following
                     </a>
                 </dt>
                 <dd>${followingCount}</dd>
-                <dt><a href="<g:createLink action="followers" controller="friend" id="${session.user.userId}"/>">
+                <dt><a href="<g:createLink action="followers" controller="friend" id="${loggedInUserInfo(field: 'userId')}"/>">
                     Followers
                     </a>
                 </dt>

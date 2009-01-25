@@ -1,11 +1,11 @@
 class PostController {
+    def authenticateService
 
     def index = { }
 
     def list = {
-        def userDbId = session.user.id
-        // detached object...
-        def user = User.get(userDbId)
+        def user = authenticateService.userDomain()
+        user = User.get(user.id)
 
         def idsToInclude = user.following.collect { u -> u.id }
         idsToInclude.add(user.id)
@@ -55,14 +55,15 @@ class PostController {
 
         def content = params.postContent
         if (content) {
-            def user = User.get(session.user.id)
+            def user = authenticateService.userDomain()
+            user = User.get(user.id)
+            
             if (user) {
                 user.addToPosts(new Post(content: content))
                 flash.message = "Added new post"
             }
         }
         redirect(action: 'list')
-
     }
 
 	def tagCloud = {
