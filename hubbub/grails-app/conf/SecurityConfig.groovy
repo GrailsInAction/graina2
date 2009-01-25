@@ -3,6 +3,7 @@ security {
     cacheUsers = false
 
     loginUserDomainClass = "User"
+    authorityDomainClass = "Role"
     userName = "userId"
     password = "password"
 
