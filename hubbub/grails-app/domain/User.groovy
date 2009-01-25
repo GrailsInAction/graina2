@@ -3,6 +3,11 @@ class User {
     String password
     boolean enabled = true
 
+    // For Spring Security plugin's user registration.
+    String email
+    String userRealName
+    boolean emailShow
+
     Date signupDate = new Date()
     Profile profile
     Map plugins
@@ -26,7 +31,8 @@ class User {
         })
 
         profile(nullable: true)
-
+        userRealName(nullable: true, blank: true)
+        email(nullable: true, blank: true)
     }
 
     static transients = [ 'ipAddress' ]
