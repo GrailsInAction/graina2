@@ -51,3 +51,8 @@ log4j = {
          'org.hibernate',
          'org.springframework'
 }
+
+
+//log4j.logger.org.springframework.security='off,stdout'
+
+//log4j.logger.org.springframework.security='off,stdout'
