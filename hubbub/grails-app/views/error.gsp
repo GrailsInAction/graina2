@@ -1,4 +1,4 @@
-<% @page import="grails.util.Environment" %>
+<%@ page import="grails.util.Environment" %>
 <g:if test="${Environment.current == Environment.PRODUCTION}">
     ${response.sendError(500)}
 </g:if>
