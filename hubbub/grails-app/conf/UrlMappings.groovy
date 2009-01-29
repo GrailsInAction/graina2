@@ -19,6 +19,6 @@ class UrlMappings {
                 // apply constraints here
             }
         }
-        "500"(view:'/error')
+        "500"(controller: "errors", action: "internalServer")
     }
 }

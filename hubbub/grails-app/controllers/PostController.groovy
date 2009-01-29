@@ -1,12 +1,12 @@
 class PostController {
     def postService
+    def authenticateService
 
     def index = { }
 
     def list = {
-        def userDbId = session.user.id
-        // detached object...
-        def user = User.get(userDbId)
+        def user = authenticateService.userDomain()
+        user = User.get(user.id)
 
         def idsToInclude = user.following.collect { u -> u.id }
         idsToInclude.add(user.id)
@@ -56,8 +56,10 @@ class PostController {
         def content = params.postContent
         if (content) {
             def post = null
+            def user = authenticateService.userDomain()
+
             try {
-                post = postService.createPost(session.user.id, content)
+                post = postService.createPost(user.id, content)
             }
             catch (Exception ex) {
             }
