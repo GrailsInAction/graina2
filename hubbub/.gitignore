@@ -1,0 +1,6 @@
+.gradle
+docs
+hubbub.iws
+stacktrace.log
+test/reports
+web-app/plugins

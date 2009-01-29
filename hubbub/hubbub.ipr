@@ -61,9 +61,13 @@
   </component>
   <component name="FacetAutodetectingManager">
     <autodetection-disabled>
-      <facet-type id="Groovy">
+      <facet-type id="Spring">
         <modules>
-          <module name="hubbub" />
+          <module name="hubbub">
+            <files>
+              <file url="file://$PROJECT_DIR$/web-app/WEB-INF/applicationContext.xml" />
+            </files>
+          </module>
         </modules>
       </facet-type>
     </autodetection-disabled>

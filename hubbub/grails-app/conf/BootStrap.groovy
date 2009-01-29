@@ -1,20 +1,25 @@
+import org.codehaus.groovy.grails.commons.ApplicationHolder
+
 class BootStrap {
 
 
     def init = {servletContext ->
 
         def samples = ['glen', 'peter', 'phil', 'jason']
+        def userRole = new Role(authority: "ROLE_USER", description: "Registered user")
+        def authenticateService = ApplicationHolder.application.mainContext.getBean("authenticateService")
 
         if (!User.list()) {
             samples.each { userId ->
-                def user = new User(userId: userId, password: "password".encodeAsSha1(), profile: new Profile(fullName: userId, homepage: "http://www.${userId}.com/${userId}", email: "${userId}@${userId}.com"))
+                def user = new User(userId: userId, password: authenticateService.encodePassword("password"), profile: new Profile(fullName: userId, homepage: "http://www.${userId}.com/${userId}", email: "${userId}@${userId}.com"))
+                userRole.addToPeople(user)
                 if (user.validate()) {
                     println "Creating user ${userId}..."
                     user.profile.jabberAddress = "${userId}@decaf.local"
                     def url = this.class.getResource("/${userId}.jpg")
                     if (url) {
                         def image = new File(url.toURI()).readBytes()
-                        println "Creatig With custom photo"
+                        println "Creating With custom photo"
                         user.profile.photo = image
                     }
                     user.save(flush:true)
@@ -44,6 +49,8 @@ class BootStrap {
             }
             def loner = new User(userId: 'loner', password: "password".encodeAsSha1()).save()
         }
+
+        userRole.save()
     }
 
     def destroy = {
