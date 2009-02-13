@@ -14,10 +14,6 @@ class PostListTests extends functionaltestplugin.FunctionalTestCase {
         }
 
         // Check that the timeline page was loaded.
-        assertRedirectUrlContains "/post/list"
-
-        // Fetch the page.
-        get("/post/list")
         assertTitle "Hubbub » New Post"
         assertContentContains "What are you hacking on right now?"
 
@@ -28,6 +24,6 @@ class PostListTests extends functionaltestplugin.FunctionalTestCase {
             click "Post"
         }
 
-        assertContentContains "peter " + testMsg
+        assertContentContains testMsg
     }
 }
