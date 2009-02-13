@@ -14,7 +14,7 @@
 
 
             <p>
-                <g:form action="add">
+                <g:form name="postMessage" action="add">
                     <textarea id='postContent' name="postContent" onkeydown="updateCounter()" rows="3" cols="50"></textarea>
                 <g:submitButton name="post" value="Post"/>
                 </g:form>
