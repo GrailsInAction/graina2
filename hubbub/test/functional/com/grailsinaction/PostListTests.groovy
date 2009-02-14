@@ -3,12 +3,12 @@ package com.grailsinaction
 class PostListTests extends functionaltestplugin.FunctionalTestCase {
     void testTimelineNotLoggedIn() {
         get("/post/list")
-        assertStatus 500
+        assertTitle "Hubbub » Howdy"
     }
 
     void testTimeline() {
         // User must log in first.
-        post("/login/index") {
+        post("/j_spring_security_check") {
             userId = "peter"
             password = "password"
         }
