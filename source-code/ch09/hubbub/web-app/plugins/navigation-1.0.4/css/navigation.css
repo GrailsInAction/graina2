@@ -1,0 +1,96 @@
+/*
+
+COLORING
+
+For ease of colortheming, the color selectors are grouped together with descriptive comments.
+Just change the color-values to apply your own color-scheme.
+
+*/
+
+/* Main navigation */
+.navigation li a { background-color: #aaa }                         /* Background-color */
+.navigation li.navigation_active a { background-color: #555; }      /* Background-color of active item */
+.navigation li.navigation_active a:hover { background-color: #555;} /* Background-color of hovered active item */
+.navigation li a:hover { background-color: #999; }                  /* Background-color of hovered item */
+.navigation li a { color: #fff; }                                   /* Text color */
+.navigation li a:hover { color: #fff; }                             /* Text color on hovering */
+.navigation li { border: 1px solid #888; }                          /* Border color */
+.navigation li.navigation_first { border-left-color: #888; }        /* Border color. Typically same as above */
+.navigation li { border-left-color: #bbb; }                         /* Highlight border-color */
+.navigation li.navigation_active { border-left-color: #555; }       /* Highlight border-color of active item */
+
+/* Sub navigation */
+.subnavigation li { background-color: #555; }                       /* Background-color */
+.subnavigation li a { border-color: #555; }                         /* Should be set to the same as the above */
+.subnavigation li a { color: #fff; }                                /* Text color */
+.subnavigation li a:hover { border-color: #fff; }                   /* Markings color of hovered item */
+.subnavigation li a:hover { color: #e0e0e0; }                       /* Text color of hovered item */
+.subnavigation li.subnavigation_active a { color: #e0e0e0; }        /* Text color of active item */
+.subnavigation li.subnavigation_active a { border-color: #e0e0e0; } /* Markings color of active item */
+
+.navigation {
+    list-style-type: none;
+    clear: both;
+    margin: 1em 0;
+    font-size: 12px;
+    overflow: hidden; /* Clearing floats */
+}
+
+.navigation li {
+    float: left;
+    /* border: 1px solid #888; */
+    /* border-left-color: #bbb; */
+}
+.navigation li.navigation_first {
+    /* border-left-color: #888; */
+}
+.navigation li.navigation_active {
+    /* border-left-color: #555; */
+}
+.navigation li a {
+    padding: 0.5em 1em;
+    display: block;
+    text-decoration: none;
+    /* background-color: #aaa; */
+    /* color: #fff; */
+}
+.navigation li a:hover {
+    /* background-color: #999; */
+}
+.navigation li.navigation_active a {
+    /* background-color: #555; */
+    color: #fff;
+    cursor: default;
+}
+
+.subnavigation {
+    list-style-type: none;
+    clear: both;
+    margin: 1em 0;
+    font-size: 12px;
+    overflow: auto; /* Clearing floats */
+}
+.subnavigation li {
+    float: left;
+    /* background-color: #555; */
+    padding: 0.35em 1.5em;
+    border-width: 1px 0;
+}
+.subnavigation li a {
+    display: block;
+    /* color: #fff; */
+    padding: 2px 0;
+    /* border-color: #555; */
+    border-style: solid;
+    border-width: 1px 0;
+    text-decoration: none;
+}
+.subnavigation li a:hover {
+    /* border-color: #fff; */
+    border-width: 1px 0;
+}
+.subnavigation li.subnavigation_active a {
+    /* color: #e0e0e0; */
+    cursor: default;
+    /* border-color: #e0e0e0; */
+}

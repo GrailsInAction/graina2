@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+  <testsuite errors="0" failures="0" hostname="decaf.local" id="0" name="DateTagLibTests" package="" tests="1" time="0.023" timestamp="2009-03-17T01:52:36">
+      <properties />
+
+      <testcase classname="DateTagLibTests" name="testSomething" time="0.022" />
+
+      <system-out><![CDATA[--Output from testSomething--
+]]></system-out>
+
+      <system-err><![CDATA[--Output from testSomething--
+]]></system-err>
+
+  </testsuite>
+  <testsuite errors="0" failures="0" hostname="decaf.local" id="1" name="LameSecurityFiltersTests" package="" tests="1" time="0.0080" timestamp="2009-03-17T01:52:36">
+      <properties />
+
+      <testcase classname="LameSecurityFiltersTests" name="testSomething" time="0.0070" />
+
+      <system-out><![CDATA[--Output from testSomething--
+]]></system-out>
+
+      <system-err><![CDATA[--Output from testSomething--
+]]></system-err>
+
+  </testsuite>
+  <testsuite errors="0" failures="0" hostname="decaf.local" id="2" name="ImageControllerTests" package="com.grailsinaction" tests="1" time="0.13" timestamp="2009-03-17T01:52:36">
+      <properties />
+
+      <testcase classname="com.grailsinaction.ImageControllerTests" name="testSomething" time="0.129" />
+
+      <system-out><![CDATA[--Output from testSomething--
+]]></system-out>
+
+      <system-err><![CDATA[--Output from testSomething--
+]]></system-err>
+
+  </testsuite>
+  <testsuite errors="0" failures="0" hostname="decaf.local" id="3" name="PostControllerTests" package="com.grailsinaction" tests="1" time="0.0090" timestamp="2009-03-17T01:52:36">
+      <properties />
+
+      <testcase classname="com.grailsinaction.PostControllerTests" name="testSomething" time="0.0090" />
+
+      <system-out><![CDATA[--Output from testSomething--
+]]></system-out>
+
+      <system-err><![CDATA[--Output from testSomething--
+]]></system-err>
+
+  </testsuite>
+  <testsuite errors="0" failures="0" hostname="decaf.local" id="4" name="PostIntegrationTests" package="com.grailsinaction" tests="3" time="1.738" timestamp="2009-03-17T01:52:57">
+      <properties />
+
+      <testcase classname="com.grailsinaction.PostIntegrationTests" name="testFirstPost" time="1.421" />
+
+      <testcase classname="com.grailsinaction.PostIntegrationTests" name="testAccessingPosts" time="0.101" />
+
+      <testcase classname="com.grailsinaction.PostIntegrationTests" name="testPostWithTags" time="0.095" />
+
+      <system-out><![CDATA[--Output from testFirstPost--
+--Output from testAccessingPosts--
+--Output from testPostWithTags--
+]]></system-out>
+
+      <system-err><![CDATA[--Output from testFirstPost--
+--Output from testAccessingPosts--
+--Output from testPostWithTags--
+]]></system-err>
+
+  </testsuite>
+  <testsuite errors="0" failures="0" hostname="decaf.local" id="5" name="PostServiceTests" package="com.grailsinaction" tests="1" time="0.0060" timestamp="2009-03-17T01:52:36">
+      <properties />
+
+      <testcase classname="com.grailsinaction.PostServiceTests" name="testSomething" time="0.0060" />
+
+      <system-out><![CDATA[--Output from testSomething--
+]]></system-out>
+
+      <system-err><![CDATA[--Output from testSomething--
+]]></system-err>
+
+  </testsuite>
+  <testsuite errors="0" failures="0" hostname="decaf.local" id="6" name="PostTests" package="com.grailsinaction" tests="1" time="0.0090" timestamp="2009-03-17T01:52:36">
+      <properties />
+
+      <testcase classname="com.grailsinaction.PostTests" name="testSomething" time="0.0080" />
+
+      <system-out><![CDATA[--Output from testSomething--
+]]></system-out>
+
+      <system-err><![CDATA[--Output from testSomething--
+]]></system-err>
+
+  </testsuite>
+  <testsuite errors="0" failures="0" hostname="decaf.local" id="7" name="ProfileControllerTests" package="com.grailsinaction" tests="1" time="0.018" timestamp="2009-03-17T01:52:36">
+      <properties />
+
+      <testcase classname="com.grailsinaction.ProfileControllerTests" name="testSomething" time="0.018" />
+
+      <system-out><![CDATA[--Output from testSomething--
+]]></system-out>
+
+      <system-err><![CDATA[--Output from testSomething--
+]]></system-err>
+
+  </testsuite>
+  <testsuite errors="0" failures="0" hostname="decaf.local" id="8" name="ProfileTests" package="com.grailsinaction" tests="1" time="0.01" timestamp="2009-03-17T01:52:36">
+      <properties />
+
+      <testcase classname="com.grailsinaction.ProfileTests" name="testSomething" time="0.0090" />
+
+      <system-out><![CDATA[--Output from testSomething--
+]]></system-out>
+
+      <system-err><![CDATA[--Output from testSomething--
+]]></system-err>
+
+  </testsuite>
+  <testsuite errors="0" failures="0" hostname="decaf.local" id="9" name="QueryIntegrationTests" package="com.grailsinaction" tests="2" time="0.345" timestamp="2009-03-17T01:52:59">
+      <properties />
+
+      <testcase classname="com.grailsinaction.QueryIntegrationTests" name="testBasicDynamicFinders" time="0.233" />
+
+      <testcase classname="com.grailsinaction.QueryIntegrationTests" name="testQueryByExample" time="0.084" />
+
+      <system-out><![CDATA[--Output from testBasicDynamicFinders--
+--Output from testQueryByExample--
+]]></system-out>
+
+      <system-err><![CDATA[--Output from testBasicDynamicFinders--
+--Output from testQueryByExample--
+]]></system-err>
+
+  </testsuite>
+  <testsuite errors="0" failures="0" hostname="decaf.local" id="10" name="SearchControllerTests" package="com.grailsinaction" tests="1" time="0.0090" timestamp="2009-03-17T01:52:36">
+      <properties />
+
+      <testcase classname="com.grailsinaction.SearchControllerTests" name="testSomething" time="0.0090" />
+
+      <system-out><![CDATA[--Output from testSomething--
+]]></system-out>
+
+      <system-err><![CDATA[--Output from testSomething--
+]]></system-err>
+
+  </testsuite>
+  <testsuite errors="0" failures="0" hostname="decaf.local" id="11" name="TagControllerTests" package="com.grailsinaction" tests="1" time="0.051" timestamp="2009-03-17T01:52:36">
+      <properties />
+
+      <testcase classname="com.grailsinaction.TagControllerTests" name="testSomething" time="0.051" />
+
+      <system-out><![CDATA[--Output from testSomething--
+]]></system-out>
+
+      <system-err><![CDATA[--Output from testSomething--
+]]></system-err>
+
+  </testsuite>
+  <testsuite errors="0" failures="0" hostname="decaf.local" id="12" name="TagTests" package="com.grailsinaction" tests="1" time="0.031" timestamp="2009-03-17T01:52:36">
+      <properties />
+
+      <testcase classname="com.grailsinaction.TagTests" name="testSomething" time="0.031" />
+
+      <system-out><![CDATA[--Output from testSomething--
+]]></system-out>
+
+      <system-err><![CDATA[--Output from testSomething--
+]]></system-err>
+
+  </testsuite>
+  <testsuite errors="0" failures="0" hostname="decaf.local" id="13" name="UserControllerTests" package="com.grailsinaction" tests="1" time="0.032" timestamp="2009-03-17T01:52:36">
+      <properties />
+
+      <testcase classname="com.grailsinaction.UserControllerTests" name="testSomething" time="0.031" />
+
+      <system-out><![CDATA[--Output from testSomething--
+]]></system-out>
+
+      <system-err><![CDATA[--Output from testSomething--
+]]></system-err>
+
+  </testsuite>
+  <testsuite errors="0" failures="0" hostname="decaf.local" id="14" name="UserIntegrationTests" package="com.grailsinaction" tests="6" time="0.374" timestamp="2009-03-17T01:52:59">
+      <properties />
+
+      <testcase classname="com.grailsinaction.UserIntegrationTests" name="testFirstSaveEver" time="0.027" />
+
+      <testcase classname="com.grailsinaction.UserIntegrationTests" name="testSaveAndUpdate" time="0.035" />
+
+      <testcase classname="com.grailsinaction.UserIntegrationTests" name="testSaveThenDelete" time="0.048" />
+
+      <testcase classname="com.grailsinaction.UserIntegrationTests" name="testEvilSave" time="0.061" />
+
+      <testcase classname="com.grailsinaction.UserIntegrationTests" name="testEvilSaveCorrected" time="0.01" />
+
+      <testcase classname="com.grailsinaction.UserIntegrationTests" name="testFollowing" time="0.148" />
+
+      <system-out><![CDATA[--Output from testFirstSaveEver--
+--Output from testSaveAndUpdate--
+--Output from testSaveThenDelete--
+--Output from testEvilSave--
+--Output from testEvilSaveCorrected--
+--Output from testFollowing--
+]]></system-out>
+
+      <system-err><![CDATA[--Output from testFirstSaveEver--
+--Output from testSaveAndUpdate--
+--Output from testSaveThenDelete--
+--Output from testEvilSave--
+--Output from testEvilSaveCorrected--
+--Output from testFollowing--
+]]></system-err>
+
+  </testsuite>
+  <testsuite errors="0" failures="0" hostname="decaf.local" id="15" name="UserTests" package="com.grailsinaction" tests="1" time="0.018" timestamp="2009-03-17T01:52:36">
+      <properties />
+
+      <testcase classname="com.grailsinaction.UserTests" name="testSomething" time="0.018" />
+
+      <system-out><![CDATA[--Output from testSomething--
+]]></system-out>
+
+      <system-err><![CDATA[--Output from testSomething--
+]]></system-err>
+
+  </testsuite>
+</testsuites>
