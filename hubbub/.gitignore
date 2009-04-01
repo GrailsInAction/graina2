@@ -1,4 +1,5 @@
 .gradle
+devDb.*
 docs
 hubbub.iws
 stacktrace.log
