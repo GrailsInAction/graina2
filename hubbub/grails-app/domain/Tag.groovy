@@ -7,7 +7,7 @@ class Tag implements Comparable {
 	static hasMany = [ posts : Post ]
 	
 	//NB owned by post, so you can only do post.addToTags() not other way around
-	static belongsTo = [ User, Post, StarPost ]
+	static belongsTo = [ User, Post ]
 	
 	
 	// we keep tags sorted by tag name on each entry
