@@ -1,51 +1,37 @@
-class BootStrap {
+import com.grailsinaction.*
+import grails.util.Environment
 
+class BootStrap { 
 
-    def init = {servletContext ->
+    def init = { servletContext ->
 
-        def samples = ['glen', 'peter', 'phil', 'jason']
+        switch (Environment.current) {
 
-        if (!User.list()) {
-            samples.each { userId ->
-                def user = new User(userId: userId, password: "password".encodeAsSha1(), profile: new Profile(fullName: userId, homepage: "http://www.${userId}.com/${userId}", email: "${userId}@${userId}.com"))
-                if (user.validate()) {
-                    println "Creating user ${userId}..."
-                    def url = this.class.getResource("/${userId}.jpg")
-                    if (url) {
-                        def image = new File(url.toURI()).readBytes()
-                        println "Creating With custom photo"
-                        user.profile.photo = image
-                    }
-                    user.save(flush:true)
-					def tag = new Tag(name: "grails", user: user).save()
-                    def post = new Post(content: "A post from ${userId}", user: user, tag: tag).save()
-                    
-                    post.addToTags(tag)
-                    user.addToPosts(post)
-                } else {
-                    println("\n\n\nError in account bootstrap for ${userId}!\n\n\n")
-                    user.errors.each {err ->
-                        println err
-                    }
-                }
-            }
-            samples.each { userId ->
-                println "Searching for user ${userId}"
-                def user = User.findByUserId(userId)
-                println "User is ${user}"
-                def others = samples.findAll { it != userId }
-                others.each { otherId ->
-                    def other = User.findByUserId(otherId)
-                    user.addToFollowers(other)
-                    other.addToFollowing(user)
-                }
+            case Environment.DEVELOPMENT:
+                createAdminUserIfRequired()
+                break;
 
-            }
-            def loner = new User(userId: 'loner', password: "password".encodeAsSha1()).save()
+            case Environment.PRODUCTION:
+                println "No special configuration required"
+                break;
+
         }
+        
     }
+
 
     def destroy = {
     }
 
-} 
+    void createAdminUserIfRequired() {
+        if (User.count() == 0) {
+            println "Fresh Database. Creating ADMIN user."
+            def profile = new Profile(email: "admin@yourhost.com")
+            def user = new User(userId: "admin",
+                password: "secret", profile: profile).save()
+        } else {
+            println "Existing admin user, skipping creation"
+        }
+    }
+}
+
