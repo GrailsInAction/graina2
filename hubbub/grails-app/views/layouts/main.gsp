@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>Hubbub &raquo; <g:layoutTitle default="Welcome" /></title>
-        <!-- <link rel="stylesheet" href="<g:createLinkTo dir='css' file='main.css'/>"/> -->
+        <nav:resources/>
         <link rel="stylesheet" href="<g:createLinkTo dir='css' file='hubbub.css'/>"/>
         <g:layoutHead />
         <g:javascript library="application" />
@@ -13,6 +13,7 @@
                 <a href="<g:createLinkTo dir="/"/>"><img id="logo" src="${createLinkTo(dir: 'images', file: 'headerlogo.png')}" alt="hubbub logo"/></a>
             </div>
             <div id="bd"><!-- start body -->
+                <nav:render group="tabs"/>
                 <g:layoutBody/>
             </div>  <!-- end body -->
             <div id="ft">

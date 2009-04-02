@@ -8,6 +8,13 @@ class PostController {
 
     def scaffold = true
 
+    static navigation = [
+        [group: 'tabs', action: 'personal', title: 'My Posts', order: 0],
+        [action:'timeline', title: 'My Timeline', order: 1],
+        [action: 'global', title: 'Everyone', order: 2],
+
+    ]
+
     def index = {
         if (!params.id)
             params.id = "chuck_norris"
