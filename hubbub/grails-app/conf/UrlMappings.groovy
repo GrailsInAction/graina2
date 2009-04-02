@@ -20,9 +20,9 @@ class UrlMappings {
 
 
         "/users/$id" {
-			controller = "post"
-			action = "timeline"
-		}
+            controller = "post"
+            action = "timeline"
+        }
 
 
         "500"(view:'/error')
