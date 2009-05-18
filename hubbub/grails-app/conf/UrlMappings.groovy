@@ -24,6 +24,7 @@ class UrlMappings {
             action = "timeline"
         }
 
+        "/"(controller: 'post', action: 'global')
 
         "500"(view:'/error')
     }

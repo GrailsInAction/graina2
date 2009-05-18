@@ -7,6 +7,8 @@ class PhotoUploadCommand {
 
 class ImageController {
 
+    def imageService
+
     def upload = { PhotoUploadCommand puc ->
         println "Starting upload"
         def user = User.findByUserId(puc.userId)
@@ -38,6 +40,17 @@ class ImageController {
         if (user && user?.profile?.photo) {
             response.setContentLength(user.profile.photo.length)
             response.getOutputStream().write(user.profile.photo)
+        } else {
+            response.sendError(404)
+        }
+
+    }
+
+    def tiny = {
+        if (params.id) {
+            def image = imageService.getUserTinyThumbnail(params.id)
+            response.setContentLength(image.length)
+            response.getOutputStream().write(image)
         } else {
             response.sendError(404)
         }

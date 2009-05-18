@@ -79,6 +79,10 @@ class UserController {
         }
     }
 
+    def register3 = {
+        // exercise for the reader
+    }
+
     def profile = {
         
         if (params.id) {
@@ -131,6 +135,5 @@ class UserRegistrationCommand {
         timezone(nullable: true)
         jabberAddress(email: true, nullable: true)
     }
-
 
 }

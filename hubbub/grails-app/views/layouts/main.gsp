@@ -4,8 +4,9 @@
         <title>Hubbub &raquo; <g:layoutTitle default="Welcome" /></title>
         <nav:resources/>
         <link rel="stylesheet" href="<g:createLinkTo dir='css' file='hubbub.css'/>"/>
-        <g:layoutHead />
         <g:javascript library="application" />
+        <g:javascript library="scriptaculous"/>
+        <g:layoutHead />
     </head>
     <body>
         <div>

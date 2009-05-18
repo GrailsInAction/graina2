@@ -16,19 +16,36 @@ class PostController {
     ]
 
     def index = {
-        if (!params.id)
-            params.id = "chuck_norris"
         redirect(action: 'timeline', params: params)
     }
 
+    def global = {
+
+        def (posts, postCount) = postService.getGlobalTimelineAndCount(params)
+        [ posts : posts, postCount : postCount ]
+    }
+
     def timeline = {
-        def user = User.findByUserId(params.id)
-        [ user : user ]
+
+        def user = User.get(session.user.id)
+        def (posts, postCount) = postService.getUserTimelineAndCount(user.userId, params)
+        [ user : user, posts : posts, postCount : postCount ]
+    }
+
+    def personal = {
+
+        def user = params.id ? User.findByUserId(params.id) : session.user
+        if (!user) {
+            response.sendError(404)
+        }
+        def (posts, postCount) = postService.getUserPosts(user.userId, params)
+        
+        [ user : user, posts : posts, postCount : postCount ]
     }
 
     def addPost = {
         try {
-            def newPost = postService.createPost(params.id, params.content)
+            def newPost = postService.createPost(session.user.userId, params.content)
             flash.message = "Added new post: ${newPost.content}"
         } catch (PostException pe) {
             flash.message = pe.message
@@ -36,6 +53,39 @@ class PostController {
         redirect(action: 'timeline', id: params.id)
     }
 
+    def addPostAjax = {
+        try {
+            def newPost = postService.createPost(session.user.userId, params.content)
+            def posts
+            def postCount
+            switch(params.timelineToReturn) {
+                case "global":
+                    (posts, postCount) = postService.getGlobalTimelineAndCount(params)
+                    break
+                case "mytimeline":
+                    (posts, postCount) = postService.getUserTimelineAndCount(session.user.userId, params)
+                    break
+                case "myposts":
+                    (posts, postCount) = postService.getUserPosts(session.user.userId, params)
+                    break
+            }
+            println "postCount is ${postCount}"
+            render(template:"postentries", collection: posts, var: 'post')
+        } catch (PostException pe) {
+            render {
+                div(class:"errors", pe.message)
+            }
+        }
+
+    }
+
+    def tinyurl = {
+        def origUrl = params?.fullUrl?.encodeAsURL()
+        def tinyUrl = new URL("http://tinyurl.com/api-create.php?url=${origUrl}").text
+        render(contentType:"application/json") {
+            urls(small: tinyUrl, full: params.fullUrl)
+        }
+    }
 
     def recentPosts = {
 
@@ -57,28 +107,6 @@ class PostController {
             xml { render posts.encodeAsXML() }
         }
 
-
     }
-
-   
-
-    /* Refactor old addPost() action into the PostService */
-    /*
-    def addPost = {
-        def user = User.findByUserId(params.id)
-        if (user) {
-            def post = new Post(params)
-            if (post.validate()) {
-                user.addToPosts(post)
-                flash.message = "Successfully created Post"
-            } else {
-                flash.message = "Invalid or empty post"
-            }
-        } else {
-            flash.message = "Invalid User Id"
-        }
-        redirect(action: 'timeline', id: params.id)
-    }
-    */
 
 }
