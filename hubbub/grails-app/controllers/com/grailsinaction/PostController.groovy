@@ -37,6 +37,7 @@ class PostController {
         def user = params.id ? User.findByUserId(params.id) : session.user
         if (!user) {
             response.sendError(404)
+            return
         }
         def (posts, postCount) = postService.getUserPosts(user.userId, params)
         
