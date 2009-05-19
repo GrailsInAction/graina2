@@ -1,4 +1,4 @@
-<project xmlns:ivy="antlib:org.apache.ivy.ant" name="service-tests" default="test">
+<project xmlns:ivy="antlib:org.apache.ivy.ant" name="integration-tests" default="test">
     <property environment="env"/>
   	<property name="ivy.install.version" value="2.0.0" />
     <condition property="ivy.home" value="${env.IVY_HOME}">
@@ -43,8 +43,9 @@
 
     <macrodef name="grails">
         <attribute name="script"/>
+        <attribute name="args" default="" />
         <sequential>
-            <grailsTask script="@{script}" classpathref="grails.classpath">
+            <grailsTask script="@{script}" args="@{args}" classpathref="grails.classpath">
                 <compileClasspath refid="compile.classpath"/>
                 <testClasspath refid="test.classpath"/>
                 <runtimeClasspath refid="app.classpath"/>

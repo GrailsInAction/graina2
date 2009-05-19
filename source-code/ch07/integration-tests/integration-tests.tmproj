@@ -6,7 +6,7 @@
 	<array>
 		<dict>
 			<key>filename</key>
-			<string>service-tests.launch</string>
+			<string>integration-tests.launch</string>
 		</dict>
 		<dict>
 			<key>filename</key>
