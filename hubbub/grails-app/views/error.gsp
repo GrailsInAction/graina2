@@ -1,8 +1,3 @@
-<%@ page import="grails.util.Environment" %>
-<g:if test="${Environment.current == Environment.PRODUCTION}">
-    ${response.sendError(500)}
-</g:if>
-<g:else>
 <html>
   <head>
 	  <title>Grails Runtime Exception</title>
@@ -57,4 +52,3 @@
 	</g:if>
   </body>
 </html>
-</g:else>
