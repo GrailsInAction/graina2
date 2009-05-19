@@ -1,5 +1,7 @@
 class DateTagLib {
 
+    static namespace = "h"
+
     public static String getNiceDate(Date date) {
 
         def now = new Date()

@@ -1,24 +1,44 @@
 class UrlMappings {
+    
     static mappings = {
-        "/posts"(controller: "postRest", action: "list")
-
-        "/post"(controller: "postRest") {
-            action = [PUT: "save"]
-        }
-
-        "/post/$id"(controller: "postRest") {
-            action = [GET: "show", POST: "update", DELETE: "delete"]
-
-            constraints {
-                id(matches: /\d+/)
-            }
-        }
 
         "/$controller/$action?/$id?"{
             constraints {
-                // apply constraints here
+             // apply constraints here
             }
         }
-        "500"(controller: "errors", action: "internalServer")
+
+
+        "/timeline/chuck_norris" {
+            controller = "post"
+            action = "timeline"
+            id = "chuck_norris"
+        }
+
+        // alternatively, do it as a one-liner
+        // "/timeline/chuck_norris"(controller:"post", action:"timeline", id:"chuck_norris")
+
+
+        "/users/$id" {
+            controller = "post"
+            action = "timeline"
+        }
+
+        "/"(controller: 'post', action: 'global')
+
+        "/users/$userId/stats" {
+            controller = "user"
+            action = "stats"
+        }
+
+        "/users/$userId/feed/$format?" {
+            controller = "user"
+            action = "feed"
+            constraints {
+                format(inList: ['rss', 'atom'])
+            }
+        }
+
+        "500"(view:'/error')
     }
 }

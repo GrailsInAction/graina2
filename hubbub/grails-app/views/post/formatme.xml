@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+    <post id="4">
+        <content>Some more content here.</content>
+        <dateCreated>2009-02-11 21:45:57.899 EST</dateCreated>
+        <tags />
+        <user id="1" />
+    </post>
+    <post id="3">
+        <content>Tinkering with the hubbub app.</content>
+        <dateCreated>2009-02-11 19:51:04.460 EST</dateCreated>
+        <tags />
+        <user id="1" />
+    </post>
+    <post id="2">
+        <content>Working on a few new moves. Bit sluggish today.</content>
+        <dateCreated>2009-02-11 19:50:48.671 EST</dateCreated>
+        <tags />
+        <user id="1" />
+    </post>
+    <post id="1">
+        <content>Been working my roundhouse kicks.</content>
+        <dateCreated>2009-02-11 19:50:00.0 EST</dateCreated>
+        <tags />
+        <user id="1" />
+    </post>
+</list>
