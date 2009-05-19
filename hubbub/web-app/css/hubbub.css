@@ -1,5 +1,34 @@
 
 
+body {
+
+    background: #dddddd;
+    padding-top: 4px;
+    font-family: "Helvetica";
+}
+
+#hd {
+    padding: 1em;
+    background-image: url('../images/background.png');
+    background-repeat: repeat-x;
+}
+
+#bd {
+    margin-top: 0.5em;
+    border: 1px solid lightgray;
+    background: white;
+    padding: 1em;
+}
+
+#ft {
+    background: #222222;
+    padding: 1em;
+    text-align: center;
+    color: white;
+    font-family: "Lucinda Grande",Arial;
+    font-size: 12pt;
+}
+
 #sidebar {
 
     margin-top: 3em;
@@ -74,4 +103,59 @@ dd {
 .friendsThumbnails img {
     margin: 4px;
 }
+
+.flash {
+    background: #ffe957;
+    border: 1px dotted black;
+    color: black;
+    padding: 1em;
+    margin: 1em;
+    font-weight: bold;
+    background-color: #ffe957;
+}
+
+.errors {
+    background: lightpink;
+    border: 1px dotted red;
+    color: black;
+    padding: 1em;
+    margin: 1em;
+    font-weight: bold;
+}
+
+.step{
+    padding-left: 1em;
+}
+
+.prevLink {
+    padding-left: 1em;
+}
+
+
+.nextLink {
+    padding-left: 1em;
+}
+
+.currentStep {
+    padding-left: 1em;
+    font-weight: bold;
+}
+
+.searchPost {
+    border: 1px dotted black;
+    background-color: #dddddd;
+    padding: 1em;
+    margin-bottom: 1em;
+}
+
+.searchFrom {
+    color: #333333;
+    font-style: italic;
+    font-size: smaller;
+}
+
+.searchContent {
+    
+}
+
 
