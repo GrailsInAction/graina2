@@ -2,6 +2,8 @@ package com.grailsinaction
 
 class User {
 
+    static searchable = true
+    
     String userId
     String password
       

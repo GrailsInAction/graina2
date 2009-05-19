@@ -63,6 +63,19 @@
         </g:radioGroup>
         </dd>
 
+        <dt>Bio:</dt>
+        <dd> 
+            <p style="margin-top: 3em"/>
+            <gui:richEditor id="bio"
+                            height="100px"
+                            width="600px"/>
+            <script type="text/javascript">
+                GRAILSUI.bio._defaultToolbar.titlebar = 'Enter your bio';
+            </script>
+
+        </dd>
+
+
         <dt>
             <g:actionSubmit value="Register" />
         </dt>

@@ -26,6 +26,19 @@ class UrlMappings {
 
         "/"(controller: 'post', action: 'global')
 
+        "/users/$userId/stats" {
+            controller = "user"
+            action = "stats"
+        }
+
+        "/users/$userId/feed/$format?" {
+            controller = "user"
+            action = "feed"
+            constraints {
+                format(inList: ['rss', 'atom'])
+            }
+        }
+
         "500"(view:'/error')
     }
 }

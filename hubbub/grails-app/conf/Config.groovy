@@ -39,6 +39,10 @@ environments {
     }
 }
 
+grails.mail.host="192.168.1.9"
+grails.mail.default.from="hubbub@grailsinaction.com"
+
+
 // log4j configuration
 log4j = {
     error  'org.codehaus.groovy.grails.web.servlet',  //  controllers

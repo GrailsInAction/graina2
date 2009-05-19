@@ -2,6 +2,11 @@ package com.grailsinaction
 
 class Post {
 
+    static searchable = {
+        user(component:true)
+        spellCheck "include"
+    }
+
     String content
     Date dateCreated
 

@@ -96,6 +96,82 @@ class UserController {
 
     }
 
+    def stats = {
+        User user = User.findByUserId(params.userId)
+        if (user) {
+            def sdf = new java.text.SimpleDateFormat('E')
+            def postsOnDay = [:]
+            user.posts.each { post ->
+                def dayOfWeek = sdf.format(post.dateCreated)
+                if (postsOnDay[dayOfWeek]) {
+                    postsOnDay[dayOfWeek]++
+                } else {
+                    postsOnDay[dayOfWeek] = 1
+                }
+            }
+            return [ userId: params.userId, postsOnDay: postsOnDay ]
+        } else {
+            flash.message = "No stats available for that user"
+            redirect(uri: "/")
+        }
+
+    }
+
+    def feed = {
+
+
+        User user = User.findByUserId(params.userId)
+        def format = params.format ?: "atom"
+
+        def feedUri = g.createLinkTo(dir: '/') + "${params.userId}/feed/${format}"
+
+        if (user) {
+
+            def pc = Post.createCriteria()
+            def posts = pc.list {
+                eq('user', user)
+                maxResults(5)
+                order("dateCreated", "desc")
+            }
+
+            def fb = new feedsplugin.FeedBuilder()
+
+            fb.feed  {
+                title = "Hubbub Feed for ${user.userId}"
+                link = feedUri
+                description = "All of the latest hubbub posts for ${user.userId}"
+                posts.each { post ->
+                    entry(post.content[0..10] + "...") {
+                        publishedDate = post.dateCreated
+                        link =  g.createLink(absolute: true, controller: 'user', id: user.userId) + "#" + post.id
+                        content(type:'text/html') {
+                            post.content
+                        }
+                    }
+                }
+            }
+            def feedXml = fb.render( format )
+            render(text: feedXml, contentType:"text/xml")
+        }
+
+    }
+
+    def welcomeEmail =  {
+
+        if (params.email) {
+            sendMail {
+                to params.email
+                subject "Welcome to Hubbub!"
+                body(view: "welcomeEmail", model: [ email: params.email ])
+		    }
+            flash.message = "Welcome aboard"
+        }
+        redirect(uri: "/")
+
+    }
+
+
+
 }
 
 
