@@ -1,0 +1,13 @@
+Testsuite: MyControllerUnitTests
+Tests run: 2, Failures: 0, Errors: 0, Time elapsed: 3.089 sec
+------------- Standard Output ---------------
+--Output from testShowNoItems--
+--Output from testShow--
+------------- ---------------- ---------------
+------------- Standard Error -----------------
+--Output from testShowNoItems--
+--Output from testShow--
+------------- ---------------- ---------------
+
+Testcase: testShowNoItems took 2.901 sec
+Testcase: testShow took 0.186 sec

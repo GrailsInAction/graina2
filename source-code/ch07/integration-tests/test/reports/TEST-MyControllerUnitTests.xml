@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="0" hostname="redwood" name="MyControllerUnitTests" tests="2" time="3.089" timestamp="2009-05-19T13:08:40">
+  <properties />
+  <testcase classname="MyControllerUnitTests" name="testShowNoItems" time="2.9" />
+  <testcase classname="MyControllerUnitTests" name="testShow" time="0.186" />
+  <system-out><![CDATA[--Output from testShowNoItems--
+--Output from testShow--
+]]></system-out>
+  <system-err><![CDATA[--Output from testShowNoItems--
+--Output from testShow--
+]]></system-err>
+</testsuite>
