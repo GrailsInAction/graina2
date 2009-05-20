@@ -2,26 +2,55 @@
 <html>
     <head>
         <title>Hubbub &raquo; <g:layoutTitle default="Welcome" /></title>
-        <nav:resources/>
+        <!-- <link rel="stylesheet" href="${createLinkTo(dir:'css',file:'hubbub.css')}" />  -->
         <link rel="stylesheet" href="<g:createLinkTo dir='css' file='hubbub.css'/>"/>
+        <link rel="shortcut icon" href="${createLinkTo(dir:'images',file:'favicon.ico')}" type="image/x-icon" />
+        <link rel="stylesheet" href="${createLinkTo(dir: 'css', file: 'reset-fonts-grids.css')}"/>
+        <nav:resources/>
+        <g:layoutHead />
         <g:javascript library="application" />
         <g:javascript library="scriptaculous"/>
-        <g:layoutHead />
     </head>
-    <body>
-        <div>
-            <div id="hd">
-                <a href="<g:createLinkTo dir="/"/>"><img id="logo" src="${createLinkTo(dir: 'images', file: 'headerlogo.png')}" alt="hubbub logo"/></a>
-            </div>
-            <div id="bd"><!-- start body -->
-                <nav:render group="tabs"/>
-                <g:layoutBody/>
-            </div>  <!-- end body -->
-            <div id="ft">
-                <div id="footerText">
-                    Hubbub - Social Networking on Grails
-                </div>
-            </div>
-        </div>
-    </body>
+    <body>	
+        <div id="doc3" class="yui-t5">
+                    <div id="hd">
+		                 <a href="<g:createLinkTo dir="/"/>"><img id="logo" src="${createLinkTo(dir: 'images', file: 'headerlogo.png')}" alt="hubbub logo"/></a>
+                        <!--
+		                <div style="float: right; position: relative; margin-right: 7px; font-size: medium; ">
+		                    <g:textField name="search" value="Search here..."/>
+		                </div>
+                        -->
+
+		            </div>
+		            <div id="bd"><!-- start body -->
+
+		                <div id="yui-main">
+		                    <div class="yui-b">
+		                        <g:if test="${flash.message}">
+		                            <div class="flash">
+		                                ${flash.message}
+		                            </div>
+		                        </g:if>
+                                <nav:render group="tabs"/>
+		                        <g:layoutBody/>
+		                    </div>
+		                </div>
+		                <div class="yui-b">
+                            <g:isLoggedIn>
+                                <g:render template="sidebar_profile"/>
+                            </g:isLoggedIn>
+                            <g:isNotLoggedIn>
+                                <g:render template="sidebar_login"/>
+                            </g:isNotLoggedIn>
+  
+                        </div>
+
+		            </div>  <!-- end body -->
+		            <div id="ft">
+		                <div id="footerText">
+		                Hubbub <g:meta name="app.version"/> on Grails <g:meta name="app.grails.version"/>.
+		                </div>
+		            </div>
+		        </div>		
+    </body>	
 </html>

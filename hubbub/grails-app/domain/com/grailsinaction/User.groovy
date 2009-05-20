@@ -25,9 +25,7 @@ class User {
 
     static constraints = {
         userId(size:3..20, unique: true)
-        password(size: 6..8, validator: { passwd, user ->
-            passwd != user.userId
-        })
+        password(blank: false)
         dateCreated()
         profile(nullable: true)
         userRealName(nullable: true, blank: true)

@@ -27,22 +27,26 @@ class PostController {
 
     def timeline = {
 
-        def user = authenticateService.userDomain()
-        user = User.get(user.id)
+        def user = params.id ? User.findByUserId(params.id) : User.get(authenticateService.userDomain().id)
+        if (!user) {
+            response.sendError(404)
+            return
+        }
         def (posts, postCount) = postService.getUserTimelineAndCount(user.userId, params)
-        [ user : user, posts : posts, postCount : postCount ]
+
+        [ targetUser : user, posts : posts, postCount : postCount ]
     }
 
     def personal = {
 
-        def user = params.id ? User.findByUserId(params.id) : authenticateService.userDomain()
+        def user = params.id ? User.findByUserId(params.id) : User.get(authenticateService.userDomain().id)
         if (!user) {
             response.sendError(404)
             return
         }
         def (posts, postCount) = postService.getUserPosts(user.userId, params)
         
-        [ user : user, posts : posts, postCount : postCount ]
+        [ targetUser : user, posts : posts, postCount : postCount ]
     }
 
     def addPost = {

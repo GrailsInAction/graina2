@@ -5,22 +5,17 @@
             <dl>
                 <dt>User</dt>
                 <dd>
-                  ${session.user.userId}
-                  <%--
-                  <g:loggedInUserInfo field="userId">Guest</g:loggedInUserInfo><g:isLoggedIn>
-                  (<g:link controller="logout" action="index">sign out</g:link>)</g:isLoggedIn>
-                  --%>
+                  <g:loggedInUserInfo field="userId">Guest</g:loggedInUserInfo>
                 </dd>
             </dl>
-			<g:link controller="login" action="logout">Logout</g:link>
-
+            <g:isLoggedIn><g:link controller="logout" action="index">Logout</g:link></g:isLoggedIn>
 
         <h3>Stats</h3>
 
             <!-- Follower counts -->
             <dl>
                 <!--
-                <dt><a href='<g:createLink action="following" controller="friend" id="${session.user.userId}"/>'>
+                <dt><a href='<g:createLink action="following" controller="friend" id="${user.userId}"/>'>
                     Following
                     </a>
                 </dt>

@@ -2,6 +2,7 @@ import com.grailsinaction.*
 import grails.util.Environment
 
 class BootStrap { 
+    def authenticateService
 
     def init = { servletContext ->
 
@@ -29,7 +30,7 @@ class BootStrap {
             println "Fresh Database. Creating ADMIN user."
             def profile = new Profile(email: "admin@yourhost.com")
             def user = new User(userId: "admin",
-                password: "secret", profile: profile).save()
+                password: authenticateService.encodePassword("secret"), profile: profile).save()
         } else {
             println "Existing admin user, skipping creation"
         }
@@ -52,7 +53,7 @@ class BootStrap {
 
         if (!User.list()) {
             samples.each { userId, profileAttrs ->
-                def user = new User(userId: userId, password: "password")
+                def user = new User(userId: userId, password: authenticateService.encodePassword("password"))
                 userRole.addToPeople(user)
 
                 if (user.validate()) {
@@ -97,7 +98,7 @@ class BootStrap {
                 }
 
             }
-            def loner = new User(userId: 'loner', password: "password").save()
+            def loner = new User(userId: 'loner', password: authenticateService.encodePassword("password")).save()
 
            
         }

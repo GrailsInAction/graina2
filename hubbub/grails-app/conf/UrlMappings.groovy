@@ -9,10 +9,9 @@ class UrlMappings {
         }
 
 
-        "/timeline/chuck_norris" {
+        "/timeline" {
             controller = "post"
             action = "timeline"
-            id = "chuck_norris"
         }
 
         // alternatively, do it as a one-liner
