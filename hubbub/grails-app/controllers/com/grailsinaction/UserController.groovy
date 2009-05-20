@@ -4,10 +4,13 @@ class UserController {
 
     def scaffold = true
 
+    // In the book, the value for 'isVisible' is a closure, but a bug
+    // in the Nav plugin means that this doesn't work with WebFlow
+    // services. So here we use the simple boolean value.
     static navigation = [
         [group:'tabs', action:'search', order: 90],
         [action: 'advSearch', title: 'Advanced Search', order: 95],
-        [action: 'register', order: 99, isVisible: { true }]
+        [action: 'register', order: 99, isVisible: true]
     ]
 
 
