@@ -15,6 +15,9 @@ security {
 
     useRequestMapDomainClass = false
 
+    // "/image/**" and "/post/global" URL rules are new - you won't
+    // find them in the book. Down to those application changes as
+    // above.
     requestMapString = """\
 CONVERT_URL_TO_LOWERCASE_BEFORE_COMPARISON
 PATTERN_TYPE_APACHE_ANT
