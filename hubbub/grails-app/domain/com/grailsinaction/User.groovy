@@ -24,7 +24,7 @@ class User {
 	
 
     static constraints = {
-        userId(size:3..20, unique: true)
+        userId(blank: false, size:3..20, unique: true)
         password(blank: false)
         dateCreated()
         profile(nullable: true)
