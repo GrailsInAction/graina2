@@ -1,6 +1,11 @@
 /**
  * These tests are not the same as in the book - the ones in the book
  * are incorrect.
+ *
+ * Note that these tests will only work if you run them in the development
+ * environment:
+ *
+ *   grails dev functional-tests
  */
 class PostListFunctionalTests extends functionaltestplugin.FunctionalTestCase {
     void testTimelineNotLoggedIn() {
