@@ -81,9 +81,10 @@ class UserController {
 
         def role = Role.findByAuthority(defaultRole)
         if (!role) {
-            user.password = ''
+            urc.password = null
+            urc.passwordRepeat = null
             flash.message = 'Default Role not found.'
-            return [ user: user ]
+            return [ userDetails: urc ]
         }
 
         if (!urc.hasErrors()) {
@@ -92,13 +93,15 @@ class UserController {
             user.profile = new Profile(props)
 
             // Put the encoded password in the database.
-            user.password = authenticateService.encodePassword(params.passwd)
+            user.password = authenticateService.encodePassword(urc.password)
             user.emailShow = true
 
             // We've validated the user - now it's time to save it.
             if (!user.save()) {
+                urc.password = null
+                urc.passwordRepeat = null
                 flash.message = "Error registering user"
-                return [ user: user ]
+                return [ userDetails: urc ]
             }
 
             role.addToPeople(user)
@@ -122,7 +125,8 @@ class UserController {
                 emailerService.sendEmails([email])
             }
 
-            def auth = new AuthToken(user.userId, params.passwd)
+            // Automatically log the new user into the application.
+            def auth = new AuthToken(user.userId, urc.password)
             def authtoken = daoAuthenticationProvider.authenticate(auth)
             SCH.context.authentication = authtoken
 
@@ -130,8 +134,10 @@ class UserController {
             redirect(uri: '/')
         }
         else {
+            urc.password = null
+            urc.passwordRepeat = null
             flash.message = "Error registering user"
-            return [ user: urc ]
+            return [ userDetails: urc ]
         }
     }
 
@@ -247,7 +253,7 @@ class UserRegistrationCommand {
     String jabberAddress
 
     static constraints = {
-        userId(size: 3..20)
+        userId(blank: false, size: 3..20)
 
         // Ensure password does not match userid
         password(size: 6..8, blank: false,

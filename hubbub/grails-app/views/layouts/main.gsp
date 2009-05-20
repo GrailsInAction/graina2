@@ -37,10 +37,10 @@
 		                </div>
 		                <div class="yui-b">
                             <g:isLoggedIn>
-                                <g:render template="sidebar_profile"/>
+                                <g:render template="/post/sidebar_profile"/>
                             </g:isLoggedIn>
                             <g:isNotLoggedIn>
-                                <g:render template="sidebar_login"/>
+                                <g:render template="/post/sidebar_login"/>
                             </g:isNotLoggedIn>
   
                         </div>

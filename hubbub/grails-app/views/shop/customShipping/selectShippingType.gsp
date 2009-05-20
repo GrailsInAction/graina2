@@ -1,7 +1,7 @@
 <html>
     <head>
         <title>Shipping Type</title>
-        <meta content="hubbub" name="layout"/>
+        <meta content="main" name="layout"/>
 
     </head>
 <body>

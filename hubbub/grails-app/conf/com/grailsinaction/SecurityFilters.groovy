@@ -4,9 +4,9 @@ class SecurityFilters {
     def authenticateService
 
     def filters = {
-        // Add the user to the view model after every action in the
-        // post controller, unless it's already there.
-        userInModel(controller: "post", action: "*") {
+        // Add the user to the view model after every action, unless
+        // it's already there.
+        userInModel(controller: "*", action: "*") {
             after = { model ->
                 // Some actions do not have a model. In such cases we
                 // don't attempt to add the user.

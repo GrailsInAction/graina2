@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Register New User (Command Object)</title>
+        <title>Register New User</title>
         <style>
             dd {
                 text-align: left;
@@ -11,28 +11,28 @@
     </head>
     <body>
 
-        <h1>Register New User (Command Object)</h1>
+        <h1>Register New User</h1>
 
-        <g:hasErrors>
+        <g:hasErrors bean="${userDetails}">
             <div class="errors">
-               <g:renderErrors bean="${user}" as="list" />
+               <g:renderErrors bean="${userDetails}" as="list" />
             </div>
         </g:hasErrors>
 
         <g:form action="register2">
             <dl>
                 <dt>User Id</dt>
-                <dd><g:textField name="userId" value="${user?.userId}"/></dd>
+                <dd><g:textField name="userId" value="${userDetails?.userId}"/></dd>
                 <dt>Password</dt>
-                <dd><g:passwordField name="password" value="${user?.password}"/></dd>
+                <dd><g:passwordField name="password" value="${userDetails?.password}"/></dd>
                 <dt>(repeat)</dt>
-                <dd><g:passwordField name="passwordRepeat" value="${user?.passwordRepeat}"/></dd>
+                <dd><g:passwordField name="passwordRepeat" value="${userDetails?.passwordRepeat}"/></dd>
                 <dt>Full Name</dt>
-                <dd><g:textField name="fullName" value="${user?.fullName}"/></dd>
+                <dd><g:textField name="fullName" value="${userDetails?.fullName}"/></dd>
                 <dt>Bio</dt>
-                <dd><g:textArea name="bio" value="${user?.bio}"/></dd>
+                <dd><g:textArea name="bio" value="${userDetails?.bio}"/></dd>
                 <dt>Email</dt>
-                <dd><g:textField name="email" value="${user?.email}"/></dd>
+                <dd><g:textField name="email" value="${userDetails?.email}"/></dd>
                 <dt><g:submitButton name="register" value="Register"/></dt>
             </dl>
 
