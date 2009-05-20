@@ -1,3 +1,7 @@
+/**
+ * These tests are not the same as in the book - the ones in the book
+ * are incorrect.
+ */
 class PostListFunctionalTests extends functionaltestplugin.FunctionalTestCase {
     void testTimelineNotLoggedIn() {
         get("/post/global")
