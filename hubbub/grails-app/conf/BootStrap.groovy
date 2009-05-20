@@ -45,12 +45,16 @@ class BootStrap {
                        'sven' : [ fullName: 'Sven Haiges' ],
                        'burt' : [fullName : 'Burt Beckwith']
         ]
+
+        def userRole = new Role(authority: "ROLE_USER", description: "Registered user")
  
         def now = new Date()
 
         if (!User.list()) {
             samples.each { userId, profileAttrs ->
                 def user = new User(userId: userId, password: "password")
+                userRole.addToPeople(user)
+
                 if (user.validate()) {
                     println "Creating user ${userId}..."
                     user.profile = new Profile(profileAttrs)
@@ -98,6 +102,7 @@ class BootStrap {
            
         }
 
+        userRole.save()
 
     }
 }

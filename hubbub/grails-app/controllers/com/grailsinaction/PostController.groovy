@@ -3,7 +3,7 @@ package com.grailsinaction
 import grails.converters.*
 
 class PostController {
-
+    def authenticateService
     def postService
 
     def scaffold = true
@@ -27,14 +27,15 @@ class PostController {
 
     def timeline = {
 
-        def user = User.get(session.user.id)
+        def user = authenticateService.userDomain()
+        user = User.get(user.id)
         def (posts, postCount) = postService.getUserTimelineAndCount(user.userId, params)
         [ user : user, posts : posts, postCount : postCount ]
     }
 
     def personal = {
 
-        def user = params.id ? User.findByUserId(params.id) : session.user
+        def user = params.id ? User.findByUserId(params.id) : authenticateService.userDomain()
         if (!user) {
             response.sendError(404)
             return
@@ -46,7 +47,7 @@ class PostController {
 
     def addPost = {
         try {
-            def newPost = postService.createPost(session.user.userId, params.content)
+            def newPost = postService.createPost(authenticateService.userDomain().userId, params.content)
             flash.message = "Added new post: ${newPost.content}"
         } catch (PostException pe) {
             flash.message = pe.message
@@ -56,7 +57,8 @@ class PostController {
 
     def addPostAjax = {
         try {
-            def newPost = postService.createPost(session.user.userId, params.content)
+            def user = authenticateService.userDomain()
+            def newPost = postService.createPost(user.userId, params.content)
             def posts
             def postCount
             switch(params.timelineToReturn) {
@@ -64,10 +66,10 @@ class PostController {
                     (posts, postCount) = postService.getGlobalTimelineAndCount(params)
                     break
                 case "mytimeline":
-                    (posts, postCount) = postService.getUserTimelineAndCount(session.user.userId, params)
+                    (posts, postCount) = postService.getUserTimelineAndCount(user.userId, params)
                     break
                 case "myposts":
-                    (posts, postCount) = postService.getUserPosts(session.user.userId, params)
+                    (posts, postCount) = postService.getUserPosts(user.userId, params)
                     break
             }
             println "postCount is ${postCount}"
