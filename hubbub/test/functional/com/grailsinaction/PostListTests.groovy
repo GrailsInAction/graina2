@@ -1,3 +1,5 @@
+package com.grailsinaction
+
 /**
  * These tests are not the same as in the book - the ones in the book
  * are incorrect.
@@ -7,7 +9,7 @@
  *
  *   grails dev functional-tests
  */
-class PostListFunctionalTests extends functionaltestplugin.FunctionalTestCase {
+class PostListTests extends functionaltestplugin.FunctionalTestCase {
     void testTimelineNotLoggedIn() {
         get("/post/global")
         assertTitle "Hubbub » Global Timeline"
