@@ -1,6 +1,17 @@
 class UrlMappings {
     
     static mappings = {
+        "/posts"(controller: "postRest") {
+            action = [GET: "list", POST: "save"]
+        }
+
+        "/post/$id"(controller: "postRest") {
+            action = [GET: "show", PUT: "update", DELETE: "delete"]
+
+            constraints {
+                id(matches: /\d+/)
+            }
+        }
 
         "/$controller/$action?/$id?"{
             constraints {

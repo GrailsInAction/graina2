@@ -51,7 +51,7 @@ class PostController {
 
     def addPost = {
         try {
-            def newPost = postService.createPost(authenticateService.userDomain().userId, params.content)
+            def newPost = postService.createAndReturnPost(authenticateService.userDomain().userId, params.content)
             flash.message = "Added new post: ${newPost.content}"
         } catch (PostException pe) {
             flash.message = pe.message
@@ -62,7 +62,7 @@ class PostController {
     def addPostAjax = {
         try {
             def user = authenticateService.userDomain()
-            def newPost = postService.createPost(user.userId, params.content)
+            def newPost = postService.createAndReturnPost(user.userId, params.content)
             def posts
             def postCount
             switch(params.timelineToReturn) {

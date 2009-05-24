@@ -5,14 +5,53 @@ class PostException extends RuntimeException {
     Post post
 }
 
-class PostService {
+class PostService implements RemotePostService {
 
     boolean transactional = true
     
     def int MAX_ENTRIES_PER_PAGE = 10
 
-    Post createPost(String userId, String content) {
-        def user = User.findByUserId(userId)
+    /**
+     * Method for REST and remoting access.
+     */
+    long createPost(String username, String content) {
+        def user = User.findByUserId(username)
+        if (!user) {
+            throw new PostException(message: "User not found.")
+        }
+
+        def post = createPost(user.id, content)
+        if (!post) {
+            throw new PostException(message: "Create failed: ${post.errors}")
+        }
+        else {
+            return post.id
+        }
+    }
+
+    /**
+     * Internal version of createPost() method for our standard controllers.
+     * It needs a different name because the arguments are the same as
+     * the one used for remoting.
+     */
+    Post createAndReturnPost(String username, String content) {
+        def user = User.findByUserId(username)
+        if (!user) {
+            throw new PostException(message: "User not found.")
+        }
+
+        def post = createPost(user.id, content)
+        if (!post) {
+            throw new PostException(message: "Create failed: ${post.errors}")
+        }
+        else {
+            return post
+        }
+    }
+
+
+    Post createPost(long id, String content) {
+        def user = User.get(id)
         if (user) {
             def post = new Post(content: content)
             user.addToPosts(post)
