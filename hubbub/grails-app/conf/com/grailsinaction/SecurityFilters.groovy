@@ -27,10 +27,17 @@ class SecurityFilters {
             }
         }
 
-        profileChanges(controller: "profile", action: "edit,update") {
+        // Custom access control to ensure that users can only edit
+        // their own profiles, not anybody else's.
+        //
+        // Because we're using a scaffolded controller for profiles,
+        // we do user checks based on the domain instance ID, rather
+        // than the username/userId (which is what the example in the
+        // book uses).
+        profileChanges(controller: "profile", action: "(edit|update)") {
             before = {
-                def currUserId = authenticateService.userDomain().userId
-                if (currUserId != params.userId) {
+                def currUserId = authenticateService.userDomain().id
+                if (currUserId != params.id.toLong()) {
                     redirect(controller: "login", action: "denied")
                     return false
                 }
