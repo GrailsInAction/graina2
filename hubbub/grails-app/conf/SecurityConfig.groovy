@@ -15,6 +15,9 @@ security {
 
     useRequestMapDomainClass = false
 
+    // Enable HTTP Basic authentication.
+    basicProcessingFilter = true
+
     // "/image/**" and "/post/global" URL rules are new - you won't
     // find them in the book. Down to those application changes as
     // above.
