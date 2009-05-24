@@ -29,10 +29,15 @@ class PostListTests extends functionaltestplugin.FunctionalTestCase {
         // Post a new message.
         def testMsg = "Functional test message"
         form("postMessage") {
-            postContent = testMsg
+            content = testMsg
             click "Post"
         }
 
+        // Reload the page and check that the new post is displayed.
         assertContentContains testMsg
+
+        // Make sure we're logged back out so we don't affect subsequent
+        // tests.
+        get("/logout")
     }
 }

@@ -15,7 +15,7 @@
     <p>
        
 
-        <g:form action="ajaxAdd">
+        <g:form name="postMessage" action="ajaxAdd">
             <g:textArea id='postContent' name="content" rows="3" cols="50" onkeydown="updateCounter()" /><br/>
             <g:submitToRemote value="Post"
                  url="[controller: 'post', action: 'addPostAjax']"
