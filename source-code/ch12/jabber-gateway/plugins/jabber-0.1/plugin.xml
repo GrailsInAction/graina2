@@ -1,0 +1,13 @@
+<plugin name='jabber' version='0.1'>
+  <author>Glen Smith</author>
+  <authorEmail>glen@bytecode.com.au</authorEmail>
+  <title>Jabber Plugin</title>
+  <description>This plugin provides the opportunity to send and receive Chat messages via the Jabber API.
+</description>
+  <documentation>http://grails.org/Jabber+Plugin</documentation>
+  <resources>
+    <resource>Config</resource>
+    <resource>DataSource</resource>
+    <resource>UrlMappings</resource>
+  </resources>
+</plugin>
