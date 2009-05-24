@@ -9,7 +9,7 @@ class PostService implements RemotePostService {
 
     boolean transactional = true
     
-    def int MAX_ENTRIES_PER_PAGE = 10
+    int MAX_ENTRIES_PER_PAGE = 10
 
     /**
      * Method for REST and remoting access.
@@ -55,11 +55,25 @@ class PostService implements RemotePostService {
         if (user) {
             def post = new Post(content: content)
             user.addToPosts(post)
-            if (user.save()) {
-                return post
-            } else {
+
+            if (!user.save()) {
                 throw new PostException(message: "Invalid or empty post", post: post)
             }
+
+            // If the post content contains "@<userId>", then we create
+            // a reply.
+            def m = content =~ /@(\w+)/
+            if (m) {
+                def targetUser = User.findByUserId(m[0][1])
+                if (targetUser) {
+                    new Reply(post: post, inReplyTo: targetUser).save()
+                }
+                else {
+                    throw new PostException(message: "Reply-to user not found", post: post)
+                }
+            }
+
+            return post
         }
         throw new PostException(message: "Invalid User Id")
 
