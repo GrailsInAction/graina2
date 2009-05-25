@@ -36,12 +36,12 @@
 		                    </div>
 		                </div>
 		                <div class="yui-b">
-                            <g:isLoggedIn>
+                            <sec:isLoggedIn>
                                 <g:render template="/post/sidebar_profile"/>
-                            </g:isLoggedIn>
-                            <g:isNotLoggedIn>
+                            </sec:isLoggedIn>
+                            <sec:isNotLoggedIn>
                                 <g:render template="/post/sidebar_login"/>
-                            </g:isNotLoggedIn>
+                            </sec:isNotLoggedIn>
   
                         </div>
 

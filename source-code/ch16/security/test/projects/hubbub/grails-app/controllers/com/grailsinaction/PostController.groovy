@@ -3,7 +3,6 @@ package com.grailsinaction
 import grails.converters.*
 
 class PostController {
-    def authenticateService
     def postService
 
     def scaffold = true
@@ -27,7 +26,7 @@ class PostController {
 
     def timeline = {
 
-        def user = params.id ? User.findByUserId(params.id) : User.get(authenticateService.userDomain().id)
+        def user = params.id ? User.findByUserId(params.id) : User.get(session["user"]?.id)
         if (!user) {
             response.sendError(404)
             return
@@ -39,7 +38,7 @@ class PostController {
 
     def personal = {
 
-        def user = params.id ? User.findByUserId(params.id) : User.get(authenticateService.userDomain().id)
+        def user = params.id ? User.findByUserId(params.id) : User.get(session["user"]?.id)
         if (!user) {
             response.sendError(404)
             return
@@ -51,7 +50,7 @@ class PostController {
 
     def addPost = {
         try {
-            def newPost = postService.createAndReturnPost(authenticateService.userDomain().userId, params.content)
+            def newPost = postService.createAndReturnPost(session["user"]?.userId, params.content)
             flash.message = "Added new post: ${newPost.content}"
         } catch (PostException pe) {
             flash.message = pe.message
@@ -61,7 +60,7 @@ class PostController {
 
     def addPostAjax = {
         try {
-            def user = authenticateService.userDomain()
+            def user = session["user"]
             def newPost = postService.createAndReturnPost(user.userId, params.content)
             def posts
             def postCount

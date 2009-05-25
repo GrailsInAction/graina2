@@ -16,10 +16,7 @@ class User extends com.grailsinaction.security.Account {
     static hasMany = [
             posts : Post,
             tags : Tag,
-            following : User,
-            authorities : Role ]
-    static belongsTo = Role
-	
+            following : User ]
 
     static constraints = {
         dateCreated()

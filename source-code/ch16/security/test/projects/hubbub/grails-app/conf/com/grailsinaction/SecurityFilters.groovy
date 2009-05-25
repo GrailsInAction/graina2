@@ -1,9 +1,15 @@
 package com.grailsinaction
 
 class SecurityFilters {
-    def authenticateService
-
     def filters = {
+        // Authentication required for every post action except for
+        // "global".
+        accessControl(controller: "post", action: '^(?!global).*') {
+            before = {
+                authcRequired()
+            }
+        }
+
         // Add the user to the view model after every action, unless
         // it's already there.
         userInModel(controller: "*", action: "*") {
@@ -12,8 +18,8 @@ class SecurityFilters {
                 // don't attempt to add the user.
                 if (!model) return
 
-                if (!model["user"] && authenticateService.isLoggedIn()) {
-                    model["user"] = User.get(authenticateService.userDomain().id)
+                if (!model["user"] && session["user"]) {
+                    model["user"] = User.get(session["user"].id)
                 }
 
                 // Since the layout requires access to the "following"
@@ -36,9 +42,9 @@ class SecurityFilters {
         // book uses).
         profileChanges(controller: "profile", action: "(edit|update)") {
             before = {
-                def currUserId = authenticateService.userDomain().id
+                def currUserId = session["user"].id
                 if (currUserId != params.id.toLong()) {
-                    redirect(controller: "login", action: "denied")
+                    redirect(controller: "login", action: "unauthorized")
                     return false
                 }
                 return true

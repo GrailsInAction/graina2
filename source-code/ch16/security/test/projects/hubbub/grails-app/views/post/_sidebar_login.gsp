@@ -4,16 +4,13 @@
 
        <h3>Login</h3>
         <div id="loginForm">
-            <form action="${resource(file: 'j_spring_security_check')}">
+            <g:form controller="login" action="signIn">
                 <table>
                   <tr>
-                    <td>User Id:</td><td><g:textField name="j_username"/></td>
+                    <td>User ID:</td><td><g:textField name="userId"/></td>
                   </tr>
                   <tr>
-                    <td>Password:</td><td><input name="j_password" type="password"/></td>
-                  </tr>
-                  <tr>
-				    <td>Remember:</td><td><input type='checkbox' name='_spring_security_remember_me'<g:if test='${hasCookie}'> checked='checked'</g:if>/></td>
+                    <td>Password:</td><td><input name="password" type="password"/></td>
                   </tr>
                   <tr>
                     <td colspan="2"><g:submitButton name="login" value="Login"/></td>
@@ -23,7 +20,7 @@
                   </tr>
                 </table>
 				
-            </form>
+            </g:form>
         </div>
 
 </div>
