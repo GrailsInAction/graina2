@@ -1,8 +1,0 @@
---Output from testFirstSaveEver--
---Output from testSaveAndUpdate--
---Output from testSaveThenDelete--
---Output from testManyPosts--
---Output from testPostWithTags--
---Output from testBasicDynamicFinders--
---Output from testQueryByExample--
-

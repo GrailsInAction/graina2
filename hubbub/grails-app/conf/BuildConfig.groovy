@@ -1,2 +1,2 @@
-tomcat.mgr.username = "dilbert"
-tomcat.mgr.password = "teatimex"
+tomcat.mgr.username = "overlord"
+tomcat.mgr.password = "Kr@kat04"

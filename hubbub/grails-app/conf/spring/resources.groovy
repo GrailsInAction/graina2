@@ -2,31 +2,27 @@ import org.springframework.jmx.support.MBeanServerFactoryBean
 import org.springframework.jmx.export.MBeanExporter
 import org.hibernate.jmx.StatisticsService
 
-
-import org.apache.activemq.ActiveMQConnectionFactory
-
-// From http://docs.codehaus.org/display/GRAILS/MBean+export+the+Groovy+way
-
+// Place your Spring DSL code here
 beans = {
-    //first bean definition
+    // This is required for the HTTP Basic authentication to work properly.
+    // It fixes the plugin so that a 401 status is sent back to the client
+    // for an unauthenticated user, rather than the default 302.
+    authenticationEntryPoint(org.springframework.security.ui.basicauth.BasicProcessingFilterEntryPoint) {
+        realmName = 'Hubbub'
+    }
+
+    // Hibernate statistics collection.
     hibernateStats(StatisticsService) {
         statisticsEnabled = true
         sessionFactory = ref("sessionFactory")
     }
 
-
     mbeanServer(MBeanServerFactoryBean) {
         locateExistingServerIfPossible = true
     }
 
-    //third bean definition
     exporter(MBeanExporter) {
         server = mbeanServer
         beans = ["org.hibernate:name=statistics": hibernateStats]
     }
-
-    connectionFactory(ActiveMQConnectionFactory) {
-        brokerURL = "tcp://localhost:61616"
-    }
-
 }

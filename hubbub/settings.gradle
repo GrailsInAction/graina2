@@ -1,4 +1,0 @@
-println "Initialisation phase"
-addMavenRepo()
-addMavenStyleRepo("codehaus-snapshots", "http://snapshots.repository.codehaus.org")
-dependencies("org.grails:grails-bootstrap:1.1-SNAPSHOT")
