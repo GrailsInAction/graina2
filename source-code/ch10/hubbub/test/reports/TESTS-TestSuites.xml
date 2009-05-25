@@ -1,0 +1,3665 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+  <testsuite errors="0" failures="0" hostname="redwood" id="0" name="AccessControlTests" package="com.grailsinaction" tests="2" time="42.948" timestamp="2009-05-24T21:11:11">
+      <properties />
+
+      <testcase classname="com.grailsinaction.AccessControlTests" name="testAnonymousAccess" time="18.24" />
+
+      <testcase classname="com.grailsinaction.AccessControlTests" name="testTimeline" time="24.579" />
+
+      <system-out><![CDATA[--Output from testAnonymousAccess--
+
+
+>>>>>>>>>>>>>>>>>>>> Making request to / using method GET >>>>>>>>>>>>>>>>>>>>
+Initializing web request settings for http://localhost:8080/hubbub/
+Request parameters:
+========================================
+========================================
+Request headers:
+========================================
+========================================
+Content of web window [TopLevelWindow[name=""]] changed
+<<<<<<<<<<<<<<<<<<<< Received response from GET http://localhost:8080/hubbub/ <<<<<<<<<<<<<<<<<<<<
+Response was 200 'OK', headers:
+========================================
+Content-Language: en-GB
+Content-Type: text/html; charset=utf-8
+Expires: Thu, 01 Jan 1970 00:00:00 GMT
+Set-Cookie: JSESSIONID=1tod36jupc4xz;Path=/hubbub
+Content-Length: 7255
+Server: Jetty(6.1.14)
+========================================
+Content
+========================================
+
+<html>
+    <head>
+        <title>Hubbub &raquo; Global Timeline</title>
+        <!-- <link rel="stylesheet" href="/hubbub/css/hubbub.css" />  -->
+        <link rel="stylesheet" href="/hubbub/css/hubbub.css"/>
+        <link rel="shortcut icon" href="/hubbub/images/favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="/hubbub/css/reset-fonts-grids.css"/>
+        <link rel="stylesheet" type="text/css" href="/hubbub/plugins/navigation-1.0.4/css/navigation.css"/>
+        <meta name="layout" content="main"/>
+        <script type="text/javascript" src="/hubbub/js/application.js"></script>
+
+        <script type="text/javascript" src="/hubbub/js/prototype/prototype.js"></script>
+<script type="text/javascript" src="/hubbub/js/prototype/scriptaculous.js"></script>
+<script type="text/javascript" src="/hubbub/js/prototype/builder.js"></script>
+<script type="text/javascript" src="/hubbub/js/prototype/controls.js"></script>
+<script type="text/javascript" src="/hubbub/js/prototype/effects.js"></script>
+<script type="text/javascript" src="/hubbub/js/prototype/slider.js"></script>
+<script type="text/javascript" src="/hubbub/js/prototype/dragdrop.js"></script>
+
+    </head>
+    <body>	
+        <div id="doc3" class="yui-t5">
+                    <div id="hd">
+		                 <a href="/hubbub/"><img id="logo" src="/hubbub/images/headerlogo.png" alt="hubbub logo"/></a>
+                        <!--
+		                <div style="float: right; position: relative; margin-right: 7px; font-size: medium; ">
+		                    <input type="text" name="search" value="Search here..." id="search" />
+		                </div>
+                        -->
+
+		            </div>
+		            <div id="bd"><!-- start body -->
+
+		                <div id="yui-main">
+		                    <div class="yui-b">
+		                        
+                                <ul class="navigation" id="navigation_tabs"><li class="navigation_active navigation_first"><a href="/hubbub/post/personal">My Posts</a></li><li class="navigation_active"><a href="/hubbub/timeline">My Timeline</a></li><li class="navigation_active"><a href="/hubbub/">Everyone</a></li><li><a href="/hubbub/user/search">Search</a></li><li><a href="/hubbub/user/advSearch">Advanced Search</a></li><li class="navigation_last"><a href="/hubbub/user/register2">Register</a></li></ul>
+		                        <!--	
+        <h3>
+            Global Timeline
+        </h3>
+	-->
+	
+        
+
+        <div id="allPosts">
+            <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Functional test message
+
+    </div>
+    <div class="postDate">
+        6 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Stuff and the like
+
+    </div>
+    <div class="postDate">
+        6 hours 1 minute ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Not authenticated...
+
+    </div>
+    <div class="postDate">
+        6 hours 8 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        What about now?
+
+    </div>
+    <div class="postDate">
+        6 hours 10 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Maybe this time?
+
+    </div>
+    <div class="postDate">
+        6 hours 14 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Wisteria Lane
+
+    </div>
+    <div class="postDate">
+        6 hours 37 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Another new REST post.
+
+    </div>
+    <div class="postDate">
+        6 hours 39 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        A post by REST!
+
+    </div>
+    <div class="postDate">
+        11 hours 1 minute ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/glen"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/glen">glen</a>
+        Another post from me!
+
+    </div>
+    <div class="postDate">
+        4 days 5 hours 1 minute ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Woohoo!
+
+    </div>
+    <div class="postDate">
+        4 days 5 hours 29 minutes ago
+    </div>
+</div>
+ 
+        </div>
+
+        <span class="currentStep">1</span><a href="/hubbub/?offset=10&amp;max=10" class="step">2</a><a href="/hubbub/?offset=10&amp;max=10" class="nextLink">Next</a>
+		                    </div>
+		                </div>
+		                <div class="yui-b">
+                            
+                            
+                                
+
+<div id="sidebar">
+
+       <h3>Login</h3>
+        <div id="loginForm">
+            <form action="/hubbub/j_spring_security_check">
+                <table>
+                  <tr>
+                    <td>User Id:</td><td><input type="text" name="j_username" id="j_username" value="" /></td>
+                  </tr>
+                  <tr>
+                    <td>Password:</td><td><input name="j_password" type="password"/></td>
+                  </tr>
+                  <tr>
+				    <td>Remember:</td><td><input type='checkbox' name='_spring_security_remember_me'/></td>
+                  </tr>
+                  <tr>
+                    <td colspan="2"><input type="submit" name="login" value="Login" id="login" /></td>
+                  </tr>
+                  <tr>
+				    <td colspan="2">try "glen" or "peter" with "password"</td>
+                  </tr>
+                </table>
+				
+            </form>
+        </div>
+
+</div>
+                            
+  
+                        </div>
+
+		            </div>  <!-- end body -->
+		            <div id="ft">
+		                <div id="footerText">
+		                Hubbub 0.1 on Grails 1.1.
+		                </div>
+		            </div>
+		        </div>		
+    </body>	
+</html>
+========================================
+
+--Output from testTimeline--
+
+
+>>>>>>>>>>>>>>>>>>>> Making request to /post/personal using method GET >>>>>>>>>>>>>>>>>>>>
+Initializing web request settings for http://localhost:8080/hubbub/post/personal
+Request parameters:
+========================================
+========================================
+Request headers:
+========================================
+========================================
+Content of web window [TopLevelWindow[name=""]] changed
+<<<<<<<<<<<<<<<<<<<< Received response from GET http://localhost:8080/hubbub/post/personal <<<<<<<<<<<<<<<<<<<<
+Response was a redirect to http://localhost:8080/hubbub/;jsessionid=1htwiqzkb725g <<<<<<<<<<<<<<<<<<<<
+Response was 302 'Found', headers:
+========================================
+Expires: Thu, 01 Jan 1970 00:00:00 GMT
+Set-Cookie: JSESSIONID=1htwiqzkb725g;Path=/hubbub
+Location: http://localhost:8080/hubbub/;jsessionid=1htwiqzkb725g
+Content-Length: 0
+Server: Jetty(6.1.14)
+========================================
+Content
+========================================
+
+========================================
+
+Following redirect to http://localhost:8080/hubbub/;jsessionid=1htwiqzkb725g
+
+
+>>>>>>>>>>>>>>>>>>>> Making request to http://localhost:8080/hubbub/;jsessionid=1htwiqzkb725g using method GET >>>>>>>>>>>>>>>>>>>>
+Initializing web request settings for http://localhost:8080/hubbub/;jsessionid=1htwiqzkb725g
+Request parameters:
+========================================
+========================================
+Request headers:
+========================================
+========================================
+Content of web window [TopLevelWindow[name=""]] changed
+<<<<<<<<<<<<<<<<<<<< Received response from GET http://localhost:8080/hubbub/;jsessionid=1htwiqzkb725g <<<<<<<<<<<<<<<<<<<<
+Response was 200 'OK', headers:
+========================================
+Content-Language: en-GB
+Content-Type: text/html; charset=utf-8
+Content-Length: 7255
+Server: Jetty(6.1.14)
+========================================
+Content
+========================================
+
+<html>
+    <head>
+        <title>Hubbub &raquo; Global Timeline</title>
+        <!-- <link rel="stylesheet" href="/hubbub/css/hubbub.css" />  -->
+        <link rel="stylesheet" href="/hubbub/css/hubbub.css"/>
+        <link rel="shortcut icon" href="/hubbub/images/favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="/hubbub/css/reset-fonts-grids.css"/>
+        <link rel="stylesheet" type="text/css" href="/hubbub/plugins/navigation-1.0.4/css/navigation.css"/>
+        <meta name="layout" content="main"/>
+        <script type="text/javascript" src="/hubbub/js/application.js"></script>
+
+        <script type="text/javascript" src="/hubbub/js/prototype/prototype.js"></script>
+<script type="text/javascript" src="/hubbub/js/prototype/scriptaculous.js"></script>
+<script type="text/javascript" src="/hubbub/js/prototype/builder.js"></script>
+<script type="text/javascript" src="/hubbub/js/prototype/controls.js"></script>
+<script type="text/javascript" src="/hubbub/js/prototype/effects.js"></script>
+<script type="text/javascript" src="/hubbub/js/prototype/slider.js"></script>
+<script type="text/javascript" src="/hubbub/js/prototype/dragdrop.js"></script>
+
+    </head>
+    <body>	
+        <div id="doc3" class="yui-t5">
+                    <div id="hd">
+		                 <a href="/hubbub/"><img id="logo" src="/hubbub/images/headerlogo.png" alt="hubbub logo"/></a>
+                        <!--
+		                <div style="float: right; position: relative; margin-right: 7px; font-size: medium; ">
+		                    <input type="text" name="search" value="Search here..." id="search" />
+		                </div>
+                        -->
+
+		            </div>
+		            <div id="bd"><!-- start body -->
+
+		                <div id="yui-main">
+		                    <div class="yui-b">
+		                        
+                                <ul class="navigation" id="navigation_tabs"><li class="navigation_active navigation_first"><a href="/hubbub/post/personal">My Posts</a></li><li class="navigation_active"><a href="/hubbub/timeline">My Timeline</a></li><li class="navigation_active"><a href="/hubbub/">Everyone</a></li><li><a href="/hubbub/user/search">Search</a></li><li><a href="/hubbub/user/advSearch">Advanced Search</a></li><li class="navigation_last"><a href="/hubbub/user/register2">Register</a></li></ul>
+		                        <!--	
+        <h3>
+            Global Timeline
+        </h3>
+	-->
+	
+        
+
+        <div id="allPosts">
+            <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Functional test message
+
+    </div>
+    <div class="postDate">
+        6 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Stuff and the like
+
+    </div>
+    <div class="postDate">
+        6 hours 1 minute ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Not authenticated...
+
+    </div>
+    <div class="postDate">
+        6 hours 8 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        What about now?
+
+    </div>
+    <div class="postDate">
+        6 hours 10 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Maybe this time?
+
+    </div>
+    <div class="postDate">
+        6 hours 15 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Wisteria Lane
+
+    </div>
+    <div class="postDate">
+        6 hours 37 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Another new REST post.
+
+    </div>
+    <div class="postDate">
+        6 hours 40 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        A post by REST!
+
+    </div>
+    <div class="postDate">
+        11 hours 1 minute ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/glen"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/glen">glen</a>
+        Another post from me!
+
+    </div>
+    <div class="postDate">
+        4 days 5 hours 1 minute ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Woohoo!
+
+    </div>
+    <div class="postDate">
+        4 days 5 hours 29 minutes ago
+    </div>
+</div>
+ 
+        </div>
+
+        <span class="currentStep">1</span><a href="/hubbub/?offset=10&amp;max=10" class="step">2</a><a href="/hubbub/?offset=10&amp;max=10" class="nextLink">Next</a>
+		                    </div>
+		                </div>
+		                <div class="yui-b">
+                            
+                            
+                                
+
+<div id="sidebar">
+
+       <h3>Login</h3>
+        <div id="loginForm">
+            <form action="/hubbub/j_spring_security_check">
+                <table>
+                  <tr>
+                    <td>User Id:</td><td><input type="text" name="j_username" id="j_username" value="" /></td>
+                  </tr>
+                  <tr>
+                    <td>Password:</td><td><input name="j_password" type="password"/></td>
+                  </tr>
+                  <tr>
+				    <td>Remember:</td><td><input type='checkbox' name='_spring_security_remember_me'/></td>
+                  </tr>
+                  <tr>
+                    <td colspan="2"><input type="submit" name="login" value="Login" id="login" /></td>
+                  </tr>
+                  <tr>
+				    <td colspan="2">try "glen" or "peter" with "password"</td>
+                  </tr>
+                </table>
+				
+            </form>
+        </div>
+
+</div>
+                            
+  
+                        </div>
+
+		            </div>  <!-- end body -->
+		            <div id="ft">
+		                <div id="footerText">
+		                Hubbub 0.1 on Grails 1.1.
+		                </div>
+		            </div>
+		        </div>		
+    </body>	
+</html>
+========================================
+
+
+
+>>>>>>>>>>>>>>>>>>>> Making request to /j_spring_security_check using method POST >>>>>>>>>>>>>>>>>>>>
+Initializing web request settings for http://localhost:8080/hubbub/j_spring_security_check
+Request parameters:
+========================================
+j_username: peter
+j_password: test
+========================================
+Request headers:
+========================================
+========================================
+Content of web window [TopLevelWindow[name=""]] changed
+<<<<<<<<<<<<<<<<<<<< Received response from POST http://localhost:8080/hubbub/j_spring_security_check <<<<<<<<<<<<<<<<<<<<
+Response was a redirect to http://localhost:8080/hubbub/login/authfail?login_error=1 <<<<<<<<<<<<<<<<<<<<
+Response was 302 'Found', headers:
+========================================
+Expires: Thu, 01 Jan 1970 00:00:00 GMT
+Set-Cookie: grails_remember_me=;Path=/hubbub;Expires=Thu, 01 Jan 1970 00:00:00 GMT
+Location: http://localhost:8080/hubbub/login/authfail?login_error=1
+Content-Length: 0
+Server: Jetty(6.1.14)
+========================================
+Content
+========================================
+
+========================================
+
+Following redirect to http://localhost:8080/hubbub/login/authfail?login_error=1
+
+
+>>>>>>>>>>>>>>>>>>>> Making request to http://localhost:8080/hubbub/login/authfail?login_error=1 using method GET >>>>>>>>>>>>>>>>>>>>
+Initializing web request settings for http://localhost:8080/hubbub/login/authfail?login_error=1
+Request parameters:
+========================================
+========================================
+Request headers:
+========================================
+========================================
+Content of web window [TopLevelWindow[name=""]] changed
+<<<<<<<<<<<<<<<<<<<< Received response from GET http://localhost:8080/hubbub/login/authfail?login_error=1 <<<<<<<<<<<<<<<<<<<<
+Response was a redirect to http://localhost:8080/hubbub/ <<<<<<<<<<<<<<<<<<<<
+Response was 302 'Found', headers:
+========================================
+Location: http://localhost:8080/hubbub/
+Content-Length: 0
+Server: Jetty(6.1.14)
+========================================
+Content
+========================================
+
+========================================
+
+Following redirect to http://localhost:8080/hubbub/
+
+
+>>>>>>>>>>>>>>>>>>>> Making request to http://localhost:8080/hubbub/ using method GET >>>>>>>>>>>>>>>>>>>>
+Initializing web request settings for http://localhost:8080/hubbub/
+Request parameters:
+========================================
+========================================
+Request headers:
+========================================
+========================================
+Content of web window [TopLevelWindow[name=""]] changed
+<<<<<<<<<<<<<<<<<<<< Received response from GET http://localhost:8080/hubbub/ <<<<<<<<<<<<<<<<<<<<
+Response was 200 'OK', headers:
+========================================
+Content-Language: en-GB
+Content-Type: text/html; charset=utf-8
+Content-Length: 7255
+Server: Jetty(6.1.14)
+========================================
+Content
+========================================
+
+<html>
+    <head>
+        <title>Hubbub &raquo; Global Timeline</title>
+        <!-- <link rel="stylesheet" href="/hubbub/css/hubbub.css" />  -->
+        <link rel="stylesheet" href="/hubbub/css/hubbub.css"/>
+        <link rel="shortcut icon" href="/hubbub/images/favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="/hubbub/css/reset-fonts-grids.css"/>
+        <link rel="stylesheet" type="text/css" href="/hubbub/plugins/navigation-1.0.4/css/navigation.css"/>
+        <meta name="layout" content="main"/>
+        <script type="text/javascript" src="/hubbub/js/application.js"></script>
+
+        <script type="text/javascript" src="/hubbub/js/prototype/prototype.js"></script>
+<script type="text/javascript" src="/hubbub/js/prototype/scriptaculous.js"></script>
+<script type="text/javascript" src="/hubbub/js/prototype/builder.js"></script>
+<script type="text/javascript" src="/hubbub/js/prototype/controls.js"></script>
+<script type="text/javascript" src="/hubbub/js/prototype/effects.js"></script>
+<script type="text/javascript" src="/hubbub/js/prototype/slider.js"></script>
+<script type="text/javascript" src="/hubbub/js/prototype/dragdrop.js"></script>
+
+    </head>
+    <body>	
+        <div id="doc3" class="yui-t5">
+                    <div id="hd">
+		                 <a href="/hubbub/"><img id="logo" src="/hubbub/images/headerlogo.png" alt="hubbub logo"/></a>
+                        <!--
+		                <div style="float: right; position: relative; margin-right: 7px; font-size: medium; ">
+		                    <input type="text" name="search" value="Search here..." id="search" />
+		                </div>
+                        -->
+
+		            </div>
+		            <div id="bd"><!-- start body -->
+
+		                <div id="yui-main">
+		                    <div class="yui-b">
+		                        
+                                <ul class="navigation" id="navigation_tabs"><li class="navigation_active navigation_first"><a href="/hubbub/post/personal">My Posts</a></li><li class="navigation_active"><a href="/hubbub/timeline">My Timeline</a></li><li class="navigation_active"><a href="/hubbub/">Everyone</a></li><li><a href="/hubbub/user/search">Search</a></li><li><a href="/hubbub/user/advSearch">Advanced Search</a></li><li class="navigation_last"><a href="/hubbub/user/register2">Register</a></li></ul>
+		                        <!--	
+        <h3>
+            Global Timeline
+        </h3>
+	-->
+	
+        
+
+        <div id="allPosts">
+            <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Functional test message
+
+    </div>
+    <div class="postDate">
+        6 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Stuff and the like
+
+    </div>
+    <div class="postDate">
+        6 hours 1 minute ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Not authenticated...
+
+    </div>
+    <div class="postDate">
+        6 hours 8 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        What about now?
+
+    </div>
+    <div class="postDate">
+        6 hours 10 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Maybe this time?
+
+    </div>
+    <div class="postDate">
+        6 hours 15 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Wisteria Lane
+
+    </div>
+    <div class="postDate">
+        6 hours 37 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Another new REST post.
+
+    </div>
+    <div class="postDate">
+        6 hours 40 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        A post by REST!
+
+    </div>
+    <div class="postDate">
+        11 hours 1 minute ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/glen"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/glen">glen</a>
+        Another post from me!
+
+    </div>
+    <div class="postDate">
+        4 days 5 hours 1 minute ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Woohoo!
+
+    </div>
+    <div class="postDate">
+        4 days 5 hours 29 minutes ago
+    </div>
+</div>
+ 
+        </div>
+
+        <span class="currentStep">1</span><a href="/hubbub/?offset=10&amp;max=10" class="step">2</a><a href="/hubbub/?offset=10&amp;max=10" class="nextLink">Next</a>
+		                    </div>
+		                </div>
+		                <div class="yui-b">
+                            
+                            
+                                
+
+<div id="sidebar">
+
+       <h3>Login</h3>
+        <div id="loginForm">
+            <form action="/hubbub/j_spring_security_check">
+                <table>
+                  <tr>
+                    <td>User Id:</td><td><input type="text" name="j_username" id="j_username" value="" /></td>
+                  </tr>
+                  <tr>
+                    <td>Password:</td><td><input name="j_password" type="password"/></td>
+                  </tr>
+                  <tr>
+				    <td>Remember:</td><td><input type='checkbox' name='_spring_security_remember_me'/></td>
+                  </tr>
+                  <tr>
+                    <td colspan="2"><input type="submit" name="login" value="Login" id="login" /></td>
+                  </tr>
+                  <tr>
+				    <td colspan="2">try "glen" or "peter" with "password"</td>
+                  </tr>
+                </table>
+				
+            </form>
+        </div>
+
+</div>
+                            
+  
+                        </div>
+
+		            </div>  <!-- end body -->
+		            <div id="ft">
+		                <div id="footerText">
+		                Hubbub 0.1 on Grails 1.1.
+		                </div>
+		            </div>
+		        </div>		
+    </body>	
+</html>
+========================================
+
+
+
+>>>>>>>>>>>>>>>>>>>> Making request to /j_spring_security_check using method POST >>>>>>>>>>>>>>>>>>>>
+Initializing web request settings for http://localhost:8080/hubbub/j_spring_security_check
+Request parameters:
+========================================
+j_username: peter
+j_password: password
+========================================
+Request headers:
+========================================
+========================================
+Content of web window [TopLevelWindow[name=""]] changed
+<<<<<<<<<<<<<<<<<<<< Received response from POST http://localhost:8080/hubbub/j_spring_security_check <<<<<<<<<<<<<<<<<<<<
+Response was a redirect to http://localhost:8080/hubbub/login/authfail?login_error=1 <<<<<<<<<<<<<<<<<<<<
+Response was 302 'Found', headers:
+========================================
+Location: http://localhost:8080/hubbub/login/authfail?login_error=1
+Content-Length: 0
+Server: Jetty(6.1.14)
+========================================
+Content
+========================================
+
+========================================
+
+Following redirect to http://localhost:8080/hubbub/login/authfail?login_error=1
+
+
+>>>>>>>>>>>>>>>>>>>> Making request to http://localhost:8080/hubbub/login/authfail?login_error=1 using method GET >>>>>>>>>>>>>>>>>>>>
+Initializing web request settings for http://localhost:8080/hubbub/login/authfail?login_error=1
+Request parameters:
+========================================
+========================================
+Request headers:
+========================================
+========================================
+Content of web window [TopLevelWindow[name=""]] changed
+<<<<<<<<<<<<<<<<<<<< Received response from GET http://localhost:8080/hubbub/login/authfail?login_error=1 <<<<<<<<<<<<<<<<<<<<
+Response was a redirect to http://localhost:8080/hubbub/login/auth?login_error=1 <<<<<<<<<<<<<<<<<<<<
+Response was 302 'Found', headers:
+========================================
+Location: http://localhost:8080/hubbub/login/auth?login_error=1
+Content-Length: 0
+Server: Jetty(6.1.14)
+========================================
+Content
+========================================
+
+========================================
+
+Following redirect to http://localhost:8080/hubbub/login/auth?login_error=1
+
+
+>>>>>>>>>>>>>>>>>>>> Making request to http://localhost:8080/hubbub/login/auth?login_error=1 using method GET >>>>>>>>>>>>>>>>>>>>
+Initializing web request settings for http://localhost:8080/hubbub/login/auth?login_error=1
+Request parameters:
+========================================
+========================================
+Request headers:
+========================================
+========================================
+Content of web window [TopLevelWindow[name=""]] changed
+<<<<<<<<<<<<<<<<<<<< Received response from GET http://localhost:8080/hubbub/login/auth?login_error=1 <<<<<<<<<<<<<<<<<<<<
+Response was a redirect to http://localhost:8080/hubbub/ <<<<<<<<<<<<<<<<<<<<
+Response was 302 'Found', headers:
+========================================
+Expires: -1
+Location: http://localhost:8080/hubbub/
+Cache-Control: no-cache
+max-age: Thu, 01 Jan 1970 00:00:00 GMT
+Cache-Control: private
+Content-Length: 0
+Server: Jetty(6.1.14)
+========================================
+Content
+========================================
+
+========================================
+
+Following redirect to http://localhost:8080/hubbub/
+
+
+>>>>>>>>>>>>>>>>>>>> Making request to http://localhost:8080/hubbub/ using method GET >>>>>>>>>>>>>>>>>>>>
+Initializing web request settings for http://localhost:8080/hubbub/
+Request parameters:
+========================================
+========================================
+Request headers:
+========================================
+========================================
+Content of web window [TopLevelWindow[name=""]] changed
+<<<<<<<<<<<<<<<<<<<< Received response from GET http://localhost:8080/hubbub/ <<<<<<<<<<<<<<<<<<<<
+Response was 200 'OK', headers:
+========================================
+Content-Language: en-GB
+Content-Type: text/html; charset=utf-8
+Content-Length: 7263
+Server: Jetty(6.1.14)
+========================================
+Content
+========================================
+
+<html>
+    <head>
+        <title>Hubbub &raquo; Global Timeline</title>
+        <!-- <link rel="stylesheet" href="/hubbub/css/hubbub.css" />  -->
+        <link rel="stylesheet" href="/hubbub/css/hubbub.css"/>
+        <link rel="shortcut icon" href="/hubbub/images/favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="/hubbub/css/reset-fonts-grids.css"/>
+        <link rel="stylesheet" type="text/css" href="/hubbub/plugins/navigation-1.0.4/css/navigation.css"/>
+        <meta name="layout" content="main"/>
+        <script type="text/javascript" src="/hubbub/js/application.js"></script>
+
+        <script type="text/javascript" src="/hubbub/js/prototype/prototype.js"></script>
+<script type="text/javascript" src="/hubbub/js/prototype/scriptaculous.js"></script>
+<script type="text/javascript" src="/hubbub/js/prototype/builder.js"></script>
+<script type="text/javascript" src="/hubbub/js/prototype/controls.js"></script>
+<script type="text/javascript" src="/hubbub/js/prototype/effects.js"></script>
+<script type="text/javascript" src="/hubbub/js/prototype/slider.js"></script>
+<script type="text/javascript" src="/hubbub/js/prototype/dragdrop.js"></script>
+
+    </head>
+    <body>	
+        <div id="doc3" class="yui-t5">
+                    <div id="hd">
+		                 <a href="/hubbub/"><img id="logo" src="/hubbub/images/headerlogo.png" alt="hubbub logo"/></a>
+                        <!--
+		                <div style="float: right; position: relative; margin-right: 7px; font-size: medium; ">
+		                    <input type="text" name="search" value="Search here..." id="search" />
+		                </div>
+                        -->
+
+		            </div>
+		            <div id="bd"><!-- start body -->
+
+		                <div id="yui-main">
+		                    <div class="yui-b">
+		                        
+                                <ul class="navigation" id="navigation_tabs"><li class="navigation_active navigation_first"><a href="/hubbub/post/personal">My Posts</a></li><li class="navigation_active"><a href="/hubbub/timeline">My Timeline</a></li><li class="navigation_active"><a href="/hubbub/">Everyone</a></li><li><a href="/hubbub/user/search">Search</a></li><li><a href="/hubbub/user/advSearch">Advanced Search</a></li><li class="navigation_last"><a href="/hubbub/user/register2">Register</a></li></ul>
+		                        <!--	
+        <h3>
+            Global Timeline
+        </h3>
+	-->
+	
+        
+
+        <div id="allPosts">
+            <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Functional test message
+
+    </div>
+    <div class="postDate">
+        6 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Stuff and the like
+
+    </div>
+    <div class="postDate">
+        6 hours 1 minute ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Not authenticated...
+
+    </div>
+    <div class="postDate">
+        6 hours 8 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        What about now?
+
+    </div>
+    <div class="postDate">
+        6 hours 10 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Maybe this time?
+
+    </div>
+    <div class="postDate">
+        6 hours 15 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Wisteria Lane
+
+    </div>
+    <div class="postDate">
+        6 hours 37 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Another new REST post.
+
+    </div>
+    <div class="postDate">
+        6 hours 40 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        A post by REST!
+
+    </div>
+    <div class="postDate">
+        11 hours 1 minute ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/glen"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/glen">glen</a>
+        Another post from me!
+
+    </div>
+    <div class="postDate">
+        4 days 5 hours 1 minute ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Woohoo!
+
+    </div>
+    <div class="postDate">
+        4 days 5 hours 30 minutes ago
+    </div>
+</div>
+ 
+        </div>
+
+        <span class="currentStep">1</span><a href="/hubbub/?offset=10&amp;max=10" class="step">2</a><a href="/hubbub/?offset=10&amp;max=10" class="nextLink">Next</a>
+		                    </div>
+		                </div>
+		                <div class="yui-b">
+                            
+                                <div id="sidebar">
+
+        <h3>Profile</h3>
+
+            <dl>
+                <dt>User</dt>
+                <dd>
+                  peter
+                </dd>
+            </dl>
+            <a href="/hubbub/logout/index">Logout</a>
+
+        <h3>Stats</h3>
+
+            <!-- Follower counts -->
+            <dl>
+                <!--
+                <dt><a href='/hubbub/friend/following/peter'>
+                    Following
+                    </a>
+                </dt>
+                -->
+                <dt>Posts</dt>
+                <dd>18</dd>
+            </dl>
+
+        <h3>Mates</h3>
+        
+            <!-- People I am following -->
+            
+            <div id="friendsThumbnails">
+                
+                    <img src="/hubbub/image/tiny/glen" alt="glen"/>
+                
+                    <img src="/hubbub/image/tiny/burt" alt="burt"/>
+                
+            </div>
+            
+            
+
+
+
+</div>
+                            
+                            
+  
+                        </div>
+
+		            </div>  <!-- end body -->
+		            <div id="ft">
+		                <div id="footerText">
+		                Hubbub 0.1 on Grails 1.1.
+		                </div>
+		            </div>
+		        </div>		
+    </body>	
+</html>
+========================================
+
+
+
+>>>>>>>>>>>>>>>>>>>> Making request to /j_spring_security_check using method POST >>>>>>>>>>>>>>>>>>>>
+Initializing web request settings for http://localhost:8080/hubbub/j_spring_security_check
+Request parameters:
+========================================
+j_username: peter
+j_password: password
+========================================
+Request headers:
+========================================
+========================================
+Content of web window [TopLevelWindow[name=""]] changed
+<<<<<<<<<<<<<<<<<<<< Received response from POST http://localhost:8080/hubbub/j_spring_security_check <<<<<<<<<<<<<<<<<<<<
+Response was a redirect to http://localhost:8080/hubbub/timeline <<<<<<<<<<<<<<<<<<<<
+Response was 302 'Found', headers:
+========================================
+Location: http://localhost:8080/hubbub/timeline
+Content-Length: 0
+Server: Jetty(6.1.14)
+========================================
+Content
+========================================
+
+========================================
+
+Following redirect to http://localhost:8080/hubbub/timeline
+
+
+>>>>>>>>>>>>>>>>>>>> Making request to http://localhost:8080/hubbub/timeline using method GET >>>>>>>>>>>>>>>>>>>>
+Initializing web request settings for http://localhost:8080/hubbub/timeline
+Request parameters:
+========================================
+========================================
+Request headers:
+========================================
+========================================
+Query is from Post as p where p.user.id in (5,2,3)
+Post count is 10
+Content of web window [TopLevelWindow[name=""]] changed
+<<<<<<<<<<<<<<<<<<<< Received response from GET http://localhost:8080/hubbub/timeline <<<<<<<<<<<<<<<<<<<<
+Response was 200 'OK', headers:
+========================================
+Content-Language: en-GB
+Content-Type: text/html; charset=utf-8
+Content-Length: 9721
+Server: Jetty(6.1.14)
+========================================
+Content
+========================================
+
+<html>
+    <head>
+        <title>Hubbub &raquo; MyTimeline for Peter Ledbrook</title>
+        <!-- <link rel="stylesheet" href="/hubbub/css/hubbub.css" />  -->
+        <link rel="stylesheet" href="/hubbub/css/hubbub.css"/>
+        <link rel="shortcut icon" href="/hubbub/images/favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="/hubbub/css/reset-fonts-grids.css"/>
+        <link rel="stylesheet" type="text/css" href="/hubbub/plugins/navigation-1.0.4/css/navigation.css"/>
+        <meta name="layout" content="main"/>
+        <script type="text/javascript" src="/hubbub/js/application.js"></script>
+
+        <script type="text/javascript" src="/hubbub/js/prototype/prototype.js"></script>
+<script type="text/javascript" src="/hubbub/js/prototype/scriptaculous.js"></script>
+<script type="text/javascript" src="/hubbub/js/prototype/builder.js"></script>
+<script type="text/javascript" src="/hubbub/js/prototype/controls.js"></script>
+<script type="text/javascript" src="/hubbub/js/prototype/effects.js"></script>
+<script type="text/javascript" src="/hubbub/js/prototype/slider.js"></script>
+<script type="text/javascript" src="/hubbub/js/prototype/dragdrop.js"></script>
+
+    </head>
+    <body>	
+        <div id="doc3" class="yui-t5">
+                    <div id="hd">
+		                 <a href="/hubbub/"><img id="logo" src="/hubbub/images/headerlogo.png" alt="hubbub logo"/></a>
+                        <!--
+		                <div style="float: right; position: relative; margin-right: 7px; font-size: medium; ">
+		                    <input type="text" name="search" value="Search here..." id="search" />
+		                </div>
+                        -->
+
+		            </div>
+		            <div id="bd"><!-- start body -->
+
+		                <div id="yui-main">
+		                    <div class="yui-b">
+		                        
+                                <ul class="navigation" id="navigation_tabs"><li class="navigation_active navigation_first"><a href="/hubbub/post/personal">My Posts</a></li><li class="navigation_active"><a href="/hubbub/timeline">My Timeline</a></li><li class="navigation_active"><a href="/hubbub/">Everyone</a></li><li><a href="/hubbub/user/search">Search</a></li><li><a href="/hubbub/user/advSearch">Advanced Search</a></li><li class="navigation_last"><a href="/hubbub/user/register2">Register</a></li></ul>
+		                        <!--
+        <h3>
+            Personal Timeline for Peter Ledbrook
+        </h3>
+	-->
+
+        
+            <div id="newPost">
+
+    <input id="charLeft" name="charLeft" size="5" value="160" readonly="true"/>
+
+    <h3>
+        What is Peter Ledbrook hacking on right now?
+    </h3>
+
+    
+
+    <p>
+       
+
+        <form action="/hubbub/post/ajaxAdd" method="post" name="postMessage" id="postMessage" >
+            <textarea cols="50" id="postContent" name="content" onkeydown="updateCounter()" rows="3" ></textarea><br/>
+            <input onclick="new Ajax.Updater('allPosts','/hubbub/post/addPostAjax',{asynchronous:true,evalScripts:true,onComplete:function(e){showSpinner(false)},onLoading:function(e){showSpinner(true)},onSuccess:function(e){clearPost(e)},parameters:Form.serialize(this.form)});return false" type="button" value="Post"></input>
+
+             <input type="hidden" name="timelineToReturn" value="mytimeline" id="timelineToReturn" />
+             <img id="spinner" style="display: none"
+                src="/hubbub/images/spinner.gif"/>
+
+              <!-- <a href="#" id="showHideUrlOld" onClick="return toggleTinyUrl()">Show TinyURL</a>  -->
+                <a href="#" id="showHideUrl" onClick="Effect.toggle('tinyUrl', 'slide', { duration: 0.5 }); return false;">TinyURL</a>
+
+                </form>
+
+
+                <div id="tinyUrl" style="display:none;">
+					<form action="/hubbub/post/index" method="post" >
+						TinyUrl:
+							<input type="text" name="fullUrl" size="68" id="fullUrl" value="" />
+							<input onclick="new Ajax.Request('/hubbub/post/tinyurl',{asynchronous:true,evalScripts:true,onSuccess:function(e){addTinyUrl(e)},parameters:Form.serialize(this.form)});return false" type="button" value="Make Tiny"></input>
+						</form>
+				</div>
+
+        
+
+        <script type="text/javascript">
+
+            function clearPost(e) {
+                $('postContent').value=''
+            }
+            function showSpinner(visible) {
+                $('spinner').style.display = visible ? "inline" : "none"
+            }
+
+
+
+                function addTinyUrl(e) {
+                    var tinyUrl = e.responseJSON.urls.small
+                    $("postContent").value += tinyUrl
+                    updateCounter()
+                    toggleTinyUrl()
+                }
+
+            function updateCounter() {
+                $("charLeft").value = 160 - $F("postContent").length
+            }
+            updateCounter();
+        
+</script>
+
+
+    </p>
+</div>
+        
+
+        <div id="allPosts">
+            <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Functional test message
+
+    </div>
+    <div class="postDate">
+        6 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Stuff and the like
+
+    </div>
+    <div class="postDate">
+        6 hours 2 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Not authenticated...
+
+    </div>
+    <div class="postDate">
+        6 hours 8 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        What about now?
+
+    </div>
+    <div class="postDate">
+        6 hours 10 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Maybe this time?
+
+    </div>
+    <div class="postDate">
+        6 hours 15 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Wisteria Lane
+
+    </div>
+    <div class="postDate">
+        6 hours 37 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Another new REST post.
+
+    </div>
+    <div class="postDate">
+        6 hours 40 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        A post by REST!
+
+    </div>
+    <div class="postDate">
+        11 hours 2 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/glen"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/glen">glen</a>
+        Another post from me!
+
+    </div>
+    <div class="postDate">
+        4 days 5 hours 1 minute ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Woohoo!
+
+    </div>
+    <div class="postDate">
+        4 days 5 hours 30 minutes ago
+    </div>
+</div>
+ 
+        </div>
+
+        <span class="currentStep">1</span><a href="/hubbub/timeline?offset=10&amp;max=10" class="step">2</a><a href="/hubbub/timeline?offset=10&amp;max=10" class="nextLink">Next</a>
+		                    </div>
+		                </div>
+		                <div class="yui-b">
+                            
+                                <div id="sidebar">
+
+        <h3>Profile</h3>
+
+            <dl>
+                <dt>User</dt>
+                <dd>
+                  peter
+                </dd>
+            </dl>
+            <a href="/hubbub/logout/index">Logout</a>
+
+        <h3>Stats</h3>
+
+            <!-- Follower counts -->
+            <dl>
+                <!--
+                <dt><a href='/hubbub/friend/following/peter'>
+                    Following
+                    </a>
+                </dt>
+                -->
+                <dt>Posts</dt>
+                <dd>16</dd>
+            </dl>
+
+        <h3>Mates</h3>
+        
+            <!-- People I am following -->
+            
+            <div id="friendsThumbnails">
+                
+                    <img src="/hubbub/image/tiny/burt" alt="burt"/>
+                
+                    <img src="/hubbub/image/tiny/glen" alt="glen"/>
+                
+            </div>
+            
+            
+
+
+
+</div>
+                            
+                            
+  
+                        </div>
+
+		            </div>  <!-- end body -->
+		            <div id="ft">
+		                <div id="footerText">
+		                Hubbub 0.1 on Grails 1.1.
+		                </div>
+		            </div>
+		        </div>		
+    </body>	
+</html>
+========================================
+
+
+
+>>>>>>>>>>>>>>>>>>>> Making request to /logout using method GET >>>>>>>>>>>>>>>>>>>>
+Initializing web request settings for http://localhost:8080/hubbub/logout
+Request parameters:
+========================================
+========================================
+Request headers:
+========================================
+========================================
+Content of web window [TopLevelWindow[name=""]] changed
+<<<<<<<<<<<<<<<<<<<< Received response from GET http://localhost:8080/hubbub/logout <<<<<<<<<<<<<<<<<<<<
+Response was a redirect to http://localhost:8080/hubbub/j_spring_security_logout <<<<<<<<<<<<<<<<<<<<
+Response was 302 'Found', headers:
+========================================
+Location: http://localhost:8080/hubbub/j_spring_security_logout
+Content-Length: 0
+Server: Jetty(6.1.14)
+========================================
+Content
+========================================
+
+========================================
+
+Following redirect to http://localhost:8080/hubbub/j_spring_security_logout
+
+
+>>>>>>>>>>>>>>>>>>>> Making request to http://localhost:8080/hubbub/j_spring_security_logout using method GET >>>>>>>>>>>>>>>>>>>>
+Initializing web request settings for http://localhost:8080/hubbub/j_spring_security_logout
+Request parameters:
+========================================
+========================================
+Request headers:
+========================================
+========================================
+Content of web window [TopLevelWindow[name=""]] changed
+<<<<<<<<<<<<<<<<<<<< Received response from GET http://localhost:8080/hubbub/j_spring_security_logout <<<<<<<<<<<<<<<<<<<<
+Response was a redirect to http://localhost:8080/hubbub/ <<<<<<<<<<<<<<<<<<<<
+Response was 302 'Found', headers:
+========================================
+Expires: Thu, 01 Jan 1970 00:00:00 GMT
+Set-Cookie: grails_remember_me=;Path=/hubbub;Expires=Thu, 01 Jan 1970 00:00:00 GMT
+Location: http://localhost:8080/hubbub/
+Content-Length: 0
+Server: Jetty(6.1.14)
+========================================
+Content
+========================================
+
+========================================
+
+Following redirect to http://localhost:8080/hubbub/
+
+
+>>>>>>>>>>>>>>>>>>>> Making request to http://localhost:8080/hubbub/ using method GET >>>>>>>>>>>>>>>>>>>>
+Initializing web request settings for http://localhost:8080/hubbub/
+Request parameters:
+========================================
+========================================
+Request headers:
+========================================
+========================================
+Content of web window [TopLevelWindow[name=""]] changed
+<<<<<<<<<<<<<<<<<<<< Received response from GET http://localhost:8080/hubbub/ <<<<<<<<<<<<<<<<<<<<
+Response was 200 'OK', headers:
+========================================
+Expires: Thu, 01 Jan 1970 00:00:00 GMT
+Set-Cookie: JSESSIONID=uet3b286us65;Path=/hubbub
+Content-Language: en-GB
+Content-Type: text/html; charset=utf-8
+Content-Length: 7257
+Server: Jetty(6.1.14)
+========================================
+Content
+========================================
+
+<html>
+    <head>
+        <title>Hubbub &raquo; Global Timeline</title>
+        <!-- <link rel="stylesheet" href="/hubbub/css/hubbub.css" />  -->
+        <link rel="stylesheet" href="/hubbub/css/hubbub.css"/>
+        <link rel="shortcut icon" href="/hubbub/images/favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="/hubbub/css/reset-fonts-grids.css"/>
+        <link rel="stylesheet" type="text/css" href="/hubbub/plugins/navigation-1.0.4/css/navigation.css"/>
+        <meta name="layout" content="main"/>
+        <script type="text/javascript" src="/hubbub/js/application.js"></script>
+
+        <script type="text/javascript" src="/hubbub/js/prototype/prototype.js"></script>
+<script type="text/javascript" src="/hubbub/js/prototype/scriptaculous.js"></script>
+<script type="text/javascript" src="/hubbub/js/prototype/builder.js"></script>
+<script type="text/javascript" src="/hubbub/js/prototype/controls.js"></script>
+<script type="text/javascript" src="/hubbub/js/prototype/effects.js"></script>
+<script type="text/javascript" src="/hubbub/js/prototype/slider.js"></script>
+<script type="text/javascript" src="/hubbub/js/prototype/dragdrop.js"></script>
+
+    </head>
+    <body>	
+        <div id="doc3" class="yui-t5">
+                    <div id="hd">
+		                 <a href="/hubbub/"><img id="logo" src="/hubbub/images/headerlogo.png" alt="hubbub logo"/></a>
+                        <!--
+		                <div style="float: right; position: relative; margin-right: 7px; font-size: medium; ">
+		                    <input type="text" name="search" value="Search here..." id="search" />
+		                </div>
+                        -->
+
+		            </div>
+		            <div id="bd"><!-- start body -->
+
+		                <div id="yui-main">
+		                    <div class="yui-b">
+		                        
+                                <ul class="navigation" id="navigation_tabs"><li class="navigation_active navigation_first"><a href="/hubbub/post/personal">My Posts</a></li><li class="navigation_active"><a href="/hubbub/timeline">My Timeline</a></li><li class="navigation_active"><a href="/hubbub/">Everyone</a></li><li><a href="/hubbub/user/search">Search</a></li><li><a href="/hubbub/user/advSearch">Advanced Search</a></li><li class="navigation_last"><a href="/hubbub/user/register2">Register</a></li></ul>
+		                        <!--	
+        <h3>
+            Global Timeline
+        </h3>
+	-->
+	
+        
+
+        <div id="allPosts">
+            <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Functional test message
+
+    </div>
+    <div class="postDate">
+        6 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Stuff and the like
+
+    </div>
+    <div class="postDate">
+        6 hours 2 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Not authenticated...
+
+    </div>
+    <div class="postDate">
+        6 hours 8 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        What about now?
+
+    </div>
+    <div class="postDate">
+        6 hours 10 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Maybe this time?
+
+    </div>
+    <div class="postDate">
+        6 hours 15 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Wisteria Lane
+
+    </div>
+    <div class="postDate">
+        6 hours 37 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Another new REST post.
+
+    </div>
+    <div class="postDate">
+        6 hours 40 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        A post by REST!
+
+    </div>
+    <div class="postDate">
+        11 hours 2 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/glen"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/glen">glen</a>
+        Another post from me!
+
+    </div>
+    <div class="postDate">
+        4 days 5 hours 1 minute ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Woohoo!
+
+    </div>
+    <div class="postDate">
+        4 days 5 hours 30 minutes ago
+    </div>
+</div>
+ 
+        </div>
+
+        <span class="currentStep">1</span><a href="/hubbub/?offset=10&amp;max=10" class="step">2</a><a href="/hubbub/?offset=10&amp;max=10" class="nextLink">Next</a>
+		                    </div>
+		                </div>
+		                <div class="yui-b">
+                            
+                            
+                                
+
+<div id="sidebar">
+
+       <h3>Login</h3>
+        <div id="loginForm">
+            <form action="/hubbub/j_spring_security_check">
+                <table>
+                  <tr>
+                    <td>User Id:</td><td><input type="text" name="j_username" id="j_username" value="" /></td>
+                  </tr>
+                  <tr>
+                    <td>Password:</td><td><input name="j_password" type="password"/></td>
+                  </tr>
+                  <tr>
+				    <td>Remember:</td><td><input type='checkbox' name='_spring_security_remember_me'/></td>
+                  </tr>
+                  <tr>
+                    <td colspan="2"><input type="submit" name="login" value="Login" id="login" /></td>
+                  </tr>
+                  <tr>
+				    <td colspan="2">try "glen" or "peter" with "password"</td>
+                  </tr>
+                </table>
+				
+            </form>
+        </div>
+
+</div>
+                            
+  
+                        </div>
+
+		            </div>  <!-- end body -->
+		            <div id="ft">
+		                <div id="footerText">
+		                Hubbub 0.1 on Grails 1.1.
+		                </div>
+		            </div>
+		        </div>		
+    </body>	
+</html>
+========================================
+
+
+
+>>>>>>>>>>>>>>>>>>>> Making request to /post/personal using method GET >>>>>>>>>>>>>>>>>>>>
+Initializing web request settings for http://localhost:8080/hubbub/post/personal
+Request parameters:
+========================================
+========================================
+Request headers:
+========================================
+========================================
+Content of web window [TopLevelWindow[name=""]] changed
+<<<<<<<<<<<<<<<<<<<< Received response from GET http://localhost:8080/hubbub/post/personal <<<<<<<<<<<<<<<<<<<<
+Response was a redirect to http://localhost:8080/hubbub/ <<<<<<<<<<<<<<<<<<<<
+Response was 302 'Found', headers:
+========================================
+Location: http://localhost:8080/hubbub/
+Content-Length: 0
+Server: Jetty(6.1.14)
+========================================
+Content
+========================================
+
+========================================
+
+Following redirect to http://localhost:8080/hubbub/
+
+
+>>>>>>>>>>>>>>>>>>>> Making request to http://localhost:8080/hubbub/ using method GET >>>>>>>>>>>>>>>>>>>>
+Initializing web request settings for http://localhost:8080/hubbub/
+Request parameters:
+========================================
+========================================
+Request headers:
+========================================
+========================================
+Content of web window [TopLevelWindow[name=""]] changed
+<<<<<<<<<<<<<<<<<<<< Received response from GET http://localhost:8080/hubbub/ <<<<<<<<<<<<<<<<<<<<
+Response was 200 'OK', headers:
+========================================
+Content-Language: en-GB
+Content-Type: text/html; charset=utf-8
+Content-Length: 7257
+Server: Jetty(6.1.14)
+========================================
+Content
+========================================
+
+<html>
+    <head>
+        <title>Hubbub &raquo; Global Timeline</title>
+        <!-- <link rel="stylesheet" href="/hubbub/css/hubbub.css" />  -->
+        <link rel="stylesheet" href="/hubbub/css/hubbub.css"/>
+        <link rel="shortcut icon" href="/hubbub/images/favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="/hubbub/css/reset-fonts-grids.css"/>
+        <link rel="stylesheet" type="text/css" href="/hubbub/plugins/navigation-1.0.4/css/navigation.css"/>
+        <meta name="layout" content="main"/>
+        <script type="text/javascript" src="/hubbub/js/application.js"></script>
+
+        <script type="text/javascript" src="/hubbub/js/prototype/prototype.js"></script>
+<script type="text/javascript" src="/hubbub/js/prototype/scriptaculous.js"></script>
+<script type="text/javascript" src="/hubbub/js/prototype/builder.js"></script>
+<script type="text/javascript" src="/hubbub/js/prototype/controls.js"></script>
+<script type="text/javascript" src="/hubbub/js/prototype/effects.js"></script>
+<script type="text/javascript" src="/hubbub/js/prototype/slider.js"></script>
+<script type="text/javascript" src="/hubbub/js/prototype/dragdrop.js"></script>
+
+    </head>
+    <body>	
+        <div id="doc3" class="yui-t5">
+                    <div id="hd">
+		                 <a href="/hubbub/"><img id="logo" src="/hubbub/images/headerlogo.png" alt="hubbub logo"/></a>
+                        <!--
+		                <div style="float: right; position: relative; margin-right: 7px; font-size: medium; ">
+		                    <input type="text" name="search" value="Search here..." id="search" />
+		                </div>
+                        -->
+
+		            </div>
+		            <div id="bd"><!-- start body -->
+
+		                <div id="yui-main">
+		                    <div class="yui-b">
+		                        
+                                <ul class="navigation" id="navigation_tabs"><li class="navigation_active navigation_first"><a href="/hubbub/post/personal">My Posts</a></li><li class="navigation_active"><a href="/hubbub/timeline">My Timeline</a></li><li class="navigation_active"><a href="/hubbub/">Everyone</a></li><li><a href="/hubbub/user/search">Search</a></li><li><a href="/hubbub/user/advSearch">Advanced Search</a></li><li class="navigation_last"><a href="/hubbub/user/register2">Register</a></li></ul>
+		                        <!--	
+        <h3>
+            Global Timeline
+        </h3>
+	-->
+	
+        
+
+        <div id="allPosts">
+            <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Functional test message
+
+    </div>
+    <div class="postDate">
+        6 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Stuff and the like
+
+    </div>
+    <div class="postDate">
+        6 hours 2 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Not authenticated...
+
+    </div>
+    <div class="postDate">
+        6 hours 8 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        What about now?
+
+    </div>
+    <div class="postDate">
+        6 hours 10 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Maybe this time?
+
+    </div>
+    <div class="postDate">
+        6 hours 15 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Wisteria Lane
+
+    </div>
+    <div class="postDate">
+        6 hours 37 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Another new REST post.
+
+    </div>
+    <div class="postDate">
+        6 hours 40 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        A post by REST!
+
+    </div>
+    <div class="postDate">
+        11 hours 2 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/glen"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/glen">glen</a>
+        Another post from me!
+
+    </div>
+    <div class="postDate">
+        4 days 5 hours 1 minute ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Woohoo!
+
+    </div>
+    <div class="postDate">
+        4 days 5 hours 30 minutes ago
+    </div>
+</div>
+ 
+        </div>
+
+        <span class="currentStep">1</span><a href="/hubbub/?offset=10&amp;max=10" class="step">2</a><a href="/hubbub/?offset=10&amp;max=10" class="nextLink">Next</a>
+		                    </div>
+		                </div>
+		                <div class="yui-b">
+                            
+                            
+                                
+
+<div id="sidebar">
+
+       <h3>Login</h3>
+        <div id="loginForm">
+            <form action="/hubbub/j_spring_security_check">
+                <table>
+                  <tr>
+                    <td>User Id:</td><td><input type="text" name="j_username" id="j_username" value="" /></td>
+                  </tr>
+                  <tr>
+                    <td>Password:</td><td><input name="j_password" type="password"/></td>
+                  </tr>
+                  <tr>
+				    <td>Remember:</td><td><input type='checkbox' name='_spring_security_remember_me'/></td>
+                  </tr>
+                  <tr>
+                    <td colspan="2"><input type="submit" name="login" value="Login" id="login" /></td>
+                  </tr>
+                  <tr>
+				    <td colspan="2">try "glen" or "peter" with "password"</td>
+                  </tr>
+                </table>
+				
+            </form>
+        </div>
+
+</div>
+                            
+  
+                        </div>
+
+		            </div>  <!-- end body -->
+		            <div id="ft">
+		                <div id="footerText">
+		                Hubbub 0.1 on Grails 1.1.
+		                </div>
+		            </div>
+		        </div>		
+    </body>	
+</html>
+========================================
+
+]]></system-out>
+
+      <system-err><![CDATA[--Output from testAnonymousAccess--
+--Output from testTimeline--
+]]></system-err>
+
+  </testsuite>
+  <testsuite errors="0" failures="0" hostname="redwood" id="1" name="PostListTests" package="com.grailsinaction" tests="2" time="9.806" timestamp="2009-05-24T21:11:54">
+      <properties />
+
+      <testcase classname="com.grailsinaction.PostListTests" name="testTimeline" time="7.097" />
+
+      <testcase classname="com.grailsinaction.PostListTests" name="testTimelineNotLoggedIn" time="2.697" />
+
+      <system-out><![CDATA[--Output from testTimeline--
+
+
+>>>>>>>>>>>>>>>>>>>> Making request to /j_spring_security_check using method POST >>>>>>>>>>>>>>>>>>>>
+Initializing web request settings for http://localhost:8080/hubbub/j_spring_security_check
+Request parameters:
+========================================
+j_username: peter
+j_password: password
+========================================
+Request headers:
+========================================
+========================================
+Content of web window [TopLevelWindow[name=""]] changed
+<<<<<<<<<<<<<<<<<<<< Received response from POST http://localhost:8080/hubbub/j_spring_security_check <<<<<<<<<<<<<<<<<<<<
+Response was a redirect to http://localhost:8080/hubbub/timeline;jsessionid=fqbdbtrqff1v <<<<<<<<<<<<<<<<<<<<
+Response was 302 'Found', headers:
+========================================
+Expires: Thu, 01 Jan 1970 00:00:00 GMT
+Set-Cookie: JSESSIONID=fqbdbtrqff1v;Path=/hubbub
+Location: http://localhost:8080/hubbub/timeline;jsessionid=fqbdbtrqff1v
+Content-Length: 0
+Server: Jetty(6.1.14)
+========================================
+Content
+========================================
+
+========================================
+
+Following redirect to http://localhost:8080/hubbub/timeline;jsessionid=fqbdbtrqff1v
+
+
+>>>>>>>>>>>>>>>>>>>> Making request to http://localhost:8080/hubbub/timeline;jsessionid=fqbdbtrqff1v using method GET >>>>>>>>>>>>>>>>>>>>
+Initializing web request settings for http://localhost:8080/hubbub/timeline;jsessionid=fqbdbtrqff1v
+Request parameters:
+========================================
+========================================
+Request headers:
+========================================
+========================================
+Query is from Post as p where p.user.id in (2,5,3)
+Post count is 10
+Content of web window [TopLevelWindow[name=""]] changed
+<<<<<<<<<<<<<<<<<<<< Received response from GET http://localhost:8080/hubbub/timeline;jsessionid=fqbdbtrqff1v <<<<<<<<<<<<<<<<<<<<
+Response was 200 'OK', headers:
+========================================
+Content-Language: en-GB
+Content-Type: text/html; charset=utf-8
+Content-Length: 9721
+Server: Jetty(6.1.14)
+========================================
+Content
+========================================
+
+<html>
+    <head>
+        <title>Hubbub &raquo; MyTimeline for Peter Ledbrook</title>
+        <!-- <link rel="stylesheet" href="/hubbub/css/hubbub.css" />  -->
+        <link rel="stylesheet" href="/hubbub/css/hubbub.css"/>
+        <link rel="shortcut icon" href="/hubbub/images/favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="/hubbub/css/reset-fonts-grids.css"/>
+        <link rel="stylesheet" type="text/css" href="/hubbub/plugins/navigation-1.0.4/css/navigation.css"/>
+        <meta name="layout" content="main"/>
+        <script type="text/javascript" src="/hubbub/js/application.js"></script>
+
+        <script type="text/javascript" src="/hubbub/js/prototype/prototype.js"></script>
+<script type="text/javascript" src="/hubbub/js/prototype/scriptaculous.js"></script>
+<script type="text/javascript" src="/hubbub/js/prototype/builder.js"></script>
+<script type="text/javascript" src="/hubbub/js/prototype/controls.js"></script>
+<script type="text/javascript" src="/hubbub/js/prototype/effects.js"></script>
+<script type="text/javascript" src="/hubbub/js/prototype/slider.js"></script>
+<script type="text/javascript" src="/hubbub/js/prototype/dragdrop.js"></script>
+
+    </head>
+    <body>	
+        <div id="doc3" class="yui-t5">
+                    <div id="hd">
+		                 <a href="/hubbub/"><img id="logo" src="/hubbub/images/headerlogo.png" alt="hubbub logo"/></a>
+                        <!--
+		                <div style="float: right; position: relative; margin-right: 7px; font-size: medium; ">
+		                    <input type="text" name="search" value="Search here..." id="search" />
+		                </div>
+                        -->
+
+		            </div>
+		            <div id="bd"><!-- start body -->
+
+		                <div id="yui-main">
+		                    <div class="yui-b">
+		                        
+                                <ul class="navigation" id="navigation_tabs"><li class="navigation_active navigation_first"><a href="/hubbub/post/personal">My Posts</a></li><li class="navigation_active"><a href="/hubbub/timeline">My Timeline</a></li><li class="navigation_active"><a href="/hubbub/">Everyone</a></li><li><a href="/hubbub/user/search">Search</a></li><li><a href="/hubbub/user/advSearch">Advanced Search</a></li><li class="navigation_last"><a href="/hubbub/user/register2">Register</a></li></ul>
+		                        <!--
+        <h3>
+            Personal Timeline for Peter Ledbrook
+        </h3>
+	-->
+
+        
+            <div id="newPost">
+
+    <input id="charLeft" name="charLeft" size="5" value="160" readonly="true"/>
+
+    <h3>
+        What is Peter Ledbrook hacking on right now?
+    </h3>
+
+    
+
+    <p>
+       
+
+        <form action="/hubbub/post/ajaxAdd" method="post" name="postMessage" id="postMessage" >
+            <textarea cols="50" id="postContent" name="content" onkeydown="updateCounter()" rows="3" ></textarea><br/>
+            <input onclick="new Ajax.Updater('allPosts','/hubbub/post/addPostAjax',{asynchronous:true,evalScripts:true,onComplete:function(e){showSpinner(false)},onLoading:function(e){showSpinner(true)},onSuccess:function(e){clearPost(e)},parameters:Form.serialize(this.form)});return false" type="button" value="Post"></input>
+
+             <input type="hidden" name="timelineToReturn" value="mytimeline" id="timelineToReturn" />
+             <img id="spinner" style="display: none"
+                src="/hubbub/images/spinner.gif"/>
+
+              <!-- <a href="#" id="showHideUrlOld" onClick="return toggleTinyUrl()">Show TinyURL</a>  -->
+                <a href="#" id="showHideUrl" onClick="Effect.toggle('tinyUrl', 'slide', { duration: 0.5 }); return false;">TinyURL</a>
+
+                </form>
+
+
+                <div id="tinyUrl" style="display:none;">
+					<form action="/hubbub/post/index" method="post" >
+						TinyUrl:
+							<input type="text" name="fullUrl" size="68" id="fullUrl" value="" />
+							<input onclick="new Ajax.Request('/hubbub/post/tinyurl',{asynchronous:true,evalScripts:true,onSuccess:function(e){addTinyUrl(e)},parameters:Form.serialize(this.form)});return false" type="button" value="Make Tiny"></input>
+						</form>
+				</div>
+
+        
+
+        <script type="text/javascript">
+
+            function clearPost(e) {
+                $('postContent').value=''
+            }
+            function showSpinner(visible) {
+                $('spinner').style.display = visible ? "inline" : "none"
+            }
+
+
+
+                function addTinyUrl(e) {
+                    var tinyUrl = e.responseJSON.urls.small
+                    $("postContent").value += tinyUrl
+                    updateCounter()
+                    toggleTinyUrl()
+                }
+
+            function updateCounter() {
+                $("charLeft").value = 160 - $F("postContent").length
+            }
+            updateCounter();
+        
+</script>
+
+
+    </p>
+</div>
+        
+
+        <div id="allPosts">
+            <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Functional test message
+
+    </div>
+    <div class="postDate">
+        6 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Stuff and the like
+
+    </div>
+    <div class="postDate">
+        6 hours 2 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Not authenticated...
+
+    </div>
+    <div class="postDate">
+        6 hours 8 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        What about now?
+
+    </div>
+    <div class="postDate">
+        6 hours 11 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Maybe this time?
+
+    </div>
+    <div class="postDate">
+        6 hours 15 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Wisteria Lane
+
+    </div>
+    <div class="postDate">
+        6 hours 38 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Another new REST post.
+
+    </div>
+    <div class="postDate">
+        6 hours 40 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        A post by REST!
+
+    </div>
+    <div class="postDate">
+        11 hours 2 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/glen"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/glen">glen</a>
+        Another post from me!
+
+    </div>
+    <div class="postDate">
+        4 days 5 hours 1 minute ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Woohoo!
+
+    </div>
+    <div class="postDate">
+        4 days 5 hours 30 minutes ago
+    </div>
+</div>
+ 
+        </div>
+
+        <span class="currentStep">1</span><a href="/hubbub/timeline?offset=10&amp;max=10" class="step">2</a><a href="/hubbub/timeline?offset=10&amp;max=10" class="nextLink">Next</a>
+		                    </div>
+		                </div>
+		                <div class="yui-b">
+                            
+                                <div id="sidebar">
+
+        <h3>Profile</h3>
+
+            <dl>
+                <dt>User</dt>
+                <dd>
+                  peter
+                </dd>
+            </dl>
+            <a href="/hubbub/logout/index">Logout</a>
+
+        <h3>Stats</h3>
+
+            <!-- Follower counts -->
+            <dl>
+                <!--
+                <dt><a href='/hubbub/friend/following/peter'>
+                    Following
+                    </a>
+                </dt>
+                -->
+                <dt>Posts</dt>
+                <dd>16</dd>
+            </dl>
+
+        <h3>Mates</h3>
+        
+            <!-- People I am following -->
+            
+            <div id="friendsThumbnails">
+                
+                    <img src="/hubbub/image/tiny/glen" alt="glen"/>
+                
+                    <img src="/hubbub/image/tiny/burt" alt="burt"/>
+                
+            </div>
+            
+            
+
+
+
+</div>
+                            
+                            
+  
+                        </div>
+
+		            </div>  <!-- end body -->
+		            <div id="ft">
+		                <div id="footerText">
+		                Hubbub 0.1 on Grails 1.1.
+		                </div>
+		            </div>
+		        </div>		
+    </body>	
+</html>
+========================================
+
+Setting value to [Functional test message] on text area [name:content id:postContent] of form [postMessage]
+Added DOM node [[#text] with value [Functional test message] and id [null], name [null]] to parent [[textarea] with value [null] and id [postContent], name [content]]
+Clicked [Post] which resolved to a [class com.gargoylesoftware.htmlunit.html.HtmlButtonInput]
+
+
+>>>>>>>>>>>>>>>>>>>> Making request to /logout using method GET >>>>>>>>>>>>>>>>>>>>
+Initializing web request settings for http://localhost:8080/hubbub/logout
+Request parameters:
+========================================
+========================================
+Request headers:
+========================================
+========================================
+Content of web window [TopLevelWindow[name=""]] changed
+<<<<<<<<<<<<<<<<<<<< Received response from GET http://localhost:8080/hubbub/logout <<<<<<<<<<<<<<<<<<<<
+Response was a redirect to http://localhost:8080/hubbub/j_spring_security_logout <<<<<<<<<<<<<<<<<<<<
+Response was 302 'Found', headers:
+========================================
+Location: http://localhost:8080/hubbub/j_spring_security_logout
+Content-Length: 0
+Server: Jetty(6.1.14)
+========================================
+Content
+========================================
+
+========================================
+
+Following redirect to http://localhost:8080/hubbub/j_spring_security_logout
+
+
+>>>>>>>>>>>>>>>>>>>> Making request to http://localhost:8080/hubbub/j_spring_security_logout using method GET >>>>>>>>>>>>>>>>>>>>
+Initializing web request settings for http://localhost:8080/hubbub/j_spring_security_logout
+Request parameters:
+========================================
+========================================
+Request headers:
+========================================
+========================================
+Content of web window [TopLevelWindow[name=""]] changed
+<<<<<<<<<<<<<<<<<<<< Received response from GET http://localhost:8080/hubbub/j_spring_security_logout <<<<<<<<<<<<<<<<<<<<
+Response was a redirect to http://localhost:8080/hubbub/ <<<<<<<<<<<<<<<<<<<<
+Response was 302 'Found', headers:
+========================================
+Location: http://localhost:8080/hubbub/
+Expires: Thu, 01 Jan 1970 00:00:00 GMT
+Set-Cookie: grails_remember_me=;Path=/hubbub;Expires=Thu, 01 Jan 1970 00:00:00 GMT
+Content-Length: 0
+Server: Jetty(6.1.14)
+========================================
+Content
+========================================
+
+========================================
+
+Following redirect to http://localhost:8080/hubbub/
+
+
+>>>>>>>>>>>>>>>>>>>> Making request to http://localhost:8080/hubbub/ using method GET >>>>>>>>>>>>>>>>>>>>
+Initializing web request settings for http://localhost:8080/hubbub/
+Request parameters:
+========================================
+========================================
+Request headers:
+========================================
+========================================
+Query is from Post as p where p.user.id in (5,2,3)
+Post count is 10
+postCount is 17
+Removed DOM node [[img] with value [null] and id [null], name [null]] from parent [[div] with value [null] and id [null], name [null]]
+Removed DOM node [[div] with value [null] and id [null], name [null]] from parent [[div] with value [null] and id [allPosts], name [null]]
+Removed DOM node [[#text] with value [peter] and id [null], name [null]] from parent [[a] with value [null] and id [null], name [null]]
+Removed DOM node [[a] with value [null] and id [null], name [null]] from parent [[div] with value [null] and id [null], name [null]]
+Removed DOM node [[#text] with value [
+        Functional test message
+
+    ] and id [null], name [null]] from parent [[div] with value [null] and id [null], name [null]]
+Removed DOM node [[div] with value [null] and id [null], name [null]] from parent [[div] with value [null] and id [null], name [null]]
+Removed DOM node [[#text] with value [
+        6 minutes ago
+    ] and id [null], name [null]] from parent [[div] with value [null] and id [null], name [null]]
+Removed DOM node [[div] with value [null] and id [null], name [null]] from parent [[div] with value [null] and id [null], name [null]]
+Removed DOM node [[div] with value [null] and id [null], name [null]] from parent [[div] with value [null] and id [allPosts], name [null]]
+Removed DOM node [[img] with value [null] and id [null], name [null]] from parent [[div] with value [null] and id [null], name [null]]
+Removed DOM node [[div] with value [null] and id [null], name [null]] from parent [[div] with value [null] and id [allPosts], name [null]]
+Removed DOM node [[#text] with value [peter] and id [null], name [null]] from parent [[a] with value [null] and id [null], name [null]]
+Removed DOM node [[a] with value [null] and id [null], name [null]] from parent [[div] with value [null] and id [null], name [null]]
+Removed DOM node [[#text] with value [
+        Stuff and the like
+
+    ] and id [null], name [null]] from parent [[div] with value [null] and id [null], name [null]]
+Removed DOM node [[div] with value [null] and id [null], name [null]] from parent [[div] with value [null] and id [null], name [null]]
+Removed DOM node [[#text] with value [
+        6 hours 2 minutes ago
+    ] and id [null], name [null]] from parent [[div] with value [null] and id [null], name [null]]
+Removed DOM node [[div] with value [null] and id [null], name [null]] from parent [[div] with value [null] and id [null], name [null]]
+Removed DOM node [[div] with value [null] and id [null], name [null]] from parent [[div] with value [null] and id [allPosts], name [null]]
+Removed DOM node [[img] with value [null] and id [null], name [null]] from parent [[div] with value [null] and id [null], name [null]]
+Removed DOM node [[div] with value [null] and id [null], name [null]] from parent [[div] with value [null] and id [allPosts], name [null]]
+Removed DOM node [[#text] with value [peter] and id [null], name [null]] from parent [[a] with value [null] and id [null], name [null]]
+Removed DOM node [[a] with value [null] and id [null], name [null]] from parent [[div] with value [null] and id [null], name [null]]
+Removed DOM node [[#text] with value [
+        Not authenticated...
+
+    ] and id [null], name [null]] from parent [[div] with value [null] and id [null], name [null]]
+Removed DOM node [[div] with value [null] and id [null], name [null]] from parent [[div] with value [null] and id [null], name [null]]
+Removed DOM node [[#text] with value [
+        6 hours 8 minutes ago
+    ] and id [null], name [null]] from parent [[div] with value [null] and id [null], name [null]]
+Removed DOM node [[div] with value [null] and id [null], name [null]] from parent [[div] with value [null] and id [null], name [null]]
+Removed DOM node [[div] with value [null] and id [null], name [null]] from parent [[div] with value [null] and id [allPosts], name [null]]
+Removed DOM node [[img] with value [null] and id [null], name [null]] from parent [[div] with value [null] and id [null], name [null]]
+Removed DOM node [[div] with value [null] and id [null], name [null]] from parent [[div] with value [null] and id [allPosts], name [null]]
+Removed DOM node [[#text] with value [peter] and id [null], name [null]] from parent [[a] with value [null] and id [null], name [null]]
+Removed DOM node [[a] with value [null] and id [null], name [null]] from parent [[div] with value [null] and id [null], name [null]]
+Removed DOM node [[#text] with value [
+        What about now?
+
+    ] and id [null], name [null]] from parent [[div] with value [null] and id [null], name [null]]
+Removed DOM node [[div] with value [null] and id [null], name [null]] from parent [[div] with value [null] and id [null], name [null]]
+Removed DOM node [[#text] with value [
+        6 hours 11 minutes ago
+    ] and id [null], name [null]] from parent [[div] with value [null] and id [null], name [null]]
+Removed DOM node [[div] with value [null] and id [null], name [null]] from parent [[div] with value [null] and id [null], name [null]]
+Removed DOM node [[div] with value [null] and id [null], name [null]] from parent [[div] with value [null] and id [allPosts], name [null]]
+Removed DOM node [[img] with value [null] and id [null], name [null]] from parent [[div] with value [null] and id [null], name [null]]
+Removed DOM node [[div] with value [null] and id [null], name [null]] from parent [[div] with value [null] and id [allPosts], name [null]]
+Removed DOM node [[#text] with value [peter] and id [null], name [null]] from parent [[a] with value [null] and id [null], name [null]]
+Removed DOM node [[a] with value [null] and id [null], name [null]] from parent [[div] with value [null] and id [null], name [null]]
+Removed DOM node [[#text] with value [
+        Maybe this time?
+
+    ] and id [null], name [null]] from parent [[div] with value [null] and id [null], name [null]]
+Removed DOM node [[div] with value [null] and id [null], name [null]] from parent [[div] with value [null] and id [null], name [null]]
+Removed DOM node [[#text] with value [
+        6 hours 15 minutes ago
+    ] and id [null], name [null]] from parent [[div] with value [null] and id [null], name [null]]
+Removed DOM node [[div] with value [null] and id [null], name [null]] from parent [[div] with value [null] and id [null], name [null]]
+Removed DOM node [[div] with value [null] and id [null], name [null]] from parent [[div] with value [null] and id [allPosts], name [null]]
+Removed DOM node [[img] with value [null] and id [null], name [null]] from parent [[div] with value [null] and id [null], name [null]]
+Removed DOM node [[div] with value [null] and id [null], name [null]] from parent [[div] with value [null] and id [allPosts], name [null]]
+Removed DOM node [[#text] with value [peter] and id [null], name [null]] from parent [[a] with value [null] and id [null], name [null]]
+Removed DOM node [[a] with value [null] and id [null], name [null]] from parent [[div] with value [null] and id [null], name [null]]
+Removed DOM node [[#text] with value [
+        Wisteria Lane
+
+    ] and id [null], name [null]] from parent [[div] with value [null] and id [null], name [null]]
+Removed DOM node [[div] with value [null] and id [null], name [null]] from parent [[div] with value [null] and id [null], name [null]]
+Removed DOM node [[#text] with value [
+        6 hours 38 minutes ago
+    ] and id [null], name [null]] from parent [[div] with value [null] and id [null], name [null]]
+Removed DOM node [[div] with value [null] and id [null], name [null]] from parent [[div] with value [null] and id [null], name [null]]
+Removed DOM node [[div] with value [null] and id [null], name [null]] from parent [[div] with value [null] and id [allPosts], name [null]]
+Removed DOM node [[img] with value [null] and id [null], name [null]] from parent [[div] with value [null] and id [null], name [null]]
+Removed DOM node [[div] with value [null] and id [null], name [null]] from parent [[div] with value [null] and id [allPosts], name [null]]
+Removed DOM node [[#text] with value [peter] and id [null], name [null]] from parent [[a] with value [null] and id [null], name [null]]
+Removed DOM node [[a] with value [null] and id [null], name [null]] from parent [[div] with value [null] and id [null], name [null]]
+Removed DOM node [[#text] with value [
+        Another new REST post.
+
+    ] and id [null], name [null]] from parent [[div] with value [null] and id [null], name [null]]
+Removed DOM node [[div] with value [null] and id [null], name [null]] from parent [[div] with value [null] and id [null], name [null]]
+Removed DOM node [[#text] with value [
+        6 hours 40 minutes ago
+    ] and id [null], name [null]] from parent [[div] with value [null] and id [null], name [null]]
+Removed DOM node [[div] with value [null] and id [null], name [null]] from parent [[div] with value [null] and id [null], name [null]]
+Removed DOM node [[div] with value [null] and id [null], name [null]] from parent [[div] with value [null] and id [allPosts], name [null]]
+Removed DOM node [[img] with value [null] and id [null], name [null]] from parent [[div] with value [null] and id [null], name [null]]
+Removed DOM node [[div] with value [null] and id [null], name [null]] from parent [[div] with value [null] and id [allPosts], name [null]]
+Removed DOM node [[#text] with value [peter] and id [null], name [null]] from parent [[a] with value [null] and id [null], name [null]]
+Removed DOM node [[a] with value [null] and id [null], name [null]] from parent [[div] with value [null] and id [null], name [null]]
+Removed DOM node [[#text] with value [
+        A post by REST!
+
+    ] and id [null], name [null]] from parent [[div] with value [null] and id [null], name [null]]
+Removed DOM node [[div] with value [null] and id [null], name [null]] from parent [[div] with value [null] and id [null], name [null]]
+Removed DOM node [[#text] with value [
+        11 hours 2 minutes ago
+    ] and id [null], name [null]] from parent [[div] with value [null] and id [null], name [null]]
+Removed DOM node [[div] with value [null] and id [null], name [null]] from parent [[div] with value [null] and id [null], name [null]]
+Removed DOM node [[div] with value [null] and id [null], name [null]] from parent [[div] with value [null] and id [allPosts], name [null]]
+Removed DOM node [[img] with value [null] and id [null], name [null]] from parent [[div] with value [null] and id [null], name [null]]
+Removed DOM node [[div] with value [null] and id [null], name [null]] from parent [[div] with value [null] and id [allPosts], name [null]]
+Removed DOM node [[#text] with value [glen] and id [null], name [null]] from parent [[a] with value [null] and id [null], name [null]]
+Removed DOM node [[a] with value [null] and id [null], name [null]] from parent [[div] with value [null] and id [null], name [null]]
+Removed DOM node [[#text] with value [
+        Another post from me!
+
+    ] and id [null], name [null]] from parent [[div] with value [null] and id [null], name [null]]
+Removed DOM node [[div] with value [null] and id [null], name [null]] from parent [[div] with value [null] and id [null], name [null]]
+Removed DOM node [[#text] with value [
+        4 days 5 hours 1 minute ago
+    ] and id [null], name [null]] from parent [[div] with value [null] and id [null], name [null]]
+Removed DOM node [[div] with value [null] and id [null], name [null]] from parent [[div] with value [null] and id [null], name [null]]
+Removed DOM node [[div] with value [null] and id [null], name [null]] from parent [[div] with value [null] and id [allPosts], name [null]]
+Removed DOM node [[img] with value [null] and id [null], name [null]] from parent [[div] with value [null] and id [null], name [null]]
+Removed DOM node [[div] with value [null] and id [null], name [null]] from parent [[div] with value [null] and id [allPosts], name [null]]
+Removed DOM node [[#text] with value [peter] and id [null], name [null]] from parent [[a] with value [null] and id [null], name [null]]
+Removed DOM node [[a] with value [null] and id [null], name [null]] from parent [[div] with value [null] and id [null], name [null]]
+Removed DOM node [[#text] with value [
+        Woohoo!
+
+    ] and id [null], name [null]] from parent [[div] with value [null] and id [null], name [null]]
+Removed DOM node [[div] with value [null] and id [null], name [null]] from parent [[div] with value [null] and id [null], name [null]]
+Removed DOM node [[#text] with value [
+        4 days 5 hours 30 minutes ago
+    ] and id [null], name [null]] from parent [[div] with value [null] and id [null], name [null]]
+Removed DOM node [[div] with value [null] and id [null], name [null]] from parent [[div] with value [null] and id [null], name [null]]
+Removed DOM node [[div] with value [null] and id [null], name [null]] from parent [[div] with value [null] and id [allPosts], name [null]]
+Added DOM node [[div] with value [null] and id [null], name [null]] to parent [[div] with value [null] and id [allPosts], name [null]]
+Added DOM node [[img] with value [null] and id [null], name [null]] to parent [[div] with value [null] and id [null], name [null]]
+Added DOM node [[div] with value [null] and id [null], name [null]] to parent [[div] with value [null] and id [allPosts], name [null]]
+Added DOM node [[div] with value [null] and id [null], name [null]] to parent [[div] with value [null] and id [null], name [null]]
+Added DOM node [[a] with value [null] and id [null], name [null]] to parent [[div] with value [null] and id [null], name [null]]
+Added DOM node [[#text] with value [peter] and id [null], name [null]] to parent [[a] with value [null] and id [null], name [null]]
+Added DOM node [[#text] with value [
+        Functional test message
+
+    ] and id [null], name [null]] to parent [[div] with value [null] and id [null], name [null]]
+Added DOM node [[div] with value [null] and id [null], name [null]] to parent [[div] with value [null] and id [null], name [null]]
+Added DOM node [[#text] with value [
+        Right now
+    ] and id [null], name [null]] to parent [[div] with value [null] and id [null], name [null]]
+Added DOM node [[div] with value [null] and id [null], name [null]] to parent [[div] with value [null] and id [allPosts], name [null]]
+Added DOM node [[img] with value [null] and id [null], name [null]] to parent [[div] with value [null] and id [null], name [null]]
+Added DOM node [[div] with value [null] and id [null], name [null]] to parent [[div] with value [null] and id [allPosts], name [null]]
+Added DOM node [[div] with value [null] and id [null], name [null]] to parent [[div] with value [null] and id [null], name [null]]
+Added DOM node [[a] with value [null] and id [null], name [null]] to parent [[div] with value [null] and id [null], name [null]]
+Added DOM node [[#text] with value [peter] and id [null], name [null]] to parent [[a] with value [null] and id [null], name [null]]
+Added DOM node [[#text] with value [
+        Functional test message
+
+    ] and id [null], name [null]] to parent [[div] with value [null] and id [null], name [null]]
+Added DOM node [[div] with value [null] and id [null], name [null]] to parent [[div] with value [null] and id [null], name [null]]
+Added DOM node [[#text] with value [
+        6 minutes ago
+    ] and id [null], name [null]] to parent [[div] with value [null] and id [null], name [null]]
+Added DOM node [[div] with value [null] and id [null], name [null]] to parent [[div] with value [null] and id [allPosts], name [null]]
+Added DOM node [[img] with value [null] and id [null], name [null]] to parent [[div] with value [null] and id [null], name [null]]
+Added DOM node [[div] with value [null] and id [null], name [null]] to parent [[div] with value [null] and id [allPosts], name [null]]
+Added DOM node [[div] with value [null] and id [null], name [null]] to parent [[div] with value [null] and id [null], name [null]]
+Added DOM node [[a] with value [null] and id [null], name [null]] to parent [[div] with value [null] and id [null], name [null]]
+Added DOM node [[#text] with value [peter] and id [null], name [null]] to parent [[a] with value [null] and id [null], name [null]]
+Added DOM node [[#text] with value [
+        Stuff and the like
+
+    ] and id [null], name [null]] to parent [[div] with value [null] and id [null], name [null]]
+Added DOM node [[div] with value [null] and id [null], name [null]] to parent [[div] with value [null] and id [null], name [null]]
+Added DOM node [[#text] with value [
+        6 hours 2 minutes ago
+    ] and id [null], name [null]] to parent [[div] with value [null] and id [null], name [null]]
+Added DOM node [[div] with value [null] and id [null], name [null]] to parent [[div] with value [null] and id [allPosts], name [null]]
+Added DOM node [[img] with value [null] and id [null], name [null]] to parent [[div] with value [null] and id [null], name [null]]
+Added DOM node [[div] with value [null] and id [null], name [null]] to parent [[div] with value [null] and id [allPosts], name [null]]
+Added DOM node [[div] with value [null] and id [null], name [null]] to parent [[div] with value [null] and id [null], name [null]]
+Added DOM node [[a] with value [null] and id [null], name [null]] to parent [[div] with value [null] and id [null], name [null]]
+Added DOM node [[#text] with value [peter] and id [null], name [null]] to parent [[a] with value [null] and id [null], name [null]]
+Added DOM node [[#text] with value [
+        Not authenticated...
+
+    ] and id [null], name [null]] to parent [[div] with value [null] and id [null], name [null]]
+Added DOM node [[div] with value [null] and id [null], name [null]] to parent [[div] with value [null] and id [null], name [null]]
+Added DOM node [[#text] with value [
+        6 hours 8 minutes ago
+    ] and id [null], name [null]] to parent [[div] with value [null] and id [null], name [null]]
+Added DOM node [[div] with value [null] and id [null], name [null]] to parent [[div] with value [null] and id [allPosts], name [null]]
+Added DOM node [[img] with value [null] and id [null], name [null]] to parent [[div] with value [null] and id [null], name [null]]
+Added DOM node [[div] with value [null] and id [null], name [null]] to parent [[div] with value [null] and id [allPosts], name [null]]
+Added DOM node [[div] with value [null] and id [null], name [null]] to parent [[div] with value [null] and id [null], name [null]]
+Added DOM node [[a] with value [null] and id [null], name [null]] to parent [[div] with value [null] and id [null], name [null]]
+Added DOM node [[#text] with value [peter] and id [null], name [null]] to parent [[a] with value [null] and id [null], name [null]]
+Added DOM node [[#text] with value [
+        What about now?
+
+    ] and id [null], name [null]] to parent [[div] with value [null] and id [null], name [null]]
+Added DOM node [[div] with value [null] and id [null], name [null]] to parent [[div] with value [null] and id [null], name [null]]
+Added DOM node [[#text] with value [
+        6 hours 11 minutes ago
+    ] and id [null], name [null]] to parent [[div] with value [null] and id [null], name [null]]
+Added DOM node [[div] with value [null] and id [null], name [null]] to parent [[div] with value [null] and id [allPosts], name [null]]
+Added DOM node [[img] with value [null] and id [null], name [null]] to parent [[div] with value [null] and id [null], name [null]]
+Added DOM node [[div] with value [null] and id [null], name [null]] to parent [[div] with value [null] and id [allPosts], name [null]]
+Added DOM node [[div] with value [null] and id [null], name [null]] to parent [[div] with value [null] and id [null], name [null]]
+Added DOM node [[a] with value [null] and id [null], name [null]] to parent [[div] with value [null] and id [null], name [null]]
+Added DOM node [[#text] with value [peter] and id [null], name [null]] to parent [[a] with value [null] and id [null], name [null]]
+Added DOM node [[#text] with value [
+        Maybe this time?
+
+    ] and id [null], name [null]] to parent [[div] with value [null] and id [null], name [null]]
+Added DOM node [[div] with value [null] and id [null], name [null]] to parent [[div] with value [null] and id [null], name [null]]
+Added DOM node [[#text] with value [
+        6 hours 15 minutes ago
+    ] and id [null], name [null]] to parent [[div] with value [null] and id [null], name [null]]
+Added DOM node [[div] with value [null] and id [null], name [null]] to parent [[div] with value [null] and id [allPosts], name [null]]
+Added DOM node [[img] with value [null] and id [null], name [null]] to parent [[div] with value [null] and id [null], name [null]]
+Added DOM node [[div] with value [null] and id [null], name [null]] to parent [[div] with value [null] and id [allPosts], name [null]]
+Added DOM node [[div] with value [null] and id [null], name [null]] to parent [[div] with value [null] and id [null], name [null]]
+Added DOM node [[a] with value [null] and id [null], name [null]] to parent [[div] with value [null] and id [null], name [null]]
+Added DOM node [[#text] with value [peter] and id [null], name [null]] to parent [[a] with value [null] and id [null], name [null]]
+Added DOM node [[#text] with value [
+        Wisteria Lane
+
+    ] and id [null], name [null]] to parent [[div] with value [null] and id [null], name [null]]
+Added DOM node [[div] with value [null] and id [null], name [null]] to parent [[div] with value [null] and id [null], name [null]]
+Added DOM node [[#text] with value [
+        6 hours 38 minutes ago
+    ] and id [null], name [null]] to parent [[div] with value [null] and id [null], name [null]]
+Added DOM node [[div] with value [null] and id [null], name [null]] to parent [[div] with value [null] and id [allPosts], name [null]]
+Added DOM node [[img] with value [null] and id [null], name [null]] to parent [[div] with value [null] and id [null], name [null]]
+Added DOM node [[div] with value [null] and id [null], name [null]] to parent [[div] with value [null] and id [allPosts], name [null]]
+Added DOM node [[div] with value [null] and id [null], name [null]] to parent [[div] with value [null] and id [null], name [null]]
+Added DOM node [[a] with value [null] and id [null], name [null]] to parent [[div] with value [null] and id [null], name [null]]
+Added DOM node [[#text] with value [peter] and id [null], name [null]] to parent [[a] with value [null] and id [null], name [null]]
+Added DOM node [[#text] with value [
+        Another new REST post.
+
+    ] and id [null], name [null]] to parent [[div] with value [null] and id [null], name [null]]
+Added DOM node [[div] with value [null] and id [null], name [null]] to parent [[div] with value [null] and id [null], name [null]]
+Added DOM node [[#text] with value [
+        6 hours 40 minutes ago
+    ] and id [null], name [null]] to parent [[div] with value [null] and id [null], name [null]]
+Added DOM node [[div] with value [null] and id [null], name [null]] to parent [[div] with value [null] and id [allPosts], name [null]]
+Added DOM node [[img] with value [null] and id [null], name [null]] to parent [[div] with value [null] and id [null], name [null]]
+Added DOM node [[div] with value [null] and id [null], name [null]] to parent [[div] with value [null] and id [allPosts], name [null]]
+Added DOM node [[div] with value [null] and id [null], name [null]] to parent [[div] with value [null] and id [null], name [null]]
+Added DOM node [[a] with value [null] and id [null], name [null]] to parent [[div] with value [null] and id [null], name [null]]
+Added DOM node [[#text] with value [peter] and id [null], name [null]] to parent [[a] with value [null] and id [null], name [null]]
+Added DOM node [[#text] with value [
+        A post by REST!
+
+    ] and id [null], name [null]] to parent [[div] with value [null] and id [null], name [null]]
+Added DOM node [[div] with value [null] and id [null], name [null]] to parent [[div] with value [null] and id [null], name [null]]
+Added DOM node [[#text] with value [
+        11 hours 2 minutes ago
+    ] and id [null], name [null]] to parent [[div] with value [null] and id [null], name [null]]
+Added DOM node [[div] with value [null] and id [null], name [null]] to parent [[div] with value [null] and id [allPosts], name [null]]
+Added DOM node [[img] with value [null] and id [null], name [null]] to parent [[div] with value [null] and id [null], name [null]]
+Added DOM node [[div] with value [null] and id [null], name [null]] to parent [[div] with value [null] and id [allPosts], name [null]]
+Added DOM node [[div] with value [null] and id [null], name [null]] to parent [[div] with value [null] and id [null], name [null]]
+Added DOM node [[a] with value [null] and id [null], name [null]] to parent [[div] with value [null] and id [null], name [null]]
+Added DOM node [[#text] with value [glen] and id [null], name [null]] to parent [[a] with value [null] and id [null], name [null]]
+Added DOM node [[#text] with value [
+        Another post from me!
+
+    ] and id [null], name [null]] to parent [[div] with value [null] and id [null], name [null]]
+Added DOM node [[div] with value [null] and id [null], name [null]] to parent [[div] with value [null] and id [null], name [null]]
+Added DOM node [[#text] with value [
+        4 days 5 hours 1 minute ago
+    ] and id [null], name [null]] to parent [[div] with value [null] and id [null], name [null]]
+Changed attribute style to display: none on tag [img] (id: com.gargoylesoftware.htmlunit.html.DomAttr@c0f87e / name: null)
+Content of web window [TopLevelWindow[name=""]] changed
+<<<<<<<<<<<<<<<<<<<< Received response from GET http://localhost:8080/hubbub/ <<<<<<<<<<<<<<<<<<<<
+Response was 200 'OK', headers:
+========================================
+Expires: Thu, 01 Jan 1970 00:00:00 GMT
+Set-Cookie: JSESSIONID=95yq9p1y8tfz;Path=/hubbub
+Content-Language: en-GB
+Content-Type: text/html; charset=utf-8
+Content-Length: 7257
+Server: Jetty(6.1.14)
+========================================
+Content
+========================================
+
+<html>
+    <head>
+        <title>Hubbub &raquo; Global Timeline</title>
+        <!-- <link rel="stylesheet" href="/hubbub/css/hubbub.css" />  -->
+        <link rel="stylesheet" href="/hubbub/css/hubbub.css"/>
+        <link rel="shortcut icon" href="/hubbub/images/favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="/hubbub/css/reset-fonts-grids.css"/>
+        <link rel="stylesheet" type="text/css" href="/hubbub/plugins/navigation-1.0.4/css/navigation.css"/>
+        <meta name="layout" content="main"/>
+        <script type="text/javascript" src="/hubbub/js/application.js"></script>
+
+        <script type="text/javascript" src="/hubbub/js/prototype/prototype.js"></script>
+<script type="text/javascript" src="/hubbub/js/prototype/scriptaculous.js"></script>
+<script type="text/javascript" src="/hubbub/js/prototype/builder.js"></script>
+<script type="text/javascript" src="/hubbub/js/prototype/controls.js"></script>
+<script type="text/javascript" src="/hubbub/js/prototype/effects.js"></script>
+<script type="text/javascript" src="/hubbub/js/prototype/slider.js"></script>
+<script type="text/javascript" src="/hubbub/js/prototype/dragdrop.js"></script>
+
+    </head>
+    <body>	
+        <div id="doc3" class="yui-t5">
+                    <div id="hd">
+		                 <a href="/hubbub/"><img id="logo" src="/hubbub/images/headerlogo.png" alt="hubbub logo"/></a>
+                        <!--
+		                <div style="float: right; position: relative; margin-right: 7px; font-size: medium; ">
+		                    <input type="text" name="search" value="Search here..." id="search" />
+		                </div>
+                        -->
+
+		            </div>
+		            <div id="bd"><!-- start body -->
+
+		                <div id="yui-main">
+		                    <div class="yui-b">
+		                        
+                                <ul class="navigation" id="navigation_tabs"><li class="navigation_active navigation_first"><a href="/hubbub/post/personal">My Posts</a></li><li class="navigation_active"><a href="/hubbub/timeline">My Timeline</a></li><li class="navigation_active"><a href="/hubbub/">Everyone</a></li><li><a href="/hubbub/user/search">Search</a></li><li><a href="/hubbub/user/advSearch">Advanced Search</a></li><li class="navigation_last"><a href="/hubbub/user/register2">Register</a></li></ul>
+		                        <!--	
+        <h3>
+            Global Timeline
+        </h3>
+	-->
+	
+        
+
+        <div id="allPosts">
+            <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Functional test message
+
+    </div>
+    <div class="postDate">
+        6 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Stuff and the like
+
+    </div>
+    <div class="postDate">
+        6 hours 2 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Not authenticated...
+
+    </div>
+    <div class="postDate">
+        6 hours 8 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        What about now?
+
+    </div>
+    <div class="postDate">
+        6 hours 11 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Maybe this time?
+
+    </div>
+    <div class="postDate">
+        6 hours 15 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Wisteria Lane
+
+    </div>
+    <div class="postDate">
+        6 hours 38 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Another new REST post.
+
+    </div>
+    <div class="postDate">
+        6 hours 40 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        A post by REST!
+
+    </div>
+    <div class="postDate">
+        11 hours 2 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/glen"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/glen">glen</a>
+        Another post from me!
+
+    </div>
+    <div class="postDate">
+        4 days 5 hours 1 minute ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Woohoo!
+
+    </div>
+    <div class="postDate">
+        4 days 5 hours 30 minutes ago
+    </div>
+</div>
+ 
+        </div>
+
+        <span class="currentStep">1</span><a href="/hubbub/?offset=10&amp;max=10" class="step">2</a><a href="/hubbub/?offset=10&amp;max=10" class="nextLink">Next</a>
+		                    </div>
+		                </div>
+		                <div class="yui-b">
+                            
+                            
+                                
+
+<div id="sidebar">
+
+       <h3>Login</h3>
+        <div id="loginForm">
+            <form action="/hubbub/j_spring_security_check">
+                <table>
+                  <tr>
+                    <td>User Id:</td><td><input type="text" name="j_username" id="j_username" value="" /></td>
+                  </tr>
+                  <tr>
+                    <td>Password:</td><td><input name="j_password" type="password"/></td>
+                  </tr>
+                  <tr>
+				    <td>Remember:</td><td><input type='checkbox' name='_spring_security_remember_me'/></td>
+                  </tr>
+                  <tr>
+                    <td colspan="2"><input type="submit" name="login" value="Login" id="login" /></td>
+                  </tr>
+                  <tr>
+				    <td colspan="2">try "glen" or "peter" with "password"</td>
+                  </tr>
+                </table>
+				
+            </form>
+        </div>
+
+</div>
+                            
+  
+                        </div>
+
+		            </div>  <!-- end body -->
+		            <div id="ft">
+		                <div id="footerText">
+		                Hubbub 0.1 on Grails 1.1.
+		                </div>
+		            </div>
+		        </div>		
+    </body>	
+</html>
+========================================
+
+--Output from testTimelineNotLoggedIn--
+
+
+>>>>>>>>>>>>>>>>>>>> Making request to /post/global using method GET >>>>>>>>>>>>>>>>>>>>
+Initializing web request settings for http://localhost:8080/hubbub/post/global
+Request parameters:
+========================================
+========================================
+Request headers:
+========================================
+========================================
+Content of web window [TopLevelWindow[name=""]] changed
+<<<<<<<<<<<<<<<<<<<< Received response from GET http://localhost:8080/hubbub/post/global <<<<<<<<<<<<<<<<<<<<
+Response was 200 'OK', headers:
+========================================
+Content-Language: en-GB
+Content-Type: text/html; charset=utf-8
+Expires: Thu, 01 Jan 1970 00:00:00 GMT
+Set-Cookie: JSESSIONID=4f2cdjeixx8m;Path=/hubbub
+Content-Length: 7253
+Server: Jetty(6.1.14)
+========================================
+Content
+========================================
+
+<html>
+    <head>
+        <title>Hubbub &raquo; Global Timeline</title>
+        <!-- <link rel="stylesheet" href="/hubbub/css/hubbub.css" />  -->
+        <link rel="stylesheet" href="/hubbub/css/hubbub.css"/>
+        <link rel="shortcut icon" href="/hubbub/images/favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="/hubbub/css/reset-fonts-grids.css"/>
+        <link rel="stylesheet" type="text/css" href="/hubbub/plugins/navigation-1.0.4/css/navigation.css"/>
+        <meta name="layout" content="main"/>
+        <script type="text/javascript" src="/hubbub/js/application.js"></script>
+
+        <script type="text/javascript" src="/hubbub/js/prototype/prototype.js"></script>
+<script type="text/javascript" src="/hubbub/js/prototype/scriptaculous.js"></script>
+<script type="text/javascript" src="/hubbub/js/prototype/builder.js"></script>
+<script type="text/javascript" src="/hubbub/js/prototype/controls.js"></script>
+<script type="text/javascript" src="/hubbub/js/prototype/effects.js"></script>
+<script type="text/javascript" src="/hubbub/js/prototype/slider.js"></script>
+<script type="text/javascript" src="/hubbub/js/prototype/dragdrop.js"></script>
+
+    </head>
+    <body>	
+        <div id="doc3" class="yui-t5">
+                    <div id="hd">
+		                 <a href="/hubbub/"><img id="logo" src="/hubbub/images/headerlogo.png" alt="hubbub logo"/></a>
+                        <!--
+		                <div style="float: right; position: relative; margin-right: 7px; font-size: medium; ">
+		                    <input type="text" name="search" value="Search here..." id="search" />
+		                </div>
+                        -->
+
+		            </div>
+		            <div id="bd"><!-- start body -->
+
+		                <div id="yui-main">
+		                    <div class="yui-b">
+		                        
+                                <ul class="navigation" id="navigation_tabs"><li class="navigation_active navigation_first"><a href="/hubbub/post/personal">My Posts</a></li><li class="navigation_active"><a href="/hubbub/timeline">My Timeline</a></li><li class="navigation_active"><a href="/hubbub/">Everyone</a></li><li><a href="/hubbub/user/search">Search</a></li><li><a href="/hubbub/user/advSearch">Advanced Search</a></li><li class="navigation_last"><a href="/hubbub/user/register2">Register</a></li></ul>
+		                        <!--	
+        <h3>
+            Global Timeline
+        </h3>
+	-->
+	
+        
+
+        <div id="allPosts">
+            <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Functional test message
+
+    </div>
+    <div class="postDate">
+        Right now
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Functional test message
+
+    </div>
+    <div class="postDate">
+        6 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Stuff and the like
+
+    </div>
+    <div class="postDate">
+        6 hours 2 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Not authenticated...
+
+    </div>
+    <div class="postDate">
+        6 hours 8 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        What about now?
+
+    </div>
+    <div class="postDate">
+        6 hours 11 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Maybe this time?
+
+    </div>
+    <div class="postDate">
+        6 hours 15 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Wisteria Lane
+
+    </div>
+    <div class="postDate">
+        6 hours 38 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        Another new REST post.
+
+    </div>
+    <div class="postDate">
+        6 hours 40 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/peter"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/peter">peter</a>
+        A post by REST!
+
+    </div>
+    <div class="postDate">
+        11 hours 2 minutes ago
+    </div>
+</div>
+ <div class="postImage">
+    
+        <img src="/hubbub/image/renderImage/glen"/>
+    
+</div>
+<div class="postEntry">
+    <div class="postText">
+
+        <a href="/hubbub/user/profile/glen">glen</a>
+        Another post from me!
+
+    </div>
+    <div class="postDate">
+        4 days 5 hours 1 minute ago
+    </div>
+</div>
+ 
+        </div>
+
+        <span class="currentStep">1</span><a href="/hubbub/?offset=10&amp;max=10" class="step">2</a><a href="/hubbub/?offset=10&amp;max=10" class="nextLink">Next</a>
+		                    </div>
+		                </div>
+		                <div class="yui-b">
+                            
+                            
+                                
+
+<div id="sidebar">
+
+       <h3>Login</h3>
+        <div id="loginForm">
+            <form action="/hubbub/j_spring_security_check">
+                <table>
+                  <tr>
+                    <td>User Id:</td><td><input type="text" name="j_username" id="j_username" value="" /></td>
+                  </tr>
+                  <tr>
+                    <td>Password:</td><td><input name="j_password" type="password"/></td>
+                  </tr>
+                  <tr>
+				    <td>Remember:</td><td><input type='checkbox' name='_spring_security_remember_me'/></td>
+                  </tr>
+                  <tr>
+                    <td colspan="2"><input type="submit" name="login" value="Login" id="login" /></td>
+                  </tr>
+                  <tr>
+				    <td colspan="2">try "glen" or "peter" with "password"</td>
+                  </tr>
+                </table>
+				
+            </form>
+        </div>
+
+</div>
+                            
+  
+                        </div>
+
+		            </div>  <!-- end body -->
+		            <div id="ft">
+		                <div id="footerText">
+		                Hubbub 0.1 on Grails 1.1.
+		                </div>
+		            </div>
+		        </div>		
+    </body>	
+</html>
+========================================
+
+]]></system-out>
+
+      <system-err><![CDATA[--Output from testTimeline--
+--Output from testTimelineNotLoggedIn--
+]]></system-err>
+
+  </testsuite>
+</testsuites>
