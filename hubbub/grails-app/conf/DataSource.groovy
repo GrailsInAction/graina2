@@ -15,6 +15,7 @@ environments {
     development {
         dataSource {
             dbCreate = "update" // one of 'create', 'create-drop','update'
+            driverClassName = "com.p6spy.engine.spy.P6SpyDriver" // use this driver to enable p6spy logging
             url = "jdbc:hsqldb:file:devDb;shutdown=true"
         }
     }
