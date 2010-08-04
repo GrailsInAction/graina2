@@ -3,7 +3,7 @@ package com.grailsinaction
 import grails.converters.JSON
 
 class PostRestController {
-    def authenticateService
+    def springSecurityService
     def postService
 
     def list = {
@@ -36,7 +36,7 @@ class PostRestController {
     }
 
     def save = {
-        def user = authenticateService.userDomain()
+        def user = springSecurityService.principal
         def newContent = request.XML.content.text()
         def post = postService.createPost(user.id, newContent)
 

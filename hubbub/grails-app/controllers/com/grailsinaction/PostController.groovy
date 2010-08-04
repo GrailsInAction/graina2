@@ -3,7 +3,7 @@ package com.grailsinaction
 import grails.converters.*
 
 class PostController {
-    def authenticateService
+    def springSecurityService
     def postService
 
     def scaffold = true
@@ -26,8 +26,7 @@ class PostController {
     }
 
     def timeline = {
-
-        def user = params.id ? User.findByUserId(params.id) : User.get(authenticateService.userDomain().id)
+        def user = params.id ? User.findByUserId(params.id) : User.get(springSecurityService.principal.id)
         if (!user) {
             response.sendError(404)
             return
@@ -38,8 +37,7 @@ class PostController {
     }
 
     def personal = {
-
-        def user = params.id ? User.findByUserId(params.id) : User.get(authenticateService.userDomain().id)
+        def user = params.id ? User.findByUserId(params.id) : User.get(springSecurityService.principal.id)
         if (!user) {
             response.sendError(404)
             return
@@ -51,7 +49,7 @@ class PostController {
 
     def addPost = {
         try {
-            def newPost = postService.createAndReturnPost(authenticateService.userDomain().userId, params.content)
+            def newPost = postService.createAndReturnPost(springSecurityService.principal.username, params.content)
             flash.message = "Added new post: ${newPost.content}"
         } catch (PostException pe) {
             flash.message = pe.message
@@ -61,8 +59,8 @@ class PostController {
 
     def addPostAjax = {
         try {
-            def user = authenticateService.userDomain()
-            def newPost = postService.createAndReturnPost(user.userId, params.content)
+            def user = springSecurityService.principal
+            def newPost = postService.createAndReturnPost(user.username, params.content)
             def posts
             def postCount
             switch(params.timelineToReturn) {
@@ -70,10 +68,10 @@ class PostController {
                     (posts, postCount) = postService.getGlobalTimelineAndCount(params)
                     break
                 case "mytimeline":
-                    (posts, postCount) = postService.getUserTimelineAndCount(user.userId, params)
+                    (posts, postCount) = postService.getUserTimelineAndCount(user.username, params)
                     break
                 case "myposts":
-                    (posts, postCount) = postService.getUserPosts(user.userId, params)
+                    (posts, postCount) = postService.getUserPosts(user.username, params)
                     break
             }
             println "postCount is ${postCount}"
@@ -115,5 +113,4 @@ class PostController {
         }
 
     }
-
 }

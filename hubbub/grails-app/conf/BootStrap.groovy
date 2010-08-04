@@ -2,7 +2,7 @@ import com.grailsinaction.*
 import grails.util.Environment
 
 class BootStrap { 
-    def authenticateService
+    def springSecurityService
 
     def init = { servletContext ->
 
@@ -30,7 +30,7 @@ class BootStrap {
             println "Fresh Database. Creating ADMIN user."
             def profile = new Profile(email: "admin@yourhost.com")
             def user = new User(userId: "admin",
-                password: authenticateService.encodePassword("secret"), profile: profile).save()
+                password: springSecurityService.encodePassword("secret"), profile: profile).save()
         } else {
             println "Existing admin user, skipping creation"
         }
@@ -47,14 +47,13 @@ class BootStrap {
                        'burt' : [fullName : 'Burt Beckwith']
         ]
 
-        def userRole = new Role(authority: "ROLE_USER", description: "Registered user")
+        def userRole = new Role(authority: "ROLE_USER", description: "Registered user").save()
  
         def now = new Date()
 
         if (!User.list()) {
             samples.each { userId, profileAttrs ->
-                def user = new User(userId: userId, password: authenticateService.encodePassword("password"))
-                userRole.addToPeople(user)
+                def user = new User(userId: userId, password: springSecurityService.encodePassword("password"))
 
                 if (user.validate()) {
                     println "Creating user ${userId}..."
@@ -66,7 +65,11 @@ class BootStrap {
                         user.profile.photo = image
                     }
                     user.save(flush:true)
-					def tag = new Tag(name: "grails", user: user).save()
+                    
+                    // Link the user to the role.
+                    UserRole.create(user, userRole)
+
+                    def tag = new Tag(name: "grails", user: user).save()
                     def tag2 = new Tag(name: "groovy", user: user).save()
                     // 10.downto(1) { postNo ->
                         def post = new Post(content: "A first post from ${userId}", user: user, tag: tag).save()
@@ -98,13 +101,10 @@ class BootStrap {
                 }
 
             }
-            def loner = new User(userId: 'loner', password: authenticateService.encodePassword("password")).save()
+            def loner = new User(userId: 'loner', password: springSecurityService.encodePassword("password")).save()
 
            
         }
-
-        userRole.save()
-
     }
 }
 

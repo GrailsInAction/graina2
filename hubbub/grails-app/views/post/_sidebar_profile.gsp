@@ -5,10 +5,10 @@
             <dl>
                 <dt>User</dt>
                 <dd>
-                  <g:loggedInUserInfo field="userId">Guest</g:loggedInUserInfo>
+                  <sec:username>Guest</sec:username>
                 </dd>
             </dl>
-            <g:isLoggedIn><g:link controller="logout" action="index">Logout</g:link></g:isLoggedIn>
+            <sec:ifLoggedIn><g:link controller="logout" action="index">Logout</g:link></sec:ifLoggedIn>
 
         <h3>Stats</h3>
 

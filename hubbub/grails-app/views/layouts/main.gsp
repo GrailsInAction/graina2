@@ -31,17 +31,19 @@
 		                                ${flash.message}
 		                            </div>
 		                        </g:if>
+                             <sec:ifLoggedIn>
                                 <nav:render group="tabs"/>
+                             </sec:ifLoggedIn>
 		                        <g:layoutBody/>
 		                    </div>
 		                </div>
 		                <div class="yui-b">
-                            <g:isLoggedIn>
+                            <sec:ifLoggedIn>
                                 <g:render template="/post/sidebar_profile"/>
-                            </g:isLoggedIn>
-                            <g:isNotLoggedIn>
+                            </sec:ifLoggedIn>
+                            <sec:ifNotLoggedIn>
                                 <g:render template="/post/sidebar_login"/>
-                            </g:isNotLoggedIn>
+                            </sec:ifNotLoggedIn>
   
                         </div>
 
