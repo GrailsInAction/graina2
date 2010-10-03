@@ -9,12 +9,17 @@ class BootStrap {
         switch (Environment.current) {
 
             case Environment.DEVELOPMENT:
-                // createAdminUserIfRequired()
+                createAdminUserIfRequired()
                 createTestingUsers()
                 break;
 
             case Environment.PRODUCTION:
-                println "No special configuration required"
+                createAdminUserIfRequired()
+                if (!Role.findByAuthority("ROLE_USER")) {
+                    def userRole = new Role(
+                            authority: "ROLE_USER",
+                            description: "Registered user").save()
+                }
                 break;
 
         }
@@ -29,8 +34,16 @@ class BootStrap {
         if (!User.findByUserId("admin")) {
             println "Fresh Database. Creating ADMIN user."
             def profile = new Profile(email: "admin@yourhost.com")
-            def user = new User(userId: "admin",
-                password: springSecurityService.encodePassword("secret"), profile: profile).save()
+            def user = new User(
+                    userId: "admin",
+                    password: springSecurityService.encodePassword("secret"), profile: profile).save()
+            
+            def role = Role.findByAuthority("ROLE_ADMIN")
+            if (!role) {
+                role =  new Role(authority: "ROLE_ADMIN", description: "Administrator").save()
+            }
+            
+            UserRole.create user, role
         } else {
             println "Existing admin user, skipping creation"
         }
@@ -101,9 +114,9 @@ class BootStrap {
                 }
 
             }
-            def loner = new User(userId: 'loner', password: springSecurityService.encodePassword("password")).save()
-
-           
+            
+            // User that isn't following anyone and that no one else is following.
+            new User(userId: 'loner', password: springSecurityService.encodePassword("password")).save()
         }
     }
 }
