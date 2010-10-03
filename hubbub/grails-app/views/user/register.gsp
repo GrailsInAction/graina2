@@ -1,7 +1,6 @@
 <html>
     <head>
         <title>Register New User</title>
-        <meta name="layout" content="main"/>
         <style>
             dd {
                 text-align: left;

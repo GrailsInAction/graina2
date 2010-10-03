@@ -25,8 +25,7 @@
                  onComplete="showSpinner(false)"/>
 
              <g:hiddenField name="timelineToReturn" value="${timelineType}"/>
-             <img id="spinner" style="display: none"
-                src="<g:createLinkTo dir='/images' file='spinner.gif'/>"/>
+             <img id="spinner" style=" display: none" src="${resource(dir:'/images', file:'spinner.gif')}"/>
 
               <!-- <a href="#" id="showHideUrlOld" onClick="return toggleTinyUrl()">Show TinyURL</a>  -->
                 <a href="#" id="showHideUrl" onClick="Effect.toggle('tinyUrl', 'slide', { duration: 0.5 }); return false;">TinyURL</a>

@@ -1,7 +1,6 @@
 <html>
     <head>
         <title>Global Timeline</title>
-        <meta name="layout" content="main"/>
     </head>
     <body>
 

@@ -1,7 +1,6 @@
 <html>
     <head>
-        <title>MyTimeline for ${targetUser.profile.fullName}</title>
-        <meta name="layout" content="main"/>
+        <title>Timeline for ${targetUser.profile.fullName}</title>
         <g:if test="${user.profile.skin}">
             <link rel="stylesheet" href="<g:createLinkTo dir='css' file='${user.profile.skin}.css'/>"/>
         </g:if>
