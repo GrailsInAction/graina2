@@ -7,6 +7,11 @@ body {
     font-family: "Helvetica";
 }
 
+h1 {
+    font-size: 140%;
+    font-weight: bold;
+}
+
 #hd {
     padding: 1em;
     background-image: url('../images/background.png');
@@ -68,12 +73,18 @@ body {
     width: 90%;    
 }
 
+dl {
+    padding-left: 5px;
+    padding-top: 10px;
+}
+
 dt {
-    float: left;    
+    float: left;
 }
 
 dd {
-    text-align: right;
+    padding-left: 12em;
+    padding-bottom: 0.5em;
 }
 
 

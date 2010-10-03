@@ -9,8 +9,8 @@ class PostController {
     def scaffold = true
 
     static navigation = [
-        [group: 'tabs', action: 'personal', title: 'My Posts', order: 0],
-        [action:'timeline', title: 'My Timeline', order: 1],
+        [group: 'tabs', action: 'personal', title: 'My Posts', order: 0, isVisible: { springSecurityService.isLoggedIn() }],
+        [action:'timeline', title: 'My Timeline', order: 1, isVisible: { springSecurityService.isLoggedIn() }],
         [action: 'global', title: 'Everyone', order: 2],
 
     ]
