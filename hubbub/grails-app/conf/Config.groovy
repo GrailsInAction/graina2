@@ -41,8 +41,9 @@ environments {
     }
 }
 
-grails.mail.host="192.168.1.9"
-grails.mail.default.from="hubbub@grailsinaction.com"
+grails.mail.host = "localhost"
+grails.mail.port = 5566
+grails.mail.default.from = "hubbub@grailsinaction.com"
 
 
 // log4j configuration

@@ -1,9 +1,9 @@
 <html>
 <head>
   <title>Hubbub &raquo; <g:layoutTitle default="Welcome" /></title>
-  <link rel="stylesheet" href="<g:createLinkTo dir='css' file='hubbub.css'/>"/>
   <link rel="shortcut icon" href="${createLinkTo(dir:'images',file:'favicon.ico')}" type="image/x-icon" />
   <link rel="stylesheet" href="${createLinkTo(dir: 'css', file: 'reset-fonts-grids.css')}"/>
+  <link rel="stylesheet" href="<g:createLinkTo dir='css' file='hubbub.css'/>"/>
   <g:layoutHead />
   <g:javascript library="application" />
   <g:javascript library="scriptaculous"/>
