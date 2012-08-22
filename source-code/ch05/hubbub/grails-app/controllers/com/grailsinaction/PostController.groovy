@@ -14,7 +14,7 @@ class PostController {
         redirect(action: 'timeline', params: params)
     }
 
-    def timeline = {
+    def timeline() {
         def user = User.findByUserId(params.id)
         [ user : user ]
     }
