@@ -8,7 +8,7 @@ class Post {
 	static belongsTo = [ user : User ] 
 
     static constraints = {
-        content(blank: false)
+        content blank: false
     }
     static mapping = {
         sort dateCreated:"desc"              
