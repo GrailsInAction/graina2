@@ -24,7 +24,7 @@ class UrlMappings {
 			action = "timeline"
 		}
 
-        "/"(view:"/index")
+
         "500"(view:'/error')
     }
 }
