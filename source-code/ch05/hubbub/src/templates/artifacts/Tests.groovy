@@ -1,6 +1,13 @@
-import grails.test.*
+@artifact.package@import grails.test.*
 
-@artifact.package@class @artifact.name@ extends grails.test.GrailsUnitTestCase {
+class @artifact.name@ extends @artifact.superclass@ {
+    protected void setUp() {
+        super.setUp()
+    }
+
+    protected void tearDown() {
+        super.tearDown()
+    }
 
     void testSomething() {
 

@@ -16,7 +16,11 @@ class PostController {
 
     def timeline() {
         def user = User.findByUserId(params.id)
-        [ user : user ]
+        if (!user) {
+            response.sendError(404) // user not found
+        } else {
+            [ user : user ]
+        }
     }
 
     def addPost = {
