@@ -1,7 +1,7 @@
 package com.grailsinaction
 
 class Profile {
-    static belongsTo = [ User ]
+    static belongsTo = User
     byte[] photo           
     String fullName
     String bio
