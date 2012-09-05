@@ -33,7 +33,7 @@ class PostControllerSpec extends Specification {
       when: "the timeline is invoked"
       controller.timeline()
 
-      then:
+      then: "a 404 is sent to the browser"
       response.status == 404
 
     }
