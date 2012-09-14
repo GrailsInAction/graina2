@@ -23,7 +23,9 @@ class PostController {
         }
     }
 
-    def addPost = {
+    /*
+    New version of post using a service layer
+    def addPost() {
         try {
             def newPost = postService.createPost(params.id, params.content)
             flash.message = "Added new post: ${newPost.content}"
@@ -32,9 +34,10 @@ class PostController {
         }
         redirect(action: 'timeline', id: params.id)
     }
+    */
 
 
-    def recentPosts = {
+    def recentPosts() {
 
         def user = User.findByUserId(params.id)
         def posts = Post.findAllByUser(user, [max: 5])
@@ -60,13 +63,13 @@ class PostController {
    
 
     /* Refactor old addPost() action into the PostService */
-    /*
-    def addPost = {
+    
+    def addPost() {
         def user = User.findByUserId(params.id)
         if (user) {
             def post = new Post(params)
-            if (post.validate()) {
-                user.addToPosts(post)
+            user.addToPosts(post)
+            if (post.validate() && post.save(failOnError: true)) {
                 flash.message = "Successfully created Post"
             } else {
                 flash.message = "Invalid or empty post"
@@ -76,6 +79,6 @@ class PostController {
         }
         redirect(action: 'timeline', id: params.id)
     }
-    */
+    
 
 }

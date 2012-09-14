@@ -4,8 +4,9 @@ import grails.test.mixin.TestFor
 import spock.lang.Specification
 import grails.test.mixin.Mock
 
+
 @TestFor(PostController)
-@Mock(User)
+@Mock([User,Post])
 class PostControllerSpec extends Specification {
 
     def "Get a users timeline given their id"() {
@@ -37,5 +38,66 @@ class PostControllerSpec extends Specification {
       response.status == 404
 
     }
+
+    def "Adding a valid new post to the timeline"() {
+      given: "A user with posts in the db"
+      User chuck = new User(userId: "chuck_norris", password: "password").save(failOnError: true)
+
+      and: "A userid parameter"
+      params.id = chuck.userId
+
+      and: "Some content for the post"
+      params.content = "Chuck Norris can unit test entire applications with a single assert."
+
+      when: "addPost is invoked"
+      def model = controller.addPost()
+
+      then: "our flash message and redirect confirms the success"
+      flash.message == "Successfully created Post"
+      response.redirectedUrl == "/post/timeline/${chuck.userId}"
+      Post.countByUser(chuck) == 1
+
+    }
+
+    def "Adding a invalid new post to the timeline trips an error"() {
+        given: "A user with posts in the db"
+        User chuck = new User(userId: "chuck_norris", password: "password").save(failOnError: true)
+
+        and: "A userid parameter"
+        params.id = chuck.userId
+
+        and: "Some content for the post"
+        params.content = null
+
+        when: "addPost is invoked"
+        def model = controller.addPost()
+
+        then: "our flash message and redirect confirms the success"
+        flash.message == "Invalid or empty post"
+        response.redirectedUrl == "/post/timeline/${chuck.userId}"
+        Post.countByUser(chuck) == 0
+
+    }
+
+    @spock.lang.Unroll
+    def "Testing id of #suppliedId redirects to #expectedUrl"() {
+
+        given:
+        params.id = suppliedId
+
+        when: "Controller is invoked"
+        controller.index()
+
+        then:
+        response.redirectedUrl == expectedUrl
+
+        where:
+        suppliedId  |   expectedUrl
+        'joe_cool'  |   '/post/timeline/joe_cool'
+        null        |   '/post/timeline/chuck_norris'
+
+    }
+
+
 
 }
