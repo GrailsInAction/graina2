@@ -25,16 +25,17 @@ class PostController {
 
     /*
     New version of post using a service layer
-    def addPost() {
+    */
+    def addPost(String userId, String content) {
         try {
-            def newPost = postService.createPost(params.id, params.content)
+            def newPost = postService.createPost(userId, content)
             flash.message = "Added new post: ${newPost.content}"
         } catch (PostException pe) {
             flash.message = pe.message
         }
-        redirect(action: 'timeline', id: params.id)
+        redirect(action: 'timeline', id: userId)
     }
-    */
+
 
 
     def recentPosts() {
@@ -63,7 +64,7 @@ class PostController {
    
 
     /* Refactor old addPost() action into the PostService */
-    
+    /*
     def addPost() {
         def user = User.findByUserId(params.id)
         if (user) {
@@ -79,6 +80,6 @@ class PostController {
         }
         redirect(action: 'timeline', id: params.id)
     }
-    
+    */
 
 }

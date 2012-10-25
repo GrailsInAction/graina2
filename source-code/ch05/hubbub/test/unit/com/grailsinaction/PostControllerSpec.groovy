@@ -3,6 +3,7 @@ package com.grailsinaction
 import grails.test.mixin.TestFor
 import spock.lang.Specification
 import grails.test.mixin.Mock
+import spock.lang.IgnoreRest
 
 
 @TestFor(PostController)
@@ -95,6 +96,24 @@ class PostControllerSpec extends Specification {
         suppliedId  |   expectedUrl
         'joe_cool'  |   '/post/timeline/joe_cool'
         null        |   '/post/timeline/chuck_norris'
+
+    }
+
+    @IgnoreRest
+    def "Adding new post via mocked service layer honours functionality"() {
+
+        given: "a mock post service"
+        def mockPostService = Mock(PostService)
+        mockPostService.createPost(_, _) >> new Post(content: "Mock Post")
+        controller.postService = mockPostService
+
+
+        when:  "controller is invoked"
+        def result = controller.addPost("joe_cool", "Posting up a storm")
+
+        then: "redirected to timeline, flash message tells us all is well"
+        flash.message ==~ /Added new post: Mock.*/
+        response.redirectedUrl == '/post/timeline/joe_cool'
 
     }
 
