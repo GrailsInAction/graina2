@@ -1,3 +1,5 @@
+package com.grailsinaction
+
 import com.grailsinaction.*
 
 class LameSecurityFilters {

@@ -104,7 +104,7 @@ class PostControllerSpec extends Specification {
 
         given: "a mock post service"
         def mockPostService = Mock(PostService)
-        mockPostService.createPost(_, _) >> new Post(content: "Mock Post")
+        1 * mockPostService.createPost(_, _) >> new Post(content: "Mock Post")
         controller.postService = mockPostService
 
 

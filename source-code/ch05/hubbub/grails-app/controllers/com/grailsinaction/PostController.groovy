@@ -14,8 +14,8 @@ class PostController {
         redirect(action: 'timeline', params: params)
     }
 
-    def timeline() {
-        def user = User.findByUserId(params.id)
+    def timeline(String id) {
+        def user = User.findByUserId(id)
         if (!user) {
             response.sendError(404) // user not found
         } else {
@@ -26,14 +26,14 @@ class PostController {
     /*
     New version of post using a service layer
     */
-    def addPost(String userId, String content) {
+    def addPost(String id, String content) {
         try {
-            def newPost = postService.createPost(userId, content)
+            def newPost = postService.createPost(id, content)
             flash.message = "Added new post: ${newPost.content}"
         } catch (PostException pe) {
             flash.message = pe.message
         }
-        redirect(action: 'timeline', id: userId)
+        redirect(action: 'timeline', id: id)
     }
 
 
