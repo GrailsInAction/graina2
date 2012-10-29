@@ -1,5 +1,7 @@
 package com.grailsinaction
 
+import grails.validation.Validateable
+
 class UserController {
 
     def scaffold = true
@@ -87,7 +89,7 @@ class UserController {
 
 }
 
-
+@Validateable
 class UserRegistrationCommand {
 
     String userId

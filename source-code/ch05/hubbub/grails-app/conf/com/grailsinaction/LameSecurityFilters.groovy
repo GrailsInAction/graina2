@@ -34,6 +34,12 @@ class LameSecurityFilters {
                         println "Setting user to ${params.login}"
                     }
                 }
+
+                if (!session.user) {
+                    redirect(controller: 'login', action: 'form')
+                    return false
+                }
+                /*
                 if (!session.user) {
                     
                     def user = User.get(1)
@@ -45,7 +51,7 @@ class LameSecurityFilters {
                     }
                     
                 }
-  
+                 */
             }
         }
 

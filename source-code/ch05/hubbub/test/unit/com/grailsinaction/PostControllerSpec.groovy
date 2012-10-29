@@ -7,7 +7,7 @@ import spock.lang.IgnoreRest
 
 
 @TestFor(PostController)
-@Mock([User,Post])
+@Mock([User,Post,LameSecurityFilters])
 class PostControllerSpec extends Specification {
 
     def "Get a users timeline given their id"() {
@@ -99,7 +99,6 @@ class PostControllerSpec extends Specification {
 
     }
 
-    @IgnoreRest
     def "Adding new post via mocked service layer honours functionality"() {
 
         given: "a mock post service"
@@ -117,6 +116,17 @@ class PostControllerSpec extends Specification {
 
     }
 
+    @IgnoreRest
+    def "Exercising security filter invocation for unauthenticated user"() {
 
+        when:
+        withFilters(action:"post") {
+            controller.addPost("glen_a_smith", "A first post")
+        }
+
+        then:
+        response.redirectedUrl == '/login/form'
+
+    }
 
 }
