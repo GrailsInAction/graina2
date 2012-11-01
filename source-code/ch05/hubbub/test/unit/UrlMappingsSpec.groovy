@@ -10,13 +10,13 @@ class UrlMappingsSpec extends Specification {
     def "Ensure basic mapping operations for user permalink"() {
 
         expect:
-        assertForwardUrlMapping(expectUrl, controller: expectCtrl, action: expectAction) {
+        assertForwardUrlMapping(url, controller: expectCtrl, action: expectAction) {
             id = expectId
         }
 
         where:
-        expectUrl               | expectCtrl| expectAction  | expectId
-        '/users/glen'           | 'post'    | 'timeline'    | 'glens'
+        url                     | expectCtrl| expectAction  | expectId
+        '/users/glen'           | 'post'    | 'timeline'    | 'glen'
         '/timeline/chuck_norris'| 'post'    | 'timeline'    | 'chuck_norris'
     }
 
