@@ -43,6 +43,7 @@ class UserControllerSpec extends Specification {
         urc.userId = userId
         urc.password = password
         urc.passwordRepeat = passwordRepeat
+        urc.fullName = "Your Name Here"
 
         when: "the validator is invoked"
         def isValidRegistration = urc.validate()
@@ -50,6 +51,7 @@ class UserControllerSpec extends Specification {
         then: "the appropriate fields are flagged as errors"
         isValidRegistration == anticipatedValid
         urc.errors.getFieldError(fieldInError)?.code == errorCode
+        println urc.errors
 
         where:
         userId  | password   | passwordRepeat| anticipatedValid   | fieldInError       | errorCode

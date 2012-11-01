@@ -106,7 +106,8 @@ class UserRegistrationCommand {
     String jabberAddress
 
     static constraints = {
-        userId(size: 3..20)
+        importFrom Profile
+        importFrom User
 
         // Ensure password does not match userid
         password(size: 6..8, blank: false,
@@ -117,14 +118,6 @@ class UserRegistrationCommand {
                 validator: { passwd2, urc ->
                     return passwd2 == urc.password
                 })
-        fullName(nullable: true)
-        bio(nullable: true, maxSize: 1000)
-        homepage(url: true, nullable: true)
-        email(email: true, nullable: true)
-        photo(nullable: true)
-        country(nullable: true)
-        timezone(nullable: true)
-        jabberAddress(email: true, nullable: true)
     }
 
 
