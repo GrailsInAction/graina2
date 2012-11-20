@@ -1,6 +1,5 @@
 package com.grailsinaction
 
 class TagController {
-
-    def scaffold = true
+    static scaffold = true
 }
