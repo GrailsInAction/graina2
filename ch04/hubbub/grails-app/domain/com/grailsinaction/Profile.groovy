@@ -10,6 +10,7 @@ class Profile {
     String timezone
     String country
     String jabberAddress
+
     static constraints = {
         fullName nullable: true
         bio nullable: true, maxSize: 1000
