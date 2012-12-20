@@ -1,28 +1,38 @@
 <html>
     <head>
-        <title>MyTimeline for ${user.profile.fullName}</title>
-        <%-- <meta name="layout" content="main"/> --%>
-        <g:if test="${user.profile.skin}">
-            <link rel="stylesheet" href="<g:createLinkTo dir='css' file='${user.profile.skin}.css'/>"/>
-        </g:if>
+        <title>Timeline for ${ user.profile ? user.profile.fullName : user.id }</title>
+        <meta name="layout" content="main"/>
     </head>
     <body>
 
-	<!--
-        <h3>
-            Personal Timeline for ${user.profile.fullName}
-        </h3>
-	-->
+        <div id="newPost">
 
-        <g:if test="${session.user}">
-            <g:render template="newpost" model="[user: user, timelineType: 'mytimeline']"/>
-        </g:if>
+            <h3>
+                What is ${ user.profile ? user.profile.fullName : user.id } hacking on right now?
+            </h3>
 
-        <div id="allPosts">
-            <g:render template="postentries" collection="${posts}" />
+            <g:if test="${flash.message}">
+                <div class="flash">
+                    ${flash.message}
+                </div>
+            </g:if>
+
+            <p>
+                <g:form action="addPost" id="${params.id}">
+                    <g:textArea id='postContent' name="content" rows="3" cols="50"/><br/>
+                    <g:submitButton name="post" value="Post"/>
+                </g:form>
+            </p>
         </div>
 
-        <g:paginate total="${postCount}"/>
+        <div class="allPosts">
+            <g:each in="${user.posts}" var="post">
+                <div class="postEntry">
+                    <div class="postText">${post.content}</div>
+                    <div class="postDate">${post.dateCreated}</div>
+                </div>
+            </g:each>
+        </div>
 
     </body>
 </html>

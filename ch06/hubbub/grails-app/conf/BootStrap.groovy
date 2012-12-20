@@ -1,104 +1,116 @@
 import com.grailsinaction.*
-import grails.util.Environment
 
-class BootStrap { 
+class BootStrap {
 
     def init = { servletContext ->
-
-        switch (Environment.current) {
-
-            case Environment.DEVELOPMENT:
-                // createAdminUserIfRequired()
-                createTestingUsers()
-                break;
-
-            case Environment.PRODUCTION:
-                println "No special configuration required"
-                break;
-
+        environments {
+            development {
+                if (!Post.count()) createSampleData()
+            }
+            test {
+                if (!Post.count()) createSampleData()
+            }
         }
+
+        // Admin user is required for all environments
+        createAdminUserIfRequired()
+    }
+
+    private createSampleData() {
+
+        def now = new Date()
+        def franky = new User(
+                loginId: "franky",
+                password: "testing",
+                profile: new Profile(email: "franky@nowhere.net"),
+                dateCreated: now).save(failOnError: true)
+        def sara = new User(
+                loginId: "sara",
+                password: "crikey",
+                profile: new Profile(email: "sara@nowhere.net"),
+                dateCreated: now - 2).save(failOnError: true)
+        def phil = new User(
+                loginId: "phil",
+                password: "thomas",
+                profile: new Profile(email: "phil@nowhere.net"),
+                dateCreated: now)
+        def dillon = new User(loginId: "dillon",
+                password: "crikey",
+                profile: new Profile(email: "dillon@nowhere.net"),
+                dateCreated: now - 2).save(failOnError: true)
+
+        phil.addToFollowing(franky)
+        phil.addToFollowing(sara)
+        phil.save(failOnError: true)
+
+        phil.addToPosts(content: "Very first post")
+        phil.addToPosts(content: "Second post")
+        phil.addToPosts(content: "Time for a BBQ!")
+        phil.addToPosts(content: "Writing a very very long book")
+        phil.addToPosts(content: "Tap dancing")
+        phil.addToPosts(content: "Pilates is killing me")
+        phil.save()
+
+        sara.addToPosts(content: "My first post")
+        sara.addToPosts(content: "Second post")
+        sara.addToPosts(content: "Time for a BBQ!")
+        sara.addToPosts(content: "Writing a very very long book")
+        sara.addToPosts(content: "Tap dancing")
+        sara.addToPosts(content: "Pilates is killing me")
+        sara.save(flush: true)
+
+        dillon.addToPosts(content: "Pilates is killing me as well")
+        dillon.save(flush: true)
+
+        // We have to update the 'dateCreated' field after the initial save to
+        // work around Grails' auto-timestamping feature. Note that this trick
+        // won't work for the 'lastUpdated' field.
+        def postsAsList = phil.posts as List
+        postsAsList[0].addToTags(user: phil, name: "groovy")
+        postsAsList[0].addToTags(user: phil, name: "grails")
+        postsAsList[0].dateCreated = now.updated(year: 2004, month: 4)
+
+        postsAsList[1].addToTags(user: phil, name: "grails")
+        postsAsList[1].addToTags(user: phil, name: "ramblings")
+        postsAsList[1].addToTags(user: phil, name: "second")
+        postsAsList[1].dateCreated = now.updated(year: 2007, month: 1, dayOfMonth: 13)
+
+        postsAsList[2].addToTags(user: phil, name: "groovy")
+        postsAsList[2].addToTags(user: phil, name: "bbq")
+        postsAsList[2].dateCreated = now.updated(year: 2009, month: 9)
+
+        postsAsList[3].addToTags(user: phil, name: "groovy")
+        postsAsList[3].dateCreated = now.updated(year: 2011, month: 4, dayOfMonth: 1)
+
+        postsAsList[4].dateCreated = now.updated(year: 2011, month: 11, dayOfMonth: 4)
+        postsAsList[5].dateCreated = now.updated(year: 2012, dayOfMonth: 10)
+        phil.save(failOnError: true)
+
+        postsAsList = sara.posts as List
+        postsAsList[0].dateCreated = now.updated(year: 2007, month: 4)
+        postsAsList[1].dateCreated = now.updated(year: 2008, month: 2, dayOfMonth: 13)
+        postsAsList[2].dateCreated = now.updated(year: 2008, month: 3, dayOfMonth: 24)
+        postsAsList[3].dateCreated = now.updated(year: 2011, month: 10, dayOfMonth: 8)
+        postsAsList[4].dateCreated = now.updated(year: 2011, month: 11, dayOfMonth: 4)
+        postsAsList[5].dateCreated = now.updated(year: 2012, month: 7, dayOfMonth: 1)
         
+        sara.dateCreated = now - 2
+        sara.save(failOnError: true)
+
+        dillon.dateCreated = now - 2
+        dillon.save(failOnError: true)
     }
 
-
-    def destroy = {
-    }
-
-    void createAdminUserIfRequired() {
-        if (!User.findByUserId("admin")) {
+    private createAdminUserIfRequired() {
+        if (!User.findByLoginId("admin")) {
             println "Fresh Database. Creating ADMIN user."
+
             def profile = new Profile(email: "admin@yourhost.com")
-            def user = new User(userId: "admin",
-                password: "secret", profile: profile).save()
-        } else {
+            new User(loginId: "admin", password: "secret", profile: profile).save()
+        }
+        else {
             println "Existing admin user, skipping creation"
         }
     }
 
-
-    void createTestingUsers()  {
-
-        def samples = [
-                       'chuck_norris' : [ fullName: 'Chuck Norris', bio: 'Can kill two stones with one bird' ],
-                       'glen' : [ fullName: 'Glen Smith', jabberAddress: 'glen@decaf.local' ],
-                       'peter' : [ fullName: 'Peter Ledbrook' ],
-                       'sven' : [ fullName: 'Sven Haiges' ],
-                       'burt' : [fullName : 'Burt Beckwith']
-        ]
- 
-        def now = new Date()
-
-        if (!User.list()) {
-            samples.each { userId, profileAttrs ->
-                def user = new User(userId: userId, password: "password")
-                if (user.validate()) {
-                    println "Creating user ${userId}..."
-                    user.profile = new Profile(profileAttrs)
-                    def url = this.class.getResource("/${userId}.jpg")
-                    if (url) {
-                        def image = new File(url.toURI()).readBytes()
-                        println "Creating With custom photo"
-                        user.profile.photo = image
-                    }
-                    user.save(flush:true)
-					def tag = new Tag(name: "grails", user: user).save()
-                    def tag2 = new Tag(name: "groovy", user: user).save()
-                    // 10.downto(1) { postNo ->
-                        def post = new Post(content: "A first post from ${userId}", user: user, tag: tag).save()
-                        post.dateCreated = now--
-
-                        post.addToTags(tag)
-                        user.addToPosts(post)
-                    // }
-                } else {
-                    println("\n\n\nError in account bootstrap for ${userId}!\n\n\n")
-                    user.errors.each {err ->
-                        println err
-                    }
-                }
-            }
-            samples.each { userId, profileAttrs ->
-                println "Searching for user ${userId}"
-                def user = User.findByUserId(userId)
-                println "User is ${user}"
-                def others = samples.keySet().findAll { it != userId }
-                def skip = true // to mix followers
-                others.each { otherId ->
-                    skip = !skip
-                    if (!skip) {
-                      def other = User.findByUserId(otherId)
-                      user.addToFollowing(other)
-                      println "${user.userId} is following ${otherId}"
-                    }
-                }
-
-            }
-            def loner = new User(userId: 'loner', password: "password").save()
-
-           
-        }
-
-
-    }
 }
-
