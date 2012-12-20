@@ -1,27 +1,39 @@
 
 
 body {
-
     background: #dddddd;
-    padding-top: 4px;
     font-family: "Helvetica";
 }
 
 #hd {
     padding: 1em;
-    background-image: url('../images/background.png');
-    background-repeat: repeat-x;
+
+    /* Cross-browser gradient fill for the header */
+    background-image: linear-gradient(top, rgb(120,120,240) 5%, rgb(6,3,82) 100%, rgb(36,36,171) 100%);
+    background-image: -o-linear-gradient(top, rgb(120,120,240) 5%, rgb(6,3,82) 100%, rgb(36,36,171) 100%);
+    background-image: -moz-linear-gradient(top, rgb(120,120,240) 5%, rgb(6,3,82) 100%, rgb(36,36,171) 100%);
+    background-image: -webkit-linear-gradient(top, rgb(120,120,240) 5%, rgb(6,3,82) 100%, rgb(36,36,171) 100%);
+    background-image: -ms-linear-gradient(top, rgb(120,120,240) 5%, rgb(6,3,82) 100%, rgb(36,36,171) 100%);
+
+    background-image: -webkit-gradient(
+	linear,
+	left top,
+	left bottom,
+	color-stop(0.05, rgb(120,120,240)),
+	color-stop(1, rgb(6,3,82)),
+	color-stop(1, rgb(36,36,171))
+    );
 }
 
 #bd {
     margin-top: 0.5em;
-    border: 1px solid lightgray;
     background: white;
     padding: 1em;
 }
 
 #ft {
     background: #222222;
+    clear: both;
     padding: 1em;
     text-align: center;
     color: white;
@@ -102,16 +114,6 @@ dd {
 
 .friendsThumbnails img {
     margin: 4px;
-}
-
-.flash {
-    background: #ffe957;
-    border: 1px dotted black;
-    color: black;
-    padding: 1em;
-    margin: 1em;
-    font-weight: bold;
-    background-color: #ffe957;
 }
 
 .errors {
