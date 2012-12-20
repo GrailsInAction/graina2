@@ -18,4 +18,5 @@ class User {
         profile nullable: true
 
     }
+
 }
