@@ -2,17 +2,16 @@
 <html>
 <head>
   <title>Hubbub &raquo; <g:layoutTitle default="Welcome" /></title>
-  <link rel="stylesheet" href="${resource(dir: 'css', file: 'hubbub.css')}"/>
-  <link rel="stylesheet" href="${resource(dir: 'css', file: 'main.css')}"/>
+  <g:external dir="css" file="hubbub.css"/>
+  <g:external dir="css" file="main.css"/>
   <g:layoutHead />
 </head>
 <body>
   <div>
     <div id="hd">
-      <a href="${resource(dir: '/')}">
-        <img id="logo" src="${resource(dir: 'images', file: 'headerlogo.png')}" 
-             alt="hubbub logo"/>
-      </a>
+      <g:link uri="/">
+        <g:img id="logo" uri="/images/headerlogo.png" alt="hubbub logo"/>
+      </g:link>
     </div>
     <div id="bd"><!-- start body -->
       <g:layoutBody/>
