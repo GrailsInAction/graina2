@@ -54,10 +54,13 @@ class UserControllerSpec extends Specification {
         println urc.errors
 
         where:
-        userId  | password   | passwordRepeat| anticipatedValid   | fieldInError       | errorCode
-        "glen"  | "password" | "no-match"   | false               | "passwordRepeat"   | "validator.invalid"
-        "peter" | "password" | "password"   | true                | null               | null
-        "a"     | "password" | "password"   | false               | "userId"           | "size.toosmall"
+        
+        password = 'password'
+        
+        userId  | passwordRepeat | anticipatedValid   | fieldInError       | errorCode
+        "glen"  | "no-match"     | false               | "passwordRepeat"   | "validator.invalid"
+        "peter" | "password"     | true                | null               | null
+        "a"     | "password"     | false               | "userId"           | "size.toosmall"
 
     }
 
