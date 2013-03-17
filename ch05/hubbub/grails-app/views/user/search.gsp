@@ -12,6 +12,5 @@
             <g:submitButton name="search" value="Search"/>
         </g:form>
     </formset>
-    <g:textField name="loginId"/>
 </body>
 </html>
