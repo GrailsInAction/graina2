@@ -65,10 +65,10 @@ class UserIntegrationSpec extends IntegrationSpec  {
         user.hasErrors()
 
         "size.toosmall" == user.errors.getFieldError("password").code                     
-        "tiny" == user.errors.getFieldError("password").rejectedValue        
-        "url.invalid" == user.errors.getFieldError("homepage").code 
-        "not-a-url" == user.errors.getFieldError("homepage").rejectedValue
-        !user.errors.getFieldError("loginId")                  
+        "tiny" == user.errors.getFieldError("password").rejectedValue
+        !user.errors.getFieldError("loginId")
+
+        // 'homepage' is now on the Profile class, so is not validated.
     
     }
 
@@ -81,7 +81,8 @@ class UserIntegrationSpec extends IntegrationSpec  {
 
         when: "We fix the invalid properties"
         chuck.password = "fistfist"
-        chuck.homepage = "http://www.chucknorrisfacts.com"
+
+        // 'homepage' is now on Profile so can't be set on the user.
 
         then: "The user saves and validates fine"
         chuck.validate()
