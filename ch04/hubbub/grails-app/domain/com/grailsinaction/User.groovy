@@ -24,4 +24,7 @@ class User {
     static mapping = {
         profile lazy: false
     }
+
+    String toString() { return "User $loginId (id: $id)" }
+    String getDisplayString() { return loginId }
 }
