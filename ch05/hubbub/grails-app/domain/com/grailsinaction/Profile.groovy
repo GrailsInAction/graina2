@@ -1,7 +1,7 @@
 package com.grailsinaction
 
 class Profile {
-    static belongsTo = User                     
+    User user
     byte[] photo           
     String fullName
     String bio
@@ -15,10 +15,13 @@ class Profile {
         fullName nullable: true
         bio nullable: true, maxSize: 1000
         homepage url: true, nullable: true
-        email email: true, nullable: true
+        email email: true, nullable: false
         photo nullable: true
         country nullable: true
         timezone nullable: true
         jabberAddress email: true, nullable: true
     }
+
+    String toString() { return "Profile of $fullName (id: $id)" }
+    String getDisplayString() { return fullName }
 }
