@@ -22,19 +22,22 @@ grails.project.dependency.resolution = {
     }
 
     dependencies {
+        test "org.spockframework:spock-grails-support:0.7-groovy-2.0"
     }
 
     plugins {
         runtime ":hibernate:$grailsVersion"
         runtime ":jquery:1.7.2"
-        runtime ":resources:1.1.6"
+        runtime ":resources:1.2"
 
         build ":tomcat:$grailsVersion"
 
         runtime ":database-migration:1.1"
 
-        compile ':cache:1.0.0'
+        compile ':cache:1.0.1'
 
-        test ":spock:0.7"
+        test ":spock:0.7", {
+            exclude "spock-grails-support"
+        }
     }
 }
