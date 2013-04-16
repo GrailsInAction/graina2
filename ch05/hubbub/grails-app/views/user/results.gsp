@@ -12,7 +12,7 @@
   </p>
   <ul>
     <g:each var="user" in="${users}">
-    <li>${user.loginId}</li>
+    <li><g:link controller="user" action="show" id="${user.id}">${user.loginId}</g:link></li>
     </g:each>
   </ul>
   <g:link action='search'>Search Again</g:link>
