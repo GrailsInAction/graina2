@@ -71,7 +71,7 @@ class UserIntegrationSpec extends IntegrationSpec  {
     def "Recovering from a failed save by fixing invalid properties"() {
 
         given: "A user that has invalid properties"
-        def chuck = new User(loginId: 'chuck_norris', password: 'tiny', homepage: 'not-a-url')
+        def chuck = new User(loginId: 'chuck_norris', password: 'tiny')
         assert chuck.save()  == null
         assert chuck.hasErrors()
 
