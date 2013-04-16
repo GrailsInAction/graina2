@@ -19,27 +19,42 @@ class BootStrap {
     private createSampleData() {
 
         def now = new Date()
-        def franky = new User(
-                loginId: "franky",
+        def graeme = new User(
+                loginId: "graeme",
+                password: "willow",
+                profile: new Profile(fullName: "Graeme Rocher", email: "graeme@nowhere.net"),
+                dateCreated: now).save(failOnError: true)
+        def jeff = new User(
+                loginId: "jeff",
+                password: "sheldon",
+                profile: new Profile(fullName: "Jeff Brown", email: "jeff@nowhere.net"),
+                dateCreated: now).save(failOnError: true)
+        def burt = new User(
+                loginId: "burt",
+                password: "mandible",
+                profile: new Profile(fullName: "Burt Beckwith", email: "burt@nowhere.net"),
+                dateCreated: now).save(failOnError: true)
+        def frankie = new User(
+                loginId: "frankie",
                 password: "testing",
-                profile: new Profile(email: "franky@nowhere.net"),
+                profile: new Profile(fullName: "Frankie Goes to Hollywood", email: "frankie@nowhere.net"),
                 dateCreated: now).save(failOnError: true)
         def sara = new User(
                 loginId: "sara",
                 password: "crikey",
-                profile: new Profile(email: "sara@nowhere.net"),
+                profile: new Profile(fullName: "Sara Miles", email: "sara@nowhere.net"),
                 dateCreated: now - 2).save(failOnError: true)
         def phil = new User(
                 loginId: "phil",
                 password: "thomas",
-                profile: new Profile(email: "phil@nowhere.net"),
+                profile: new Profile(fullName: "Phil Potts", email: "phil@nowhere.net"),
                 dateCreated: now)
         def dillon = new User(loginId: "dillon",
                 password: "crikey",
-                profile: new Profile(email: "dillon@nowhere.net"),
+                profile: new Profile(fullName: "Dillon Jessop", email: "dillon@nowhere.net"),
                 dateCreated: now - 2).save(failOnError: true)
 
-        phil.addToFollowing(franky)
+        phil.addToFollowing(frankie)
         phil.addToFollowing(sara)
         phil.save(failOnError: true)
 

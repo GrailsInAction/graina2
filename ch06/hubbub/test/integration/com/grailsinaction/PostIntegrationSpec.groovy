@@ -38,7 +38,7 @@ class PostIntegrationSpec extends IntegrationSpec  {
         
     }
 
-    def "Test tagging several posts with various tags"() {
+    def "Exercise tagging several posts with various tags"() {
 
         given: "A user with a set of tags"
         def user = new User(loginId: 'joe', password: 'secret').save(failOnError: true)
