@@ -13,9 +13,7 @@ class User {
     static constraints = {
 
         loginId size: 3..20, unique: true, blank: false
-        password size: 6..8, blank: false//, validator: { passwd, user ->
-//            return passwd != user.loginId
-//        }
+        password size: 6..8, blank: false
         tags()
         posts()
         profile nullable: true
