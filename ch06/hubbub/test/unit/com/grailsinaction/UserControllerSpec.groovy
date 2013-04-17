@@ -6,7 +6,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 @TestFor(UserController)
-@Mock([User, Profile, LameSecurityFilters])
+@Mock([User, Profile])
 class UserControllerSpec extends Specification {
 
 

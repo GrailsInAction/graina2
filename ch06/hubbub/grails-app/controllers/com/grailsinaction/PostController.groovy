@@ -3,9 +3,20 @@ package com.grailsinaction
 class PostController {
     static scaffold = true
 
+    def index() {
+        if (!params.id)
+            params.id = "chuck_norris"
+        redirect(action: 'timeline', params: params)
+    }
+
+
     def timeline() {
         def user = User.findByLoginId(params.id)
-        [ user : user ]
+        if (!user) {
+            response.sendError(404)
+        } else {
+            [ user : user ]
+        }
     }
 
     def addPost() {
@@ -16,7 +27,6 @@ class PostController {
             if (user.save()) {
                 flash.message = "Successfully created Post"
             } else {
-                user.discard()
                 flash.message = "Invalid or empty post"
             }
         } else {

@@ -6,7 +6,8 @@ class User {
     String password
     String homepage
     Date dateCreated
-    Profile profile
+
+    static hasOne = [ profile : Profile ]
 
     static hasMany = [ posts : Post, tags : Tag, following : User ]
 

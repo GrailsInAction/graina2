@@ -1,29 +1,30 @@
 package com.grailsinaction
 
 import grails.test.mixin.TestFor
+import spock.lang.Ignore
 import spock.lang.Specification
 import grails.test.mixin.Mock
 import spock.lang.IgnoreRest
 
 
 @TestFor(PostController)
-@Mock([User,Post,LameSecurityFilters])
+@Mock([User,Post])
 class PostControllerSpec extends Specification {
 
     def "Get a users timeline given their id"() {
       given: "A user with posts in the db"
-      User chuck = new User(userId: "chuck_norris", password: "password").save(failOnError: true)
+      User chuck = new User(loginId: "chuck_norris", password: "password").save(failOnError: true)
       chuck.addToPosts(new Post(content: "A first post"))
       chuck.addToPosts(new Post(content: "A second post"))
 
-      and: "A userid parameter"
-      params.id = chuck.userId
+      and: "A loginId parameter"
+      params.id = chuck.loginId
 
       when: "the timeline is invoked"
       def model = controller.timeline()
 
       then: "the user is in the returned model"
-      model.user.userId == "chuck_norris"
+      model.user.loginId == "chuck_norris"
       model.user.posts.size() == 2
     }
 
@@ -42,10 +43,10 @@ class PostControllerSpec extends Specification {
 
     def "Adding a valid new post to the timeline"() {
       given: "A user with posts in the db"
-      User chuck = new User(userId: "chuck_norris", password: "password").save(failOnError: true)
+      User chuck = new User(loginId: "chuck_norris", password: "password").save(failOnError: true)
 
-      and: "A userid parameter"
-      params.id = chuck.userId
+      and: "A loginId parameter"
+      params.id = chuck.loginId
 
       and: "Some content for the post"
       params.content = "Chuck Norris can unit test entire applications with a single assert."
@@ -55,17 +56,17 @@ class PostControllerSpec extends Specification {
 
       then: "our flash message and redirect confirms the success"
       flash.message == "Successfully created Post"
-      response.redirectedUrl == "/post/timeline/${chuck.userId}"
+      response.redirectedUrl == "/post/timeline/${chuck.loginId}"
       Post.countByUser(chuck) == 1
 
     }
 
     def "Adding a invalid new post to the timeline trips an error"() {
         given: "A user with posts in the db"
-        User chuck = new User(userId: "chuck_norris", password: "password").save(failOnError: true)
+        User chuck = new User(loginId: "chuck_norris", password: "password").save(failOnError: true)
 
-        and: "A userid parameter"
-        params.id = chuck.userId
+        and: "A loginId parameter"
+        params.id = chuck.loginId
 
         and: "Some content for the post"
         params.content = null
@@ -75,7 +76,7 @@ class PostControllerSpec extends Specification {
 
         then: "our flash message and redirect confirms the success"
         flash.message == "Invalid or empty post"
-        response.redirectedUrl == "/post/timeline/${chuck.userId}"
+        response.redirectedUrl == "/post/timeline/${chuck.loginId}"
         Post.countByUser(chuck) == 0
 
     }
@@ -99,6 +100,7 @@ class PostControllerSpec extends Specification {
 
     }
 
+    @Ignore
     def "Adding new post via mocked service layer honours functionality"() {
 
         given: "a mock post service"
@@ -116,7 +118,7 @@ class PostControllerSpec extends Specification {
 
     }
 
-    @IgnoreRest
+    @Ignore
     def "Exercising security filter invocation for unauthenticated user"() {
 
         when:

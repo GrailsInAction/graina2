@@ -22,6 +22,7 @@ grails.project.dependency.resolution = {
     }
 
     dependencies {
+        test "org.spockframework:spock-grails-support:0.7-groovy-2.0"
     }
 
     plugins {
@@ -35,6 +36,8 @@ grails.project.dependency.resolution = {
 
         compile ':cache:1.0.0'
 
-        test ":spock:0.7"
+        test(":spock:0.7") {
+            exclude "spock-grails-support"
+        }
     }
 }
