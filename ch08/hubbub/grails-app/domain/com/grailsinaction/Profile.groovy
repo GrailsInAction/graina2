@@ -10,6 +10,7 @@ class Profile {
     String timezone
     String country
     String jabberAddress
+    String skin
 
     static constraints = {
         fullName nullable: true
@@ -20,6 +21,7 @@ class Profile {
         country nullable: true
         timezone nullable: true
         jabberAddress email: true, nullable: true
+        skin nullable: true, blank: true, inList: ['blues', 'nighttime']
     }
 
     String toString() { return "Profile of $fullName (id: $id)" }
