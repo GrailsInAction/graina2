@@ -12,7 +12,7 @@ class Profile {
     String jabberAddress
 
     static constraints = {
-        fullName nullable: true
+        fullName blank: true
         bio nullable: true, maxSize: 1000
         homepage url: true, nullable: true
         email email: true, nullable: false
