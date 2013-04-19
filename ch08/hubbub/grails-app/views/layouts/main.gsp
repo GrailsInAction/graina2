@@ -6,6 +6,7 @@
   <g:external dir="css" file="main.css"/>
   <nav:resources/>
   <g:layoutHead/>
+  <r:layoutResources/>
 </head>
 <body>
   <div>
@@ -22,5 +23,6 @@
       <div id="footerText">Hubbub - Social Networking on Grails</div>
     </div>
   </div>
+  <r:layoutResources/>
 </body>
 </html>

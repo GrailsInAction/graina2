@@ -31,7 +31,27 @@ class PostController {
         } catch (PostException pe) {
             flash.message = pe.message
         }
-        redirect action: 'timeline', id: id
+        redirect action: "timeline", id: id
+    }
+    
+    def addPostAjax(String content) {
+        try {
+            def newPost = postService.createPost(session.user.loginId, content)
+            def recentPosts = Post.findAllByUser(session.user, [sort: "dateCreated", order: "desc", max: 20])
+            render template: "postentries", collection: recentPosts, var: "post"
+        } catch (PostException pe) {
+            render {
+                div(class:"errors", pe.message)
+            }
+        }
+    }
+
+    def tinyurl(String fullUrl) {
+        def origUrl = fullUrl?.encodeAsURL()
+        def tinyUrl = new URL("http://tinyurl.com/api-create.php?url=${origUrl}").text
+        render(contentType:"application/json") {
+            urls(small: tinyUrl, full: params.fullUrl)
+        }
     }
     
 }
