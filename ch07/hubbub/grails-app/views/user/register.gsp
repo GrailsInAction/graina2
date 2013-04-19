@@ -5,6 +5,11 @@
 </head>
 <body>
     <h1>Register New User</h1>
+    <g:if test="${flash.message}">
+        <div class="flash">
+            ${flash.message}
+        </div>
+    </g:if>
     <g:hasErrors>
         <div class="errors">
            <g:renderErrors bean="${user}" as="list" />
