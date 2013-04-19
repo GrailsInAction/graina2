@@ -7,6 +7,8 @@ class PhotoUploadCommand {
 
 class ImageController {
 
+    static defaultAction = "form"
+
     def upload(PhotoUploadCommand puc) {
         def user = User.findByLoginId(puc.loginId)
         user.profile.photo = puc.photo
