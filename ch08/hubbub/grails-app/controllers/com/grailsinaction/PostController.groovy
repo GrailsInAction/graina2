@@ -50,7 +50,7 @@ class PostController {
         def origUrl = fullUrl?.encodeAsURL()
         def tinyUrl = new URL("http://tinyurl.com/api-create.php?url=${origUrl}").text
         render(contentType:"application/json") {
-            urls(small: tinyUrl, full: params.fullUrl)
+            urls(small: tinyUrl, full: fullUrl)
         }
     }
     
