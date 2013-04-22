@@ -14,7 +14,7 @@ class DateTagLib {
         out << niceDate
     }
 
-    static String getNiceDate(Date date) {
+    String getNiceDate(Date date) {
         final long second = 1000
         final long minute = second * 60
         final long hour = minute * 60
