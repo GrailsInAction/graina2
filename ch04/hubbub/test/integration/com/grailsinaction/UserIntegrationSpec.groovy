@@ -7,7 +7,7 @@ class UserIntegrationSpec extends IntegrationSpec  {
 
     def "Saving our first user to the database"() {
 
-    	given: "A brand new user"
+        given: "A brand new user"
         def joe = new User(loginId: 'joe', password: 'secret')
 
         when: "the user is saved"
