@@ -64,7 +64,7 @@ class BootStrap {
         phil.addToPosts(content: "Writing a very very long book")
         phil.addToPosts(content: "Tap dancing")
         phil.addToPosts(content: "Pilates is killing me")
-        phil.save()
+        phil.save(failOnError: true)
 
         sara.addToPosts(content: "My first post")
         sara.addToPosts(content: "Second post")
@@ -72,10 +72,10 @@ class BootStrap {
         sara.addToPosts(content: "Writing a very very long book")
         sara.addToPosts(content: "Tap dancing")
         sara.addToPosts(content: "Pilates is killing me")
-        sara.save(flush: true)
+        sara.save(failOnError: true)
 
         dillon.addToPosts(content: "Pilates is killing me as well")
-        dillon.save(flush: true)
+        dillon.save(failOnError: true, flush: true)
 
         // We have to update the 'dateCreated' field after the initial save to
         // work around Grails' auto-timestamping feature. Note that this trick
@@ -113,7 +113,8 @@ class BootStrap {
         sara.save(failOnError: true)
 
         dillon.dateCreated = now - 2
-        dillon.save(failOnError: true)
+        dillon.save(failOnError: true, flush: true)
+
     }
 
     private createAdminUserIfRequired() {
