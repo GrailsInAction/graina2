@@ -16,10 +16,11 @@ class PostServiceSpec extends Specification {
 
         given: "A new user in the db"
         def securityService = Mock(SpringSecurityService)
-        _ * securityService.encodePassword(_) >> "skfjhaskfh"
+        securityService.encodePassword(_ as String) >> "skfjhaskfh"
 
-        User chuck = new User(loginId: "chuck_norris", password: "password")
+        User chuck = new User(loginId: "chuck_norris")
         chuck.springSecurityService = securityService
+        chuck.password = "password"
         chuck.save(failOnError: true)
 
         when: "a new post is created by the service"
@@ -35,10 +36,11 @@ class PostServiceSpec extends Specification {
 
         given: "A new user in the db"
         def securityService = Mock(SpringSecurityService)
-        _ * securityService.encodePassword(_) >> "skfjhaskfh"
+        securityService.encodePassword(_ as String) >> "skfjhaskfh"
 
-        def chuck = new User(loginId: "chuck_norris", password: "password")
+        def chuck = new User(loginId: "chuck_norris")
         chuck.springSecurityService = securityService
+        chuck.password = "password"
         chuck.save(failOnError: true)
 
         when: "an invalid post is attempted"

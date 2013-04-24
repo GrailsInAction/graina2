@@ -28,11 +28,11 @@ class UserIntegrationSpec extends IntegrationSpec  {
 
         when: "A property is changed"
         def foundUser = User.get(existingUser.id)    
-        foundUser.password = 'sesame'                   
+        foundUser.password = 'sesame'
         foundUser.save(failOnError: true)              
 
         then: "The change is reflected in the database"
-        User.get(existingUser.id).password == 'sesame'
+        User.get(existingUser.id).passwordHash == 'sesame'.encodeAsSHA256()
 
     }
 
@@ -52,31 +52,32 @@ class UserIntegrationSpec extends IntegrationSpec  {
     def "Saving a user with invalid properties causes an error"() {
 
         given: "A user which fails several field validations"
-        def user = new User(loginId: 'chuck_norris', password: 'tiny')
+        def user = new User(loginId: 'me', password: 'tiny')
 
         when:  "The user is validated"
         user.validate()
 
         then:
         user.hasErrors()
-
-        "size.toosmall" == user.errors.getFieldError("password").code                     
-        "tiny" == user.errors.getFieldError("password").rejectedValue
-        !user.errors.getFieldError("loginId")
+        user.errors.getFieldError("loginId")
+        !user.errors.getFieldError("passwordHash")
 
         // 'homepage' is now on the Profile class, so is not validated.
+
+        // The password is no longer validated on the domain class because
+        // its SHA256 hash is stored instead.
     
     }
 
     def "Recovering from a failed save by fixing invalid properties"() {
 
         given: "A user that has invalid properties"
-        def chuck = new User(loginId: 'chuck_norris', password: 'tiny')
+        def chuck = new User(loginId: 'me', password: 'tiny')
         assert chuck.save()  == null
         assert chuck.hasErrors()
 
         when: "We fix the invalid properties"
-        chuck.password = "fistfist"
+        chuck.loginId = "chuck_norris"
 
         // 'homepage' is now on Profile so can't be set on the user.
 

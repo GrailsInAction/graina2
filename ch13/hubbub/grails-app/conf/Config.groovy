@@ -91,10 +91,12 @@ log4j = {
 }
 
 // Added by the Spring Security Core plugin:
-grails.plugins.springsecurity.userLookup.userDomainClassName = 'com.grailsinaction.User'
-grails.plugins.springsecurity.userLookup.usernamePropertyName = 'loginId'
-grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'com.grailsinaction.UserRole'
-grails.plugins.springsecurity.authority.className = 'com.grailsinaction.Role'
+grails.plugins.springsecurity.userLookup.userDomainClassName = "com.grailsinaction.User"
+grails.plugins.springsecurity.userLookup.usernamePropertyName = "loginId"
+grails.plugins.springsecurity.userLookup.passwordPropertyName = "passwordHash"
+grails.plugins.springsecurity.userLookup.authorityJoinClassName = "com.grailsinaction.UserRole"
+grails.plugins.springsecurity.authority.className = "com.grailsinaction.Role"
+grails.plugins.springsecurity.successHandler.defaultTargetUrl = "/"
 
 grails.plugins.springsecurity.securityConfigType = "InterceptUrlMap"
 grails.plugins.springsecurity.interceptUrlMap = [
