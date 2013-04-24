@@ -8,9 +8,9 @@ class TwitterUser implements TwitterUserDomain {
     String tokenSecret
     String token
 
-	static belongsTo = [user: User]
+    static belongsTo = [user: User]
 
-	static constraints = {
-		uid unique: true
-	}
+    static constraints = {
+        uid unique: true
+    }
 }
