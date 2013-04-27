@@ -46,7 +46,7 @@ class PostController {
         }
     }
 
-    def tinyurl(String fullUrl) {
+    def tinyUrl(String fullUrl) {
         def origUrl = fullUrl?.encodeAsURL()
         def tinyUrl = new URL("http://tinyurl.com/api-create.php?url=${origUrl}").text
         render(contentType:"application/json") {

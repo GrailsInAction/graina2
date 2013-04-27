@@ -60,10 +60,10 @@
         </div>
 
         <div id="tinyUrl" style="display:none;">
-           <g:formRemote name="tinyUrlForm" url="[action: 'tinyurl']" onSuccess="addTinyUrl(data);">
-              TinyUrl: <g:textField name="fullUrl"/>
-              <g:submitButton name="submit" value="Make Tiny"/>
-           </g:formRemote>
+<g:formRemote name="tinyUrlForm" url="[action: 'tinyUrl']" onSuccess="addTinyUrl(data);">
+  TinyUrl: <g:textField name="fullUrl"/>
+  <g:submitButton name="submit" value="Make Tiny"/>
+</g:formRemote>
 
             <g:javascript>
             function addTinyUrl(data) {
