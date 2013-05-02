@@ -106,5 +106,11 @@ grails.cache.config = {
         diskExpiryThreadIntervalSeconds 120
         memoryStoreEvictionPolicy 'LRU'
     }
+
+    cache {
+        name 'myDailyCache'
+        timeToLiveSeconds 60*60*24
+    }
+
 }
 
