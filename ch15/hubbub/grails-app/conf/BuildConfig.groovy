@@ -22,6 +22,7 @@ grails.project.dependency.resolution = {
     }
 
     dependencies {
+        compile 'org.apache.activemq:activemq-core:5.7.0'
         test "org.spockframework:spock-grails-support:0.7-groovy-2.0"
     }
 
