@@ -15,11 +15,8 @@ class JabberServiceIntegrationSpec extends IntegrationSpec {
         def jabberIds = ["glen@grailsinaction.com",
                 "peter@grailsinaction.com" ]
 
-        when:
+        expect:
         jabberService.sendMessage(post, jabberIds)
-
-        then:
-        true
 
     }
 }
