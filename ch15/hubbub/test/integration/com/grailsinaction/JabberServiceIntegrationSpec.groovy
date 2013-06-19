@@ -7,6 +7,9 @@ import spock.lang.Specification
 class JabberServiceIntegrationSpec extends IntegrationSpec {
 
     def jabberService
+    def jmsService
+
+    def jmsOutputQueue = "jabberOutQ"
 
     def "First send to a queue"() {
         given: "Some sample queue data"
@@ -14,9 +17,15 @@ class JabberServiceIntegrationSpec extends IntegrationSpec {
                 content: 'is backstroking across the atlantic']
         def jabberIds = ["glen@grailsinaction.com",
                 "peter@grailsinaction.com" ]
+        def currentMsgs = jmsService.browse(jabberService.sendQueue)
 
-        expect:
+        when:
         jabberService.sendMessage(post, jabberIds)
+
+        then:
+        true
+        jmsService.browse(jabberService.sendQueue).size() ==
+                currentMsgs.size() + 1
 
     }
 }

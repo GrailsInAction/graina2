@@ -128,3 +128,11 @@ grails.plugins.springsecurity.filterChain.chainMap = [
    '/**': 'JOINED_FILTERS,-basicAuthenticationFilter,-basicExceptionTranslationFilter'
 ]
 
+chat {
+    serviceName = "gmail.com"
+    host = "talk.google.com"
+    port = 5222
+    username = "your.email@gmail.com"
+    password = "your.password"
+}
+

@@ -5,6 +5,8 @@ class JabberService {
     static exposes = ["jms"]
     static destination = "jabberInQ"
 
+    static sendQueue = "jabberOutQ"
+
     def jmsService
 
     void onMessage(msg) {
@@ -22,10 +24,9 @@ class JabberService {
 
     void sendMessage(post, jabberIds) {
         log.debug "Sending jabber message for ${post.user.userId}..."
-        jmsService.sendQueueJMSMessage("jabberOutQ",
-                [ userId: post.user.userId,
-                        content: post.content,
-                        to: jabberIds.join(",") ] )
+        def msg = [ userId: post.user.userId,
+                content: post.content, to: jabberIds.join(",") ]
+        jmsService.sendQueueJMSMessage(sendQueue, msg)
     }
 
 }
