@@ -2,8 +2,10 @@
 // config files can be ConfigSlurper scripts, Java properties files, or classes
 // in the classpath in ConfigSlurper format
 
-grails.config.locations = [ "classpath:${appName}-config.groovy",
-                            "file:./${appName}-config.groovy"]
+// grails.config.locations = [ "classpath:${appName}-config.properties",
+//                             "classpath:${appName}-config.groovy",
+//                             "file:${userHome}/.grails/${appName}-config.properties",
+//                             "file:${userHome}/.grails/${appName}-config.groovy"]
 
 // if (System.properties["${appName}.config.location"]) {
 //    grails.config.locations << "file:" + System.properties["${appName}.config.location"]
@@ -11,7 +13,7 @@ grails.config.locations = [ "classpath:${appName}-config.groovy",
 
 grails.project.groupId = appName // change this to alter the default package name and Maven publishing destination
 grails.mime.file.extensions = true // enables the parsing of file extensions from URLs into the request format
-grails.mime.use.accept.header = true
+grails.mime.use.accept.header = false
 grails.mime.types = [
     all:           '*/*',
     atom:          'application/atom+xml',
@@ -86,47 +88,12 @@ log4j = {
            'org.springframework',
            'org.hibernate',
            'net.sf.ehcache.hibernate'
-
-    debug "com.the6hours.grails.springsecurity.twitter"
 }
 
-// Added by the Spring Security Core plugin:
-grails.plugins.springsecurity.userLookup.userDomainClassName = "com.grailsinaction.User"
-grails.plugins.springsecurity.userLookup.usernamePropertyName = "loginId"
-grails.plugins.springsecurity.userLookup.passwordPropertyName = "passwordHash"
-grails.plugins.springsecurity.userLookup.authorityJoinClassName = "com.grailsinaction.UserRole"
-grails.plugins.springsecurity.authority.className = "com.grailsinaction.Role"
-grails.plugins.springsecurity.successHandler.defaultTargetUrl = "/"
-
-grails.plugins.springsecurity.securityConfigType = "InterceptUrlMap"
-grails.plugins.springsecurity.interceptUrlMap = [
-   '/':             ['IS_AUTHENTICATED_ANONYMOUSLY'],
-   '/api/**':       ['IS_AUTHENTICATED_FULLY'],
-   '/user/**':      ['ROLE_ADMIN'],
-   '/role/**':      ['ROLE_ADMIN'],
-   '/secure/**':    ['ROLE_ADMIN'],
-   '/finance/**':   ['ROLE_FINANCE', 'IS_AUTHENTICATED_FULLY'],
-   '/js/**':        ['IS_AUTHENTICATED_ANONYMOUSLY'],
-   '/css/**':       ['IS_AUTHENTICATED_ANONYMOUSLY'],
-   '/images/**':    ['IS_AUTHENTICATED_ANONYMOUSLY'],
-   '/login/auth':   ['IS_AUTHENTICATED_ANONYMOUSLY'],
-   '/logout/**':    ['IS_AUTHENTICATED_ANONYMOUSLY'],
-   '/**':           ['IS_AUTHENTICATED_REMEMBERED']
-]
-
-grails.plugins.springsecurity.twitter.autoCreate.active = true
-
-
-grails.plugins.springsecurity.twitter.app.key='Hubbub'
-grails.plugins.springsecurity.twitter.app.consumerKey='JAKUl99V6SSoUTgD9xE2g'
-grails.plugins.springsecurity.twitter.app.consumerSecret='BYmgwzK2d1lM5V3LOk0y8gGrflW2eMWbtxTNxvq0w'
-
-grails.plugins.springsecurity.useBasicAuth = true
-grails.plugins.springsecurity.basic.realmName = "Hubbub"
-grails.plugins.springsecurity.filterChain.chainMap = [
-   '/api/**': 'JOINED_FILTERS',
-   '/**': 'JOINED_FILTERS,-basicAuthenticationFilter,-basicExceptionTranslationFilter'
-]
-
-
-
+chat {
+    serviceName = "gmail.com"
+    host = "talk.google.com"
+    port = 5222
+    username = "your.email@gmail.com"
+    password = "your.password"
+}

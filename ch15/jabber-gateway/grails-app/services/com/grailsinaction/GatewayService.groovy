@@ -1,6 +1,7 @@
 package com.grailsinaction
 
 class GatewayService {
+
     static expose = ['jabber', 'jms']
     static destination = "jabberOutQ"
 
@@ -20,4 +21,3 @@ class GatewayService {
         jmsService.sendQueueJMSMessage ("jabberInQ", msg)
     }
 }
-

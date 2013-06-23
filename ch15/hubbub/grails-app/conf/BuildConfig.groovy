@@ -43,7 +43,6 @@ grails.project.dependency.resolution = {
         compile ":spring-security-twitter:0.4.4"
         compile ":jms:1.2"
         compile ":quartz:1.0-RC8"
-        compile ":jabber:0.1"
 
         test ":spock:0.7", {
             exclude "spock-grails-support"

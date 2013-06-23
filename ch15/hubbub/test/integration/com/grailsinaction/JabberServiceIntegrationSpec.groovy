@@ -11,6 +11,8 @@ class JabberServiceIntegrationSpec extends IntegrationSpec {
 
     def jmsOutputQueue = "jabberOutQ"
 
+    static transactional = false
+
     def "First send to a queue"() {
         given: "Some sample queue data"
         def post = [user: [userId: 'chuck_norris'],
