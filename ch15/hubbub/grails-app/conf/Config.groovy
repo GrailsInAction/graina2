@@ -87,7 +87,8 @@ log4j = {
            'org.hibernate',
            'net.sf.ehcache.hibernate'
 
-    debug "com.the6hours.grails.springsecurity.twitter"
+    debug "com.the6hours.grails.springsecurity.twitter",
+            "grails.plugin.jms"
 }
 
 // Added by the Spring Security Core plugin:
