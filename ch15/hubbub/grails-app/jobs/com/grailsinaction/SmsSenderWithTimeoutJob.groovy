@@ -3,6 +3,7 @@ package com.grailsinaction
 class SmsSenderWithTimeoutJob {
 
     def concurrent = false
+    def volatility = false
 
     static triggers = {
       simple repeatInterval: 10000 // execute job every 10 seconds
