@@ -44,6 +44,8 @@ grails.project.dependency.resolution = {
         compile ":jms:1.2"
         compile ":quartz:1.0-RC9"
 
+        compile ":platform-core:1.0.RC5"
+
         test ":spock:0.7", {
             exclude "spock-grails-support"
         }
