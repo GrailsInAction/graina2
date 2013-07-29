@@ -15,6 +15,7 @@ class PostService {
             user.addToPosts(post)
 
             if (post.validate() && user.save()) {
+                event 'onNewPost', post
                 return post
             }
             else {
