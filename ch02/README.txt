@@ -1,14 +1,14 @@
 Grails in Action - Chapter 2 examples
 -------------------------------------
 
-The examples in this directory are mainly Groovy scripts, although
-CopingWithLineBreaks.groovy is a class. To run the examples, first
-make sure that Groovy is installed and is on your path. Then simply
-run:
+In addition to the scripts and classes added to the qotd Grails application,
+we have also included some plain Groovy scripts in this directory. To run them,
+simply execute
 
   groovy <filename>
 
-For example:
+from the command line. For example:
 
   groovy closures.groovy
 
+These examples give you more insight into Groovy's syntax and the Groovy JDK.
