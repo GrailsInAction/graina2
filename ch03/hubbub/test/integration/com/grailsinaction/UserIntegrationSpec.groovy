@@ -8,8 +8,7 @@ class UserIntegrationSpec extends IntegrationSpec  {
     def "Saving our first user to the database"() {
 
         given: "A brand new user"
-        def joe = new User(loginId: 'joe', password: 'secret',
-            homepage: 'http://www.grailsinaction.com')
+        def joe = new User(loginId: 'joe', password: 'secret')
 
         when: "the user is saved"
         joe.save()
@@ -25,8 +24,7 @@ class UserIntegrationSpec extends IntegrationSpec  {
     def "Updating a saved user changes its properties"() {
 
         given: "An existing user"
-        def existingUser = new User(loginId: 'joe', password: 'secret',
-            homepage: 'http://www.grailsinaction.com').save(failOnError: true)
+        def existingUser = new User(loginId: 'joe', password: 'secret').save(failOnError: true)
 
         when: "A property is changed"
         def foundUser = User.get(existingUser.id)    
@@ -41,8 +39,7 @@ class UserIntegrationSpec extends IntegrationSpec  {
     def "Deleting an existing user removes it from the database"() {
 
         given: "An existing user"
-        def user = new User(loginId: 'joe', password: 'secret',
-            homepage: 'http://www.grailsinaction.com').save(failOnError: true)
+        def user = new User(loginId: 'joe', password: 'secret').save(failOnError: true)
 
         when: "The user is deleted"
         def foundUser = User.get(user.id)
@@ -55,8 +52,7 @@ class UserIntegrationSpec extends IntegrationSpec  {
     def "Saving a user with invalid properties causes an error"() {
 
         given: "A user which fails several field validations"
-        def user = new User(loginId: 'chuck_norris',
-            password: 'tiny', homepage: 'not-a-url')
+        def user = new User(loginId: 'chuck_norris', password: 'tiny')
 
         when:  "The user is validated"
         user.validate()
@@ -75,7 +71,7 @@ class UserIntegrationSpec extends IntegrationSpec  {
     def "Recovering from a failed save by fixing invalid properties"() {
 
         given: "A user that has invalid properties"
-        def chuck = new User(loginId: 'chuck_norris', password: 'tiny', homepage: 'not-a-url')
+        def chuck = new User(loginId: 'chuck_norris', password: 'tiny')
         assert chuck.save()  == null
         assert chuck.hasErrors()
 
