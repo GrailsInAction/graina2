@@ -21,8 +21,19 @@ grails.project.dependency.resolution = {
         mavenCentral()
     }
 
+    def gebVersion = "0.9.0"
+    def seleniumVersion = "2.32.0"
+
     dependencies {
         test "org.spockframework:spock-grails-support:0.7-groovy-2.0"
+        test "org.gebish:geb-spock:$gebVersion"
+
+        test "org.seleniumhq.selenium:selenium-support:$seleniumVersion"
+//        test "org.seleniumhq.selenium:selenium-htmlunit-driver:$seleniumVersion", {
+//            exclude "xml-apis"
+//        }
+//        test "org.seleniumhq.selenium:selenium-chrome-driver:$seleniumVersion"
+        test "org.seleniumhq.selenium:selenium-firefox-driver:$seleniumVersion"
     }
 
     plugins {
@@ -32,12 +43,15 @@ grails.project.dependency.resolution = {
         runtime ":navigation:1.3.2"
 
         build ":tomcat:$grailsVersion"
+        test ":functional-test-development:0.9.4", {
+            exclude "hibernate"
+        }
 
         runtime ":database-migration:1.1"
 
         compile ':cache:1.0.1'
 
-        test ":spock:0.7", {
+        test ":spock:0.7", ":geb:$gebVersion", {
             exclude "spock-grails-support"
         }
     }
