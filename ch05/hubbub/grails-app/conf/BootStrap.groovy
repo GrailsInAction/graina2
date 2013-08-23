@@ -121,10 +121,6 @@ class BootStrap {
         if (!User.findByLoginId("admin")) {
             println "Fresh Database. Creating ADMIN user."
 
-            new User(
-                loginId: "admin",
-                password: "secret",
-                profile: new Profile(fullName: "Administrator", email: "admin@nowhere.net")).save(failOnError: true, flush: true)
             def profile = new Profile(email: "admin@yourhost.com", fullName: "Administrator")
             new User(loginId: "admin", password: "secret", profile: profile).save(failOnError: true)
         }
