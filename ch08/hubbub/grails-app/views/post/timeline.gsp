@@ -80,12 +80,7 @@
         </div>
 
         <div class="allPosts">
-            <g:each in="${user.posts}" var="post">
-                <div class="postEntry">
-                    <div class="postText">${post.content}</div>
-                    <div class="postDate"><hub:dateFromNow date="${post.dateCreated}"/></div>
-                </div>
-            </g:each>
+            <g:render template="postentries" collection="${user.posts}" var="post"/>
         </div>
 
     </body>

@@ -128,6 +128,10 @@ grails.plugins.springsecurity.filterChain.chainMap = [
    '/api/**': 'JOINED_FILTERS',
    '/**': 'JOINED_FILTERS,-basicAuthenticationFilter,-basicExceptionTranslationFilter'
 ]
+grails.plugins.springsecurity.useSecurityEventListener = true
+grails.plugins.springsecurity.onAuthenticationSuccessEvent = { evt, appCtx ->
+    appCtx.grailsEvents.event 'security', 'onUserLogin' , evt
+}
 
 
 

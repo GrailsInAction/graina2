@@ -1,0 +1,44 @@
+body {
+	font: Trebuchet MS, Verdana, Helvetica;
+	margin: 0px;
+}
+#quote q	{
+	font-size: 2.5em;
+	display: block;
+	margin: .5em;
+	padding: .5em;
+	background: url(../images/background.png) repeat-x;
+	border: 1px dotted black;
+}
+#quote p   {
+	font-size: 1.5em;
+	text-align:right;
+	margin-right: 2em;
+}
+#nav {
+	text-align:right;
+	margin-right: 1em;
+}
+
+#header {
+ 	background: url(../images/logo_background.png) repeat-x;
+}
+#header img {
+	padding: 1em;
+}
+#menu {
+	background: url(../images/menu_background.png) repeat-x;
+	padding: 5px;	
+}
+#menu li {
+	display: inline;
+	margin-left: 5px;
+	margin-right: 5px;
+	
+}
+
+#menu a {
+	font-size: 1.5em;
+	text-decoration: none;
+	color: #4F82B5; // #14477A
+}
