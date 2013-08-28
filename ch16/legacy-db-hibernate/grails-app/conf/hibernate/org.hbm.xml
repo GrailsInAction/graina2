@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping auto-import="true" default-lazy="false" package="com.grailsinaction.legacy.db">
+    <class name="Branch"
+           table="BK_BRANCH" mutable="false">
+        <cache usage="read-write"/>
+        <id name="name" column="BRANCH_NM">
+            <generator class="assigned"/>
+        </id>
+
+        <set name="sections" table="BK_BRANCH_TO_SECTION"
+            cascade="save-update">
+            <key column="BRANCH_NM"/>
+            <many-to-many class="Section" column="SECTION_ID"/>
+        </set>
+
+		<!--
+        <set name="files" table="BK_BRANCH_TO_FILE"
+            cascade="save-update">
+            <key column="BRANCH_NM"/>
+            <many-to-many class="File" column="FILE_ID" />
+        </set>
+		-->
+
+        <one-to-one name="manager" class="Manager" cascade="save-update"/>
+
+
+    </class>
+
+    <class name="Manager"
+           table="BK_MANAGER" >
+        <cache usage="read-write"/>
+        <id name="id" column="BRANCH_NM">
+            <generator class="foreign">
+                <param name="property">branch</param>
+            </generator>
+        </id>
+        <property name="name" column="NAME"/>
+        <property name="managementRating" column="MGMT_RATING_VAL"/>
+
+        <one-to-one name="branch" class="Branch" constrained="true"/>
+
+        <many-to-one name="location" column="LOCATION_ID" class="Location"
+                     not-null="true"/>
+    </class>
+
+
+    <class name="Location"
+           table="BK_LOCATION" >
+        <cache usage="read-write"/>
+        <id name="id" column="LOCATION_ID">
+            <generator class="increment"/>
+        </id>
+        <property name="name" column="LOCATION_NM"/>
+    </class>
+
+    <class name="Section"
+           table="BK_SECTION" >
+        <cache usage="read-write"/>
+        <id name="id" column="SECTION_ID">
+            <generator class="increment"/>
+        </id>
+        <property name="name" column="SECTION_NM"/>
+        <property name="start" type="date" column="START_DT"/>
+        <property name="end" type="date" column="END_DT"/>
+
+        <set name="branches" table="BK_BRANCH_TO_SECTION"
+            cascade="save-update">
+            <key column="SECTION_ID"/>
+            <many-to-many class="Branch" column="BRANCH_NM"/>
+        </set>
+
+        <set name="locations" table="BK_LOCATION_SECTION_MAP"
+           cascade="save-update">
+           <key column="SECTION_ID"/>
+            <composite-element class="SectionToLocation">
+                <parent name="section"/>
+                <many-to-one name="location" column="LOCATION_ID" not-null="true" class="Location"/>
+                <property name="start" type="date" column="START_DT"/>
+                <property name="end" type="date" column="END_DT"/>
+            </composite-element>
+       </set>
+
+		<set name="files" inverse="true">
+			<key column="SECTION_ID"/>
+			<one-to-many class="SectionToFile"/>
+		</set>
+			
+		<!--
+       <set name="files" table="BK_FILE_SECTION_MAP"
+           cascade="save-update">
+           <key column="SECTION_ID"/>
+           <composite-element class="SectionToFile">
+               <parent name="section"/>
+               <many-to-one name="file" column="FILE_ID" not-null="true" class="File"/>
+               <property name="start" type="date" column="START_DT"/>
+               <property name="end" type="date" column="END_DT"/>
+           </composite-element>
+       </set>
+		-->
+        
+    </class>
+
+    <class name="SectionToFile" table="BK_FILE_SECTION_MAP">
+		<composite-id name="id" class="SectionToFileId">
+			<key-property name="sectionId" access="field" column="SECTION_ID"/>
+			<key-property name="fileId" access="field" column="FILE_ID"/>			
+		</composite-id>
+		<property name="start" type="date" column="START_DT"/>
+        <property name="end" type="date" column="END_DT"/>
+		<many-to-one name="section" column="SECTION_ID" not-null="true" insert="false" update="false"/>
+		<many-to-one name="file" column="FILE_ID" not-null="true" insert="false" update="false"/>
+			
+	</class>
+
+    <class name="File" table="BK_FILE" >
+        <cache usage="read-write"/>
+         <id name="id" column="FILE_ID">
+            <generator class="increment"/>
+        </id>
+
+        <property name="name" column="FILE_NM"/>
+        <property name="description" column="FILE_DESC"/>
+        <property name="start" type="date" column="START_DT"/>
+        <property name="end" type="date" column="END_DT"/>
+        <property name="securityRating" column="SECURITY_RATING_VAL"/>
+
+        <many-to-one name="resourceType" column="FILE_TYPE_CD" class="FileType"
+                     not-null="true"/>
+
+        <many-to-one name="owner" column="FILE_OWNER_ID" class="FileOwner"
+                     not-null="true"/>
+
+		<set name="sections" inverse="true">
+				<key column="FILE_ID"/>
+				<one-to-many class="SectionToFile"/>
+		</set>
+		
+		<!--
+		<set name="branches" table="BK_BRANCH_TO_FILE"
+            cascade="save-update">
+            <key column="FILE_ID"/>
+            <many-to-many class="Branch" column="BRANCH_NM" />
+        </set>
+		-->
+        
+    </class>
+
+    <class name="FileType"
+           table="BK_FILE_TYPE" >
+        <cache usage="read-write"/>
+        <id name="type" column="FILE_TYPE_CD" type="character">
+            <generator class="assigned"/>
+        </id>
+        <property name="name" column="FILE_TYPE_NM"/>
+        <property name="description" column="FILE_TYPE_DESC"/>
+    </class>
+
+    <class name="FileOwner"
+           table="BK_FILE_OWNER" >
+        <cache usage="read-write"/>
+        <id name="id" column="FILE_OWNER_ID">
+            <generator class="increment"/>
+        </id>
+        <property name="name" column="OWNER_NM"/>
+        <property name="description" column="OWNER_DESC"/>
+    </class>
+
+</hibernate-mapping>
