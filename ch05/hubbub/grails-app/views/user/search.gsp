@@ -7,8 +7,8 @@
     <formset>
         <legend>Search for Friends</legend>
         <g:form action="results">
-            <label for="query">User Id</label>
-            <g:textField name="query" />
+            <label for="loginId">Login ID</label>
+            <g:textField name="loginId" />
             <g:submitButton name="search" value="Search"/>
         </g:form>
     </formset>
