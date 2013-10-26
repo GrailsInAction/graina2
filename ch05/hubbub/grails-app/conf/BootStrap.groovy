@@ -18,6 +18,7 @@ class BootStrap {
     }
 
     private createSampleData() {
+        println "Creating sample data"
 
         def now = new Date()
         def graeme = new User(
@@ -119,6 +120,7 @@ class BootStrap {
     }
 
     private createAdminUserIfRequired() {
+        println "Creating admin user"
         if (!User.findByLoginId("admin")) {
             println "Fresh Database. Creating ADMIN user."
 
