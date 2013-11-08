@@ -63,6 +63,9 @@ environments {
     development {
         grails.logging.jul.usebridge = true
     }
+    test {
+        dumbster.enabled = true
+    }
     production {
         grails.logging.jul.usebridge = false
         // TODO: grails.serverURL = "http://www.changeme.com"
@@ -91,7 +94,6 @@ log4j = {
 }
 
 grails.mail.host="127.0.0.1"
-grails.mail.port = com.icegreen.greenmail.util.ServerSetupTest.SMTP.port
 grails.mail.default.from="hubbub@grailsinaction.com"
 
 grails.cache.config = {

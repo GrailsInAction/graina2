@@ -5,6 +5,8 @@ import grails.plugin.spock.*
 
 class UserIntegrationSpec extends IntegrationSpec  {
 
+    def dumbster
+
     def "Saving our first user to the database"() {
 
         given: "A brand new user"
@@ -105,6 +107,26 @@ class UserIntegrationSpec extends IntegrationSpec  {
         
     }
 
+    def "Welcome email is generated and sent"() {
+
+        given: "An empty inbox"
+        dumbster.reset()
+
+        and: "a user controller"
+        def userController = new UserController()
+
+        when: "A welcome email is sent"
+        userController.welcomeEmail("tester@email.com")
+
+
+        then: "It appears in their inbox"
+        dumbster.messageCount == 1
+        def msg = dumbster.getMessages().first()
+        msg.subject ==  "Welcome to Hubbub!"
+        msg.to == "tester@email.com"
+        msg.body =~ /The Hubbub Team/
+
+    }
 
 
 

@@ -54,7 +54,7 @@ class BootStrap {
                 loginId: "phil",
                 password: "thomas",
                 profile: new Profile(fullName: "Phil Potts", email: "phil@nowhere.net"),
-                dateCreated: now)
+                dateCreated: now).save(failOnError:true)
         def dillon = new User(loginId: "dillon",
                 password: "crikey",
                 profile: new Profile(fullName: "Dillon Jessop", email: "dillon@nowhere.net"),
@@ -81,7 +81,7 @@ class BootStrap {
         sara.save(failOnError: true)
 
         dillon.addToPosts(content: "Pilates is killing me as well")
-        dillon.save(failOnError: true, flush: true)
+        dillon.save(failOnError: true)
 
         // We have to update the 'dateCreated' field after the initial save to
         // work around Grails' auto-timestamping feature. Note that this trick
@@ -116,22 +116,22 @@ class BootStrap {
         postsAsList[5].dateCreated = now.updated(year: 2012, month: AUGUST, date: 1)
         
         sara.dateCreated = now - 2
-        sara.save(failOnError: true)
+        sara.save(failOnError: true, flush: true)
 
         dillon.dateCreated = now - 2
         dillon.save(failOnError: true, flush: true)
 
         // Now that the data has been persisted, we can index it and re-enable mirroring.
         searchableService.index()
-        searchableService.stopMirroring()
+        searchableService.startMirroring()
     }
 
     private createAdminUserIfRequired() {
         if (!User.findByLoginId("admin")) {
             println "Fresh Database. Creating ADMIN user."
 
-            def profile = new Profile(email: "admin@yourhost.com")
-            new User(loginId: "admin", password: "secret", profile: profile).save()
+            def profile = new Profile(email: "admin@yourhost.com", fullName: "Admin User", dateCreated: new Date())
+            new User(loginId: "admin", password: "secret", profile: profile).save(failOnError: true)
         }
         else {
             println "Existing admin user, skipping creation"

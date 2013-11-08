@@ -30,11 +30,13 @@ grails.project.dependency.resolution = {
         compile ':cache:1.0.1'
         compile ":cache-ehcache:1.0.0"
         compile ":searchable:0.6.4"
+        test ':dumbster:0.2'
 
         runtime ":hibernate:$grailsVersion"
         runtime ":jquery:1.7.2"
         runtime ":resources:1.2"
         runtime ":navigation:1.3.2"
+
 
         build ":tomcat:$grailsVersion"
 
