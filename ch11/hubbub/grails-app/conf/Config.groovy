@@ -96,6 +96,9 @@ log4j = {
 grails.mail.host="127.0.0.1"
 grails.mail.default.from="hubbub@grailsinaction.com"
 
+grails.plugin.databasemigration.updateOnStart = true
+grails.plugin.databasemigration.updateOnStartFileNames = ['changelog.groovy']
+
 grails.cache.config = {
     defaultCache {
         maxElementsInMemory 10000
@@ -114,5 +117,10 @@ grails.cache.config = {
         timeToLiveSeconds 60*60*24
     }
 
+}
+
+searchable {
+    mirrorChanges = false
+    bulkIndexOnStartup = false
 }
 

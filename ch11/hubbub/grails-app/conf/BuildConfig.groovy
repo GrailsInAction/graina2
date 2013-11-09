@@ -26,7 +26,7 @@ grails.project.dependency.resolution = {
     }
 
     plugins {
-        compile ":mail:1.0.1", ":greenmail:1.3.4"
+        compile ":mail:1.0.1"
         compile ':cache:1.0.1'
         compile ":cache-ehcache:1.0.0"
         compile ":searchable:0.6.4"
