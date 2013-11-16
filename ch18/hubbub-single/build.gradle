@@ -1,0 +1,69 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        maven { url "http://repo.grails.org/grails/core" }
+    }
+
+    dependencies {
+        classpath "org.grails:grails-gradle-plugin:2.0.0-SNAPSHOT", "org.codehaus.groovy:groovy-all:2.1.9"
+    }
+}
+
+apply plugin: "grails"
+
+repositories {
+    maven { url "http://repo.grails.org/grails/core" }
+    maven { url "http://repo.grails.org/grails/plugins" }
+    mavenLocal()
+//    maven { url "file:///${System.getProperty('user.home')}/.m2/repository" }
+}
+
+dependencies {
+    compile 'org.apache.activemq:activemq-core:5.7.0'
+    compile "org.grails.plugins:hibernate:3.6.10.2"
+    runtime "org.grails.plugins:tomcat:7.0.42"
+
+    runtime "org.grails.plugins:jquery:1.7.2"
+    runtime "org.grails.plugins:resources:1.2"
+    runtime "org.grails.plugins:navigation:1.3.2"
+    runtime "org.grails.plugins:jquery-ui:1.8.24", "org.grails.plugins:famfamfam:1.0.1"
+
+    runtime "org.grails.plugins:database-migration:1.3.8"
+
+    compile 'org.grails.plugins:cache:1.1.1'
+    compile "org.grails.plugins:mail:1.0.1"
+    compile "org.grails.plugins:spring-security-core:1.2.7.3", "org.grails.plugins:spring-security-ui:0.2"
+    compile "org.grails.plugins:spring-security-twitter:0.4.4"
+    compile "org.grails.plugins:jms:1.3-SNAPSHOT"
+    compile "org.grails.plugins:quartz:1.0-RC9"
+
+    test "org.spockframework:spock-grails-support:0.7-groovy-2.0"
+
+//    compile "org.grails.plugins:redis:1.3.3"
+//    compile "org.grails.plugins:mongodb:1.3.0"
+//    compile "org.grails.plugins:neo4j:1.0.1"
+
+    compile "org.grails.plugins:platform-core:1.0.RC5"
+}
+
+
+group = "com.grailsinaction"
+version = "1.0-SNAPSHOT"
+
+grails {
+    grailsVersion = "2.3.3.BUILD-SNAPSHOT"
+}
+
+task stdTest(type: org.grails.gradle.plugin.tasks.GrailsTask) {
+    command = "test-app"
+    args = "--stacktrace unit: integration:"
+}
+
+tasks.'grails-war'.mustRunAfter stdTest
+assemble.dependsOn stdTest
+
+tasks.withType(org.grails.gradle.plugin.tasks.GrailsTask) { Task t ->
+    t.jvmOptions {
+        jvmArgs "-Xmx384mx", "-XX:MaxPermSize=256m"
+    }
+}

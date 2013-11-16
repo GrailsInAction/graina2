@@ -1,0 +1,7 @@
+include "app", "user-mgmt"
+
+rootProject.name = "hubbub"
+
+for (p in rootProject.children) {
+    p.buildFileName = p.name + ".gradle"
+}

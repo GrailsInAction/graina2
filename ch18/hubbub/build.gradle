@@ -1,0 +1,41 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        maven { url "http://repo.grails.org/grails/core" }
+    }
+
+    dependencies {
+        classpath "org.grails:grails-gradle-plugin:2.0.0-SNAPSHOT", "org.codehaus.groovy:groovy-all:2.1.9"
+    }
+}
+
+subprojects {
+    if (project.file("grails-app").exists()) {
+
+        apply plugin: "grails"
+
+        repositories {
+            maven { url "http://repo.grails.org/grails/core" }
+            maven { url "http://repo.grails.org/grails/plugins" }
+            mavenLocal()
+        }
+
+        dependencies {
+            compile "org.grails.plugins:hibernate:3.6.10.2"
+            runtime "org.grails.plugins:tomcat:7.0.42"
+        }
+
+        grails {
+            grailsVersion = "2.3.3.BUILD-SNAPSHOT"
+        }
+
+        tasks.withType(org.grails.gradle.plugin.tasks.GrailsTask) { Task t ->
+            t.jvmOptions {
+                jvmArgs "-Xmx512m", "-XX:MaxPermSize=256m"
+            }
+        }
+    }
+
+    group = "com.grailsinaction"
+    version = "1.0-SNAPSHOT"
+}

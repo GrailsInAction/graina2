@@ -1,0 +1,25 @@
+configurations {
+    getByName("default").extendsFrom runtime, archives
+}
+
+/*
+repositories {
+    maven { url "http://repo.grails.org/grails/plugins" }
+}
+*/
+
+dependencies {
+    bootstrap "org.grails.plugins:release:3.0.0"
+    bootstrap "org.grails.plugins:rest-client-builder:2.0.0", {
+        exclude module: "grails-core"
+    }
+
+    compile "org.grails.plugins:spring-security-core:1.2.7.3", "org.grails.plugins:spring-security-ui:0.2"
+    compile "org.grails.plugins:spring-security-twitter:0.4.4"
+}
+
+artifacts {
+    archives file("grails-user-mgmt-${version}.zip"), {
+        builtBy tasks.'grails-package-plugin'
+    }
+}
