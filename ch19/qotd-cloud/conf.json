@@ -1,0 +1,3 @@
+{ grails: { plugins: { springsecurity: { twitter: { app: { key: "Hubbub", consumerKey: "bd782bsdfj249tuni2ng", consumerSecret: "wefnin42048hgnirgn30g8hnerglsh943" } } } } }, chat: { serviceName: "gmail.com", host: "talk.google.com", port: 5222, username: "your.email@gmail.com", password: "your.password" }
+}
+

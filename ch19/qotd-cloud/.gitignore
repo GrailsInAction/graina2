@@ -1,0 +1,7 @@
+.gradle
+.idea
+devDb.*
+target
+stacktrace.log
+test/reports
+web-app/plugins

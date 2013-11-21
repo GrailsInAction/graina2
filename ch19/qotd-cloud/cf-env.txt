@@ -1,0 +1,3 @@
+Using manifest file manifest.yml
+
+JAVA_OPTS: -XX:MaxPermSize=256m -Xmx384m -XX:+CMSClassUnloadingEnabled

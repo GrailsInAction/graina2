@@ -1,0 +1,87 @@
+Using manifest file manifest.yml
+
+TMPDIR=/home/vcap/tmp
+VCAP_APP_PORT=64507
+JAVA_OPTS=-XX:MaxPermSize=256m -Xmx384m -XX:+CMSClassUnloadingEnabled
+USER=vcap
+VCAP_APPLICATION={"instance_id":"649627ec370f5fc56823ba1d902924aa","instance_index":0,"host":"0.0.0.0","port":64507,"started_at":"2013-10-25 07:34:09 +0000","started_at_timestamp":1382686449,"start":"2013-10-25 07:34:09 +0000","state_timestamp":1382686449,"limits":{"mem":768,"disk":1024,"fds":16384},"application_version":"44e83939-63a9-4a15-a369-006e8a5a9dec","application_name":"qotd","application_uris":["qotd.cfapps.io"],"version":"44e83939-63a9-4a15-a369-006e8a5a9dec","name":"qotd","uris":["qotd.cfapps.io"],"users":null}
+PATH=/bin:/usr/bin
+PWD=/home/vcap
+VCAP_SERVICES={"elephantsql-n/a":[{"name":"elephantsql-51d59","label":"elephantsql-n/a","tags":["postgres","postgresql","relational"],"plan":"turtle","credentials":{"uri":"postgres://isbdrsrk:rtPq7u8DZ2tLrq3S5ssTgAwJBIOpYxit@babar.elephantsql.com:5432/isbdrsrk"}}]}
+SHLVL=1
+HOME=/home/vcap/app
+PORT=64507
+VCAP_APP_HOST=0.0.0.0
+DATABASE_URL=postgres://isbdrsrk:rtPq7u8DZ2tLrq3S5ssTgAwJBIOpYxit@babar.elephantsql.com:5432/isbdrsrk
+MEMORY_LIMIT=768m
+_=/usr/bin/env
+
+
+-----> Downloaded app package (34M)
+-----> Downloading OpenJDK 1.7.0_21 JRE from http://download.pivotal.io.s3.amazonaws.com/openjdk/lucid/x86_64/openjdk-1.7.0_21.tar.gz (15.3s)
+       Expanding JRE to .java (1.1s)
+-----> Downloading Auto Reconfiguration 0.7.2 from http://download.pivotal.io.s3.amazonaws.com/auto-reconfiguration/auto-reconfiguration-0.7.2.jar (0.1s)
+       Modifying /WEB-INF/web.xml for Auto Reconfiguration
+-----> Downloading Tomcat 7.0.42 from http://download.pivotal.io.s3.amazonaws.com/tomcat/tomcat-7.0.42.tar.gz (7.2s)
+       Expanding Tomcat to .tomcat (0.1s)
+       Downloading Buildpack Tomcat Support 1.1.1 from http://download.pivotal.io.s3.amazonaws.com/tomcat-buildpack-support/tomcat-buildpack-support-1.1.1.jar (0.0s)
+
+
+Oct 25, 2013 7:34:14 AM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["http-bio-64507"]
+Oct 25, 2013 7:34:14 AM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 640 ms
+Oct 25, 2013 7:34:14 AM org.apache.catalina.core.StandardService startInternal
+INFO: Starting service Catalina
+Oct 25, 2013 7:34:14 AM org.apache.catalina.core.StandardEngine startInternal
+INFO: Starting Servlet Engine: Apache Tomcat/7.0.42
+Oct 25, 2013 7:34:14 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /home/vcap/app/.tomcat/webapps/ROOT
+Oct 25, 2013 7:34:18 AM org.apache.catalina.startup.TaglibUriRule body
+INFO: TLD skipped. URI: http://java.sun.com/jsp/jstl/core is already defined
+Oct 25, 2013 7:34:18 AM org.apache.catalina.startup.TaglibUriRule body
+INFO: TLD skipped. URI: http://java.sun.com/jsp/jstl/fmt is already defined
+Oct 25, 2013 7:34:18 AM org.apache.catalina.startup.TaglibUriRule body
+INFO: TLD skipped. URI: http://www.springframework.org/tags is already defined
+Oct 25, 2013 7:34:20 AM org.cloudfoundry.reconfiguration.CloudAutoStagingBeanFactoryPostProcessor autoStagingOff
+INFO: Autostaging is active.
+Oct 25, 2013 7:34:20 AM org.cloudfoundry.reconfiguration.AbstractServiceConfigurer configure
+INFO: No beans of type javax.sql.DataSource found in application context
+Oct 25, 2013 7:34:20 AM org.cloudfoundry.reconfiguration.AbstractServiceConfigurer getBeanNames
+INFO: Class org.springframework.data.mongodb.MongoDbFactory not found.  Skipping autostaging.
+Oct 25, 2013 7:34:20 AM org.cloudfoundry.reconfiguration.AbstractServiceConfigurer configure
+INFO: No beans of type org.springframework.data.mongodb.MongoDbFactory found in application context
+Oct 25, 2013 7:34:20 AM org.cloudfoundry.reconfiguration.AbstractServiceConfigurer getBeanNames
+INFO: Class org.springframework.data.redis.connection.RedisConnectionFactory not found.  Skipping autostaging.
+Oct 25, 2013 7:34:20 AM org.cloudfoundry.reconfiguration.AbstractServiceConfigurer configure
+INFO: No beans of type org.springframework.data.redis.connection.RedisConnectionFactory found in application context
+Oct 25, 2013 7:34:20 AM org.cloudfoundry.reconfiguration.AbstractServiceConfigurer getBeanNames
+INFO: Class org.springframework.amqp.rabbit.connection.ConnectionFactory not found.  Skipping autostaging.
+Oct 25, 2013 7:34:20 AM org.cloudfoundry.reconfiguration.AbstractServiceConfigurer configure
+INFO: No beans of type org.springframework.amqp.rabbit.connection.ConnectionFactory found in application context
+Oct 25, 2013 7:34:33 AM org.cloudfoundry.reconfiguration.CloudAutoStagingBeanFactoryPostProcessor autoStagingOff
+INFO: Autostaging is active.
+Oct 25, 2013 7:34:33 AM org.cloudfoundry.reconfiguration.AbstractServiceConfigurer configure
+INFO: More than 1 (2) beans of type javax.sql.DataSourcefound in application context. Skipping autostaging.
+Oct 25, 2013 7:34:33 AM org.cloudfoundry.reconfiguration.AbstractServiceConfigurer getBeanNames
+INFO: Class org.springframework.data.mongodb.MongoDbFactory not found.  Skipping autostaging.
+Oct 25, 2013 7:34:33 AM org.cloudfoundry.reconfiguration.AbstractServiceConfigurer configure
+INFO: No beans of type org.springframework.data.mongodb.MongoDbFactory found in application context
+Oct 25, 2013 7:34:33 AM org.cloudfoundry.reconfiguration.AbstractServiceConfigurer getBeanNames
+INFO: Class org.springframework.data.redis.connection.RedisConnectionFactory not found.  Skipping autostaging.
+Oct 25, 2013 7:34:33 AM org.cloudfoundry.reconfiguration.AbstractServiceConfigurer configure
+INFO: No beans of type org.springframework.data.redis.connection.RedisConnectionFactory found in application context
+Oct 25, 2013 7:34:33 AM org.cloudfoundry.reconfiguration.AbstractServiceConfigurer getBeanNames
+INFO: Class org.springframework.amqp.rabbit.connection.ConnectionFactory not found.  Skipping autostaging.
+Oct 25, 2013 7:34:33 AM org.cloudfoundry.reconfiguration.AbstractServiceConfigurer configure
+INFO: No beans of type org.springframework.amqp.rabbit.connection.ConnectionFactory found in application context
+Oct 25, 2013 7:34:33 AM org.apache.tomcat.jdbc.pool.ConnectionPool init
+WARNING: maxActive is smaller than 1, setting maxActive to: 100
+
+
+#
+# java.lang.OutOfMemoryError: PermGen space
+# -XX:OnOutOfMemoryError="./.buildpack-diagnostics/killjava"
+#   Executing /bin/sh -c "./.buildpack-diagnostics/killjava"...
+
+

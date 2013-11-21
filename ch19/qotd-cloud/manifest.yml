@@ -1,0 +1,14 @@
+---
+applications:
+- name: qotd
+  memory: 512M
+  instances: 1
+  host: qotd
+  domain: cfapps.io
+  path: target/qotd-0.2.1.war
+  services:
+    elephantsql-51d59:
+      label: elephantsql
+      provider: elephantsql
+      version: n/a
+      plan: turtle
