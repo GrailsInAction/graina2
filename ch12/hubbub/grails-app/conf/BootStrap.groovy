@@ -1,9 +1,43 @@
 import com.grailsinaction.*
+import grails.converters.*
+import java.text.SimpleDateFormat
 import static java.util.Calendar.*
 
 class BootStrap {
 
     def init = { servletContext ->
+        def dateFormatter = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss")
+        JSON.registerObjectMarshaller(Post) { Post p ->
+            return [ published: dateFormatter.format(p.dateCreated),
+                    content: p.content,
+                    user: p.user.profile?.fullName,
+                    tags: p.tags.collect { it.name } ]
+        }
+
+        XML.registerObjectMarshaller(Post) { Post p, converter ->
+            converter.build {
+                post(published: dateFormatter.format(p.dateCreated)) {
+                    content p.content
+                    user p.user.profile?.fullName
+                    tags {
+                        for (t in p.tags) {
+                            tag t.name
+                        }
+                    }
+                }
+            }
+        }
+
+        /*
+        // Register an XML marshaller that returns a map rather than uses builder syntax.
+        XML.registerObjectMarshaller(Post) { Post p ->
+            return [ published: dateFormatter.format(p.dateCreated),
+                    content: p.content,
+                    user: p.user.profile.fullName,
+                    tags: p.tags.collect { it.name } ]
+        }
+        */
+
         environments {
             development {
                 if (!Post.count()) createSampleData()

@@ -11,7 +11,7 @@ grails.config.locations = [ "classpath:${appName}-config.groovy",
 
 grails.project.groupId = appName // change this to alter the default package name and Maven publishing destination
 grails.mime.file.extensions = true // enables the parsing of file extensions from URLs into the request format
-grails.mime.use.accept.header = false
+grails.mime.use.accept.header = true
 grails.mime.types = [
     all:           '*/*',
     atom:          'application/atom+xml',
@@ -101,6 +101,7 @@ grails.plugins.springsecurity.successHandler.defaultTargetUrl = "/"
 grails.plugins.springsecurity.securityConfigType = "InterceptUrlMap"
 grails.plugins.springsecurity.interceptUrlMap = [
    '/':             ['IS_AUTHENTICATED_ANONYMOUSLY'],
+   '/api/**':       ['IS_AUTHENTICATED_FULLY'],
    '/user/**':      ['ROLE_ADMIN'],
    '/role/**':      ['ROLE_ADMIN'],
    '/secure/**':    ['ROLE_ADMIN'],
@@ -119,3 +120,11 @@ grails.plugins.springsecurity.twitter.autoCreate.active = true
 grails.plugins.springsecurity.twitter.app.key='Hubbub'
 grails.plugins.springsecurity.twitter.app.consumerKey='JAKUl99V6SSoUTgD9xE2g'
 grails.plugins.springsecurity.twitter.app.consumerSecret='BYmgwzK2d1lM5V3LOk0y8gGrflW2eMWbtxTNxvq0w'
+
+grails.plugins.springsecurity.useBasicAuth = true
+grails.plugins.springsecurity.basic.realmName = "Hubbub"
+grails.plugins.springsecurity.filterChain.chainMap = [
+   '/api/**': 'JOINED_FILTERS',
+   '/**': 'JOINED_FILTERS,-basicAuthenticationFilter,-basicExceptionTranslationFilter'
+]
+

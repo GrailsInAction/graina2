@@ -6,7 +6,7 @@ class QueryIntegrationSpec extends IntegrationSpec {
 
     void "Simple property comparison"() {
         when: "Users are selected by a simple password match"
-        def users = User.where { password == "testing" }.list(sort: "loginId")
+        def users = User.where { passwordHash == "testing".encodeAsSHA256() }.list(sort: "loginId")
         
         then: "The users with that password are returned"
         users*.loginId == ["frankie"] 
@@ -15,7 +15,7 @@ class QueryIntegrationSpec extends IntegrationSpec {
     void "Multiple criteria"() {
         when: "A user is selected by loginId or password"
         def users = User.where {
-            loginId == "frankie" || password == "crikey"
+            loginId == "frankie" || passwordHash == "crikey".encodeAsSHA256()
         }.list(sort: "loginId")
 
         then: "The matching loginIds are returned"
@@ -52,6 +52,6 @@ class QueryIntegrationSpec extends IntegrationSpec {
         }.get()
 
         then: "A single instance is returned"
-        user.password == "thomas"
+        user.passwordHash == "thomas".encodeAsSHA256()
     }
 }

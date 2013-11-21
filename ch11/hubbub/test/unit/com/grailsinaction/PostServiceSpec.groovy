@@ -1,5 +1,6 @@
 package com.grailsinaction
 
+import grails.plugins.springsecurity.SpringSecurityService
 import grails.test.mixin.Mock
 import grails.test.mixin.TestFor
 import spock.lang.*
@@ -14,7 +15,13 @@ class PostServiceSpec extends Specification {
     def "Valid posts get saved and added to the user"() {
 
         given: "A new user in the db"
-        new User(loginId: "chuck_norris", password: "password").save(failOnError: true)
+        def securityService = Mock(SpringSecurityService)
+        securityService.encodePassword(_ as String) >> "skfjhaskfh"
+
+        User chuck = new User(loginId: "chuck_norris")
+        chuck.springSecurityService = securityService
+        chuck.password = "password"
+        chuck.save(failOnError: true)
 
         when: "a new post is created by the service"
         def newPost = service.createPost("chuck_norris", "First Post!")
@@ -28,7 +35,13 @@ class PostServiceSpec extends Specification {
     def "Invalid posts generate exceptional outcomes"() {
 
         given: "A new user in the db"
-        new User(loginId: "chuck_norris", password: "password").save(failOnError: true)
+        def securityService = Mock(SpringSecurityService)
+        securityService.encodePassword(_ as String) >> "skfjhaskfh"
+
+        def chuck = new User(loginId: "chuck_norris")
+        chuck.springSecurityService = securityService
+        chuck.password = "password"
+        chuck.save(failOnError: true)
 
         when: "an invalid post is attempted"
         def newPost = service.createPost("chuck_norris", null)

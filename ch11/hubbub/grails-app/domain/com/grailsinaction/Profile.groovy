@@ -13,7 +13,7 @@ class Profile {
     String skin
 
     static constraints = {
-        fullName blank: false
+        fullName nullable: true
         bio nullable: true, maxSize: 1000
         homepage url: true, nullable: true
         email email: true, nullable: false

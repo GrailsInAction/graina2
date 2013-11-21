@@ -3,8 +3,6 @@ import static java.util.Calendar.*
 
 class BootStrap {
 
-    def searchableService
-
     def init = { servletContext ->
         environments {
             development {
@@ -20,9 +18,6 @@ class BootStrap {
     }
 
     private createSampleData() {
-        // Search mirroring (where saved domain instances are automatically indexed) is
-        // fragile and has problems with the data below.
-        searchableService.stopMirroring()
 
         def now = new Date()
         def graeme = new User(
@@ -54,7 +49,7 @@ class BootStrap {
                 loginId: "phil",
                 password: "thomas",
                 profile: new Profile(fullName: "Phil Potts", email: "phil@nowhere.net"),
-                dateCreated: now).save(failOnError:true)
+                dateCreated: now)
         def dillon = new User(loginId: "dillon",
                 password: "crikey",
                 profile: new Profile(fullName: "Dillon Jessop", email: "dillon@nowhere.net"),
@@ -70,7 +65,7 @@ class BootStrap {
         phil.addToPosts(content: "Writing a very very long book")
         phil.addToPosts(content: "Tap dancing")
         phil.addToPosts(content: "Pilates is killing me")
-        phil.save(failOnError: true)
+        phil.save()
 
         sara.addToPosts(content: "My first post")
         sara.addToPosts(content: "Second post")
@@ -78,10 +73,10 @@ class BootStrap {
         sara.addToPosts(content: "Writing a very very long book")
         sara.addToPosts(content: "Tap dancing")
         sara.addToPosts(content: "Pilates is killing me")
-        sara.save(failOnError: true)
+        sara.save(flush: true)
 
         dillon.addToPosts(content: "Pilates is killing me as well")
-        dillon.save(failOnError: true)
+        dillon.save(flush: true)
 
         // We have to update the 'dateCreated' field after the initial save to
         // work around Grails' auto-timestamping feature. Note that this trick
@@ -116,22 +111,24 @@ class BootStrap {
         postsAsList[5].dateCreated = now.updated(year: 2012, month: AUGUST, date: 1)
         
         sara.dateCreated = now - 2
-        sara.save(failOnError: true, flush: true)
+        sara.save(failOnError: true)
 
         dillon.dateCreated = now - 2
-        dillon.save(failOnError: true, flush: true)
-
-        // Now that the data has been persisted, we can index it and re-enable mirroring.
-        searchableService.index()
-        searchableService.startMirroring()
+        dillon.save(failOnError: true)
     }
 
     private createAdminUserIfRequired() {
         if (!User.findByLoginId("admin")) {
             println "Fresh Database. Creating ADMIN user."
 
-            def profile = new Profile(email: "admin@yourhost.com", fullName: "Admin User", dateCreated: new Date())
-            new User(loginId: "admin", password: "secret", profile: profile).save(failOnError: true)
+            def profile = new Profile(email: "admin@yourhost.com")
+            def adminRole = new Role(authority: "ROLE_ADMIN").save(failOnError: true)
+            def adminUser = new User(
+                    loginId: "admin",
+                    password: "secret",
+                    profile: profile,
+                    enabled: true).save(failOnError: true)
+            UserRole.create adminUser, adminRole
         }
         else {
             println "Existing admin user, skipping creation"

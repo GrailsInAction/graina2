@@ -7,7 +7,8 @@ class PostController {
 
     static navigation = [
         [group: 'tabs', action: 'timeline', title: 'My Timeline', order: 0],
-        [action: 'global', title: 'Global Timeline', order: 1]
+        [action: 'global', title: 'Global Timeline', order: 1],
+        [action: 'singlepage', title: 'Single Page App', order: 2],
     ]
 
     def postService
@@ -63,5 +64,15 @@ class PostController {
             urls(small: tinyUrl, full: params.fullUrl)
         }
     }
-    
+
+    def singlepage() {
+        def user = params.id ? User.findByLoginId(params.id) : springSecurityService.currentUser
+        if (!user) {
+            response.sendError(404)
+        } else {
+            [ user : user ]
+        }
+    }
+
+
 }

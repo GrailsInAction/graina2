@@ -133,3 +133,16 @@ dd {
     font-weight: bold;
 }
 
+#charsRemaining {
+    font-size: x-large;
+    color: #999999;
+}
+
+.charsLow      { background-color: yellow !important; }
+.charsOverflow { background-color: red !important; }
+
+.inplacePostEdit {
+    width: 90%;
+    height: 100px;
+    margin-bottom: 1em;
+}

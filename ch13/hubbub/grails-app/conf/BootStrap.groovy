@@ -10,6 +10,7 @@ class BootStrap {
         JSON.registerObjectMarshaller(Post) { Post p ->
             return [ published: dateFormatter.format(p.dateCreated),
                     content: p.content,
+                    id: p.id,
                     user: p.user.profile?.fullName,
                     tags: p.tags.collect { it.name } ]
         }
@@ -53,45 +54,67 @@ class BootStrap {
 
     private createSampleData() {
 
+        println "No existing posts. Populating sample data."
+
         def now = new Date()
         def graeme = new User(
                 loginId: "graeme",
-                password: "willow",
+                password: "willow",  enabled: "true",
                 profile: new Profile(fullName: "Graeme Rocher", email: "graeme@nowhere.net"),
                 dateCreated: now).save(failOnError: true)
         def jeff = new User(
                 loginId: "jeff",
-                password: "sheldon",
+                password: "sheldon", enabled: "true",
                 profile: new Profile(fullName: "Jeff Brown", email: "jeff@nowhere.net"),
                 dateCreated: now).save(failOnError: true)
         def burt = new User(
                 loginId: "burt",
-                password: "mandible",
+                password: "mandible",  enabled: "true",
                 profile: new Profile(fullName: "Burt Beckwith", email: "burt@nowhere.net"),
                 dateCreated: now).save(failOnError: true)
         def frankie = new User(
                 loginId: "frankie",
-                password: "testing",
+                password: "testing", enabled: "true",
                 profile: new Profile(fullName: "Frankie Goes to Hollywood", email: "frankie@nowhere.net"),
                 dateCreated: now).save(failOnError: true)
         def sara = new User(
                 loginId: "sara",
-                password: "crikey",
+                password: "crikey",  enabled: "true",
                 profile: new Profile(fullName: "Sara Miles", email: "sara@nowhere.net"),
                 dateCreated: now - 2).save(failOnError: true)
         def phil = new User(
                 loginId: "phil",
-                password: "thomas",
+                password: "thomas",  enabled: "true",
                 profile: new Profile(fullName: "Phil Potts", email: "phil@nowhere.net"),
                 dateCreated: now)
         def dillon = new User(loginId: "dillon",
-                password: "crikey",
+                password: "crikey",   enabled: "true",
                 profile: new Profile(fullName: "Dillon Jessop", email: "dillon@nowhere.net"),
                 dateCreated: now - 2).save(failOnError: true)
 
         phil.addToFollowing(frankie)
         phil.addToFollowing(sara)
         phil.save(failOnError: true)
+
+        sara.addToFollowing(frankie)
+        sara.addToFollowing(burt)
+        sara.save(failOnError: true)
+
+        burt.addToFollowing(sara)
+        burt.addToFollowing(graeme)
+        burt.save(failOnError: true)
+
+        graeme.addToFollowing(burt)
+        graeme.addToFollowing(jeff)
+        graeme.addToFollowing(dillon)
+        graeme.save(failOnError: true)
+
+        jeff.addToFollowing(burt)
+        jeff.addToFollowing(graeme)
+        jeff.save(failOnError: true)
+
+        frankie.addToFollowing(phil)
+        frankie.save(failOnError: true)
 
         phil.addToPosts(content: "Very first post")
         phil.addToPosts(content: "Second post")
@@ -143,7 +166,7 @@ class BootStrap {
         postsAsList[3].dateCreated = now.updated(year: 2011, month: NOVEMBER, date: 8)
         postsAsList[4].dateCreated = now.updated(year: 2011, month: DECEMBER, date: 4)
         postsAsList[5].dateCreated = now.updated(year: 2012, month: AUGUST, date: 1)
-        
+
         sara.dateCreated = now - 2
         sara.save(failOnError: true)
 

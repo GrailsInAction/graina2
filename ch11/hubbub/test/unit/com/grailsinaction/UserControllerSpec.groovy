@@ -8,6 +8,12 @@ import spock.lang.*
 @Mock([User, Profile])
 class UserControllerSpec extends Specification {
 
+    def setup() {
+        defineBeans {
+            springSecurityService(grails.plugins.springsecurity.SpringSecurityService)
+        }
+    }
+
     def "Registering a user with known good parameters"() {
 
         given: "a set of user parameters"

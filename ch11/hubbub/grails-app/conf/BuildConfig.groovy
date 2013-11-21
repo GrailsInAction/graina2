@@ -26,21 +26,20 @@ grails.project.dependency.resolution = {
     }
 
     plugins {
-        compile ":mail:1.0.1"
-        compile ':cache:1.0.1'
-        compile ":cache-ehcache:1.0.0"
-        compile ":searchable:0.6.4"
-        test ':dumbster:0.2'
-
         runtime ":hibernate:$grailsVersion"
         runtime ":jquery:1.7.2"
         runtime ":resources:1.2"
         runtime ":navigation:1.3.2"
-
-
+        runtime ":jquery-ui:1.8.24", ":famfamfam:1.0.1"
+ 
         build ":tomcat:$grailsVersion"
 
         runtime ":database-migration:1.1"
+
+        compile ':cache:1.0.1'
+        compile ":mail:1.0.1"
+        compile ":spring-security-core:1.2.7.3", ":spring-security-ui:0.2"
+        compile ":spring-security-twitter:0.4.4"
 
         test ":spock:0.7", {
             exclude "spock-grails-support"

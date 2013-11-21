@@ -77,18 +77,6 @@ class UserController {
         }
     }
     
-    def welcomeEmail(String email) {
-        if (email) {
-            sendMail {
-                to email
-                subject "Welcome to Hubbub!"
-                html view: "welcomeEmail", model: [ email: email ]
-            }
-            flash.message = "Welcome aboard"
-        }
-        redirect(uri: "/")
-    }
-    
 }
 
 class UserRegistrationCommand {

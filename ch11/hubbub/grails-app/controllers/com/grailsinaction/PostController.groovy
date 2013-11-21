@@ -9,6 +9,7 @@ class PostController {
     ]
 
     def postService
+    def springSecurityService
 
     def index() {
         if (!params.id) params.id = "chuck_norris"
@@ -16,27 +17,34 @@ class PostController {
     }
     
     def timeline() {
-        def user = User.findByLoginId(params.id)
+        def user = params.id ? User.findByLoginId(params.id) : springSecurityService.currentUser
         if (!user) {
             response.sendError(404)
-        } else {
+        }
+        else {
             [ user : user ]
         }
     }
 
-    def addPost(String id, String content) {
+    /**
+     * TODO: is this still needed? If so, should it get the ID from the parameter
+     * or the current logged in user?
+     */
+    def addPost(String content) {
+        def user = springSecurityService.currentUser
         try {
-            def newPost = postService.createPost(id, content)
+            def newPost = postService.createPost(user.loginId, content)
             flash.message = "Added new post: ${newPost.content}"
         } catch (PostException pe) {
             flash.message = pe.message
         }
-        redirect action: "timeline", id: id
+        redirect action: "timeline", id: user.loginId
     }
     
     def addPostAjax(String content) {
+        def user = springSecurityService.currentUser
         try {
-            def newPost = postService.createPost(session.user.loginId, content)
+            def newPost = postService.createPost(user.loginId, content)
             def recentPosts = Post.findAllByUser(session.user, [sort: "dateCreated", order: "desc", max: 20])
             render template: "postentries", collection: recentPosts, var: "post"
         } catch (PostException pe) {
@@ -50,7 +58,7 @@ class PostController {
         def origUrl = fullUrl?.encodeAsURL()
         def tinyUrl = new URL("http://tinyurl.com/api-create.php?url=${origUrl}").text
         render(contentType:"application/json") {
-            urls(small: tinyUrl, full: fullUrl)
+            urls(small: tinyUrl, full: params.fullUrl)
         }
     }
     

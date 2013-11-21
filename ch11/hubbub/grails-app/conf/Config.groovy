@@ -2,10 +2,8 @@
 // config files can be ConfigSlurper scripts, Java properties files, or classes
 // in the classpath in ConfigSlurper format
 
-// grails.config.locations = [ "classpath:${appName}-config.properties",
-//                             "classpath:${appName}-config.groovy",
-//                             "file:${userHome}/.grails/${appName}-config.properties",
-//                             "file:${userHome}/.grails/${appName}-config.groovy"]
+grails.config.locations = [ "classpath:${appName}-config.groovy",
+                            "file:./${appName}-config.groovy"]
 
 // if (System.properties["${appName}.config.location"]) {
 //    grails.config.locations << "file:" + System.properties["${appName}.config.location"]
@@ -63,9 +61,6 @@ environments {
     development {
         grails.logging.jul.usebridge = true
     }
-    test {
-        dumbster.enabled = true
-    }
     production {
         grails.logging.jul.usebridge = false
         // TODO: grails.serverURL = "http://www.changeme.com"
@@ -91,36 +86,36 @@ log4j = {
            'org.springframework',
            'org.hibernate',
            'net.sf.ehcache.hibernate'
+
+    debug "com.the6hours.grails.springsecurity.twitter"
 }
 
-grails.mail.host="127.0.0.1"
-grails.mail.default.from="hubbub@grailsinaction.com"
+// Added by the Spring Security Core plugin:
+grails.plugins.springsecurity.userLookup.userDomainClassName = "com.grailsinaction.User"
+grails.plugins.springsecurity.userLookup.usernamePropertyName = "loginId"
+grails.plugins.springsecurity.userLookup.passwordPropertyName = "passwordHash"
+grails.plugins.springsecurity.userLookup.authorityJoinClassName = "com.grailsinaction.UserRole"
+grails.plugins.springsecurity.authority.className = "com.grailsinaction.Role"
+grails.plugins.springsecurity.successHandler.defaultTargetUrl = "/"
 
-grails.plugin.databasemigration.updateOnStart = true
-grails.plugin.databasemigration.updateOnStartFileNames = ['changelog.groovy']
+grails.plugins.springsecurity.securityConfigType = "InterceptUrlMap"
+grails.plugins.springsecurity.interceptUrlMap = [
+   '/':             ['IS_AUTHENTICATED_ANONYMOUSLY'],
+   '/user/**':      ['ROLE_ADMIN'],
+   '/role/**':      ['ROLE_ADMIN'],
+   '/secure/**':    ['ROLE_ADMIN'],
+   '/finance/**':   ['ROLE_FINANCE', 'IS_AUTHENTICATED_FULLY'],
+   '/js/**':        ['IS_AUTHENTICATED_ANONYMOUSLY'],
+   '/css/**':       ['IS_AUTHENTICATED_ANONYMOUSLY'],
+   '/images/**':    ['IS_AUTHENTICATED_ANONYMOUSLY'],
+   '/login/auth':   ['IS_AUTHENTICATED_ANONYMOUSLY'],
+   '/logout/**':    ['IS_AUTHENTICATED_ANONYMOUSLY'],
+   '/**':           ['IS_AUTHENTICATED_REMEMBERED']
+]
 
-grails.cache.config = {
-    defaultCache {
-        maxElementsInMemory 10000
-        eternal false
-        timeToIdleSeconds 120
-        timeToLiveSeconds 120
-        overflowToDisk true
-        maxElementsOnDisk 10000000
-        diskPersistent false
-        diskExpiryThreadIntervalSeconds 120
-        memoryStoreEvictionPolicy 'LRU'
-    }
+grails.plugins.springsecurity.twitter.autoCreate.active = true
 
-    cache {
-        name 'myDailyCache'
-        timeToLiveSeconds 60*60*24
-    }
 
-}
-
-searchable {
-    mirrorChanges = false
-    bulkIndexOnStartup = false
-}
-
+grails.plugins.springsecurity.twitter.app.key='Hubbub'
+grails.plugins.springsecurity.twitter.app.consumerKey='JAKUl99V6SSoUTgD9xE2g'
+grails.plugins.springsecurity.twitter.app.consumerSecret='BYmgwzK2d1lM5V3LOk0y8gGrflW2eMWbtxTNxvq0w'

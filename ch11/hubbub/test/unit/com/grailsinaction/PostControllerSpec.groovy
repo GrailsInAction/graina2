@@ -1,5 +1,6 @@
 package com.grailsinaction
 
+import grails.plugins.springsecurity.SpringSecurityService
 import grails.test.mixin.Mock
 import grails.test.mixin.TestFor
 import spock.lang.Specification
@@ -8,12 +9,21 @@ import spock.lang.Specification
 @TestFor(PostController)
 @Mock([User,Post,LameSecurityFilters])
 class PostControllerSpec extends Specification {
+    def mockSecurityService
+
+    def setup() {
+        mockSecurityService = Mock(SpringSecurityService)
+        mockSecurityService.encodePassword(_ as String) >> "kjsdfhkshfalhlkdshflas"
+    }
 
     def "Get a users timeline given their id"() {
         given: "A user with posts in the db"
-        User chuck = new User(loginId: "chuck_norris", password: "password").save(failOnError: true)
+        User chuck = new User(loginId: "chuck_norris")
+        chuck.springSecurityService = mockSecurityService
+        chuck.password = "password"
         chuck.addToPosts(new Post(content: "A first post"))
         chuck.addToPosts(new Post(content: "A second post"))
+        chuck.save(failOnError: true)
 
         and: "A loginId parameter"
         params.id = chuck.loginId
@@ -40,13 +50,17 @@ class PostControllerSpec extends Specification {
     }
 
     def "Adding a valid new post to the timeline"() {
-        given: "a mock post service"
+        given: "mock post and security services"
         def mockPostService = Mock(PostService)
         1 * mockPostService.createPost(_, _) >> new Post(content: "Mock Post")
         controller.postService = mockPostService
 
+        def securityService = Mock(SpringSecurityService)
+        _ * securityService.getCurrentUser() >> new User(loginId: "chuck_norris")
+        controller.springSecurityService = securityService
+
         when: "addPost is invoked with a login ID and some post content"
-        def model = controller.addPost("chuck_norris", "Mock Post")
+        def model = controller.addPost("Mock Post")
 
         then: "our flash message and redirect confirms the success"
         flash.message ==~ /Added new post: Mock.*/
@@ -54,13 +68,17 @@ class PostControllerSpec extends Specification {
     }
 
     def "Adding an invalid new post to the timeline trips an error"() {
-        given: "a mock post service"
+        given: "mock post and security services"
         def mockPostService = Mock(PostService)
         1 * mockPostService.createPost(_, _) >> { throw new PostException(message: "Invalid or empty post") }
         controller.postService = mockPostService
 
+        def securityService = Mock(SpringSecurityService)
+        _ * securityService.getCurrentUser() >> new User(loginId: "chuck_norris")
+        controller.springSecurityService = securityService
+
         when: "addPost is invoked with a login ID but no post content"
-        def model = controller.addPost("chuck_norris", null)
+        def model = controller.addPost(null)
 
         then: "our flash message and redirect confirms the failure"
         flash.message == "Invalid or empty post"

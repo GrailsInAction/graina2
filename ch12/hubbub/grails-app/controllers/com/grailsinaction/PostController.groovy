@@ -3,6 +3,8 @@ package com.grailsinaction
 class PostController {
     static scaffold = true
 
+    static allowedMethods = [timeline: ["GET"]]
+
     static navigation = [
         [group: 'tabs', action: 'timeline', title: 'My Timeline', order: 0],
         [action: 'global', title: 'Global Timeline', order: 1]

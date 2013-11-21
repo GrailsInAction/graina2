@@ -9,7 +9,7 @@ class PostRestController {
     transient springSecurityService
 
     def list() {
-        def body = Post.list()
+        def body = Post.list(params)
         println ">> Requested version ${params.v}"
 
         withFormat {
@@ -30,6 +30,7 @@ class PostRestController {
     def save() {
         def body
         def post = new Post(params.post)
+        post.user = springSecurityService.currentUser
         if (post.validate() && post.save()) {
             response.status = 201
             body = [id: post.id]
@@ -47,19 +48,30 @@ class PostRestController {
 
     def update(Long id) {
         if (id == null) {
-            render status: 405 
+            response.sendError 405
+            //render status: 405
             return
         }
 
         def post = Post.get(id)
         if (post) {
-            bindData post, params.post
+            //bindData post, params.post
+            post.content = params.post.content
 
+            def body
             if (post.validate() && post.save()) {
-                render status: 200, [id: post.id] as XML
+                response.status = 200
+                body = [id: post.id]
+                //render status: 200, [id: post.id] as XML
             }
             else {
-                render status: 400, [error: "Invalid data"] as XML
+                response.status = 400
+                body = [error: "Invalid data"]
+                //render status: 400, [error: "Invalid data"] as XML
+            }
+            withFormat {
+                json { render body as JSON }
+                xml { render body as XML }
             }
         }
         else {

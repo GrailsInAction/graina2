@@ -1,9 +1,8 @@
 <!doctype html>
-<html>
+<html ${pageProperty(name:'page.htmlAttrs')}>
 <head>
   <title>Hubbub &raquo; <g:layoutTitle default="Welcome" /></title>
-  <g:external dir="css" file="hubbub.css"/>
-  <g:external dir="css" file="main.css"/>
+  <r:require module="baseCss"/>
   <nav:resources/>
   <g:layoutHead/>
   <r:layoutResources/>
