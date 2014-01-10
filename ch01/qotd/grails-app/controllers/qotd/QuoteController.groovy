@@ -1,14 +1,11 @@
 package qotd
 
 class QuoteController {
-
     static scaffold = true
 
-    def quoteService
+    static defaultAction = "home"
 
-    def index() {
-        redirect(action: "home")
-    }
+    def quoteService
 
     def home() {
         render "<h1>Real Programmers do not eat Quiche</h1>"
@@ -27,5 +24,4 @@ class QuoteController {
             p(randomQuote.author)
         }
     }
-
 }
