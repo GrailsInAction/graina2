@@ -1,4 +1,4 @@
-package com.grailsinaction
+package qotd
 
 import qotd.Quote
 import spock.lang.*

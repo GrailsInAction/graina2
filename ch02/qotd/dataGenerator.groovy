@@ -22,11 +22,12 @@ for (int i in 0..<10) {
     }
 
     println pigLatinWords.join(' ')
+
+    // The above 5 lines (excluding empty lines) can be done in one go:
 //    println quote.split(/\s+/).collect { pigLatinize(it) }.join(' ')
 }
 
 String createQuote(List quoteParts, List authors) {
-//    def rand = new Random()
     return quoteParts.random()[0] + ' ' +
         quoteParts.random()[1] + ' ' +
         quoteParts.random()[2] + ' by ' +

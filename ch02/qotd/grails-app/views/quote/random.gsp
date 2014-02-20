@@ -11,7 +11,7 @@
             </g:remoteLink>
         </li>
         <li>
-            <g:link action="list">
+            <g:link action="index">
                 Admin
             </g:link>
         </li>
