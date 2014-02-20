@@ -18,10 +18,10 @@
 		<div id="list-${domainClass.propertyName}" class="content scaffold-list" role="main">
 			<h1><g:message code="default.list.label" args="[entityName]" /></h1>
 			<g:if test="\${flash.message}">
-			<div class="message" role="status">\${flash.message}</div>
+				<div class="message" role="status">\${flash.message}</div>
 			</g:if>
 			<table>
-				<thead>
+			<thead>
 					<tr>
 					<%  excludedProps = Event.allEvents.toList() << 'id' << 'version'
 						allowedNames = domainClass.persistentProperties*.name << 'dateCreated' << 'lastUpdated'
@@ -47,7 +47,7 @@
 						<td><g:formatBoolean boolean="\${${propertyName}.${p.name}}" /></td>
 					<%          } else if (p.type == Date || p.type == java.sql.Date || p.type == java.sql.Time || p.type == Calendar) { %>
 						<td><g:formatDate date="\${${propertyName}.${p.name}}" /></td>
-					<%    } else if (p.manyToOne || p.oneToOne) { %>
+					<%          } else if (p.manyToOne || p.oneToOne) { %>
 						<td>\${${propertyName}?.${p.name}?.displayString?.encodeAsHTML()}</td>
 					<%          } else { %>
 						<td>\${fieldValue(bean: ${propertyName}, field: "${p.name}")}</td>
@@ -57,7 +57,7 @@
 				</tbody>
 			</table>
 			<div class="pagination">
-				<g:paginate total="\${${propertyName}Total}" />
+				<g:paginate total="\${${propertyName}Count ?: 0}" />
 			</div>
 		</div>
 	</body>
