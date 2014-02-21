@@ -1,7 +1,10 @@
-@artifact.package@import grails.test.mixin.Mock
-import spock.lang.Specification
+@artifact.package@
 
-@Mock(@artifact.testclass@)
+import spock.lang.*
+
+/**
+ *
+ */
 class @artifact.name@ extends Specification {
 
     def setup() {

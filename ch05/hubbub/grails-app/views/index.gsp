@@ -1,4 +1,3 @@
-<%@page defaultCodec="html" %>
 <!DOCTYPE html>
 <html>
 	<head>

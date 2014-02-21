@@ -1,8 +1,8 @@
 package com.grailsinaction
 
-import grails.plugin.spock.IntegrationSpec
+import spock.lang.*
 
-class QueryIntegrationSpec extends IntegrationSpec {
+class QueryIntegrationSpec extends Specification {
 
     void "Simple property comparison"() {
         when: "Users are selected by a simple password match"
