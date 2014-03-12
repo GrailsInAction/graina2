@@ -2,7 +2,7 @@ package com.grailsinaction
 
 class Profile {
     User user
-    byte[] photo           
+    byte[] photo
     String fullName
     String bio
     String homepage

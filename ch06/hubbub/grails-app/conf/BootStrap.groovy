@@ -18,12 +18,13 @@ class BootStrap {
     }
 
     private createSampleData() {
+        println "Creating sample data"
 
         def now = new Date()
-        def graeme = new User(
-                loginId: "graeme",
-                password: "willow",
-                profile: new Profile(fullName: "Graeme Rocher", email: "graeme@nowhere.net"),
+        def chuck = new User(
+                loginId: "chuck_norris",
+                password: "kickkick",
+                profile: new Profile(fullName: "Chuck Norris", email: "chuck@nowhere.net"),
                 dateCreated: now).save(failOnError: true)
         def jeff = new User(
                 loginId: "jeff",
@@ -54,6 +55,12 @@ class BootStrap {
                 password: "crikey",
                 profile: new Profile(fullName: "Dillon Jessop", email: "dillon@nowhere.net"),
                 dateCreated: now - 2).save(failOnError: true)
+
+        chuck.addToFollowing(phil)
+        chuck.addToPosts(content: "Been working my roundhouse kicks.")
+        chuck.addToPosts(content: "Working on a few new moves. Bit sluggish today.")
+        chuck.addToPosts(content: "Tinkering with the hubbub app.")
+        chuck.save(failOnError: true)
 
         phil.addToFollowing(frankie)
         phil.addToFollowing(sara)
@@ -104,7 +111,7 @@ class BootStrap {
 
         postsAsList = sara.posts as List
         postsAsList[0].dateCreated = now.updated(year: 2007, month: MAY)
-        postsAsList[1].dateCreated = now.updated(year: 2008, month: MARCH, date: 13)
+        postsAsList[1].dateCreated = now.updated(year: 2008, month: APRIL, date: 13)
         postsAsList[2].dateCreated = now.updated(year: 2008, month: APRIL, date: 24)
         postsAsList[3].dateCreated = now.updated(year: 2011, month: NOVEMBER, date: 8)
         postsAsList[4].dateCreated = now.updated(year: 2011, month: DECEMBER, date: 4)
@@ -119,6 +126,7 @@ class BootStrap {
     }
 
     private createAdminUserIfRequired() {
+        println "Creating admin user"
         if (!User.findByLoginId("admin")) {
             println "Fresh Database. Creating ADMIN user."
 

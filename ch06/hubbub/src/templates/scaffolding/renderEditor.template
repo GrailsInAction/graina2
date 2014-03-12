@@ -98,7 +98,7 @@
  			sb << ' name="' << property.name << '.id"'
  			sb << ' from="${' << property.type.name << '.list()}"'
  			sb << ' optionKey="id"'
- 			sb << ' optionValue="displayString"'
+			sb << ' optionValue="displayString"'
 			if (isRequired()) sb << ' required=""'
  			sb << ' value="${' << "${domainInstance}?.${property.name}" << '?.id}"'
  			sb << ' class="many-to-one"'
@@ -122,7 +122,6 @@
             sb << ' from="${' << cls.name << '.list()}"'
             sb << ' multiple="multiple"'
             sb << ' optionKey="id"'
- 			sb << ' optionValue="displayString"'
             sb << ' size="5"'
             if (isRequired()) sb << ' required=""'
             sb << ' value="${' << "${domainInstance}?.${property.name}" << '*.id}"'
@@ -140,7 +139,7 @@
         pw.println()
         pw.println '<ul class="one-to-many">'
         pw.println "<g:each in=\"\${${domainInstance}?.${property.name}?}\" var=\"${property.name[0]}\">"
-        pw.println "    <li><g:link controller=\"${property.referencedDomainClass.propertyName}\" action=\"show\" id=\"\${${property.name[0]}.id}\">\${${property.name[0]}?.displayString?.encodeAsHTML()}</g:link></li>"
+        pw.println "    <li><g:link controller=\"${property.referencedDomainClass.propertyName}\" action=\"show\" id=\"\${${property.name[0]}.id}\">\${${property.name[0]}?.encodeAsHTML()}</g:link></li>"
         pw.println '</g:each>'
 		pw.println '<li class="add">'
         pw.println "<g:link controller=\"${property.referencedDomainClass.propertyName}\" action=\"create\" params=\"['${domainClass.propertyName}.id': ${domainInstance}?.id]\">\${message(code: 'default.add.label', args: [message(code: '${property.referencedDomainClass.propertyName}.label', default: '${property.referencedDomainClass.shortName}')])}</g:link>"
