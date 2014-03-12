@@ -22,6 +22,6 @@ class Post {
         def maxSize = 20
         if (content.size() > maxSize) return content.substring(0, maxSize - 3) + '...'
         else return content
-     }
-    
+    }
+
 }
