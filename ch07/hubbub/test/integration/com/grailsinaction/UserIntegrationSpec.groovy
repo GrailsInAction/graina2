@@ -1,9 +1,8 @@
 package com.grailsinaction
 
 import spock.lang.*
-import grails.plugin.spock.*
 
-class UserIntegrationSpec extends IntegrationSpec  {
+class UserIntegrationSpec extends Specification {
 
     def "Saving our first user to the database"() {
 
@@ -20,7 +19,6 @@ class UserIntegrationSpec extends IntegrationSpec  {
 
     }
 
-
     def "Updating a saved user changes its properties"() {
 
         given: "An existing user"
@@ -28,14 +26,14 @@ class UserIntegrationSpec extends IntegrationSpec  {
 
         when: "A property is changed"
         def foundUser = User.get(existingUser.id)    
-        foundUser.password = 'sesame'                   
-        foundUser.save(failOnError: true)              
+        foundUser.password = 'sesame'
+        foundUser.save(failOnError: true)
 
         then: "The change is reflected in the database"
         User.get(existingUser.id).password == 'sesame'
 
     }
-
+    
     def "Deleting an existing user removes it from the database"() {
 
         given: "An existing user"
@@ -46,9 +44,10 @@ class UserIntegrationSpec extends IntegrationSpec  {
         foundUser.delete(flush: true)
 
         then: "The user is removed from the database"
-        !User.exists(foundUser.id)            
-    }
+        !User.exists(foundUser.id)
 
+    }
+    
     def "Saving a user with invalid properties causes an error"() {
 
         given: "A user which fails several field validations"
@@ -60,7 +59,7 @@ class UserIntegrationSpec extends IntegrationSpec  {
         then:
         user.hasErrors()
 
-        "size.toosmall" == user.errors.getFieldError("password").code                     
+        "size.toosmall" == user.errors.getFieldError("password").code
         "tiny" == user.errors.getFieldError("password").rejectedValue
         !user.errors.getFieldError("loginId")
 
@@ -77,11 +76,9 @@ class UserIntegrationSpec extends IntegrationSpec  {
 
         when: "We fix the invalid properties"
         chuck.password = "fistfist"
-
-        // 'homepage' is now on Profile so can't be set on the user.
+        chuck.validate()
 
         then: "The user saves and validates fine"
-        chuck.validate()
         !chuck.hasErrors()
         chuck.save()
     
@@ -95,8 +92,8 @@ class UserIntegrationSpec extends IntegrationSpec  {
         def sven = new User(loginId: 'sven', password:'password').save()
 
         when: "Glen follows Peter, and Sven follows Peter"
-        glen.addToFollowing(peter)                     
-        glen.addToFollowing(sven)          
+        glen.addToFollowing(peter)
+        glen.addToFollowing(sven)
         sven.addToFollowing(peter)
 
         then: "Follower counts should match following people"
@@ -104,8 +101,5 @@ class UserIntegrationSpec extends IntegrationSpec  {
         1 == sven.following.size()
         
     }
-
-
-
-
+    
 }

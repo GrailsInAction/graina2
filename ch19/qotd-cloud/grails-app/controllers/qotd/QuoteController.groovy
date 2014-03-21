@@ -1,8 +1,8 @@
 package qotd
 
 class QuoteController {
-
     static scaffold = true
+
     static defaultAction = "home"
 
     def quoteService
@@ -14,7 +14,6 @@ class QuoteController {
     def random() {
         def randomQuote = quoteService.getRandomQuote()
         [quote: randomQuote]
-
     }
 
     def ajaxRandom() {
@@ -24,5 +23,4 @@ class QuoteController {
             p(randomQuote.author)
         }
     }
-
 }

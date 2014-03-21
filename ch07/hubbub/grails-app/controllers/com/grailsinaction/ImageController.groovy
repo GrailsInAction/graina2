@@ -7,17 +7,18 @@ class PhotoUploadCommand {
 
 class ImageController {
 
-    static defaultAction = "form"
-
     def upload(PhotoUploadCommand puc) {
         def user = User.findByLoginId(puc.loginId)
         user.profile.photo = puc.photo
-        redirect controller: "user", action: 'profile', id: puc.loginId
+        redirect(action: 'view', id: puc.loginId)
     }
 
     def form() {
         // pass through to upload form
         [ userList : User.list() ]
+    }
+    def view() {
+        // pass through to "view photo" page
     }
 
     def renderImage(String id) {
@@ -29,5 +30,5 @@ class ImageController {
             response.sendError(404)
         }
     }
-
+    
 }

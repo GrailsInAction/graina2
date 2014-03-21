@@ -3,27 +3,21 @@ package com.grailsinaction
 class DateTagLib {
     static namespace = "hub"
 
-    /**
-     * Renders a date as a time from now, e.g. 10 days ago
-     * or 3 mins ago.
-     * @attr date REQUIRED The target date to render.
-     */
     def dateFromNow = { attrs ->
         def date = attrs.date
-        def niceDate = getNiceDate(date) // implement this somehow...
+        def niceDate = getNiceDate(date)
         out << niceDate
     }
 
     String getNiceDate(Date date) {
+        def now = new Date()
+        def diff = Math.abs(now.time - date.time)
         final long second = 1000
         final long minute = second * 60
         final long hour = minute * 60
         final long day = hour * 24
-
-        def now = new Date()
-        def diff = Math.abs(now.time - date.time)
         def niceTime = ""
-        long calc = 0
+        long calc = 0;
         calc = Math.floor(diff / day)
         if (calc) {
             niceTime += calc + " day" + (calc > 1 ? "s " : " ")
@@ -33,7 +27,7 @@ class DateTagLib {
         if (calc) {
             niceTime += calc + " hour" + (calc > 1 ? "s " : " ")
             diff %= hour
-        }
+       }
         calc = Math.floor(diff / minute)
         if (calc) {
             niceTime += calc + " minute" + (calc > 1 ? "s " : " ")
@@ -46,5 +40,5 @@ class DateTagLib {
         }
         return niceTime
     }
-
+    
 }

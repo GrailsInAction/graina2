@@ -1,8 +1,7 @@
 package com.grailsinaction
 
 class Profile {
-    User user
-    byte[] photo           
+    byte[] photo
     String fullName
     String bio
     String homepage
@@ -11,6 +10,8 @@ class Profile {
     String country
     String jabberAddress
     String skin
+
+    static belongsTo = [user: User]
 
     static constraints = {
         fullName blank: false

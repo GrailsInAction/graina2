@@ -1,22 +1,20 @@
 package com.grailsinaction
 
 class Post {
-
     String content
     Date dateCreated
 
-    static belongsTo = [ user : User ] 
-
-    static hasMany = [ tags : Tag ]
+    static belongsTo = [ user: User ]
+    static hasMany = [ tags: Tag ]
 
     static constraints = {
         content blank: false
     }
 
     static mapping = {
-        sort dateCreated: "desc"              
+        sort dateCreated: "desc"
     }
-
+    
     String toString() { return "Post '${shortContent}' (id: $id) for user '${user.loginId}'" }
     String getDisplayString() { return shortContent }
 

@@ -6,10 +6,14 @@
 <body>
     <ul id="menu">
         <li>
-            <g:remoteLink action="ajaxRandom" update="quote">Next Quote</g:remoteLink>
+            <g:remoteLink action="ajaxRandom" update="quote">
+                Next Quote
+            </g:remoteLink>
         </li>
         <li>
-            <g:link action="index">Admin</g:link>
+            <g:link action="index">
+                Admin
+            </g:link>
         </li>
     </ul>
 

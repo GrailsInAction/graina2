@@ -1,12 +1,9 @@
 package com.grailsinaction
 
-import grails.test.mixin.Mock
-import grails.test.mixin.TestFor
 import spock.lang.*
+import grails.test.mixin.TestFor
+import grails.test.mixin.Mock
 
-/**
- * See the API for {@link grails.test.mixin.services.ServiceUnitTestMixin} for usage instructions
- */
 @TestFor(PostService)
 @Mock([User,Post])
 class PostServiceSpec extends Specification {
@@ -37,5 +34,5 @@ class PostServiceSpec extends Specification {
         thrown(PostException)
 
     }
-
+    
 }

@@ -31,7 +31,7 @@ class PostControllerSpec extends Specification {
 
     def "Check that non-existent users are handled with an error"() {
 
-        given: "the is of a non-existent user"
+        given: "the id of a non-existent user"
         params.id = "this-user-id-does-not-exist"
 
         when: "the timeline is invoked"
@@ -102,6 +102,17 @@ class PostControllerSpec extends Specification {
                                                                    
     }
     
+    def "Exercising security filter for unauthenticated user"() {
+
+        when:
+        withFilters(action: "addPost") {
+            controller.addPost("glen_a_smith", "A first post")
+        }
+
+        then:
+        response.redirectedUrl == '/login/form'
+
+    }
 
 }
 
