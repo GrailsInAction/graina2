@@ -21,17 +21,17 @@ class BootStrap {
         println "Creating sample data"
 
         def now = new Date()
-        def graeme = new User(
+        def chuck = new User(
                 loginId: "chuck_norris",
                 password: "highkick",
                 profile: new Profile(fullName: "Chuck Norris", email: "chuck@nowhere.net"),
                 dateCreated: now).save(failOnError: true)
-        def jeff = new User(
+        def glen = new User(
                 loginId: "glen",
                 password: "sheldon",
                 profile: new Profile(fullName: "Glen Smith", email: "glen@nowhere.net"),
                 dateCreated: now).save(failOnError: true)
-        def burt = new User(
+        def peter = new User(
                 loginId: "peter",
                 password: "mandible",
                 profile: new Profile(fullName: "Peter Ledbrook", email: "peter@nowhere.net"),
@@ -55,6 +55,12 @@ class BootStrap {
                 password: "crikey",
                 profile: new Profile(fullName: "Dillon Jessop", email: "dillon@nowhere.net"),
                 dateCreated: now - 2).save(failOnError: true)
+
+        chuck.addToFollowing(phil)
+        chuck.addToPosts(content: "Been working my roundhouse kicks.")
+        chuck.addToPosts(content: "Working on a few new moves. Bit sluggish today.")
+        chuck.addToPosts(content: "Tinkering with the hubbub app.")
+        chuck.save(failOnError: true)
 
         phil.addToFollowing(frankie)
         phil.addToFollowing(sara)
