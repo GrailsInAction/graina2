@@ -64,7 +64,7 @@ class PostControllerSpec extends Specification {
 
     }
 
-    def "Adding a invalid new post to the timeline trips an error"() {
+    def "Adding an invalid new post to the timeline"() {
         given: "A user with posts in the db"
         User chuck = new User(loginId: "chuck_norris", password: "password").save(failOnError: true)
 
@@ -101,18 +101,5 @@ class PostControllerSpec extends Specification {
         null        |   '/post/timeline/chuck_norris'              
                                                                    
     }
-    
-    def "Exercising security filter for unauthenticated user"() {
-
-        when:
-        withFilters(action: "addPost") {
-            controller.addPost("glen_a_smith", "A first post")
-        }
-
-        then:
-        response.redirectedUrl == '/login/form'
-
-    }
 
 }
-
