@@ -3,7 +3,9 @@ package com.grailsinaction
 class PostController {
     static scaffold = true
 
-    def index() {
+    static defaultAction = "home"
+
+    def home() {
         if (!params.id) {
             params.id = "chuck_norris"
         }
