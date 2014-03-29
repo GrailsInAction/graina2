@@ -59,7 +59,7 @@ class PostControllerSpec extends Specification {
 
     }
 
-    def "Adding a invalid new post to the timeline trips an error"() {
+    def "Adding an invalid new post to the timeline"() {
         given: "A user with posts in the db"
         User chuck = new User(loginId: "chuck_norris", password: "password").save(failOnError: true)
 
@@ -91,7 +91,7 @@ class PostControllerSpec extends Specification {
         params.id = suppliedId                                     
                                                                    
         when: "Controller is invoked"                              
-        controller.index()                                         
+        controller.home()                                         
                                                                    
         then:                                                      
         response.redirectedUrl == expectedUrl                      
