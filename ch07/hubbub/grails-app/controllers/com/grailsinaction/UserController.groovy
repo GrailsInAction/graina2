@@ -49,7 +49,7 @@ class UserController {
     
     def register2(UserRegistrationCommand urc) {
         if (urc.hasErrors()) {
-            return [ user : urc ]
+            render view: "register", model: [ user : urc ]
         } else {
             def user = new User(urc.properties)
             user.profile = new Profile(urc.properties)

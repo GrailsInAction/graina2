@@ -6,7 +6,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 @TestFor(PostController)
-@Mock([User, Post])
+@Mock([User, Post, LameSecurityFilters])
 class PostControllerSpec extends Specification {
 
     def "Get a users timeline given their id"() {
@@ -55,7 +55,10 @@ class PostControllerSpec extends Specification {
 
         then: "redirected to timeline, flash message tells us all is well"
         flash.message ==~ /Added new post: Mock.*/
-        response.redirectedUrl == '/post/timeline/joe_cool'   
+        response.redirectedUrl == '/users/joe_cool'   
+
+        // Without the custom URL mapping, the check would be this:
+//        response.redirectedUrl == '/post/timeline/joe_cool'   
 
     }
 
@@ -63,7 +66,7 @@ class PostControllerSpec extends Specification {
         given: "A user with posts in the db"
         User chuck = new User(loginId: "chuck_norris", password: "password").save(failOnError: true)
 
-        and: "A post service that throws an exeption with the given data"
+        and: "A post service that throws an exception with the given data"
         def errorMsg = "Invalid or empty post"
         def mockPostService = Mock(PostService)
         controller.postService = mockPostService
@@ -80,8 +83,11 @@ class PostControllerSpec extends Specification {
 
         then: "our flash message and redirect confirms the success"
         flash.message == errorMsg
-        response.redirectedUrl == "/post/timeline/${chuck.loginId}"
+        response.redirectedUrl == "/users/${chuck.loginId}"
         Post.countByUser(chuck) == 0
+
+        // Without the custom URL mapping, the check would be this:
+//        response.redirectedUrl == "/post/timeline/${chuck.loginId}"
     }
 
     @Unroll                                             
@@ -98,11 +104,22 @@ class PostControllerSpec extends Specification {
                                                                    
         where:                                                     
         suppliedId  |   expectedUrl                                
-        'joe_cool'  |   '/post/timeline/joe_cool'                  
-        null        |   '/post/timeline/chuck_norris'              
+        'joe_cool'  |   '/users/joe_cool'                  
+        null        |   '/users/chuck_norris'              
                                                                    
     }
     
+    def "Exercising security filter for unauthenticated user"() {
+
+        when:
+        withFilters(action: "addPost") {
+            controller.addPost("glen_a_smith", "A first post")
+        }
+
+        then:
+        response.redirectedUrl == '/login/form'
+
+    }
 
 }
 

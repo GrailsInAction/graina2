@@ -10,7 +10,7 @@ class Profile {
     String country
     String jabberAddress
 
-    static belongsTo = [user: User]
+    static belongsTo = [ user : User ]
 
     static constraints = {
         fullName blank: false
