@@ -55,7 +55,7 @@ class SimpleQueriesIntegrationSpec extends Specification {
 
     def "Static User count"() {
         expect: "Static count() method returns correct number of User instances"
-        User.count() == 8  // Admin + 7 other users
+        User.count() == 8
     }
 
 }

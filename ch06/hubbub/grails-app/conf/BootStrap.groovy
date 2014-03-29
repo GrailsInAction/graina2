@@ -23,18 +23,18 @@ class BootStrap {
         def now = new Date()
         def chuck = new User(
                 loginId: "chuck_norris",
-                password: "kickkick",
+                password: "highkick",
                 profile: new Profile(fullName: "Chuck Norris", email: "chuck@nowhere.net"),
                 dateCreated: now).save(failOnError: true)
-        def jeff = new User(
-                loginId: "jeff",
+        def glen = new User(
+                loginId: "glen",
                 password: "sheldon",
-                profile: new Profile(fullName: "Jeff Brown", email: "jeff@nowhere.net"),
+                profile: new Profile(fullName: "Glen Smith", email: "glen@nowhere.net"),
                 dateCreated: now).save(failOnError: true)
-        def burt = new User(
-                loginId: "burt",
+        def peter = new User(
+                loginId: "peter",
                 password: "mandible",
-                profile: new Profile(fullName: "Burt Beckwith", email: "burt@nowhere.net"),
+                profile: new Profile(fullName: "Peter Ledbrook", email: "peter@nowhere.net"),
                 dateCreated: now).save(failOnError: true)
         def frankie = new User(
                 loginId: "frankie",
