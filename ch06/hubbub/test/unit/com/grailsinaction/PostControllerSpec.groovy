@@ -90,7 +90,7 @@ class PostControllerSpec extends Specification {
         params.id = suppliedId                                     
                                                                    
         when: "Controller is invoked"                              
-        controller.index()                                         
+        controller.home()                                         
                                                                    
         then:                                                      
         response.redirectedUrl == expectedUrl                      
