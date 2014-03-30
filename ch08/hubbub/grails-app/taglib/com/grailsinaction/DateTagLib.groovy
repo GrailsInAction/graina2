@@ -9,7 +9,7 @@ class DateTagLib {
         out << niceDate
     }
 
-    String getNiceDate(Date date) {
+    protected String getNiceDate(Date date) {
         def now = new Date()
         def diff = Math.abs(now.time - date.time)
         final long second = 1000
@@ -27,7 +27,7 @@ class DateTagLib {
         if (calc) {
             niceTime += calc + " hour" + (calc > 1 ? "s " : " ")
             diff %= hour
-       }
+        }
         calc = Math.floor(diff / minute)
         if (calc) {
             niceTime += calc + " minute" + (calc > 1 ? "s " : " ")
