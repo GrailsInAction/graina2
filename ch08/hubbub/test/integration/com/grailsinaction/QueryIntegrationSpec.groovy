@@ -42,7 +42,7 @@ class QueryIntegrationSpec extends Specification {
         }.list(sort: "loginId", order: "desc")
 
         then: "The users created within the specified date range are returned"
-        users*.loginId == ["phil", "jeff", "graeme", "frankie", "burt", "admin"]
+        users*.loginId == ["phil", "peter", "glen", "frankie", "chuck_norris", "admin"]
     }
 
     void "Retrieve a single instance"() {

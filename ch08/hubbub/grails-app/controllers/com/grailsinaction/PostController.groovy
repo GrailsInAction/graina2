@@ -3,9 +3,11 @@ package com.grailsinaction
 class PostController {
     static scaffold = true
 
+    static defaultAction = "home"
+
     def postService
 
-    def index() {
+    def home() {
         if (!params.id) {
             params.id = "chuck_norris"
         }
@@ -14,7 +16,11 @@ class PostController {
     
     def timeline(String id) {
         def user = User.findByLoginId(id)
-        [ user : user ]
+        if (!user) {
+            response.sendError(404)
+        } else {
+            [ user : user ]
+        }
     }
 
     def addPost(String id, String content)  {
@@ -24,7 +30,7 @@ class PostController {
         } catch (PostException pe) {
             flash.message = pe.message
         }
-        redirect(action: 'timeline', id: params.id)
+        redirect(action: 'timeline', id: id)
     }
 
     def addPostAjax(String content) {

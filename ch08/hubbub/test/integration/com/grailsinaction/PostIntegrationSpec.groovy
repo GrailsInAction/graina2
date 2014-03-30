@@ -7,8 +7,8 @@ class PostIntegrationSpec extends Specification {
     def "Adding posts to user links post to user"() {
 
         given: "A brand new user"
-        def user = new User(loginId: 'joe',                   
-                            password: 'secret').save(failOnError: true)
+        def user = new User(loginId: 'joe', password: 'secret')
+        user.save(failOnError: true)
 
         when: "Several posts are added to the user"
         user.addToPosts(new Post(content: "First post... W00t!"))
@@ -22,14 +22,15 @@ class PostIntegrationSpec extends Specification {
     def "Ensure posts linked to a user can be retrieved"() {
 
         given: "A user with several posts"
-        User user = new User(loginId: 'joe', password: 'secret').save(failOnError: true)
+        def user = new User(loginId: 'joe', password: 'secret')
         user.addToPosts(new Post(content: "First"))
         user.addToPosts(new Post(content: "Second"))
         user.addToPosts(new Post(content: "Third"))
+        user.save(failOnError: true)
 
         when: "The user is retrieved by their id"
         def foundUser = User.get(user.id)
-        List<String> sortedPostContent = foundUser.posts.collect { it.content }.sort()
+        def sortedPostContent = foundUser.posts.collect { it.content }.sort()
 
         then: "The posts appear on the retrieved user"
         sortedPostContent == ['First', 'Second', 'Third']
@@ -39,11 +40,12 @@ class PostIntegrationSpec extends Specification {
     def "Exercise tagging several posts with various tags"() {
 
         given: "A user with a set of tags"
-        def user = new User(loginId: 'joe', password: 'secret').save(failOnError: true)
+        def user = new User(loginId: 'joe', password: 'secret')
         def tagGroovy = new Tag(name: 'groovy')
         def tagGrails = new Tag(name: 'grails')
         user.addToTags(tagGroovy)
         user.addToTags(tagGrails)
+        user.save(failOnError: true)
 
         when: "The user tags two fresh posts"
         def groovyPost = new Post(content: "A groovy post")
