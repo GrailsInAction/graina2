@@ -13,6 +13,11 @@ class UrlMappings {
             id = "chuck_norris"
         }
 
+        "/timeline" {
+            controller = "post"
+            action = "personal"
+        }
+
         "/users/$id" {
             controller = "post"
             action = "timeline"
