@@ -17,6 +17,10 @@ class User {
         profile nullable: true
     }
 
+    static mapping = {
+        posts sort: "dateCreated", order: "desc"
+    }
+
     String toString() { return "User $loginId (id: $id)" }
     String getDisplayString() { return loginId }
 }
