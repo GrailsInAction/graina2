@@ -1,8 +1,8 @@
 package com.grailsinaction
 
-import grails.plugin.spock.IntegrationSpec
+import spock.lang.*
 
-class QueryIntegrationSpec extends IntegrationSpec {
+class QueryIntegrationSpec extends Specification {
 
     void "Simple property comparison"() {
         when: "Users are selected by a simple password match"
@@ -42,7 +42,7 @@ class QueryIntegrationSpec extends IntegrationSpec {
         }.list(sort: "loginId", order: "desc")
 
         then: "The users created within the specified date range are returned"
-        users*.loginId == ["phil", "jeff", "graeme", "frankie", "burt", "admin"]
+        users*.loginId == ["phil", "peter", "glen", "frankie", "chuck_norris", "admin"]
     }
 
     void "Retrieve a single instance"() {

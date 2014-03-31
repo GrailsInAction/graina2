@@ -13,15 +13,14 @@ class PostService {
         if (user) {
             def post = new Post(content: content)
             user.addToPosts(post)
-
             if (post.validate() && user.save()) {
                 return post
-            }
-            else {
-                throw new PostException(message: "Invalid or empty post", post: post)
+            } else {
+                throw new PostException(
+                    message: "Invalid or empty post", post: post)
             }
         }
-
-        throw new PostException(message: "Invalid login ID")
+        throw new PostException(message: "Invalid User Id")
     }
+
 }

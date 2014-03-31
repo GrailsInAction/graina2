@@ -20,25 +20,27 @@ class BootStrap {
     }
 
     private createSampleData() {
+        println "Creating sample data"
+
         // Search mirroring (where saved domain instances are automatically indexed) is
         // fragile and has problems with the data below.
         searchableService.stopMirroring()
 
         def now = new Date()
-        def graeme = new User(
-                loginId: "graeme",
-                password: "willow",
-                profile: new Profile(fullName: "Graeme Rocher", email: "graeme@nowhere.net"),
+        def chuck = new User(
+                loginId: "chuck_norris",
+                password: "highkick",
+                profile: new Profile(fullName: "Chuck Norris", email: "chuck@nowhere.net"),
                 dateCreated: now).save(failOnError: true)
-        def jeff = new User(
-                loginId: "jeff",
+        def glen = new User(
+                loginId: "glen",
                 password: "sheldon",
-                profile: new Profile(fullName: "Jeff Brown", email: "jeff@nowhere.net"),
+                profile: new Profile(fullName: "Glen Smith", email: "glen@nowhere.net"),
                 dateCreated: now).save(failOnError: true)
-        def burt = new User(
-                loginId: "burt",
+        def peter = new User(
+                loginId: "peter",
                 password: "mandible",
-                profile: new Profile(fullName: "Burt Beckwith", email: "burt@nowhere.net"),
+                profile: new Profile(fullName: "Peter Ledbrook", email: "peter@nowhere.net"),
                 dateCreated: now).save(failOnError: true)
         def frankie = new User(
                 loginId: "frankie",
@@ -54,11 +56,17 @@ class BootStrap {
                 loginId: "phil",
                 password: "thomas",
                 profile: new Profile(fullName: "Phil Potts", email: "phil@nowhere.net"),
-                dateCreated: now).save(failOnError:true)
+                dateCreated: now)
         def dillon = new User(loginId: "dillon",
                 password: "crikey",
                 profile: new Profile(fullName: "Dillon Jessop", email: "dillon@nowhere.net"),
                 dateCreated: now - 2).save(failOnError: true)
+
+        chuck.addToFollowing(phil)
+        chuck.addToPosts(content: "Been working my roundhouse kicks.")
+        chuck.addToPosts(content: "Working on a few new moves. Bit sluggish today.")
+        chuck.addToPosts(content: "Tinkering with the hubbub app.")
+        chuck.save(failOnError: true)
 
         phil.addToFollowing(frankie)
         phil.addToFollowing(sara)
@@ -81,7 +89,7 @@ class BootStrap {
         sara.save(failOnError: true)
 
         dillon.addToPosts(content: "Pilates is killing me as well")
-        dillon.save(failOnError: true)
+        dillon.save(failOnError: true, flush: true)
 
         // We have to update the 'dateCreated' field after the initial save to
         // work around Grails' auto-timestamping feature. Note that this trick
@@ -109,14 +117,14 @@ class BootStrap {
 
         postsAsList = sara.posts as List
         postsAsList[0].dateCreated = now.updated(year: 2007, month: MAY)
-        postsAsList[1].dateCreated = now.updated(year: 2008, month: MARCH, date: 13)
+        postsAsList[1].dateCreated = now.updated(year: 2008, month: APRIL, date: 13)
         postsAsList[2].dateCreated = now.updated(year: 2008, month: APRIL, date: 24)
         postsAsList[3].dateCreated = now.updated(year: 2011, month: NOVEMBER, date: 8)
         postsAsList[4].dateCreated = now.updated(year: 2011, month: DECEMBER, date: 4)
         postsAsList[5].dateCreated = now.updated(year: 2012, month: AUGUST, date: 1)
         
         sara.dateCreated = now - 2
-        sara.save(failOnError: true, flush: true)
+        sara.save(failOnError: true)
 
         dillon.dateCreated = now - 2
         dillon.save(failOnError: true, flush: true)
@@ -127,10 +135,11 @@ class BootStrap {
     }
 
     private createAdminUserIfRequired() {
+        println "Creating admin user"
         if (!User.findByLoginId("admin")) {
             println "Fresh Database. Creating ADMIN user."
 
-            def profile = new Profile(email: "admin@yourhost.com", fullName: "Admin User", dateCreated: new Date())
+            def profile = new Profile(email: "admin@yourhost.com", fullName: "Administrator")
             new User(loginId: "admin", password: "secret", profile: profile).save(failOnError: true)
         }
         else {

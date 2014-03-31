@@ -1,10 +1,9 @@
 package com.grailsinaction
 
 import spock.lang.*
-import grails.plugin.spock.*
 
-class UserIntegrationSpec extends IntegrationSpec  {
-
+class UserIntegrationSpec extends Specification {
+    
     def dumbster
 
     def "Saving our first user to the database"() {
@@ -22,39 +21,41 @@ class UserIntegrationSpec extends IntegrationSpec  {
 
     }
 
-
     def "Updating a saved user changes its properties"() {
 
         given: "An existing user"
-        def existingUser = new User(loginId: 'joe', password: 'secret').save(failOnError: true)
+        def existingUser = new User(loginId: 'joe', password: 'secret')
+        existingUser.save(failOnError: true)
 
         when: "A property is changed"
         def foundUser = User.get(existingUser.id)    
-        foundUser.password = 'sesame'                   
-        foundUser.save(failOnError: true)              
+        foundUser.password = 'sesame'
+        foundUser.save(failOnError: true)
 
         then: "The change is reflected in the database"
         User.get(existingUser.id).password == 'sesame'
 
     }
-
+    
     def "Deleting an existing user removes it from the database"() {
 
         given: "An existing user"
-        def user = new User(loginId: 'joe', password: 'secret').save(failOnError: true)
+        def user = new User(loginId: 'joe', password: 'secret')
+        user.save(failOnError: true)
 
         when: "The user is deleted"
         def foundUser = User.get(user.id)
         foundUser.delete(flush: true)
 
         then: "The user is removed from the database"
-        !User.exists(foundUser.id)            
-    }
+        !User.exists(foundUser.id)
 
+    }
+    
     def "Saving a user with invalid properties causes an error"() {
 
         given: "A user which fails several field validations"
-        def user = new User(loginId: 'chuck_norris', password: 'tiny')
+        def user = new User(loginId: 'joe', password: 'tiny')
 
         when:  "The user is validated"
         user.validate()
@@ -62,7 +63,7 @@ class UserIntegrationSpec extends IntegrationSpec  {
         then:
         user.hasErrors()
 
-        "size.toosmall" == user.errors.getFieldError("password").code                     
+        "size.toosmall" == user.errors.getFieldError("password").code
         "tiny" == user.errors.getFieldError("password").rejectedValue
         !user.errors.getFieldError("loginId")
 
@@ -73,17 +74,15 @@ class UserIntegrationSpec extends IntegrationSpec  {
     def "Recovering from a failed save by fixing invalid properties"() {
 
         given: "A user that has invalid properties"
-        def chuck = new User(loginId: 'chuck_norris', password: 'tiny')
+        def chuck = new User(loginId: 'chuck', password: 'tiny')
         assert chuck.save()  == null
         assert chuck.hasErrors()
 
         when: "We fix the invalid properties"
         chuck.password = "fistfist"
-
-        // 'homepage' is now on Profile so can't be set on the user.
+        chuck.validate()
 
         then: "The user saves and validates fine"
-        chuck.validate()
         !chuck.hasErrors()
         chuck.save()
     
@@ -92,18 +91,18 @@ class UserIntegrationSpec extends IntegrationSpec  {
     def "Ensure a user can follow other users"() {
 
         given: "A set of baseline users"
-        def glen = new User(loginId: 'glen', password:'password').save()
-        def peter = new User(loginId: 'peter', password:'password').save()
-        def sven = new User(loginId: 'sven', password:'password').save()
+        def joe = new User(loginId: 'joe', password:'password').save()
+        def jane = new User(loginId: 'jane', password:'password').save()
+        def jill = new User(loginId: 'jill', password:'password').save()
 
-        when: "Glen follows Peter, and Sven follows Peter"
-        glen.addToFollowing(peter)                     
-        glen.addToFollowing(sven)          
-        sven.addToFollowing(peter)
+        when: "Joe follows Jane & Jill, and Jill follows Jane"
+        joe.addToFollowing(jane)
+        joe.addToFollowing(jill)
+        jill.addToFollowing(jane)
 
         then: "Follower counts should match following people"
-        2 == glen.following.size()
-        1 == sven.following.size()
+        2 == joe.following.size()
+        1 == jill.following.size()
         
     }
 
@@ -127,7 +126,5 @@ class UserIntegrationSpec extends IntegrationSpec  {
         msg.body =~ /The Hubbub Team/
 
     }
-
-
-
+    
 }

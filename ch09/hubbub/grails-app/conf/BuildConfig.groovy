@@ -46,8 +46,8 @@ grails.project.dependency.resolution = {
         //mavenRepo "http://repository.jboss.com/maven2/"
     }
 
-    def gebVersion = "0.9.0"
-    def seleniumVersion = "2.32.0"
+    def gebVersion = "0.9.2"
+    def seleniumVersion = "2.41.0"
 
     dependencies {
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes e.g.
@@ -55,11 +55,11 @@ grails.project.dependency.resolution = {
         test "org.gebish:geb-spock:$gebVersion"
 
         test "org.seleniumhq.selenium:selenium-support:$seleniumVersion"
+        test "org.seleniumhq.selenium:selenium-firefox-driver:$seleniumVersion"
 //        test "org.seleniumhq.selenium:selenium-htmlunit-driver:$seleniumVersion", {
 //            exclude "xml-apis"
 //        }
 //        test "org.seleniumhq.selenium:selenium-chrome-driver:$seleniumVersion"
-        test "org.seleniumhq.selenium:selenium-firefox-driver:$seleniumVersion"
     }
 
     plugins {
@@ -82,8 +82,6 @@ grails.project.dependency.resolution = {
 
         runtime ":navigation:1.3.2"
 
-        test ":spock:0.7", ":geb:$gebVersion", {
-            exclude "spock-grails-support"
-        }
+        test ":geb:$gebVersion"
     }
 }
