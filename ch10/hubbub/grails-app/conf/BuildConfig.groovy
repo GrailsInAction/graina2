@@ -40,6 +40,10 @@ grails.project.dependency.resolution = {
         mavenLocal()
         grailsCentral()
         mavenCentral()
+
+        // For the Searchable plugin's 'compass' dependency
+        mavenRepo "http://repo.grails.org/grails/core"
+
         // uncomment these (or add new ones) to enable remote dependency resolution from public Maven repositories
         //mavenRepo "http://repository.codehaus.org"
         //mavenRepo "http://download.java.net/maven/2/"
@@ -50,8 +54,8 @@ grails.project.dependency.resolution = {
     def seleniumVersion = "2.41.0"
 
     dependencies {
-        // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes e.g.
-        // runtime 'mysql:mysql-connector-java:5.1.24'
+        compile "org.apache.lucene:lucene-spellchecker:2.4.1"
+
         test "org.gebish:geb-spock:$gebVersion"
 
         test "org.seleniumhq.selenium:selenium-support:$seleniumVersion"
@@ -70,7 +74,7 @@ grails.project.dependency.resolution = {
         compile ":scaffolding:2.0.1"
         compile ":mail:1.0.1"
         compile ':cache:1.1.1', ":cache-ehcache:1.0.1"
-        compile ":searchable:0.6.4"
+        compile ":searchable:0.6.6"
 
         // plugins needed at runtime but not for compilation
         runtime ":hibernate:3.6.10.6" // or ":hibernate4:4.1.11.6"
