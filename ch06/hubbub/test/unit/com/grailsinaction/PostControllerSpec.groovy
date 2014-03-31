@@ -22,11 +22,11 @@ class PostControllerSpec extends Specification {
         params.id = chuck.loginId
 
         when: "the timeline is invoked"
-        def data = controller.timeline()
+        def model = controller.timeline()
 
         then: "the user is in the returned model"
-        data.user.loginId == "chuck_norris"
-        data.user.posts.size() == 2
+        model.user.loginId == "chuck_norris"
+        model.user.posts.size() == 2
     }
 
     def "Check that non-existent users are handled with an error"() {
