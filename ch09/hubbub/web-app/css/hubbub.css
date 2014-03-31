@@ -29,6 +29,7 @@ body {
     margin-top: 0.5em;
     background: white;
     padding: 1em;
+    width: 80%;
 }
 
 #ft {
@@ -39,24 +40,6 @@ body {
     color: white;
     font-family: "Lucinda Grande",Arial;
     font-size: 12pt;
-}
-
-#sidebar {
-
-    margin-top: 3em;
-    background-color: #d3e3f5;
-    padding: 1em;
-    border: 1px solid lightblue;
-    
-}
-
-#sidebar h3 {
-    color: #343534;
-    font-weight: bold;
-    border-bottom: 1px solid lightslategray;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    
 }
 
 #newPost h3 {
@@ -133,3 +116,20 @@ dd {
     font-weight: bold;
 }
 
+.step {
+    padding-left: 1em;
+}
+
+.prevLink {
+    padding-left: 1em;
+}
+
+
+.nextLink {
+    padding-left: 1em;
+}
+
+.currentStep {
+    padding-left: 1em;
+    font-weight: bold;
+}

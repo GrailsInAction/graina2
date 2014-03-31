@@ -6,12 +6,12 @@ import spock.lang.Specification
 @Mock(LameSecurityFilters)
 class LameSecurityFiltersSpec extends Specification {
 
-	def setup() {
-	}
+    def setup() {
+    }
 
-	def cleanup() {
-	}
+    def cleanup() {
+    }
 
-	void "test something"() {
-	}
+    void "test something"() {
+    }
 }
