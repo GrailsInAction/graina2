@@ -13,7 +13,8 @@ class TimelinePageFunctionalSpec extends GebReportingSpec {
     }
 
     def "Submitting a new post"() {
-        given: "I start at phil's timeline page"
+        given: "I log in and start at my timeline page"
+        login "frankie", "testing"
         to TimelinePage, "phil"
 
         when: "I enter a new message and post it"
@@ -22,5 +23,12 @@ class TimelinePageFunctionalSpec extends GebReportingSpec {
 
         then: "I see the new post in the timeline"
         waitFor { !posts("This is a test post from Geb").empty }
+    }
+
+    private login(String username, String password) {
+        to LoginPage
+        loginIdField = username
+        passwordField = password
+        signInButton.click()
     }
 }

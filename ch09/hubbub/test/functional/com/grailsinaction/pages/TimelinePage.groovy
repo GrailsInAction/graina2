@@ -14,7 +14,7 @@ class TimelinePage extends geb.Page {
     }
 
     static at = {
-        $("title").text().contains("Timeline for")
+        title.contains("Timeline for")
         $("#allPosts")
     }
 }
