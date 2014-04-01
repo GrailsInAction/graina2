@@ -3,6 +3,9 @@ import static java.util.Calendar.*
 
 class BootStrap {
 
+    def searchableService
+    def springSecurityService
+
     def init = { servletContext ->
         environments {
             development {
@@ -18,42 +21,53 @@ class BootStrap {
     }
 
     private createSampleData() {
+        println "Creating sample data"
+
+        // Search mirroring (where saved domain instances are automatically indexed) is
+        // fragile and has problems with the data below.
+        searchableService.stopMirroring()
 
         def now = new Date()
-        def graeme = new User(
-                loginId: "graeme",
-                password: "willow",
-                profile: new Profile(fullName: "Graeme Rocher", email: "graeme@nowhere.net"),
+        def chuck = new User(
+                loginId: "chuck_norris",
+                passwordHash: springSecurityService.encodePassword("highkick"),
+                profile: new Profile(fullName: "Chuck Norris", email: "chuck@nowhere.net"),
                 dateCreated: now).save(failOnError: true)
-        def jeff = new User(
-                loginId: "jeff",
-                password: "sheldon",
-                profile: new Profile(fullName: "Jeff Brown", email: "jeff@nowhere.net"),
+        def glen = new User(
+                loginId: "glen",
+                passwordHash: springSecurityService.encodePassword("sheldon"),
+                profile: new Profile(fullName: "Glen Smith", email: "glen@nowhere.net"),
                 dateCreated: now).save(failOnError: true)
-        def burt = new User(
-                loginId: "burt",
-                password: "mandible",
-                profile: new Profile(fullName: "Burt Beckwith", email: "burt@nowhere.net"),
+        def peter = new User(
+                loginId: "peter",
+                passwordHash: springSecurityService.encodePassword("mandible"),
+                profile: new Profile(fullName: "Peter Ledbrook", email: "peter@nowhere.net"),
                 dateCreated: now).save(failOnError: true)
         def frankie = new User(
                 loginId: "frankie",
-                password: "testing",
+                passwordHash: springSecurityService.encodePassword("testing"),
                 profile: new Profile(fullName: "Frankie Goes to Hollywood", email: "frankie@nowhere.net"),
                 dateCreated: now).save(failOnError: true)
         def sara = new User(
                 loginId: "sara",
-                password: "crikey",
+                passwordHash: springSecurityService.encodePassword("crikey"),
                 profile: new Profile(fullName: "Sara Miles", email: "sara@nowhere.net"),
                 dateCreated: now - 2).save(failOnError: true)
         def phil = new User(
                 loginId: "phil",
-                password: "thomas",
+                passwordHash: springSecurityService.encodePassword("thomas"),
                 profile: new Profile(fullName: "Phil Potts", email: "phil@nowhere.net"),
                 dateCreated: now)
         def dillon = new User(loginId: "dillon",
-                password: "crikey",
+                passwordHash: springSecurityService.encodePassword("crikey"),
                 profile: new Profile(fullName: "Dillon Jessop", email: "dillon@nowhere.net"),
                 dateCreated: now - 2).save(failOnError: true)
+
+        chuck.addToFollowing(phil)
+        chuck.addToPosts(content: "Been working my roundhouse kicks.")
+        chuck.addToPosts(content: "Working on a few new moves. Bit sluggish today.")
+        chuck.addToPosts(content: "Tinkering with the hubbub app.")
+        chuck.save(failOnError: true)
 
         phil.addToFollowing(frankie)
         phil.addToFollowing(sara)
@@ -65,7 +79,7 @@ class BootStrap {
         phil.addToPosts(content: "Writing a very very long book")
         phil.addToPosts(content: "Tap dancing")
         phil.addToPosts(content: "Pilates is killing me")
-        phil.save()
+        phil.save(failOnError: true)
 
         sara.addToPosts(content: "My first post")
         sara.addToPosts(content: "Second post")
@@ -73,10 +87,10 @@ class BootStrap {
         sara.addToPosts(content: "Writing a very very long book")
         sara.addToPosts(content: "Tap dancing")
         sara.addToPosts(content: "Pilates is killing me")
-        sara.save(flush: true)
+        sara.save(failOnError: true)
 
         dillon.addToPosts(content: "Pilates is killing me as well")
-        dillon.save(flush: true)
+        dillon.save(failOnError: true, flush: true)
 
         // We have to update the 'dateCreated' field after the initial save to
         // work around Grails' auto-timestamping feature. Note that this trick
@@ -104,7 +118,7 @@ class BootStrap {
 
         postsAsList = sara.posts as List
         postsAsList[0].dateCreated = now.updated(year: 2007, month: MAY)
-        postsAsList[1].dateCreated = now.updated(year: 2008, month: MARCH, date: 13)
+        postsAsList[1].dateCreated = now.updated(year: 2008, month: APRIL, date: 13)
         postsAsList[2].dateCreated = now.updated(year: 2008, month: APRIL, date: 24)
         postsAsList[3].dateCreated = now.updated(year: 2011, month: NOVEMBER, date: 8)
         postsAsList[4].dateCreated = now.updated(year: 2011, month: DECEMBER, date: 4)
@@ -114,18 +128,23 @@ class BootStrap {
         sara.save(failOnError: true)
 
         dillon.dateCreated = now - 2
-        dillon.save(failOnError: true)
+        dillon.save(failOnError: true, flush: true)
+
+        // Now that the data has been persisted, we can index it and re-enable mirroring.
+        searchableService.index()
+        searchableService.startMirroring()
     }
 
     private createAdminUserIfRequired() {
+        println "Creating admin user"
         if (!User.findByLoginId("admin")) {
             println "Fresh Database. Creating ADMIN user."
 
-            def profile = new Profile(email: "admin@yourhost.com")
+            def profile = new Profile(email: "admin@yourhost.com", fullName: "Administrator")
             def adminRole = new Role(authority: "ROLE_ADMIN").save(failOnError: true)
             def adminUser = new User(
                     loginId: "admin",
-                    password: "secret",
+                    passwordHash: springSecurityService.encodePassword("secret"),
                     profile: profile,
                     enabled: true).save(failOnError: true)
             UserRole.create adminUser, adminRole
