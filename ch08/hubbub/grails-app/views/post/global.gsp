@@ -2,9 +2,6 @@
     <head>
         <title>Global Timeline</title> 
         <meta name="layout" content="main"/>
-        <g:if test="${session.user?.profile?.skin}">
-            <g:external dir="css" file="${session.user?.profile?.skin}.css"/>
-        </g:if>
 <g:javascript>
     function clearPost(e) {
         $('postContent').text('');
