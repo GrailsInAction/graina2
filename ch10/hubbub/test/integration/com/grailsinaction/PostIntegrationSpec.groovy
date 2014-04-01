@@ -4,6 +4,14 @@ import spock.lang.*
 
 class PostIntegrationSpec extends Specification {
 
+    def searchableService
+
+    def setup() {
+        // The Searchable plugin breaks the second test if we don't disable
+        // mirroring before it runs.
+        searchableService.stopMirroring()
+    }
+
     def "Adding posts to user links post to user"() {
 
         given: "A brand new user"
