@@ -10,18 +10,18 @@
         </g:if>
 <g:javascript>
     function clearPost(e) {
-        $('postContent').text('');
+        $('#postContent').val('');
     }
     function showSpinner(visible) {
         if (visible) $('#spinner').show();
                 else $('#spinner').hide();
     }
     function addTinyUrl(data) {
-                    var tinyUrl = data.urls.small;
-                    var postBox = $("#postContent")
-                    postBox.val(postBox.val() + tinyUrl);
-                    toggleTinyUrl();
-                    $("#tinyUrl input[name='fullUrl']").val('');
+        var tinyUrl = data.urls.small;
+        var postBox = $("#postContent")
+        postBox.val(postBox.val() + tinyUrl);
+        toggleTinyUrl();
+        $("#tinyUrl input[name='fullUrl']").val('');
     }
 </g:javascript>
     </head>
@@ -44,7 +44,7 @@
                     <g:submitToRemote value="Post"
                          url="[controller: 'post', action: 'addPostAjax']"
                          update="allPosts"
-                         onSuccess="clearPost(e)"
+                         onSuccess="clearPost(data)"
                          onLoading="showSpinner(true)"
                          onComplete="showSpinner(false)"/>
 
