@@ -1,7 +1,5 @@
-import com.grailsinaction.PostController
-import grails.test.mixin.Mock
-import grails.test.mixin.TestFor
-import spock.lang.Specification
+import com.grailsinaction.*
+import spock.lang.*
 
 @TestFor(UrlMappings)
 @Mock(PostController)
@@ -15,9 +13,8 @@ class UrlMappingsSpec extends Specification {
         }
 
         where:
-        url                     | expectCtrl| expectAction  | expectId
+        url		            | expectCtrl| expectAction  | expectId
         '/users/glen'           | 'post'    | 'timeline'    | 'glen'
         '/timeline/chuck_norris'| 'post'    | 'timeline'    | 'chuck_norris'
     }
-
 }
