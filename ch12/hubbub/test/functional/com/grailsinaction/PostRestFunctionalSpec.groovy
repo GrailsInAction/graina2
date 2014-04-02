@@ -28,7 +28,6 @@ class PostRestFunctionalSpec extends Specification {
         def response = restClient.get(path: "/posts", accept: "application/xml")
 
         then: "I get the expected posts as an XML document"
-        println ">> ${response.text}"
         response.xml.post.message*.text().sort()[0..1] == [
                 "Been working my roundhouse kicks.",
                 "My first post" ]

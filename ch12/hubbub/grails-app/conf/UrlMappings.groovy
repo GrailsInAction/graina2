@@ -29,7 +29,10 @@ class UrlMappings {
 
         "/"(view: "/index")
         "500"(view:"/error")
+
+        // Swap the above error mapping with these two once
+        // http://jira.grails.org/browse/GRAILS-11281 is fixed.
 //        "500"(controller: "error", action: "internalServer")
-        "404"(controller: "error", action: "notFound")
+//        "404"(controller: "error", action: "notFound")
     }
 }
