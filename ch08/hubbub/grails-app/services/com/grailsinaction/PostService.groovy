@@ -1,12 +1,14 @@
 package com.grailsinaction
 
+import grails.transaction.Transactional
+
 class PostException extends RuntimeException {
     String message
     Post post
 }
 
+@Transactional
 class PostService {
-    static transactional = true
 
     Post createPost(String loginId, String content) {
         def user = User.findByLoginId(loginId)
