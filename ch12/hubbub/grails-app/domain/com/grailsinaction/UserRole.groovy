@@ -4,6 +4,8 @@ import org.apache.commons.lang.builder.HashCodeBuilder
 
 class UserRole implements Serializable {
 
+	private static final long serialVersionUID = 1
+
 	User user
 	Role role
 
@@ -24,30 +26,36 @@ class UserRole implements Serializable {
 	}
 
 	static UserRole get(long userId, long roleId) {
-		find 'from UserRole where user.id=:userId and role.id=:roleId',
-			[userId: userId, roleId: roleId]
+		UserRole.where {
+			user == User.load(userId) &&
+			role == Role.load(roleId)
+		}.get()
 	}
 
 	static UserRole create(User user, Role role, boolean flush = false) {
 		new UserRole(user: user, role: role).save(flush: flush, insert: true)
 	}
 
-	static boolean remove(User user, Role role, boolean flush = false) {
-		UserRole instance = UserRole.findByUserAndRole(user, role)
-		if (!instance) {
-			return false
-		}
+	static boolean remove(User u, Role r, boolean flush = false) {
 
-		instance.delete(flush: flush)
-		true
+		int rowCount = UserRole.where {
+			user == User.load(u.id) &&
+			role == Role.load(r.id)
+		}.deleteAll()
+
+		rowCount > 0
 	}
 
-	static void removeAll(User user) {
-		executeUpdate 'DELETE FROM UserRole WHERE user=:user', [user: user]
+	static void removeAll(User u) {
+		UserRole.where {
+			user == User.load(u.id)
+		}.deleteAll()
 	}
 
-	static void removeAll(Role role) {
-		executeUpdate 'DELETE FROM UserRole WHERE role=:role', [role: role]
+	static void removeAll(Role r) {
+		UserRole.where {
+			role == Role.load(r.id)
+		}.deleteAll()
 	}
 
 	static mapping = {

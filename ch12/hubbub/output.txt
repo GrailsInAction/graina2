@@ -1,0 +1,1613 @@
+| Loading Grails 2.3.7
+| Configuring classpath
+| Configuring classpath.
+| Environment set to development
+| Environment set to development.
+| Environment set to development..
+| Environment set to development...
+| Environment set to development....
+| Environment set to development.....
+| Packaging Grails application
+| Packaging Grails application.
+| Packaging Grails application..
+| Packaging Grails application...
+| Packaging Grails application....
+| Packaging Grails application.....
+| Compiling 4 source files
+| Compiling 4 source files.
+| Compiling 4 source files..
+| Compiling 4 source files...
+| Compiling 4 source files....
+| Compiling 4 source files.....
+| Running Grails application
+objc[8769]: Class JavaLaunchHelper is implemented in both /Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/bin/java and /Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/libinstrument.dylib. One of the two will be used. Which one is undefined.
+Configuring Spring Security Core ...
+... finished configuring Spring Security Core
+Configuring Spring Security Twitter ...
+... finished configuring Spring Security Twitter
+Configuring Spring Security UI ...
+... finished configuring Spring Security UI
+Resetting all passwords...
+Resetting passwords for 0 users
+Done resetting passwords...
+Creating admin user
+Fresh Database. Creating ADMIN user.
+Creating sample data
+| Server running. Browse to http://localhost:8080/hubbub
+| Error 2014-04-02 09:31:55,064 [http-bio-8080-exec-4] ERROR errors.GrailsExceptionResolver  - RuntimeException occurred when processing request: [GET] /hubbub/api/posts.json
+Test error. Stacktrace follows:
+Message: Test error
+    Line | Method
+->>   10 | index     in com.grailsinaction.PostRestController
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+|    200 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|     53 | doFilter  in grails.plugin.springsecurity.web.filter.GrailsAnonymousAuthenticationFilter
+|     49 | doFilter  in grails.plugin.springsecurity.web.authentication.RequestHolderAuthenticationFilter
+|     82 | doFilter  in grails.plugin.springsecurity.web.authentication.logout.MutableLogoutFilter
+|   1145 | runWorker in java.util.concurrent.ThreadPoolExecutor
+|    615 | run       in java.util.concurrent.ThreadPoolExecutor$Worker
+^    744 | run . . . in java.lang.Thread
+| Error 2014-04-02 09:31:55,188 [http-bio-8080-exec-4] ERROR errors.GrailsExceptionResolver  - NullPointerException occurred when processing request: [GET] /hubbub/api/posts.json
+Stacktrace follows:
+Message: null
+    Line | Method
+->>  191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    200 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|     53 | doFilter  in grails.plugin.springsecurity.web.filter.GrailsAnonymousAuthenticationFilter
+|     49 | doFilter  in grails.plugin.springsecurity.web.authentication.RequestHolderAuthenticationFilter
+|     82 | doFilter  in grails.plugin.springsecurity.web.authentication.logout.MutableLogoutFilter
+|   1145 | runWorker in java.util.concurrent.ThreadPoolExecutor
+|    615 | run . . . in java.util.concurrent.ThreadPoolExecutor$Worker
+^    744 | run       in java.lang.Thread
+| Error 2014-04-02 09:31:55,282 [http-bio-8080-exec-4] ERROR errors.GrailsExceptionResolver  - NullPointerException occurred when processing request: [GET] /hubbub/api/posts.json
+Stacktrace follows:
+Message: null
+    Line | Method
+->>  191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    200 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|     53 | doFilter  in grails.plugin.springsecurity.web.filter.GrailsAnonymousAuthenticationFilter
+|     49 | doFilter  in grails.plugin.springsecurity.web.authentication.RequestHolderAuthenticationFilter
+|     82 | doFilter  in grails.plugin.springsecurity.web.authentication.logout.MutableLogoutFilter
+|   1145 | runWorker in java.util.concurrent.ThreadPoolExecutor
+|    615 | run . . . in java.util.concurrent.ThreadPoolExecutor$Worker
+^    744 | run       in java.lang.Thread
+| Error 2014-04-02 09:31:55,368 [http-bio-8080-exec-4] ERROR errors.GrailsExceptionResolver  - NullPointerException occurred when processing request: [GET] /hubbub/api/posts.json
+Stacktrace follows:
+Message: null
+    Line | Method
+->>  191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    200 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|     53 | doFilter  in grails.plugin.springsecurity.web.filter.GrailsAnonymousAuthenticationFilter
+|     49 | doFilter  in grails.plugin.springsecurity.web.authentication.RequestHolderAuthenticationFilter
+|     82 | doFilter  in grails.plugin.springsecurity.web.authentication.logout.MutableLogoutFilter
+|   1145 | runWorker in java.util.concurrent.ThreadPoolExecutor
+|    615 | run . . . in java.util.concurrent.ThreadPoolExecutor$Worker
+^    744 | run       in java.lang.Thread
+| Error 2014-04-02 09:31:55,451 [http-bio-8080-exec-4] ERROR errors.GrailsExceptionResolver  - NullPointerException occurred when processing request: [GET] /hubbub/api/posts.json
+Stacktrace follows:
+Message: null
+    Line | Method
+->>  191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    200 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|     53 | doFilter  in grails.plugin.springsecurity.web.filter.GrailsAnonymousAuthenticationFilter
+|     49 | doFilter  in grails.plugin.springsecurity.web.authentication.RequestHolderAuthenticationFilter
+|     82 | doFilter  in grails.plugin.springsecurity.web.authentication.logout.MutableLogoutFilter
+|   1145 | runWorker in java.util.concurrent.ThreadPoolExecutor
+|    615 | run . . . in java.util.concurrent.ThreadPoolExecutor$Worker
+^    744 | run       in java.lang.Thread
+| Error 2014-04-02 09:31:55,578 [http-bio-8080-exec-4] ERROR errors.GrailsExceptionResolver  - NullPointerException occurred when processing request: [GET] /hubbub/api/posts.json
+Stacktrace follows:
+Message: null
+    Line | Method
+->>  191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    200 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|     53 | doFilter  in grails.plugin.springsecurity.web.filter.GrailsAnonymousAuthenticationFilter
+|     49 | doFilter  in grails.plugin.springsecurity.web.authentication.RequestHolderAuthenticationFilter
+|     82 | doFilter  in grails.plugin.springsecurity.web.authentication.logout.MutableLogoutFilter
+|   1145 | runWorker in java.util.concurrent.ThreadPoolExecutor
+|    615 | run . . . in java.util.concurrent.ThreadPoolExecutor$Worker
+^    744 | run       in java.lang.Thread
+| Error 2014-04-02 09:31:55,651 [http-bio-8080-exec-4] ERROR errors.GrailsExceptionResolver  - NullPointerException occurred when processing request: [GET] /hubbub/api/posts.json
+Stacktrace follows:
+Message: null
+    Line | Method
+->>  191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    200 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|     53 | doFilter  in grails.plugin.springsecurity.web.filter.GrailsAnonymousAuthenticationFilter
+|     49 | doFilter  in grails.plugin.springsecurity.web.authentication.RequestHolderAuthenticationFilter
+|     82 | doFilter  in grails.plugin.springsecurity.web.authentication.logout.MutableLogoutFilter
+|   1145 | runWorker in java.util.concurrent.ThreadPoolExecutor
+|    615 | run . . . in java.util.concurrent.ThreadPoolExecutor$Worker
+^    744 | run       in java.lang.Thread
+| Error 2014-04-02 09:31:55,692 [http-bio-8080-exec-4] ERROR errors.GrailsExceptionResolver  - NullPointerException occurred when processing request: [GET] /hubbub/api/posts.json
+Stacktrace follows:
+Message: null
+    Line | Method
+->>  191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    200 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|     53 | doFilter  in grails.plugin.springsecurity.web.filter.GrailsAnonymousAuthenticationFilter
+|     49 | doFilter  in grails.plugin.springsecurity.web.authentication.RequestHolderAuthenticationFilter
+|     82 | doFilter  in grails.plugin.springsecurity.web.authentication.logout.MutableLogoutFilter
+|   1145 | runWorker in java.util.concurrent.ThreadPoolExecutor
+|    615 | run . . . in java.util.concurrent.ThreadPoolExecutor$Worker
+^    744 | run       in java.lang.Thread
+| Error 2014-04-02 09:31:55,744 [http-bio-8080-exec-4] ERROR errors.GrailsExceptionResolver  - NullPointerException occurred when processing request: [GET] /hubbub/api/posts.json
+Stacktrace follows:
+Message: null
+    Line | Method
+->>  191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    200 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|     53 | doFilter  in grails.plugin.springsecurity.web.filter.GrailsAnonymousAuthenticationFilter
+|     49 | doFilter  in grails.plugin.springsecurity.web.authentication.RequestHolderAuthenticationFilter
+|     82 | doFilter  in grails.plugin.springsecurity.web.authentication.logout.MutableLogoutFilter
+|   1145 | runWorker in java.util.concurrent.ThreadPoolExecutor
+|    615 | run . . . in java.util.concurrent.ThreadPoolExecutor$Worker
+^    744 | run       in java.lang.Thread
+| Error 2014-04-02 09:31:55,797 [http-bio-8080-exec-4] ERROR errors.GrailsExceptionResolver  - NullPointerException occurred when processing request: [GET] /hubbub/api/posts.json
+Stacktrace follows:
+Message: null
+    Line | Method
+->>  191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    200 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|     53 | doFilter  in grails.plugin.springsecurity.web.filter.GrailsAnonymousAuthenticationFilter
+|     49 | doFilter  in grails.plugin.springsecurity.web.authentication.RequestHolderAuthenticationFilter
+|     82 | doFilter  in grails.plugin.springsecurity.web.authentication.logout.MutableLogoutFilter
+|   1145 | runWorker in java.util.concurrent.ThreadPoolExecutor
+|    615 | run . . . in java.util.concurrent.ThreadPoolExecutor$Worker
+^    744 | run       in java.lang.Thread
+| Error 2014-04-02 09:31:55,860 [http-bio-8080-exec-4] ERROR errors.GrailsExceptionResolver  - NullPointerException occurred when processing request: [GET] /hubbub/api/posts.json
+Stacktrace follows:
+Message: null
+    Line | Method
+->>  191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    200 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|     53 | doFilter  in grails.plugin.springsecurity.web.filter.GrailsAnonymousAuthenticationFilter
+|     49 | doFilter  in grails.plugin.springsecurity.web.authentication.RequestHolderAuthenticationFilter
+|     82 | doFilter  in grails.plugin.springsecurity.web.authentication.logout.MutableLogoutFilter
+|   1145 | runWorker in java.util.concurrent.ThreadPoolExecutor
+|    615 | run . . . in java.util.concurrent.ThreadPoolExecutor$Worker
+^    744 | run       in java.lang.Thread
+| Error 2014-04-02 09:31:55,928 [http-bio-8080-exec-4] ERROR errors.GrailsExceptionResolver  - NullPointerException occurred when processing request: [GET] /hubbub/api/posts.json
+Stacktrace follows:
+Message: null
+    Line | Method
+->>  191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    200 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|     53 | doFilter  in grails.plugin.springsecurity.web.filter.GrailsAnonymousAuthenticationFilter
+|     49 | doFilter  in grails.plugin.springsecurity.web.authentication.RequestHolderAuthenticationFilter
+|     82 | doFilter  in grails.plugin.springsecurity.web.authentication.logout.MutableLogoutFilter
+|   1145 | runWorker in java.util.concurrent.ThreadPoolExecutor
+|    615 | run . . . in java.util.concurrent.ThreadPoolExecutor$Worker
+^    744 | run       in java.lang.Thread
+| Error 2014-04-02 09:31:55,958 [http-bio-8080-exec-4] ERROR errors.GrailsExceptionResolver  - NullPointerException occurred when processing request: [GET] /hubbub/api/posts.json
+Stacktrace follows:
+Message: null
+    Line | Method
+->>  191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    200 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|     53 | doFilter  in grails.plugin.springsecurity.web.filter.GrailsAnonymousAuthenticationFilter
+|     49 | doFilter  in grails.plugin.springsecurity.web.authentication.RequestHolderAuthenticationFilter
+|     82 | doFilter  in grails.plugin.springsecurity.web.authentication.logout.MutableLogoutFilter
+|   1145 | runWorker in java.util.concurrent.ThreadPoolExecutor
+|    615 | run . . . in java.util.concurrent.ThreadPoolExecutor$Worker
+^    744 | run       in java.lang.Thread
+| Error 2014-04-02 09:31:55,987 [http-bio-8080-exec-4] ERROR errors.GrailsExceptionResolver  - NullPointerException occurred when processing request: [GET] /hubbub/api/posts.json
+Stacktrace follows:
+Message: null
+    Line | Method
+->>  191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    200 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|     53 | doFilter  in grails.plugin.springsecurity.web.filter.GrailsAnonymousAuthenticationFilter
+|     49 | doFilter  in grails.plugin.springsecurity.web.authentication.RequestHolderAuthenticationFilter
+|     82 | doFilter  in grails.plugin.springsecurity.web.authentication.logout.MutableLogoutFilter
+|   1145 | runWorker in java.util.concurrent.ThreadPoolExecutor
+|    615 | run . . . in java.util.concurrent.ThreadPoolExecutor$Worker
+^    744 | run       in java.lang.Thread
+| Error 2014-04-02 09:31:56,015 [http-bio-8080-exec-4] ERROR errors.GrailsExceptionResolver  - NullPointerException occurred when processing request: [GET] /hubbub/api/posts.json
+Stacktrace follows:
+Message: null
+    Line | Method
+->>  191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    200 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|     53 | doFilter  in grails.plugin.springsecurity.web.filter.GrailsAnonymousAuthenticationFilter
+|     49 | doFilter  in grails.plugin.springsecurity.web.authentication.RequestHolderAuthenticationFilter
+|     82 | doFilter  in grails.plugin.springsecurity.web.authentication.logout.MutableLogoutFilter
+|   1145 | runWorker in java.util.concurrent.ThreadPoolExecutor
+|    615 | run . . . in java.util.concurrent.ThreadPoolExecutor$Worker
+^    744 | run       in java.lang.Thread
+| Error 2014-04-02 09:31:56,032 [http-bio-8080-exec-4] ERROR errors.GrailsExceptionResolver  - NullPointerException occurred when processing request: [GET] /hubbub/api/posts.json
+Stacktrace follows:
+Message: null
+    Line | Method
+->>  191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    200 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|     53 | doFilter  in grails.plugin.springsecurity.web.filter.GrailsAnonymousAuthenticationFilter
+|     49 | doFilter  in grails.plugin.springsecurity.web.authentication.RequestHolderAuthenticationFilter
+|     82 | doFilter  in grails.plugin.springsecurity.web.authentication.logout.MutableLogoutFilter
+|   1145 | runWorker in java.util.concurrent.ThreadPoolExecutor
+|    615 | run . . . in java.util.concurrent.ThreadPoolExecutor$Worker
+^    744 | run       in java.lang.Thread
+| Error 2014-04-02 09:31:56,050 [http-bio-8080-exec-4] ERROR errors.GrailsExceptionResolver  - NullPointerException occurred when processing request: [GET] /hubbub/api/posts.json
+Stacktrace follows:
+Message: null
+    Line | Method
+->>  191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    200 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|     53 | doFilter  in grails.plugin.springsecurity.web.filter.GrailsAnonymousAuthenticationFilter
+|     49 | doFilter  in grails.plugin.springsecurity.web.authentication.RequestHolderAuthenticationFilter
+|     82 | doFilter  in grails.plugin.springsecurity.web.authentication.logout.MutableLogoutFilter
+|   1145 | runWorker in java.util.concurrent.ThreadPoolExecutor
+|    615 | run . . . in java.util.concurrent.ThreadPoolExecutor$Worker
+^    744 | run       in java.lang.Thread
+| Error 2014-04-02 09:31:56,069 [http-bio-8080-exec-4] ERROR errors.GrailsExceptionResolver  - NullPointerException occurred when processing request: [GET] /hubbub/api/posts.json
+Stacktrace follows:
+Message: null
+    Line | Method
+->>  191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    200 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|     53 | doFilter  in grails.plugin.springsecurity.web.filter.GrailsAnonymousAuthenticationFilter
+|     49 | doFilter  in grails.plugin.springsecurity.web.authentication.RequestHolderAuthenticationFilter
+|     82 | doFilter  in grails.plugin.springsecurity.web.authentication.logout.MutableLogoutFilter
+|   1145 | runWorker in java.util.concurrent.ThreadPoolExecutor
+|    615 | run . . . in java.util.concurrent.ThreadPoolExecutor$Worker
+^    744 | run       in java.lang.Thread
+| Error 2014-04-02 09:31:56,096 [http-bio-8080-exec-4] ERROR errors.GrailsExceptionResolver  - NullPointerException occurred when processing request: [GET] /hubbub/api/posts.json
+Stacktrace follows:
+Message: null
+    Line | Method
+->>  191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    200 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|     53 | doFilter  in grails.plugin.springsecurity.web.filter.GrailsAnonymousAuthenticationFilter
+|     49 | doFilter  in grails.plugin.springsecurity.web.authentication.RequestHolderAuthenticationFilter
+|     82 | doFilter  in grails.plugin.springsecurity.web.authentication.logout.MutableLogoutFilter
+|   1145 | runWorker in java.util.concurrent.ThreadPoolExecutor
+|    615 | run . . . in java.util.concurrent.ThreadPoolExecutor$Worker
+^    744 | run       in java.lang.Thread
+| Error 2014-04-02 09:31:56,125 [http-bio-8080-exec-4] ERROR errors.GrailsExceptionResolver  - NullPointerException occurred when processing request: [GET] /hubbub/api/posts.json
+Stacktrace follows:
+Message: null
+    Line | Method
+->>  191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    200 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|     53 | doFilter  in grails.plugin.springsecurity.web.filter.GrailsAnonymousAuthenticationFilter
+|     49 | doFilter  in grails.plugin.springsecurity.web.authentication.RequestHolderAuthenticationFilter
+|     82 | doFilter  in grails.plugin.springsecurity.web.authentication.logout.MutableLogoutFilter
+|   1145 | runWorker in java.util.concurrent.ThreadPoolExecutor
+|    615 | run . . . in java.util.concurrent.ThreadPoolExecutor$Worker
+^    744 | run       in java.lang.Thread
+| Error 2014-04-02 09:31:56,152 [http-bio-8080-exec-4] ERROR errors.GrailsExceptionResolver  - NullPointerException occurred when processing request: [GET] /hubbub/api/posts.json
+Stacktrace follows:
+Message: null
+    Line | Method
+->>  191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    200 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|     53 | doFilter  in grails.plugin.springsecurity.web.filter.GrailsAnonymousAuthenticationFilter
+|     49 | doFilter  in grails.plugin.springsecurity.web.authentication.RequestHolderAuthenticationFilter
+|     82 | doFilter  in grails.plugin.springsecurity.web.authentication.logout.MutableLogoutFilter
+|   1145 | runWorker in java.util.concurrent.ThreadPoolExecutor
+|    615 | run . . . in java.util.concurrent.ThreadPoolExecutor$Worker
+^    744 | run       in java.lang.Thread
+| Error 2014-04-02 09:31:56,174 [http-bio-8080-exec-4] ERROR errors.GrailsExceptionResolver  - NullPointerException occurred when processing request: [GET] /hubbub/api/posts.json
+Stacktrace follows:
+Message: null
+    Line | Method
+->>  191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    200 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|     53 | doFilter  in grails.plugin.springsecurity.web.filter.GrailsAnonymousAuthenticationFilter
+|     49 | doFilter  in grails.plugin.springsecurity.web.authentication.RequestHolderAuthenticationFilter
+|     82 | doFilter  in grails.plugin.springsecurity.web.authentication.logout.MutableLogoutFilter
+|   1145 | runWorker in java.util.concurrent.ThreadPoolExecutor
+|    615 | run . . . in java.util.concurrent.ThreadPoolExecutor$Worker
+^    744 | run       in java.lang.Thread
+| Error 2014-04-02 09:31:56,192 [http-bio-8080-exec-4] ERROR errors.GrailsExceptionResolver  - NullPointerException occurred when processing request: [GET] /hubbub/api/posts.json
+Stacktrace follows:
+Message: null
+    Line | Method
+->>  191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    200 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|     53 | doFilter  in grails.plugin.springsecurity.web.filter.GrailsAnonymousAuthenticationFilter
+|     49 | doFilter  in grails.plugin.springsecurity.web.authentication.RequestHolderAuthenticationFilter
+|     82 | doFilter  in grails.plugin.springsecurity.web.authentication.logout.MutableLogoutFilter
+|   1145 | runWorker in java.util.concurrent.ThreadPoolExecutor
+|    615 | run . . . in java.util.concurrent.ThreadPoolExecutor$Worker
+^    744 | run       in java.lang.Thread
+| Error 2014-04-02 09:31:56,211 [http-bio-8080-exec-4] ERROR errors.GrailsExceptionResolver  - NullPointerException occurred when processing request: [GET] /hubbub/api/posts.json
+Stacktrace follows:
+Message: null
+    Line | Method
+->>  191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    200 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|     53 | doFilter  in grails.plugin.springsecurity.web.filter.GrailsAnonymousAuthenticationFilter
+|     49 | doFilter  in grails.plugin.springsecurity.web.authentication.RequestHolderAuthenticationFilter
+|     82 | doFilter  in grails.plugin.springsecurity.web.authentication.logout.MutableLogoutFilter
+|   1145 | runWorker in java.util.concurrent.ThreadPoolExecutor
+|    615 | run . . . in java.util.concurrent.ThreadPoolExecutor$Worker
+^    744 | run       in java.lang.Thread
+| Error 2014-04-02 09:31:56,230 [http-bio-8080-exec-4] ERROR errors.GrailsExceptionResolver  - NullPointerException occurred when processing request: [GET] /hubbub/api/posts.json
+Stacktrace follows:
+Message: null
+    Line | Method
+->>  191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    200 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|     53 | doFilter  in grails.plugin.springsecurity.web.filter.GrailsAnonymousAuthenticationFilter
+|     49 | doFilter  in grails.plugin.springsecurity.web.authentication.RequestHolderAuthenticationFilter
+|     82 | doFilter  in grails.plugin.springsecurity.web.authentication.logout.MutableLogoutFilter
+|   1145 | runWorker in java.util.concurrent.ThreadPoolExecutor
+|    615 | run . . . in java.util.concurrent.ThreadPoolExecutor$Worker
+^    744 | run       in java.lang.Thread
+| Error 2014-04-02 09:31:56,251 [http-bio-8080-exec-4] ERROR errors.GrailsExceptionResolver  - NullPointerException occurred when processing request: [GET] /hubbub/api/posts.json
+Stacktrace follows:
+Message: null
+    Line | Method
+->>  191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    200 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|     53 | doFilter  in grails.plugin.springsecurity.web.filter.GrailsAnonymousAuthenticationFilter
+|     49 | doFilter  in grails.plugin.springsecurity.web.authentication.RequestHolderAuthenticationFilter
+|     82 | doFilter  in grails.plugin.springsecurity.web.authentication.logout.MutableLogoutFilter
+|   1145 | runWorker in java.util.concurrent.ThreadPoolExecutor
+|    615 | run . . . in java.util.concurrent.ThreadPoolExecutor$Worker
+^    744 | run       in java.lang.Thread
+| Error 2014-04-02 09:31:56,272 [http-bio-8080-exec-4] ERROR errors.GrailsExceptionResolver  - NullPointerException occurred when processing request: [GET] /hubbub/api/posts.json
+Stacktrace follows:
+Message: null
+    Line | Method
+->>  191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    200 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|     53 | doFilter  in grails.plugin.springsecurity.web.filter.GrailsAnonymousAuthenticationFilter
+|     49 | doFilter  in grails.plugin.springsecurity.web.authentication.RequestHolderAuthenticationFilter
+|     82 | doFilter  in grails.plugin.springsecurity.web.authentication.logout.MutableLogoutFilter
+|   1145 | runWorker in java.util.concurrent.ThreadPoolExecutor
+|    615 | run . . . in java.util.concurrent.ThreadPoolExecutor$Worker
+^    744 | run       in java.lang.Thread
+| Error 2014-04-02 09:31:56,292 [http-bio-8080-exec-4] ERROR errors.GrailsExceptionResolver  - NullPointerException occurred when processing request: [GET] /hubbub/api/posts.json
+Stacktrace follows:
+Message: null
+    Line | Method
+->>  191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    191 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|    200 | doFilter  in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|     63 | doFilter  in grails.plugin.cache.web.filter.AbstractFilter
+|     53 | doFilter  in grails.plugin.springsecurity.web.filter.GrailsAnonymousAuthenticationFilter
+|     49 | doFilter  in grails.plugin.springsecurity.web.authentication.RequestHolderAuthenticationFilter
+|     82 | doFilter  in grails.plugin.springsecurity.web.authentication.logout.MutableLogoutFilter
+|   1145 | runWorker in java.util.concurrent.ThreadPoolExecutor
+|    615 | run . . . in java.util.concurrent.ThreadPoolExecutor$Worker
+^    744 | run       in java.lang.Thread
+| Error 2014-04-02 09:31:56,313 [http-bio-8080-exec-4] ERROR errors.GrailsExceptionResolver  - NullPointerException occurred when processing request: [GET] /hubbub/api/posts.json
+Stacktrace follows:
+Message: null
+   Line | Method
+->> 191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   200 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|    53 | doFilter in grails.plugin.springsecurity.web.filter.GrailsAnonymousAuthenticationFilter
+|    49 | doFilter in grails.plugin.springsecurity.web.authentication.RequestHolderAuthenticationFilter
+^    82 | doFilter in grails.plugin.springsecurity.web.authentication.logout.MutableLogoutFilter
+| Error 2014-04-02 09:31:56,332 [http-bio-8080-exec-4] ERROR errors.GrailsExceptionResolver  - NullPointerException occurred when processing request: [GET] /hubbub/api/posts.json
+Stacktrace follows:
+Message: null
+   Line | Method
+->> 191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   200 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+^    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+| Error 2014-04-02 09:31:56,353 [http-bio-8080-exec-4] ERROR errors.GrailsExceptionResolver  - NullPointerException occurred when processing request: [GET] /hubbub/api/posts.json
+Stacktrace follows:
+Message: null
+   Line | Method
+->> 191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+^    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+| Error 2014-04-02 09:31:56,372 [http-bio-8080-exec-4] ERROR errors.GrailsExceptionResolver  - NullPointerException occurred when processing request: [GET] /hubbub/api/posts.json
+Stacktrace follows:
+Message: null
+   Line | Method
+->> 191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+^    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+| Error 2014-04-02 09:31:56,393 [http-bio-8080-exec-4] ERROR errors.GrailsExceptionResolver  - NullPointerException occurred when processing request: [GET] /hubbub/api/posts.json
+Stacktrace follows:
+Message: null
+   Line | Method
+->> 191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+^    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+| Error 2014-04-02 09:31:56,415 [http-bio-8080-exec-4] ERROR errors.GrailsExceptionResolver  - NullPointerException occurred when processing request: [GET] /hubbub/api/posts.json
+Stacktrace follows:
+Message: null
+   Line | Method
+->> 191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+^    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+| Error 2014-04-02 09:31:56,434 [http-bio-8080-exec-4] ERROR errors.GrailsExceptionResolver  - NullPointerException occurred when processing request: [GET] /hubbub/api/posts.json
+Stacktrace follows:
+Message: null
+   Line | Method
+->> 191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+|    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter
+|   191 | doFilter in grails.plugin.cache.web.filter.PageFragmentCachingFilter
+^    63 | doFilter in grails.plugin.cache.web.filter.AbstractFilter

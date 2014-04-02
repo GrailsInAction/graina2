@@ -10,7 +10,7 @@ class ImageController {
     def upload(PhotoUploadCommand puc) {
         def user = User.findByLoginId(puc.loginId)
         user.profile.photo = puc.photo
-        redirect controller: "user", action: 'profile', id: puc.loginId
+        redirect controller: "user", action: "profile", id: puc.loginId
     }
 
     def form() {
@@ -27,5 +27,5 @@ class ImageController {
             response.sendError(404)
         }
     }
-
+    
 }
