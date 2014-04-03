@@ -36,6 +36,40 @@ class PostRestController {
             respond post
         }
     }
+
+    def update(Long id, PostDetails postDetails) {
+        if (!postDetails.hasErrors()) {
+            def post = Post.get(id)
+
+            if (!post) {
+                respond new ErrorDetails(message: "Not found"), status: 404
+                return
+            }
+
+            post.content = postDetails.message
+            post.validate() && post.save()
+            respond post
+        }
+        else {
+            respond postDetails
+        }
+    }
+
+    def delete(Long id) {
+        def body
+        def status
+        if (Post.exists(id)) {
+            Post.load(id).delete()
+            status = 200
+            body = new ErrorDetails(message: "Post with ID $id deleted")
+        }
+        else {
+            status = 404
+            body = new ErrorDetails(message: "Not found")
+        }
+
+        respond body, status: status
+    }
     
 }
 

@@ -1,15 +1,15 @@
 angular.module('Hubbub', ['restangular']).config(
     function(RestangularProvider) {
         RestangularProvider.setBaseUrl('/hubbub/api');
-        RestangularProvider.setRequestInterceptor(function(elem, operation, what) {
-            var retElem = elem;
-            if (operation === 'put') {
-                var wrapper = {};
-                wrapper[what.substring(0, what.length -1)] = elem;
-                retElem = wrapper;
-            }
-            return retElem;
-        });
+//        RestangularProvider.setRequestInterceptor(function(elem, operation, what) {
+//            var retElem = elem;
+//            if (operation === 'put') {
+//                var wrapper = {};
+//                wrapper[what.substring(0, what.length -1)] = elem;
+//                retElem = wrapper;
+//            }
+//            return retElem;
+//        });
     }
 );
 
@@ -55,7 +55,7 @@ function NewPostCtrl($scope, $rootScope, Restangular) {
 
     $scope.newPost = function() {
         var postApi = Restangular.one("posts");
-        var newPost = { post: { content: $scope.postContent }};
+        var newPost = { message: $scope.postContent };
         postApi.post(null, newPost).then(function(response) {
             $rootScope.$broadcast("newPost", newPost);
             $scope.postContent = "";
@@ -77,19 +77,19 @@ function EditPostCtrl($scope, $rootScope, Restangular) {
         $scope.isEditState = false;
     }
 
-    $scope.originalContent = $scope.post.content
-    $scope.editedContent = $scope.post.content
+    $scope.originalContent = $scope.post.message
+    $scope.editedContent = $scope.post.message
 
     $scope.updatePost = function() {
 
         isEditState = false;
 
-        $scope.post.content = $scope.editedContent;
+        $scope.post.message = $scope.editedContent;
         $scope.post.put().then(
             function() {
                 $scope.isEditState = false;
             }, function(errorResponse) {
-                $scope.post.content = $scope.originalContent; // reset back content
+                $scope.post.message = $scope.originalContent; // reset back content
                 alert("Error saving object:" + errorResponse.status);
             }
         );
@@ -100,7 +100,7 @@ function EditPostCtrl($scope, $rootScope, Restangular) {
 
         isEditState = false;
 
-        $scope.post.content = $scope.editedContent;
+        $scope.post.message = $scope.editedContent;
         $scope.post.remove().then(
             function() {
                 $rootScope.$broadcast("deletePost", $scope.post);
