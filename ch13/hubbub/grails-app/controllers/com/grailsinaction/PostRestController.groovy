@@ -42,7 +42,7 @@ class PostRestController {
             def post = Post.get(id)
 
             if (!post) {
-                respond new ErrorDetails(error: "Not found"), status: 404
+                respond new ErrorDetails(message: "Not found"), status: 404
                 return
             }
 
@@ -61,11 +61,11 @@ class PostRestController {
         if (Post.exists(id)) {
             Post.load(id).delete()
             status = 200
-            body = new ErrorDetails(error: "Post with ID $id deleted")
+            body = new ErrorDetails(message: "Post with ID $id deleted")
         }
         else {
             status = 404
-            body = new ErrorDetails(error: "Not found")
+            body = new ErrorDetails(message: "Not found")
         }
 
         respond body, status: status
@@ -79,8 +79,4 @@ class PostDetails {
     static constraints = {
         message blank: false, nullable: false
     }
-}
-
-class ErrorDetails {
-    String error
 }

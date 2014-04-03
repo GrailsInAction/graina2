@@ -5,7 +5,8 @@ class RestFilters {
     def filters = {
         contentType(controller: "postRest") {
             before = {
-                if (!(request.format in ["json", "xml", "all"])) {
+                if (!(request.format in ["json", "xml", "all"]) &&
+                        !(request.method in ["DELETE", "GET", "HEAD"])) {
                     render status: 415,
                            text: "Unrecognized content type"
                     return false
