@@ -13,7 +13,8 @@ class BootStrap {
     def dateFormatter = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss")
         JSON.createNamedConfig("v1") { cfg ->
             cfg.registerObjectMarshaller(Post) { Post p ->
-                return [ published: dateFormatter.format(p.dateCreated),
+                return [ id: p.id,
+                         published: dateFormatter.format(p.dateCreated),
                          message: p.content,
                          user: p.user.loginId,
                          tags: p.tags.collect { it.name } ]

@@ -27,6 +27,10 @@ class UrlMappings {
 
         "/api/posts"(resources: "postRest")
 
+        "/api/posts/$id" controller: "postRest", parseRequest: true, {
+            action = [GET: "show", POST: "unsupported", PUT: "update", DELETE: "delete"]
+        }
+
         "/"(view: "/index")
         "500"(view:"/error")
 

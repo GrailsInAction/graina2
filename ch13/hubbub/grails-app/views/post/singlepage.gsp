@@ -39,7 +39,7 @@
             </span>
 
             <span ng-show="!isEditState">
-                <div class="postText">{{post.content}}</div>
+                <div class="postText">{{post.message}}</div>
                 <div class="postDate">{{post.published}} by {{post.user}}</div>
             </span>
 
