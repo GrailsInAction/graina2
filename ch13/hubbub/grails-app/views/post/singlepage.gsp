@@ -2,7 +2,7 @@
     <head>
         <title>Timeline for ${user.profile ? user.profile.fullName : user.loginId}</title>
         <meta name="layout" content="main"/>
-        <content tag="htmlAttrs">ng-app="Hubbub"</content>
+        <content tag="htmlAttrs">ng-app=Hubbub</content>
         <r:require module="core"/>
     </head>
     <body>

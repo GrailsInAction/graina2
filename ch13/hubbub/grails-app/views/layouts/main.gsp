@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ${pageProperty(name:'page.htmlAttrs')}>
 <head>
   <title>Hubbub &raquo; <g:layoutTitle default="Welcome" /></title>
   <r:require module="baseCss"/>
