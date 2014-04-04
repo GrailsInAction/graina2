@@ -49,9 +49,9 @@ grails.project.dependency.resolution = {
             exclude "grails-core"
         }
 
-        compile ":spring-security-core:1.2.7.3", ":spring-security-ui:0.2"
-        compile ":spring-security-twitter:0.4.4"
-
-        runtime ":navigation:1.3.2"
+        /*
+        compile ":spring-security-core:2.0-RC2", ":spring-security-ui:1.0-RC1"
+        compile ":spring-security-twitter:0.6.2"
+        */
     }
 }

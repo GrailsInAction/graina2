@@ -14,8 +14,8 @@ dependencies {
         exclude module: "grails-core"
     }
 
-    compile "org.grails.plugins:spring-security-core:1.2.7.3", "org.grails.plugins:spring-security-ui:0.2"
-    compile "org.grails.plugins:spring-security-twitter:0.4.4"
+    compile "org.grails.plugins:spring-security-core:2.0-RC2", "org.grails.plugins:spring-security-ui:1.0-RC1"
+    compile "org.grails.plugins:spring-security-twitter:0.6.2"
 }
 
 artifacts {

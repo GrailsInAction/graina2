@@ -1,35 +1,33 @@
 package com.grailsinaction
 
 class User {
-    transient springSecurityService
-
     String loginId
     String passwordHash
-    boolean enabled
+    boolean enabled = true
     boolean accountExpired
     boolean accountLocked
     boolean passwordExpired
     Date dateCreated
 
-    static hasOne = [ profile : Profile ]
+    static hasOne = [ profile: Profile ]
+
+    static transients = ['springSecurityService']
 
     static constraints = {
-
         loginId size: 3..20, unique: true, blank: false
         profile nullable: true
+    }
 
+    static searchable = {
+        except = ["passwordHash"]
     }
 
     static mapping = {
-        profile lazy: false
+        posts sort: "dateCreated", order: "desc"
     }
 
     Set<Role> getAuthorities() {
         UserRole.findAllByUser(this).collect { it.role } as Set
-    }
-
-    def setPassword(String password) {
-        this.passwordHash = springSecurityService.encodePassword(password)
     }
 
     String toString() { return "User $loginId (id: $id)" }

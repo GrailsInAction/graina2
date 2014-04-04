@@ -122,8 +122,6 @@ log4j = {
 grails.mail.host="127.0.0.1"
 grails.mail.default.from="hubbub@grailsinaction.com"
 
-// This doesn't work during the test phase when running the build
-// via Maven. So we switch to dbCreate for the test environment.
 grails.plugin.databasemigration.updateOnStart = true
 grails.plugin.databasemigration.updateOnStartFileNames = ['changelog.groovy']
 grails.plugin.databasemigration.forceAutoMigrate = true

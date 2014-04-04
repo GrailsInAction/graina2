@@ -1,12 +1,15 @@
 package com.grailsinaction
 
-import grails.plugin.spock.IntegrationSpec
+import spock.lang.*
 
-class QueryIntegrationSpec extends IntegrationSpec {
+class QueryIntegrationSpec extends Specification {
 
+    /*
     void "Simple property comparison"() {
         when: "Users are selected by a simple password match"
-        def users = User.where { passwordHash == "testing".encodeAsSHA256() }.list(sort: "loginId")
+        def users = User.where {
+            passwordHash == "testing".encodeAsSHA256()
+        }.list(sort: "loginId")
         
         then: "The users with that password are returned"
         users*.loginId == ["frankie"] 
@@ -21,10 +24,11 @@ class QueryIntegrationSpec extends IntegrationSpec {
         then: "The matching loginIds are returned"
         users*.loginId == ["dillon", "frankie", "sara"] 
     }
+    */
 
     void "Query on association"() {
         when: "The 'following' collection is queried"
-        def users = User.where {
+        def users = HubbubUser.where {
             following.loginId == "sara"
         }.list(sort: "loginId")
 
@@ -42,7 +46,7 @@ class QueryIntegrationSpec extends IntegrationSpec {
         }.list(sort: "loginId", order: "desc")
 
         then: "The users created within the specified date range are returned"
-        users*.loginId == ["phil", "jeff", "graeme", "frankie", "burt", "admin"]
+        users*.loginId == ["phil", "peter", "glen", "frankie", "chuck_norris", "admin"]
     }
 
     void "Retrieve a single instance"() {
@@ -52,6 +56,6 @@ class QueryIntegrationSpec extends IntegrationSpec {
         }.get()
 
         then: "A single instance is returned"
-        user.passwordHash == "thomas".encodeAsSHA256()
+        user.loginId == "phil"
     }
 }

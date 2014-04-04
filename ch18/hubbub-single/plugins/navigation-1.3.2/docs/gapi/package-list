@@ -1,7 +1,0 @@
-DefaultPackage
-grails-app.conf
-grails-app.services
-grails-app.taglib
-scripts
-test.integration
-test.unit

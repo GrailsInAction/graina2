@@ -1,7 +1,3 @@
-eventCompileEnd = {
-    println ">> Script name: ${binding.variables.scriptName}"
-}
-
 eventCreateWarStart = { String warName, File stagingDir ->
     println "About to package the WAR file from ${stagingDir}"
 

@@ -7,7 +7,7 @@ class ControllableJob {
     def group = "myServices"
 
     static triggers = {
-      simple repeatInterval: 5000 // execute job every 5 seconds
+      simple repeatInterval: 500000 // execute job every 5 seconds
     }
 
     def execute(context) {

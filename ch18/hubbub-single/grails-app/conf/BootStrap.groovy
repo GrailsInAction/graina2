@@ -12,8 +12,6 @@ class BootStrap {
     def springSecurityService
 
     def init = { servletContext ->
-        println ">> War Deployed?: ${grailsApplication.warDeployed}"
-        println ">> Current env: ${Environment.current}"
         def dateFormatter = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss")
         JSON.createNamedConfig("v1") { cfg ->
             cfg.registerObjectMarshaller(Post) { Post p ->

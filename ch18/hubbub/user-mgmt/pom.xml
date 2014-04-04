@@ -13,7 +13,7 @@
     
     <artifactId>user-mgmt</artifactId>
     <packaging>grails-plugin</packaging>
-    <version>0.1</version>
+    <version>1.0-SNAPSHOT</version>
 
     <name>user-mgmt</name>
     <description>user-mgmt</description>
@@ -107,7 +107,7 @@
         <dependency>
             <groupId>org.grails.plugins</groupId>
             <artifactId>spring-security-core</artifactId>
-            <version>1.2.7.3</version>
+            <version>2.0-RC2</version>
             <scope>compile</scope>
             <type>zip</type>
         </dependency>
@@ -115,7 +115,7 @@
         <dependency>
             <groupId>org.grails.plugins</groupId>
             <artifactId>spring-security-ui</artifactId>
-            <version>0.2</version>
+            <version>1.0-RC1</version>
             <scope>compile</scope>
             <type>zip</type>
         </dependency>
@@ -123,16 +123,8 @@
         <dependency>
             <groupId>org.grails.plugins</groupId>
             <artifactId>spring-security-twitter</artifactId>
-            <version>0.4.4</version>
+            <version>0.6.2</version>
             <scope>compile</scope>
-            <type>zip</type>
-        </dependency>
-        
-        <dependency>
-            <groupId>org.grails.plugins</groupId>
-            <artifactId>navigation</artifactId>
-            <version>1.3.2</version>
-            <scope>runtime</scope>
             <type>zip</type>
         </dependency>
         

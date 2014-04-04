@@ -1,15 +1,12 @@
 package com.grailsinaction
 
-import grails.plugins.springsecurity.SpringSecurityService
-import grails.test.mixin.Mock
-import grails.test.mixin.TestFor
 import spock.lang.*
+import grails.plugin.springsecurity.SpringSecurityService
+import grails.test.mixin.TestFor
+import grails.test.mixin.Mock
 
-/**
- * See the API for {@link grails.test.mixin.services.ServiceUnitTestMixin} for usage instructions
- */
 @TestFor(PostService)
-@Mock([User,Post])
+@Mock([HubbubUser,Post])
 class PostServiceSpec extends Specification {
 
     def "Valid posts get saved and added to the user"() {
@@ -18,9 +15,8 @@ class PostServiceSpec extends Specification {
         def securityService = Mock(SpringSecurityService)
         securityService.encodePassword(_ as String) >> "skfjhaskfh"
 
-        User chuck = new User(loginId: "chuck_norris")
-        chuck.springSecurityService = securityService
-        chuck.password = "password"
+        User chuck = new HubbubUser(loginId: "chuck_norris")
+        chuck.passwordHash = "ksadhfkasjdfh"
         chuck.save(failOnError: true)
 
         when: "a new post is created by the service"
@@ -38,9 +34,8 @@ class PostServiceSpec extends Specification {
         def securityService = Mock(SpringSecurityService)
         securityService.encodePassword(_ as String) >> "skfjhaskfh"
 
-        def chuck = new User(loginId: "chuck_norris")
-        chuck.springSecurityService = securityService
-        chuck.password = "password"
+        def chuck = new HubbubUser(loginId: "chuck_norris")
+        chuck.passwordHash = "ksadhfkasjdfh"
         chuck.save(failOnError: true)
 
         when: "an invalid post is attempted"
@@ -50,5 +45,5 @@ class PostServiceSpec extends Specification {
         thrown(PostException)
 
     }
-
+    
 }

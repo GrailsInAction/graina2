@@ -1,16 +1,34 @@
-/*
-eventAllTestsStart = {
-	runningTests = true
+eventCreateWarStart = { String warName, File stagingDir ->
+    println "About to package the WAR file from ${stagingDir}"
 
-	tryToLoadTestTypes()
+    def exclusions = ["commons-logging",
+                          "h2",
+                          "hsqldb",
+                          "spring-test",
+                          "junit"]
 
-	[junit3TestTypeClassName, junit4TestTypeClassName].each { testTypeClassName ->
-		def testTypeClass = softLoadClass(testTypeClassName)
-		if (testTypeClass) {
-			if (!functionalTests.any { it.class == testTypeClass }) {
-				functionalTests << testTypeClass.newInstance('functional', 'functional')
-			}
-		}
-	}
+    ant.delete {
+        fileset(dir: new File(stagingDir, "WEB-INF/lib").canonicalPath) {
+            for (basename in exclusions) {
+                include name: "${basename}-*.jar"
+            }
+        }
+    }
+
+    /* Uncomment to get thin WAR with shared libs
+    if (grailsEnv == "production") {
+        def sharedLibsDir = "${grailsSettings.projectWorkDir}/sharedLibs"
+
+        ant.mkdir dir: sharedLibsDir
+        ant.move todir: sharedLibsDir, {
+            fileset dir: "${stagingDir}/WEB-INF/lib", {
+                include name: "*.jar"
+                exclude name: "grails-*"
+            }
+        }
+
+        println "Shared JARs put into ${sharedLibsDir}"
+    } 
+    */
+    
 }
-*/
