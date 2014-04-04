@@ -1,0 +1,234 @@
+/* Spring Security UI */
+
+#s2ui_main {
+	margin: 0px;
+	width: 100%;
+}
+
+#s2ui_header {
+	overflow: hidden;
+}
+
+#s2ui_header_title {
+	font-size: 1.5em;
+	color: black;
+	text-align: center;
+	margin-top: 5px;
+}
+
+#s2ui_header_body {
+	width: 100%;
+}
+
+#s2ui_login_link_container {
+	position: absolute;
+	top: 28px;
+	right: 10px;
+	float: right;
+}
+
+#s2ui_content {
+	float: left;
+	width: 96%;
+	margin-top: 6px;
+	margin-left: 12px;
+}
+
+.s2ui_section {
+	padding: 18px;
+	border: 1px solid #f2f2f2;
+}
+
+.s2ui_required {
+	color: red;
+	font-weight: bold;
+}
+
+.s2ui_center {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.s2ui_hidden_button {
+	float: right;
+	height: 0;
+	left: 1px;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	width: 0;
+	z-index: -1000;
+	border: 0;
+	background: white;
+}
+
+.s2ui_error {
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	font-weight: normal;
+	color: #D8000C;
+}
+.s2ui_error p {
+	margin: 2px;
+}
+
+/* PAGINATION */
+
+.paginateButtons {
+	color: #666;
+	font-size: 10px;
+	overflow: hidden;
+	padding: 10px 3px;
+}
+
+.paginateButtons a {
+	background: #fff;
+	border: 1px solid #ccc;
+	border-color: #ccc #aaa #aaa #ccc;
+	color: #666;
+	margin: 0 3px;
+	padding: 2px 6px;
+}
+
+.paginateButtons span {
+	padding: 2px 3px;
+}
+
+/* menu overrides */
+ul.jd_menu li li {
+	width: 125px;
+}
+
+ul.jd_menu_slate li {
+	font-family: Tahoma, verdana, arial, helvetica, sans-serif;
+	font-size: 13px;
+}
+
+ul.jd_menu_slate {
+	height: 22px;
+}
+
+ul.jd_menu li {
+	height: 16px;
+}
+
+/* standard tags */
+h1 {
+	font-weight: normal;
+	color: #222222;
+	font-size: 3em;
+	line-height: 1;
+	margin-bottom: 0.5em;
+}
+
+h2 {
+	font-weight: normal;
+	color: #222222;
+	font-size: 2em;
+	margin-bottom: 0.75em;
+}
+
+h3 {
+	font-weight: normal;
+	color: #222222;
+	font-size: 1.5em;
+	line-height: 1;
+	margin-bottom: 1em;
+}
+
+h4 {
+	font-weight: normal;
+	color: #222222;
+	font-size: 1.2em;
+	line-height: 1.25;
+	margin-bottom: 1.25em;
+}
+
+h5 {
+	font-weight: normal;
+	color: #222222;
+	font-size: 1em;
+	font-weight: bold;
+	margin-bottom: 1.5em;
+}
+
+h6 {
+	font-weight: normal;
+	color: #222222;
+	font-size: 1em;
+	font-weight: bold;
+}
+
+a {
+	cursor: pointer;
+	text-decoration: none;
+	color: #363636;
+}
+
+a:hover {
+	text-decoration: underline;
+	color: #f30;
+}
+
+a:link {
+	color: #039;
+}
+
+a:visited {
+	color: #039;
+}
+
+body {
+	line-height: 1.5;
+	font: 13px verdana, arial, helvetica, sans-serif;
+	color: #333;
+	background: #fff;
+	min-width: 980px;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+img a {
+	border: none;
+}
+
+p {
+	margin: 0 0 1.5em;
+}
+
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+	vertical-align: middle;
+	margin-bottom: 1.4em;
+}
+
+caption, th, td {
+	text-align: left;
+	font-weight: normal;
+	vertical-align: middle;
+}
+
+th {
+	font-weight: bold;
+}
+
+thead th {
+	background: #999;
+}
+
+th, td, caption {
+	padding: 4px 10px 4px 5px;
+}
+
+tr.even td {
+	background: #ccc;
+}
+
+tr.odd td {
+	background: white;
+}

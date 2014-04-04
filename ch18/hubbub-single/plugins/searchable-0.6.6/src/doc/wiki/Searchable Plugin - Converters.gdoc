@@ -1,0 +1,69 @@
+h1. Converters
+
+In order to transform your objects and their properties into
+searchable text, and from data stored in the index back into objects,
+Compass has the notion of _converters_.
+
+Compass acts as a registry of converters, each identified by name.
+
+Compass includes many converters itself, some responsible for
+converting entire class instances and some for individual properties.
+
+Additionally the plugin includes a custom converter itself which
+supports @Map&lt;String, String&gt;@ class property types, since Grails
+supports this as a persistent class property type.
+
+h2. Defining Converter implementations
+
+You can define a converter with Compass settings and (since 0.5.1) as
+Spring beans.
+
+h3. Compass settings
+
+The [Compass settings|http://www.compass-project.org/docs/2.1.0/reference/html/core-settings.html#config-converter]
+can either be defined in the plugin's [configuration|Searchable Plugin - Configuration] or in a [native Compass configuration file|Searchable Plugin - Configuration].
+
+h3. Spring beans
+
+If you define a Spring bean in @resources.xml@ or @resources.groovy@
+that is an instance of @org.compass.core.converter.Converter@ then it wil be
+automatically registered with Compass using the Spring bean name as it's name.
+
+This allows you to inject your analyzer with other Spring beans and
+configuration, eg
+
+{code}
+htmlConverter(MyHtmlConverter) {
+    context = someContext
+    includeMeta = true
+}
+{code}
+
+defines a converter called @"htmlConverter"@.
+
+h2. Using Converters
+
+Converters are defined in the class mapping, either at either at the class level
+
+{code}
+class Book {
+    static searchable = {
+        converter 'bookConverter'
+    }
+    String title
+}
+{code}
+
+and/or at the property level
+
+{code}
+class Book {
+    static searchable = {
+        title converter: 'bookTitleConverter'
+    }
+    String title
+}
+{code}
+
+Note you can also use native Compass [XML|Searchable Plugin - Mapping - Compass XML] or [annotations|Searchable Plugin - Mapping - Compass annotations] to map with custom converters.
+

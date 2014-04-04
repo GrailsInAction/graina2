@@ -1,0 +1,37 @@
+By default the plugin assumes an unsecured mail server configured on port 25, getting the SMTP host name from the environment variable SMTP_HOST. However you can change this via the grails-app/Config.groovy file. For example here is how you would configure the default sender to send with a Gmail account:
+
+{code}
+grails {
+   mail {
+     host = "smtp.gmail.com"
+     port = 465
+     username = "youracount@gmail.com"
+     password = "yourpassword"
+     props = ["mail.smtp.auth":"true",
+              "mail.smtp.socketFactory.port":"465",
+              "mail.smtp.socketFactory.class":"javax.net.ssl.SSLSocketFactory",
+              "mail.smtp.socketFactory.fallback":"false"]
+   }
+}
+{code}
+
+And the configuration for sending via a Hotmail/Live account:
+
+{code}
+grails {
+   mail {
+     host = "smtp.live.com"
+     port = 587
+     username = "youracount@live.com"
+     password = "yourpassword"
+     props = ["mail.smtp.starttls.enable":"true",
+              "mail.smtp.port":"587"]
+   }
+}
+{code}
+
+If your mail session is provided via JNDI you can use the jndiName setting:
+
+{code}
+grails.mail.jndiName = "myMailSession"
+{code}

@@ -9,12 +9,12 @@ import spock.lang.Specification
 @TestFor(ErrorController)
 class ErrorControllerSpec extends Specification {
 
-	def setup() {
-	}
+    def setup() {
+    }
 
-	def cleanup() {
-	}
+    def cleanup() {
+    }
 
-	void "test something"() {
-	}
+    void "test something"() {
+    }
 }

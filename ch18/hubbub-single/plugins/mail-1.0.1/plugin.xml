@@ -1,0 +1,45 @@
+<plugin name='mail' version='1.0.1' grailsVersion='1.3 &gt; *'>
+  <author>Grails Plugin Collective</author>
+  <authorEmail>grails.plugin.collective@gmail.com</authorEmail>
+  <title>Provides Mail support to a running Grails application</title>
+  <description>This plug-in provides a MailService class as well as configuring the necessary beans within
+the Spring ApplicationContext.
+
+It also adds a "sendMail" method to all controller classes. A typical example usage is:
+
+sendMail {
+    to "fred@g2one.com","ginger@g2one.com"
+    from "john@g2one.com"
+    cc "marge@g2one.com", "ed@g2one.com"
+    bcc "joe@g2one.com"
+    subject "Hello John"
+    text "this is some text"
+}
+
+</description>
+  <documentation>http://gpc.github.com/grails-mail/</documentation>
+  <type>MailGrailsPlugin</type>
+  <resources>
+    <resource>grails.plugin.mail.MailService</resource>
+    <resource>grails.plugin.mail.PlainTextMailTagLib</resource>
+  </resources>
+  <repositories>
+    <repository name='http://download.java.net/maven/2/' url='http://download.java.net/maven/2/' />
+    <repository name='grailsCentral' url='http://plugins.grails.org' />
+    <repository name='http://repo.grails.org/grails/plugins' url='http://repo.grails.org/grails/plugins/' />
+    <repository name='http://repo.grails.org/grails/core' url='http://repo.grails.org/grails/core/' />
+    <repository name='grailsCore' url='http://svn.codehaus.org/grails/trunk/grails-plugins' />
+    <repository name='mavenCentral' url='http://repo1.maven.org/maven2/' />
+  </repositories>
+  <dependencies>
+    <compile>
+      <dependency group='javax.mail' name='mail' version='1.4.3' />
+    </compile>
+    <runtime>
+      <dependency group='org.springframework' name='spring-test' version='3.1.0.RELEASE' />
+    </runtime>
+  </dependencies>
+  <plugins />
+  <runtimePluginRequirements />
+  <behavior />
+</plugin>

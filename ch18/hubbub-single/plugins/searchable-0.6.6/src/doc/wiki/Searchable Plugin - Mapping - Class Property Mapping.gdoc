@@ -1,0 +1,148 @@
+h1. Class Property Mapping
+
+If you want to override the [conventional mapping|Searchable Plugin - Mapping - Conventions] for one or more properties, make the value of @searchable@ a @Closure@ and add method calls named after the class property:
+
+{code}
+class Post {
+    static searchable = {
+        category index: 'not_analyzed', excludeFromAll: true
+        title boost: 2.0
+        comments component: true
+    }
+    static hasMany = [comments: Comment]
+    User author
+    String title, post, category
+    Date createdAt
+}
+{code}
+
+The mapping options available depend on the kind of class property.
+
+h2. Mapping the id
+
+Compass needs to know the object's identifier property, so that needs to be mapped too.
+
+Since Grails has the well defined and generated @id@ property, the plugin generates an id mapping.
+
+You can customize this with an explicit [id mapping|Searchable Plugin - Mapping - Searchable Id].
+
+h2. Mapping simple types
+
+For simple types, you can declare any of the [searchable property mapping options|Searchable Plugin - Mapping - Searchable Property].
+
+h3. Example
+
+Given the following class:
+
+{code}
+class Article {
+    static searchable = true
+    static hasMany = [keywords: String]
+    String title, body
+}
+{code}
+
+we currently have a [conventional mapping|Searchable Plugin - Mapping - Conventions] because it declares simply @static searchable = true@. This maps both @title@ and @body@ as standard [searchable properties|Searchable Plugin - Mapping - Compass concepts#Searchable Property].
+
+Let's define a few additional [searchable property mapping options|Searchable Plugin - Mapping - Searchable Property] to customize the [conventional mapping|Searchable Plugin - Mapping - Conventions] to our needs:
+
+{code}
+class Article {
+    static searchable = {
+        title boost: 2.0
+        keywords index: 'not_analyzed'
+    }
+    static hasMany = [keywords: String]
+    String title, body
+}
+{code}
+
+In this case we've given @title@ a @[boost|Searchable Plugin - Mapping - Searchable Property#Options]@, which means hits in the @title@ property score higher than other properties, and we've declared @keywords@ as @[not_analyzed|Searchable Plugin - Mapping - Searchable Property#Options]@, meaning it's value is stored verbatim in the index.
+
+h2. Mapping associated domain classes
+
+For associated domain classes you have two choices:
+
+# You can *inherit and add* to the [conventional mapping|Searchable Plugin - Mapping - Conventions] - whether a [searchable reference|Searchable Plugin - Mapping - Compass concepts#Searchable Reference] or [searchable component|Searchable Plugin - Mapping - Compass concepts#Searchable Component] - and add to it with the supported [searchable reference mapping options|Searchable Plugin - Mapping - Searchable Reference] or [searchable component mapping options|Searchable Plugin - Mapping - Searchable Component].
+# Or you can *override* the [conventional mapping|Searchable Plugin - Mapping - Conventions] - of [searchable reference|Searchable Plugin - Mapping - Compass concepts#Searchable Reference] or [searchable component|Searchable Plugin - Mapping - Compass concepts#Searchable Component] to be the other.
+
+h3. Example
+
+Given the following classes:
+
+{code}
+class News {
+    static searchable = true
+    static hasMany = [comments: Comment]
+    String text
+}
+{code}
+
+{code}
+class Comment {
+    static searchable = true
+    String text
+    News news
+}
+{code}
+
+We start out with the [conventional mapping|Searchable Plugin - Mapping - Conventions], since @Comment@ and @News@ declare @static searchable = true@.
+
+This [maps the classes by convention|Searchable Plugin - Mapping - Conventions] meaning:
+
+* @News#comments@ becomes a [searchable reference|Searchable Plugin - Mapping - Compass concepts#Searchable Reference]
+* @Comment#news@ becomes another [searchable reference|Searchable Plugin - Mapping - Compass concepts#Searchable Reference] 
+
+h4. Inherit and add
+
+To inherit the @Comment#news@ [searchable reference|Searchable Plugin - Mapping - Compass concepts#Searchable Reference] mapping and add [searchable reference mapping options|Searchable Plugin - Mapping - Searchable Reference]:
+
+{code}
+class Comment {
+    static searchable = {
+        news cascade: ['create', 'delete']
+    }
+    String text
+    News news
+}
+{code}
+
+If you like you can also make the conventional mapping explicit, ie, declare it as a [searchable reference|Searchable Plugin - Mapping - Compass concepts#Searchable Reference] or [searchable component|Searchable Plugin - Mapping - Compass concepts#Searchable Component]:
+
+{code}
+class Comment {
+    static searchable = {
+        news reference: [cascade: ['create', 'delete']]
+    }
+    String text
+    News news
+}
+{code}
+
+The value of @reference@ or @component@ may be @true@ or a @Map@ of options.
+
+h4. Override
+
+To override the @News#comments@ [searchable reference|Searchable Plugin - Mapping - Compass concepts#Searchable Reference] mapping and make it a [searchable component|Searchable Plugin - Mapping - Compass concepts#Searchable Component] instead:
+
+{code}
+class News {
+    static searchable = {
+        comments component: true
+    }
+    static hasMany = [comments: Comment]
+    String text
+}
+{code}
+
+You can also specify [searchable reference mapping options|Searchable Plugin - Mapping - Searchable Reference] or [searchable component mapping options|Searchable Plugin - Mapping - Searchable Component] options with a @Map@ value:
+
+{code}
+class News {
+    static searchable = {
+        comments component: [cascade: 'all', accessor: 'field']
+    }
+    static hasMany = [comments: Comment]
+    String text
+}
+{code}

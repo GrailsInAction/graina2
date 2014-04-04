@@ -1,0 +1,29 @@
+Typically, you don't want to actually send email as part of your automated tests. Besides wrapping all calls to @sendMail@ in an environment sensitive guard (which is a very bad idea), you can use one of the following techniques to deal with this.
+
+h3. Disabling mail sending
+
+You can effectively disable mail sending globally in your test by setting the following value in your application for the test environment.
+
+{code}
+grails.mail.disabled = true
+{code}
+
+This will effectively cause all calls to @sendMail()@ to be a non operation, with a warning being logged that mail is disabled. The advantage of this technique is that it is cheap. The disadvantage is that it makes it impossible to test that mail would be sent and to inspect any aspects of the sent mail.
+
+h3. Using an override address
+
+You can _override_ any and all recipient email addresses in @sendMail()@ calls to force messages to be delivered to a certain mailbox.
+
+{code}
+grails.mail.overrideAddress = "test@myorg.com"
+{code}
+
+All @to@, @cc@ and @bcc@ addresses will be replaced by this value if set. The advantage of this mechanism is that it allows you to test using a real SMTP server. The disadvantage is that it requires a real SMTP server and makes it difficult to test address determination logic.
+
+h3. Using the GreenMail plugin
+
+The preferred approach is to use the existing "grails-greenmail":http://www.grails.org/plugin/greenmail plugin to run an in-memory SMTP server inside your application. This allows you to fully exercise your mail sending code and to inspect sent mail to assert correct values for recipient addresses etc.
+
+The advantage of this approach is that it is as close as possible to real world and gives you access to the sent email in your tests. The disadvantage is that it is another plugin dependency.
+
+Consult the documentation for the plugin for more information.

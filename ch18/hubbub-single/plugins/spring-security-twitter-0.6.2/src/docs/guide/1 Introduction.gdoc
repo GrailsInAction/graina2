@@ -1,0 +1,11 @@
+Grails plugin for Twitter Authentication, as extension to Grails Spring Security Core plugin.
+
+h2. Requirements:
+ * grails 2.0+
+ * spring-security-core plugin 2.0-RC2
+
+h2. Links:
+
+  * Sources - "https://github.com/splix/grails-spring-security-twitter":https://github.com/splix/grails-spring-security-twitter
+  * Example app - "https://github.com/splix/grails-twitter-authentication-example":https://github.com/splix/grails-twitter-authentication-example
+  * Submit a bug - "GitHub Issues":https://github.com/splix/grails-spring-security-twitter/issues

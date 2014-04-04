@@ -1,0 +1,82 @@
+Message content is specified by either the @text@ and/or @html@ methods that specify either the plain text or HTML content respectively.
+
+{note}
+As of version 1.0, the @body@ method that could be used to specify the message content has been deprecated (but is still there). The @body@ method requires the user to specify the content type of the message using a GSP directive such as:
+
+<%\@ page contentType="text/html" %>
+{note}
+
+h3. HTML Email
+
+To send HTML mail you can use the @html@ method. This will set the content type of the message to @text/html@.
+
+You can either supply a string value…
+
+{code}
+sendMail {
+    to "user@somewhere.org"
+    subject "Hello John"
+    html "<b>Hello</b> World"
+}
+{code}
+
+Or a view to render to form the content…
+
+{code}
+sendMail {
+    to "user@somewhere.org"
+    subject "Hello John"
+    html view: "/emails/hello", model: [param1: "value1", param2: "value2"]
+}
+{code}
+
+See the section on using views for more details of the parameters to this version of @html@.
+
+h3. Plain Text Email
+
+To send plain text mail you can use the @text@ method. This will set the content type of the message to @text/plain@.
+
+You can either supply a string value…
+
+{code}
+sendMail {
+    to "user@somewhere.org"
+    subject "Hello John"
+    text "Hello World"
+}
+{code}
+
+Or a view to render to form the content…
+
+{code}
+sendMail {
+    to "user@somewhere.org"
+    subject "Hello John"
+    text view: "/emails/hello", model: [param1: "value1", param2: "value2"]
+}
+{code}
+
+See the section on using views for more details of the parameters to this version of @text@.
+
+h3. Plain Text *and* HTML
+
+It is possible to send a multipart message that contains both plain text and HTML versions of the message. In this situation, the mail reading client is responsible for selecting the variant to display to the user.
+
+To do this, simply use both the @html@ and @text@ methods…
+
+{code}
+sendMail {
+    to "user@somewhere.org"
+    subject "Hello John"
+    text view: "/emails/text-hello", model: [param1: "value1", param2: "value2"]
+    html view: "/emails/html-hello", model: [param1: "value1", param2: "value2"]
+}
+{code}
+
+h3. Using Views
+
+Both the @text@ and @html@ methods support specifying a view to render to form the content. These are the accepted parameters:
+
+* The _view_ is the absolute path (or relative to the current controller if during a request) to the GSP, just like the existing Grails @render@ method.
+* The _plugin_ parameter is only necessary if the  view you wish to render comes from a plugin, just like the existing Grails @render@ method.
+* The _model_ parameter is a map representing the model the GSP will see for rendering data, just like the existing Grails @render@ method.

@@ -1,0 +1,12 @@
+h1. Compass Mapping XML
+
+To use Compass Mapping XML, add a  @DomainClassName.cpm.xml@  file to your classpath.
+
+Normally with Compass you need a master XML config file - typically  @compass.cfg.xml@  - in which you declare these mapped classes. With the Searchable Plugin you can choose whether you want a  @compass.cfg.xml@; if it is not found, it detects your mapping XML files automatically.
+
+Refer to the Compass docs [from here|http://www.compass-project.org] for more.
+
+{info}
+
+The plugin currently configures the Compass mappings by generating this XML at runtime, so if you would like to see it, enable [debug logging|Searchable Plugin - Debugging].
+{info}

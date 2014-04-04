@@ -1,0 +1,95 @@
+h1. termFreqs
+
+h2. Summary
+
+Get _term frequencies_ for the terms in the search index.
+
+h2. Syntax
+
+{code}
+searchableService.termFreqs()
+searchableService.termFreqs(String propertyNames...)
+searchableService.termFreqs(Map options, String propertyNames...)
+searchableService.termFreqs(Map options)
+{code}
+
+{code}
+DomainClass.termFreqs()
+DomainClass.termFreqs(String propertyNames...)
+DomainClass.termFreqs(Map options, String propertyNames...)
+DomainClass.termFreqs(Map options)
+{code}
+
+h2. Description
+
+{info:title=What's a term frequency?}
+
+A _term frequency_ represents a _term_ in the index (where a term is normally a word) and its _frequency_ in the index (number of occurances).
+
+_Term frequencies_ (often abbreviated to "term freqs") is just the plural of that, ie, a collection of terms and their respective frequencies.
+
+With term frequencies you can discover which terms are more common and which are less common, or find out the exact number of occurances of each.
+{info}
+
+Term frequencies can be limited to the subset of class hierarchy, if called as a domain class static method or with a @class@ option, and/or class properties, if the @propertyNames@ parameter or @properties@ option is provided.
+
+You can also _normalize_ the returned frequencies, which can make tag clouds easy, for example.
+
+_TODO show/link to tag cloud example_
+
+h2. Parameters
+
+* *@propertyNames@* - An arbitrary number of  domain class property names. If defined, only terms for these properties are returned
+* *@options@* - A @Map@ of [options|Searchable Plugin - Methods - termFreqs#options]
+
+h3. options
+
+* *@properties@* - A @List@ of property names; use this to get term freqs for multiple properties
+* *@size@* - The maximum number of term freqs to return. Default is all
+* *@normalise@* or *@normalize@* - A Groovy @Range@ used to normalise the frequencies. Without this option the frequencies of the returned term freqs are the _actual_ number of occurences for the term in the index.
+* *@class@* - The class to restrict the term freqs to
+* *@sort@* - Sorts the term frequencies; either @"term"@ to sort alphabetically by term or @"freq"@ to sort by highest frequency first. Default is @"freq"@
+
+h2. Returns
+
+An _array_ of @[CompassTermFreq|http://www.compass-project.org/docs/2.1.0RC/api/org/compass/core/CompassTermFreq.html]@s, each with the following methods:
+
+* *@getTerm@* - returns the term
+* *@getFreq@* - returns the frequency
+* *@getProperty@* - returns the searchable property from which the term comes
+
+h2. Examples
+
+{code}
+// print all Book term frequencies
+def termFreqs = Book.termFreqs()
+termFreqs.each { 
+    println "${it.term} occurs ${it.freq} times in the index for Book instances" 
+}
+{code}
+
+{code}
+// get Book term frequencies for Book#title
+def termFreqs = Book.termFreqs("title")
+{code}
+
+{code}
+// get Book term frequencies for Book#title, 
+// limiting the size to 100 and normalising the frequencies
+// between 0 (minimum) and 1 (maximum)
+def termFreqs = Book.termFreqs("title", size: 100, normalize: 0..1)
+{code}
+
+{code}
+// get terms from all properties in the index, 
+// sorting by term and limited to the Author class
+def termFreqs = searchableService.search(class: Author, sort: "term")
+{code}
+
+{code}
+// get terms from searchable "title" and "description" properties
+// in the index, limiting and normalsing
+def termFreqs = searchableService.search(
+    properties: ["title", "description"], size: 1000, normalise: 0..1
+)
+{code}

@@ -1,0 +1,92 @@
+h2. How it works
+
+If you want to add some specific logic to default plugin behaviour, you have to create your own
+service called `TwitterAuthService`. Then the plugin will check for known methods of this service, and if
+they're exist - use them instead of or in additional to own method.
+
+It's some kind of extending an abstract class, but you don't need to create all methods, just what you need.
+
+Used objects:
+
+  * @<TwitterUser>@ - domain class for your twitter user. It's your own class, can have other name, it's just a example
+  * @<Person>@ - general user, used by Spring Security. It's your own class, can have other name, it's just a example
+  * @TwitterAuthToken@ - token provided by plugin (instance of @com.the6hours.grails.springsecurity.facebook.TwitterAuthToken@)
+
+TwitterAuthToken contains:
+  * String token
+  * String tokenSecret
+  * long userId
+  * String screenName
+
+Notice that @<TwitterUser>@ and @<Person>@ can be same object, or can be two different object (with a relation), depends
+on your architecture.
+
+h2. Take a look at sources
+
+Please, take a look at sources of "DefaultTwitterAuthDao":https://github.com/splix/grails-spring-security-twitter/blob/master/src/groovy/com/the6hours/grails/springsecurity/twitter/DefaultTwitterAuthDao.groovy
+to understand how it works, and which methods you can use for customization. It's much easier to read from the sources, that from the docs :)
+
+h2. List of possible methods:
+
+h3. @<TwitterUser>@ findUser(TwitterAuthToken token)
+
+Called when twitter user is authenticated (on every request), must return existing instance
+for specified token, if exits. If doesn't - return @null@.
+
+h3. @<TwitterUser>@ create(TwitterAuthToken token)
+
+Called when we have a new twitter user, called on first login to create all required
+data structures.
+
+Notice, that if you have such method, it replaces all other methods for user creation, like:
+
+  * generateUsername
+  * createUser, createAppUser and createTwitterUser
+  * afterCreate
+  * createRoles
+
+h3. @<Person>@ createUser(@<TwitterUser>@ user, TwitterAuthToken token)
+
+Called if you have configured same domain for Twitter User and App User. Should create @<Person>@ object and fill with
+all required details.
+
+h3. @<TwitterUser>@ createTwitterUser(TwitterAuthToken token)
+
+Called if you have configured two domains, one for main user, one for twitter user.
+
+h3. @<Person>@ createAppUser(@<TwitterUser>@ user, TwitterAuthToken token)
+
+Called if you have configured two domains, one for main user, one for twitter user.
+
+h3. String generateUsername(@<Person>@ user, TwitterAuthToken token)
+
+Should generate a new unique username on a new user creation. If method doesn't exist, Twitter User Screen Name will be used.
+
+Not called if you have implemented @createAppUser()@ method
+
+h3. void afterCreate(@<TwitterUser>@ user, TwitterAuthToken token)
+
+Called after user was created by plugin, just after saving into database, but before roles are assigned to user.
+You can setup user object with some extra values. If you need to access Twitter API, you could use token, it
+contains `token` and `tokenSecret` for current user.
+
+h3. void createRoles(@<TwitterUser>@ user)
+
+Called when we have a new Twitter user, called on first login to create roles list for new user. If method doesn't exist,
+user will be created with default roles (configured at 'grails.plugins.springsecurity.twitter.autoCreate.roles')
+
+h3. void updateIfNeeded(@<TwitterUser>@ user, TwitterAuthToken token)
+
+Called on each login, you could update user details if needed.
+
+h3. @<Person>@ getAppUser(@<TwitterUser>@ user)
+
+Must return object to store in security context for specified facebook user (can return itself)
+
+h3. Object getPrincipal(@<Person>@ person)
+
+Principal to use with Spring Security. It's very useful if it will be instance of @UserDetails@ class.
+
+h3. Collection<GrantedAuthority> getRoles(@<Person>@ user)
+
+Must return roles list for specified facebook user

@@ -1,0 +1,33 @@
+h2. Twitter configuration
+{table}
+*Name* | *Default Value*
+grails.plugin.springsecurity.twitter.consumerKey | must be specified
+grails.plugin.springsecurity.twitter.consumerSecret | must be specified
+{table}
+
+h2. Domain configuration
+{table}
+*Name* | *Default Value*
+grails.plugin.springsecurity.twitter.domain.classname | TwitterUser
+grails.plugin.springsecurity.twitter.domain.connectionPropertyName | user
+{table}
+
+Where:
+
+ * @.classname@ - domain class name that will be used for authentication
+ * @.connectionPropertyName@ - name of property that connects (`belongsTo`) to main app user (if you have two different domains, one for app user, one for twitter user)
+
+h2. Authentication configuration
+
+{table}
+*Name* | *Default Value*
+grails.plugin.springsecurity.twitter.autoCreate.active | true
+grails.plugin.springsecurity.twitter.autoCreate.roles | ['ROLE_USER', 'ROLE_TWITTER']
+grails.plugin.springsecurity.twitter.filter.processUrl | '/j_spring_twitter_security_check'
+{table}
+
+Where:
+
+ * @.autoCreate.active@ - plugin will automatically create corresponding user for each new visitor authentication using Twitter
+ * @.autoCreate.roles@ - default list of roles that will be assigned to create user
+ * @.filter.processUrl@ - url that will be used for authentication

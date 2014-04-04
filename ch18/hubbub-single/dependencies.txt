@@ -1,0 +1,172 @@
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.grailsinaction:hubbub:grails-app:0.1
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-surefire-plugin is missing. @ line 254, column 21
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] 
+[INFO] Using the builder org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder with a thread count of 1
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building hubbub 0.1
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.8:tree (default-cli) @ hubbub ---
+[INFO] com.grailsinaction:hubbub:grails-app:0.1
+[INFO] +- org.grails:grails-plugin-async:jar:2.3.7:compile
+[INFO] |  +- org.codehaus.gpars:gpars:jar:1.1.0:compile
+[INFO] |  |  +- org.multiverse:multiverse-core:jar:0.7.0:compile
+[INFO] |  |  \- org.codehaus.jsr166-mirror:jsr166y:jar:1.7.0:compile
+[INFO] |  +- org.slf4j:jcl-over-slf4j:jar:1.7.5:compile
+[INFO] |  +- org.slf4j:slf4j-api:jar:1.7.5:compile
+[INFO] |  +- org.grails:grails-async:jar:2.3.7:compile
+[INFO] |  \- org.grails:grails-plugin-controllers:jar:2.3.7:compile
+[INFO] |     +- commons-beanutils:commons-beanutils:jar:1.8.3:compile
+[INFO] |     \- org.grails:grails-plugin-validation:jar:2.3.7:compile
+[INFO] +- org.grails:grails-plugin-rest:jar:2.3.7:compile
+[INFO] |  +- org.grails:grails-web:jar:2.3.7:compile
+[INFO] |  |  +- commons-collections:commons-collections:jar:3.2.1:compile
+[INFO] |  |  +- taglibs:standard:jar:1.1.2:runtime
+[INFO] |  |  +- org.springframework:spring-context-support:jar:3.2.8.RELEASE:compile
+[INFO] |  |  +- org.aspectj:aspectjweaver:jar:1.7.4:runtime
+[INFO] |  |  +- commons-fileupload:commons-fileupload:jar:1.3.1:compile
+[INFO] |  |  +- opensymphony:sitemesh:jar:2.4:compile
+[INFO] |  |  +- org.aspectj:aspectjrt:jar:1.7.4:runtime
+[INFO] |  |  +- org.springframework:spring-aspects:jar:3.2.8.RELEASE:runtime
+[INFO] |  |  +- junit:junit:jar:4.11:compile
+[INFO] |  |  +- org.springframework:spring-webmvc:jar:3.2.8.RELEASE:compile
+[INFO] |  |  |  \- org.springframework:spring-expression:jar:3.2.8.RELEASE:compile
+[INFO] |  |  +- xpp3:xpp3_min:jar:1.1.4c:compile
+[INFO] |  |  +- javax.servlet:jstl:jar:1.1.2:runtime
+[INFO] |  |  +- commons-el:commons-el:jar:1.0:compile
+[INFO] |  |  +- org.objenesis:objenesis:jar:1.4:compile
+[INFO] |  |  +- org.grails:grails-spring:jar:2.3.7:compile
+[INFO] |  |  \- org.grails:grails-databinding:jar:2.3.7:compile
+[INFO] |  +- org.grails:grails-plugin-datasource:jar:2.3.7:compile
+[INFO] |  |  +- org.apache.tomcat:tomcat-jdbc:jar:7.0.50:compile
+[INFO] |  |  |  \- org.apache.tomcat:tomcat-juli:jar:7.0.50:compile
+[INFO] |  |  +- org.springframework:spring-jdbc:jar:3.2.8.RELEASE:compile
+[INFO] |  |  \- org.springframework:spring-context:jar:3.2.8.RELEASE:compile
+[INFO] |  \- com.google.code.gson:gson:jar:2.2.4:compile
+[INFO] +- org.grails:grails-plugin-services:jar:2.3.7:compile
+[INFO] |  +- org.springframework:spring-tx:jar:3.2.8.RELEASE:compile
+[INFO] |  |  +- org.springframework:spring-beans:jar:3.2.8.RELEASE:compile
+[INFO] |  |  \- org.springframework:spring-core:jar:3.2.8.RELEASE:compile
+[INFO] |  \- org.grails:grails-core:jar:2.3.7:compile
+[INFO] |     +- org.grails:grails-bootstrap:jar:2.3.7:compile
+[INFO] |     +- oro:oro:jar:2.0.8:runtime
+[INFO] |     +- xalan:serializer:jar:2.7.1:runtime
+[INFO] |     +- org.springframework:spring-web:jar:3.2.8.RELEASE:compile
+[INFO] |     +- asm:asm:jar:3.3.1:runtime
+[INFO] |     +- org.hibernate.javax.persistence:hibernate-jpa-2.1-api:jar:1.0.0.Final:compile
+[INFO] |     +- aopalliance:aopalliance:jar:1.0:compile
+[INFO] |     \- commons-validator:commons-validator:jar:1.3.1:compile
+[INFO] +- org.grails:grails-plugin-i18n:jar:2.3.7:compile
+[INFO] |  \- commons-lang:commons-lang:jar:2.6:compile
+[INFO] +- org.grails:grails-plugin-databinding:jar:2.3.7:compile
+[INFO] +- org.grails:grails-plugin-filters:jar:2.3.7:compile
+[INFO] +- org.grails:grails-plugin-gsp:jar:2.3.7:compile
+[INFO] |  +- org.grails:grails-logging:jar:2.3.7:compile
+[INFO] |  \- org.grails:grails-plugin-codecs:jar:2.3.7:compile
+[INFO] |     \- commons-codec:commons-codec:jar:1.6:compile
+[INFO] +- org.grails:grails-plugin-log4j:jar:2.3.7:compile
+[INFO] |  +- log4j:log4j:jar:1.2.17:compile
+[INFO] |  \- org.slf4j:jul-to-slf4j:jar:1.7.5:compile
+[INFO] +- org.grails:grails-plugin-servlets:jar:2.3.7:compile
+[INFO] +- org.grails:grails-plugin-url-mappings:jar:2.3.7:compile
+[INFO] |  +- commons-io:commons-io:jar:2.2:compile
+[INFO] |  \- com.googlecode.concurrentlinkedhashmap:concurrentlinkedhashmap-lru:jar:1.3.1:compile
+[INFO] +- org.grails:grails-resources:jar:2.3.7:runtime
+[INFO] +- org.grails:grails-test:jar:2.3.7:test
+[INFO] |  +- org.apache.ant:ant:jar:1.8.4:test
+[INFO] |  |  \- org.apache.ant:ant-launcher:jar:1.8.4:test
+[INFO] |  +- org.grails:grails-plugin-mimetypes:jar:2.3.7:compile
+[INFO] |  +- org.grails:grails-plugin-converters:jar:2.3.7:compile
+[INFO] |  +- org.spockframework:spock-core:jar:0.7-groovy-2.0:test
+[INFO] |  |  \- org.hamcrest:hamcrest-core:jar:1.3:compile
+[INFO] |  \- org.apache.ant:ant-junit:jar:1.8.4:test
+[INFO] +- org.grails:grails-plugin-testing:jar:2.3.7:test
+[INFO] |  +- org.springframework:spring-test:jar:3.2.8.RELEASE:runtime
+[INFO] |  +- org.grails:grails-datastore-gorm:jar:3.0.2.RELEASE:compile
+[INFO] |  +- org.grails:grails-datastore-simple:jar:3.0.2.RELEASE:compile
+[INFO] |  +- org.grails:grails-plugin-domain-class:jar:2.3.7:compile
+[INFO] |  \- org.grails:grails-datastore-core:jar:3.0.2.RELEASE:compile
+[INFO] |     +- org.javassist:javassist:jar:3.17.1-GA:compile
+[INFO] |     \- javax.transaction:jta:jar:1.1:compile
+[INFO] +- com.h2database:h2:jar:1.3.170:runtime
+[INFO] +- org.apache.activemq:activemq-core:jar:5.7.0:compile
+[INFO] |  +- org.apache.geronimo.specs:geronimo-jms_1.1_spec:jar:1.1.1:compile
+[INFO] |  +- org.apache.activemq:kahadb:jar:5.7.0:compile
+[INFO] |  +- org.apache.activemq.protobuf:activemq-protobuf:jar:1.1:compile
+[INFO] |  +- org.fusesource.mqtt-client:mqtt-client:jar:1.3:compile
+[INFO] |  |  +- org.fusesource.hawtdispatch:hawtdispatch-transport:jar:1.11:compile
+[INFO] |  |  |  \- org.fusesource.hawtdispatch:hawtdispatch:jar:1.11:compile
+[INFO] |  |  \- org.fusesource.hawtbuf:hawtbuf:jar:1.9:compile
+[INFO] |  +- org.apache.geronimo.specs:geronimo-j2ee-management_1.1_spec:jar:1.0.1:compile
+[INFO] |  +- commons-net:commons-net:jar:3.1:compile
+[INFO] |  \- org.jasypt:jasypt:jar:1.9.0:compile
+[INFO] +- org.grails.plugins:scaffolding:zip:2.0.1:compile
+[INFO] +- org.grails.plugins:cache:zip:1.1.1:compile
+[INFO] |  \- org.grails.plugins:webxml:zip:1.4.1:compile
+[INFO] +- org.grails.plugins:mail:zip:1.0.1:compile
+[INFO] |  \- javax.mail:mail:jar:1.4.3:compile
+[INFO] |     \- javax.activation:activation:jar:1.1:compile
+[INFO] +- org.grails.plugins:spring-security-core:zip:2.0-RC2:compile
+[INFO] |  +- org.springframework.security:spring-security-core:jar:3.2.0.RC1:compile
+[INFO] |  \- org.springframework.security:spring-security-web:jar:3.2.0.RC1:compile
+[INFO] +- org.grails.plugins:spring-security-ui:zip:1.0-RC1:compile
+[INFO] |  +- org.grails.plugins:famfamfam:zip:1.0.1:compile
+[INFO] |  \- org.grails.plugins:jquery-ui:zip:1.8.24:compile
+[INFO] +- org.grails.plugins:spring-security-twitter:zip:0.6.2:compile
+[INFO] |  \- org.springframework.social:spring-social-twitter:jar:1.0.3.RELEASE:compile
+[INFO] |     +- org.codehaus.jackson:jackson-mapper-asl:jar:1.9.9:compile
+[INFO] |     |  \- org.codehaus.jackson:jackson-core-asl:jar:1.9.9:compile
+[INFO] |     +- org.springframework.security:spring-security-crypto:jar:3.1.3.RELEASE:compile
+[INFO] |     \- org.springframework.social:spring-social-core:jar:1.0.2.RELEASE:compile
+[INFO] +- org.grails.plugins:jms:zip:1.3-SNAPSHOT:compile
+[INFO] |  \- org.springframework:spring-jms:jar:3.1.4.RELEASE:compile
+[INFO] |     \- org.springframework:spring-aop:jar:3.1.4.RELEASE:compile
+[INFO] |        \- org.springframework:spring-asm:jar:3.1.4.RELEASE:compile
+[INFO] +- org.grails.plugins:quartz:zip:1.0-RC9:compile
+[INFO] |  +- hsqldb:hsqldb:jar:1.8.0.10:runtime
+[INFO] |  +- org.quartz-scheduler:quartz:jar:2.1.5:compile
+[INFO] |  |  \- c3p0:c3p0:jar:0.9.1.1:compile
+[INFO] |  \- org.hibernate:hibernate-core:jar:3.6.10.Final:compile
+[INFO] |     +- antlr:antlr:jar:2.7.6:compile
+[INFO] |     +- dom4j:dom4j:jar:1.6.1:compile
+[INFO] |     +- org.hibernate:hibernate-commons-annotations:jar:3.2.0.Final:compile
+[INFO] |     \- org.hibernate.javax.persistence:hibernate-jpa-2.0-api:jar:1.0.1.Final:compile
+[INFO] +- org.grails.plugins:platform-core:zip:1.0.RC5:compile
+[INFO] +- org.grails.plugins:hibernate:zip:3.6.10.6:runtime
+[INFO] |  +- cglib:cglib:jar:2.2.2:runtime
+[INFO] |  \- org.grails:grails-datastore-gorm-hibernate:jar:2.0.6.RELEASE:runtime
+[INFO] |     +- javax.validation:validation-api:jar:1.0.0.GA:runtime
+[INFO] |     +- net.sf.ehcache:ehcache-core:jar:2.4.6:runtime
+[INFO] |     +- org.hibernate:hibernate-validator:jar:4.1.0.Final:runtime
+[INFO] |     +- org.grails:grails-datastore-gorm-plugin-support:jar:2.0.6.RELEASE:runtime
+[INFO] |     |  \- org.grails:grails-datastore-web:jar:2.0.6.RELEASE:runtime
+[INFO] |     +- org.grails:grails-datastore-gorm-hibernate-core:jar:2.0.6.RELEASE:runtime
+[INFO] |     +- org.hibernate:hibernate-entitymanager:jar:3.6.10.Final:runtime
+[INFO] |     +- org.hibernate:hibernate-ehcache:jar:3.6.10.Final:runtime
+[INFO] |     \- org.springframework:spring-orm:jar:3.2.5.RELEASE:runtime
+[INFO] +- org.grails.plugins:jquery:zip:1.10.2.2:runtime
+[INFO] +- org.grails.plugins:resources:zip:1.2.1:runtime
+[INFO] +- org.grails.plugins:navigation:zip:1.3.2:runtime
+[INFO] +- org.grails.plugins:database-migration:zip:1.3.8:runtime
+[INFO] |  \- org.liquibase:liquibase-core:jar:2.0.5:runtime
+[INFO] \- org.grails.plugins:tomcat:zip:7.0.47:provided
+[INFO]    +- org.apache.tomcat:tomcat-catalina-ant:jar:7.0.47:provided
+[INFO]    +- org.apache.tomcat.embed:tomcat-embed-jasper:jar:7.0.47:provided
+[INFO]    +- org.apache.tomcat.embed:tomcat-embed-logging-log4j:jar:7.0.47:runtime
+[INFO]    +- org.eclipse.jdt.core.compiler:ecj:jar:3.7.2:provided
+[INFO]    \- org.apache.tomcat.embed:tomcat-embed-core:jar:7.0.47:provided
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 3.574 s
+[INFO] Finished at: 2014-04-03T10:12:49+00:00
+[INFO] Final Memory: 16M/310M
+[INFO] ------------------------------------------------------------------------

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module relativePaths="false" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file:///Developer/grails-dev/plugins/searchable">
+      <sourceFolder url="file:///Developer/grails-dev/plugins/searchable/grails-app/conf" isTestSource="false" />
+      <sourceFolder url="file:///Developer/grails-dev/plugins/searchable/grails-app/controllers" isTestSource="false" />
+      <sourceFolder url="file:///Developer/grails-dev/plugins/searchable/grails-app/services" isTestSource="false" />
+      <sourceFolder url="file:///Developer/grails-dev/plugins/searchable/grails-app/taglib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/groovy" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/test/java" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///Developer/grails-dev/plugins/searchable/lib/lucene-core-2.0.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///Developer/grails-dev/plugins/searchable/lib/jmock-1.1.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///Developer/grails-dev/plugins/searchable/lib/easymock.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///Developer/grails-dev/plugins/searchable/lib/compass.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntryProperties />
+  </component>
+</module>
+

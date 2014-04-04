@@ -1,0 +1,83 @@
+h1. unindex
+
+h2. Summary
+
+Un-indexes searchable class instances (removes them from the search index)
+
+h2. Syntax
+
+{code}
+domainObject.unindex()
+{code}
+
+{code}
+DomainClass.unindex()
+DomainClass.unindex(DomainClass instances...)
+DomainClass.unindex(Serializable ids...)
+{code}
+
+{code}
+searchableService.unindex()
+searchableService.unindex(Map options)
+searchableService.unindex(DomainClass instances...)
+searchableService.unindex(Serializable ids..)
+searchableService.unindex(Map options, Serializable ids...)
+{code}
+
+h2. Description
+
+When called as a domain class instance method, un-indexes the instance.
+
+When called as a domain class static method with no arguments, un-indexes all instances for that class (or hierarchy).
+
+When called as a @SearchableService@ method with no arguments, un-indexes all searchable class instances.
+
+In other invocations, un-indexes the searchable class instances you provide or identify.
+
+h2. Parameters
+
+* *@instances@* - One or more searchable class instances
+* *@ids@* - One or more searchable class instance ids
+* *@options@* - A @Map@ of [options|Searchable Plugin - Methods - unindex#options]
+
+h3. options
+
+* *@class@* - a searchable class; use this option with the @SearchableService@ method and @ids@ parameter or as an alternative to the domain-class method
+
+h2. Returns
+
+No meaningful value
+
+h2. Examples
+
+{code}
+// Unindex a Post instance
+post.unindex()
+{code}
+
+{code}
+// Add some Menus to the index
+Menu.unindex(m1, m2)
+{code}
+
+{code}
+// Add all Countries to the index
+Country.unindex()
+{code}
+
+{code}
+// Unindex everything
+searchableService.unindex()
+{code}
+
+{code}
+// Unindex the identified Book
+searchableService.unindex(class: Book, 1l)
+{code}
+
+{code}
+// Unindex the given Tool
+searchableService.unindex(tool)
+{code}
+
+

@@ -1,0 +1,33 @@
+h2. Install plugin
+
+Add dependency into `BuildConfig.groovy`:
+
+{code}
+    plugins {
+        compile "org.grails.plugins:spring-security-twitter:0.6"
+        // ...
+        // you need to have spring-security-core plugin installed
+        // ...
+    }
+{code}
+
+and put your Twitter API Consumer Key/Secret into @Config.groovy@:
+{code}
+grails.plugin.springsecurity.twitter.consumerKey= ..
+grails.plugin.springsecurity.twitter.consumerSecret= ..
+{code}
+
+It's very basic configuration, for other options (see [Configuration|guide:4 Configuration] section)
+
+Follow [Basic Usage|guide:3 Usage] guide for full example.
+
+h2. Upgrading from versions prior to 0.5
+
+Version 0.5 was completely rewritten, so you could expect some inconsistency after upgrade. Just follow this guide
+and [Configuration|guide:4 Configuration] section if you have any troubles.
+
+h2. Upgrading from versions prior to 0.6
+
+Version 0.6 is based on Spring Security Core 2 plugin. Follow upgrade notes from
+"http://grails-plugins.github.io/grails-spring-security-core/docs/manual/guide/newInV2.html":http://grails-plugins.github.io/grails-spring-security-core/docs/manual/guide/newInV2.html
+

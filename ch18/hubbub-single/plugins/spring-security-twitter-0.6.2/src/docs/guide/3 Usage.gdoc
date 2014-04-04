@@ -1,0 +1,98 @@
+h2. Example app
+
+You can take a look at "Example Application":https://github.com/splix/grails-twitter-authentication-example , it's very
+basic app, that shows how to use the plugin. Just clone it, put your Twitter App credentials, and play with the code.
+
+h2. Usage
+h3. Install plugin
+
+Add dependencies into @BuildConfig.groovy@:
+
+{code}
+plugins {
+    runtime "org.grails.plugins:resources:1.1.6"
+    compile "org.grails.plugins:spring-security-core:2.0-RC2"
+
+    compile "org.grails.plugins:spring-security-twitter:0.6"
+}
+{code}
+
+h3. Setup Twitter credentials
+
+Put your Twitter API Consumer Key/Secret into @Config.groovy@:
+{code}
+grails.plugin.springsecurity.twitter.consumerKey=..
+grails.plugin.springsecurity.twitter.consumerSecret=..
+{code}
+
+h3. Create domain class for your user
+
+Like @domain/TwitterUser.groovy@:
+
+{code}
+class TwitterUser  {
+
+    /**
+     * Twitter Username (notice that it could be modified by user, Twitter allows that)
+     */
+    String username
+
+    /**
+     * Twitter User Id
+     */
+    Long twitterId
+
+    /**
+     * Twitter API token
+     */
+    String token
+
+    /**
+     * Twitter API secret
+     */
+    String tokenSecret
+
+    /**
+     * Related to main App User
+     */
+    static belongsTo = [user: User]
+
+    static constraints = {
+        twitterId(unique: true, nullable: false)
+        username(nullable: false, blank: false)
+    }
+
+}
+{code}
+
+The plugin is configured for @TwitterUser@ class name by default. But you could use different name (or use package) for domain class,
+for example @com.company.UserWithTwitter@, that you should configure at @Config.groovy@ at this case:
+{code}
+grails.plugin.springsecurity.twitter.domain.classname='com.company.UserWithTwitter'
+{code}
+
+
+h3. Put SignIn with Twitter button:
+
+Add into your GSP:
+{code}
+<twitterAuth:button />
+{code}
+
+h3. Use Spring Security
+
+Now you could use all security tools provided by [Spring Security Core|http://grails-plugins.github.io/grails-spring-security-core/docs/manual/].
+
+For example, you could use taglib for checking user state:
+{code}
+<sec:ifLoggedIn>
+    <div class="message">Authenticated</div>
+    Hello <sec:username/>!
+</sec:ifLoggedIn>
+
+<sec:ifNotLoggedIn>
+    <div class="message">Not authenticated</div>
+    <twitterAuth:button />
+</sec:ifNotLoggedIn>
+{code}
+

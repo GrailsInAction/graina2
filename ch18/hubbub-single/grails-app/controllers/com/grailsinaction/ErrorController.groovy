@@ -1,23 +1,19 @@
 package com.grailsinaction
 
-import grails.converters.*
-
 class ErrorController {
 
-    def internalServer() {
-        def ex = request.exception
-        def body = [class: ex.getClass().name, message: ex.message]
+    def internalError() {
+        def ex = request.exception.cause ?: request.exception
 
-        withFormat {
-            html {
-                [exception: ex]
-            }
-            json {
-                render body as JSON
-            }
-            xml {
-                render body as XML
-            }
-        }
+        respond new ErrorDetails(type: ex.getClass().name, message: ex.message), view: "/error"
     }
+
+    def notFound() {
+        respond new ErrorDetails(type: "", message: "Page not found"), view: "/error"
+    }
+}
+
+class ErrorDetails {
+    String type
+    String message
 }

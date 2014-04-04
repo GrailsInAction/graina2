@@ -1,0 +1,42 @@
+<plugin name='spring-security-twitter' version='0.6.2' grailsVersion='2.0.0 &gt; *'>
+  <author>Igor Artamonov</author>
+  <authorEmail>igor@artamonov.ru</authorEmail>
+  <title>Twitter Authentication for Spring Security</title>
+  <description>Twitter authentication support for the Spring Security plugin.</description>
+  <documentation>http://splix.github.io/grails-spring-security-twitter</documentation>
+  <type>SpringSecurityTwitterGrailsPlugin</type>
+  <resources>
+    <resource>DefaultTwitterSecurityConfig</resource>
+    <resource>TwitterAuthResources</resource>
+    <resource>com.the6hours.grails.springsecurity.twitter.TwitterAuthController</resource>
+    <resource>com.the6hours.grails.springsecurity.twitter.TwitterAuthTagLib</resource>
+  </resources>
+  <repositories>
+    <repository name='grailsCentral' url='http://grails.org/plugins' />
+    <repository name='http://maven.springframework.org/release' url='http://maven.springframework.org/release/' />
+    <repository name='http://repo1.maven.org/maven2' url='http://repo1.maven.org/maven2/' />
+    <repository name='mavenCentral' url='http://repo1.maven.org/maven2/' />
+    <repository name='http://repo.spring.io/milestone' url='http://repo.spring.io/milestone/' />
+  </repositories>
+  <dependencies>
+    <compile>
+      <dependency group='org.springframework.social' name='spring-social-twitter' version='1.0.3.RELEASE' />
+    </compile>
+    <runtime>
+      <dependency group='org.springframework.security' name='spring-security-core' version='3.0.7.RELEASE' />
+      <dependency group='org.springframework.security' name='spring-security-web' version='3.0.7.RELEASE' />
+    </runtime>
+  </dependencies>
+  <plugins>
+    <provided>
+      <plugin group='org.grails.plugins' name='webxml' version='1.4.1' />
+    </provided>
+    <runtime>
+      <plugin group='org.grails.plugins' name='spring-security-core' version='2.0-RC2' />
+    </runtime>
+  </plugins>
+  <runtimePluginRequirements>
+    <plugin name='springSecurityCore' version='2.0-RC2 &gt; *' />
+  </runtimePluginRequirements>
+  <behavior />
+</plugin>

@@ -1,0 +1,11 @@
+h1. Mapping DSL
+
+The mapping DSL allows you customize various aspects of the class mapping, for example:
+
+* Limit the searchable properties using [@only@ and @except@|Searchable Plugin - Mapping - Not All Properties]
+* Change a property's mapping by [explicitly declaring its mapping|Searchable Plugin - Mapping - Class Property Mapping]
+* Alter a class's mapping by adding [class mapping options|Searchable Plugin - Mapping - Class Mapping]
+
+
+
+

@@ -1,0 +1,94 @@
+h1. countHits
+
+h2. Summary
+
+Get the number of hits for a query.
+
+h2. Syntax
+
+{code}
+searchableService.countHits(String query)
+searchableService.countHits(String queryString, Map options)
+searchableService.countHits(Map options, String queryString) // same as previous
+searchableService.countHits(Closure builder)
+searchableService.countHits(Closure builder, Map options)
+searchableService.countHits(Map options, Closure builder) // same as previous
+{code}
+
+{code}
+DomainClass.countHits(String query)
+DomainClass.countHits(String queryString, Map options)
+DomainClass.countHits(Map options, String queryString) // same as previous
+DomainClass.countHits(Closure builder)
+DomainClass.countHits(Closure builder, Map options)
+DomainClass.countHits(Map options, Closure builder) // same as previous
+{code}
+
+h2. Description
+
+Issues a query to the search engine and returns the number of hits.
+
+This method is just like @[search|Searchable Plugin - Methods - search]@, except that it always return the hit count rather than relevant class instances. In fact you can use @search(..., result: 'count')@ and @countHits(...)@ interchangably.
+
+[Options|Searchable Plugin - Methods - countHits#Options] can be provided to modify the query.
+
+h2. Parameters
+
+* *@queryString@* - A [query String|Searchable Plugin - Searching - String Queries]
+* *@builderClosure@* - A [query-buiding Closure|Searchable Plugin - Searching - Query Builder]
+* *@options@* - A @Map@ of [options|Searchable Plugin - Methods - countHits#Options]
+
+h3. Options
+
+h5. Options for String queries
+
+* *@escape@* - Should special characters be escaped? Default is @false@. [More|Searchable Plugin - Searching - String Queries#Advanced String Query Options]
+* *@defaultProperty@* or *@defaultSearchProperty@* - The searchable property for un-prefixed terms. Default is @"all"@. [More|Searchable Plugin - Searching - String Queries#Advanced String Query Options]
+* *@properties@* - The names of the class properties in which to search. [More|Searchable Plugin - Searching - String Queries#Advanced String Query Options]
+* *@defaultOperator@* - Either @"and"@ or @"or"@. Default is @"and"@ unless set otherwise elsewhere. [More|Searchable Plugin - Searching - String Queries#Advanced String Query Options]
+* *@analyzer@* - The name of a query analyzer. [More|Searchable Plugin - Searching - String Queries#Advanced String Query Options]
+* *@parser@* or *@queryParser@* - The name of a query parser. [More|Searchable Plugin - Searching - String Queries#Advanced String Query Options]
+
+h2. Returns
+
+The number of hits for the query
+
+h2. Examples
+
+{code}
+// count hits across all searchable class instances
+def count = searchableService.countHits("samuri")
+{code}
+
+{code}
+// count hits within Show instances,
+// escaping reserved string query characters
+def count = Show.countHits("CSI [Las Vegas]", escape: true)
+{code}
+
+{code}
+// count hits across all searchable class instances
+def count = searchableService.countHits("CSI [Miami]", [escape: true])
+{code}
+
+{code}
+// count hits across all searchable class instances
+// defining the query with a builder closure
+def count = searchableService.countHits {
+    term("format", "MP3")
+    multiPhrase("title") {
+        add("Wrecking")
+        add("Ball")
+    }
+}
+{code}
+
+{code}
+// count hits for Show instance with a query
+// built with a closure 
+def count = Show.countHits {
+    term("keywords", "crime")
+    term("keywords", "drama")
+    queryString("ongoing love interest subplot", [defaultSearchProperty: "notes"])
+}
+{code}

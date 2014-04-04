@@ -1,0 +1,13 @@
+You can set various _default_ settings via the application config that will be used in the absence of explicit values when sending mail.
+
+You can also set the default "from" address to use for messages in Config using:
+
+{code}
+grails.mail.default.from = "server@yourhost.com"
+{code}
+
+You can also set the default "to" address to use for messages in Config using:
+
+{code}
+grails.mail.default.to = "user@yourhost.com"
+{code}

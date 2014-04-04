@@ -1,0 +1,81 @@
+h1. index
+
+h2. Summary
+
+Indexes searchable class instances (adds them to the search index)
+
+h2. Syntax
+
+{code}
+domainObject.index()
+{code}
+
+{code}
+DomainClass.index()
+DomainClass.index(DomainClass instances...)
+DomainClass.index(Serializable ids...)
+{code}
+
+{code}
+searchableService.index()
+searchableService.index(Map options)
+searchableService.index(DomainClass instances...)
+searchableService.index(Serializable ids..)
+searchableService.index(Map options, Serializable ids...)
+{code}
+
+h2. Description
+
+When called as a domain class instance method, indexes the instance.
+
+When called as a domain class static method with no arguments, indexes all instances for that class (or hierarchy).
+
+When called as a @SearchableService@ method with no arguments, indexes all searchable class instances.
+
+In other invocations, indexes the searchable class instances you provide or identify.
+
+h2. Parameters
+
+* *@instances@* - One or more searchable class instances
+* *@ids@* - One or more searchable class instance ids
+* *@options@* - A @Map@ of [options|Searchable Plugin - Methods - index#options]
+
+h3. options
+
+* *@class@* - a searchable class; use this option with the @SearchableService@ method and @ids@ parameter or as an alternative to the domain-class method
+
+h2. Returns
+
+No meaningful value
+
+h2. Examples
+
+{code}
+// Index a Post instance
+post.index()
+{code}
+
+{code}
+// Add some Menus to the index
+Menu.index(m1, m2)
+{code}
+
+{code}
+// Add all Countries to the index
+Country.index()
+{code}
+
+{code}
+// Index everything
+searchableService.index()
+{code}
+
+{code}
+// Index the identified Book
+searchableService.index(class: Book, 1l)
+{code}
+
+{code}
+// Index the given Tool
+searchableService.index(tool)
+{code}
