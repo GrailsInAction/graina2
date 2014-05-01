@@ -52,7 +52,8 @@
                         ...
                     </div>
                     <div class="searchContent">
-                        ${searchResult.highlights[hitNum]}
+                        <%-- ${result.content} --%>
+                        ${raw(searchResult.highlights[hitNum])}
                     </div>
                 </div>
             </g:each>
