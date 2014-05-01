@@ -12,3 +12,7 @@ from the command line. For example:
   groovy closures.groovy
 
 These examples give you more insight into Groovy's syntax and the Groovy JDK.
+
+*Note* CopingWithLineBreaks.groovy doesn't compile. This is intentional! The
+file includes explanations on how to fix the compilation errors and why they
+occur.
