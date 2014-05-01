@@ -55,6 +55,7 @@ grails.project.dependency.resolution = {
 
     dependencies {
         compile "org.apache.lucene:lucene-spellchecker:2.4.1"
+        compile "org.apache.lucene:lucene-highlighter:2.4.1"
 
         test "org.gebish:geb-spock:$gebVersion"
 
