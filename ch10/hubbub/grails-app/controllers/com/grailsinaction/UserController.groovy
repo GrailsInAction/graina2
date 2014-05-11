@@ -3,6 +3,8 @@ package com.grailsinaction
 class UserController {
     static scaffold = true
 
+    def mailService
+
     static navigation = [
         [group:'tabs', action:'search', order: 90],
         [action: 'advSearch', title: 'Advanced Search', order: 95],
@@ -81,7 +83,7 @@ class UserController {
     
     def welcomeEmail(String email) {
         if (email) {
-            sendMail {
+            mailService.sendMail {
                 to email
                 subject "Welcome to Hubbub!"
                 html view: "/user/welcomeEmail", model: [ email: email ]
