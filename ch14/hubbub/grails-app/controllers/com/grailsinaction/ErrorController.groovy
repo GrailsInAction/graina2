@@ -2,7 +2,7 @@ package com.grailsinaction
 
 class ErrorController {
 
-    def internalError() {
+    def internalServer() {
         def ex = request.exception.cause ?: request.exception
 
         respond new ErrorDetails(type: ex.getClass().name, message: ex.message), view: "/error"

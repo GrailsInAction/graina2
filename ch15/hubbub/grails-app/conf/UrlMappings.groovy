@@ -1,35 +1,35 @@
 class UrlMappings {
 
     static mappings = {
-        def args = [controller: "postRest", parseRequest: true]
-        def c = {
-            action = [GET: "list", POST: "save", PUT: "unsupported", DELETE: "unsupported"]
+        "/$controller/$action?/$id?(.${format})?"{
+            constraints {
+                // apply constraints here
+            }
         }
-        "/api/v${v}/posts" args, c
-        "/api/posts" args, c
 
-        "/api/posts/$id" controller: "postRest", parseRequest: true, {
-            action = [GET: "show", POST: "unsupported", PUT: "update", DELETE: "delete"]
-        }
+        "/login/form"(controller: "auth", action: "form")
 
         "/timeline/chuck_norris" {
             controller = "post"
             action = "timeline"
             id = "chuck_norris"
         }
+        
+        "/timeline" {
+            controller = "post"
+            action = "personal"
+        }
 
         "/users/$id" {
             controller = "post"
             action = "timeline"
         }
-    
-        "/$controller/$action?/$id?"{
-            constraints {
-                // apply constraints here
-            }
-        }
 
-        "/" view:"/index"
-        "500" controller: "error", action: "internalServer"
+        "/api/posts"(resources: "postRest")
+
+        "/"(view: "/index")
+
+        "500"(controller: "error", action: "internalServer")
+        "404"(controller: "error", action: "notFound")
     }
 }
