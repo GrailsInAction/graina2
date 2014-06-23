@@ -14,7 +14,7 @@ class LoginController {
         }
         else {
             flash.error = "Unknown username or password"
-            redirect action: "form", id: "loginId"
+            redirect action: "form"
         }
     }
 }
