@@ -27,6 +27,11 @@ class UserControllerSpec extends Specification {
         params['profile.email'] = "glen@bytecode.com.au"
         params['profile.homepage'] = "http://blogs.bytecode.com.au/glen"
 
+        and: "a mock security service"
+        controller.springSecurityService = Stub(SpringSecurityService) {
+            encodePassword("winnning") >> "HFDJDKALSJDF"
+        }
+
         when: "the user is registered"
         controller.register()
 

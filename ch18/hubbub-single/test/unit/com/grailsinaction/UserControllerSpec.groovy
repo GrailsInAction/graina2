@@ -1,5 +1,6 @@
 package com.grailsinaction
 
+import grails.plugin.springsecurity.SpringSecurityService
 import groovy.mock.interceptor.StubFor
 import spock.lang.Specification
 import spock.lang.Unroll
@@ -8,7 +9,6 @@ import spock.lang.Unroll
 @Mock([User, Profile])
 class UserControllerSpec extends Specification {
 
-    /*
     def "Registering a user with known good parameters"() {
 
         given: "a set of user parameters"
@@ -22,6 +22,11 @@ class UserControllerSpec extends Specification {
         params['profile.email'] = "glen@bytecode.com.au"
         params['profile.homepage'] = "http://blogs.bytecode.com.au/glen"
 
+        and: "a mock security service"
+        controller.springSecurityService = Stub(SpringSecurityService) {
+            encodePassword("winnning") >> "HFDJDKALSJDF"
+        }
+
         when: "the user is registered"
         request.method = "POST"
         controller.register()
@@ -32,7 +37,6 @@ class UserControllerSpec extends Specification {
         Profile.count() == 1
 
     }
-    */
 
     @Unroll
     def "Registration command object for #loginId validate correctly"() {
@@ -62,7 +66,6 @@ class UserControllerSpec extends Specification {
 
     }
 
-    /*
     def "Invoking the new register action via a command object"() {
 
         given: "A configured command object"
@@ -78,6 +81,11 @@ class UserControllerSpec extends Specification {
         and: "which has been validated"
         urc.validate()
 
+        and: "a mock security service"
+        controller.springSecurityService = Stub(SpringSecurityService) {
+            encodePassword("winnning") >> "HFDJDKALSJDF"
+        }
+
         when: "the register action is invoked"
         controller.register2(urc)
 
@@ -88,7 +96,6 @@ class UserControllerSpec extends Specification {
         Profile.count() == 1
 
     } 
-    */
     
 }
 
