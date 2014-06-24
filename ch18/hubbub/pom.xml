@@ -11,9 +11,7 @@
     <name>hubbub-all</name>
 
     <properties>
-        <grails.version>2.3.7</grails.version>
-        <geb.version>0.9.2</geb.version>
-        <selenium.version>2.41.0</selenium.version>
+        <grails.version>2.3.1.BUILD-SNAPSHOT</grails.version>
     </properties>
 
     <modules>
