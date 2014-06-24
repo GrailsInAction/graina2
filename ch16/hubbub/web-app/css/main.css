@@ -245,7 +245,7 @@ label {
 	margin: 0 0.25em 0 0;
 }
 
-input, select, textarea {
+input, select, textarea, button {
 	background-color: #fcfcfc;
 	border: 1px solid #cccccc;
 	font-size: 1em;

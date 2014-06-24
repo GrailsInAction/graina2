@@ -2,16 +2,19 @@
 // config files can be ConfigSlurper scripts, Java properties files, or classes
 // in the classpath in ConfigSlurper format
 
-grails.config.locations = [ "classpath:${appName}-config.groovy",
-                            "file:./${appName}-config.groovy"]
+grails.config.locations = [ "classpath:${appName}-config.groovy", "file:./${appName}-config.groovy" ]
+//                             "classpath:${appName}-config.groovy",
+//                             "file:${userHome}/.grails/${appName}-config.properties",
+//                             "file:${userHome}/.grails/${appName}-config.groovy"]
 
 // if (System.properties["${appName}.config.location"]) {
 //    grails.config.locations << "file:" + System.properties["${appName}.config.location"]
 // }
 
 grails.project.groupId = appName // change this to alter the default package name and Maven publishing destination
-grails.mime.file.extensions = true // enables the parsing of file extensions from URLs into the request format
-grails.mime.use.accept.header = true
+
+// The ACCEPT header will not be used for content negotiation for user agents containing the following strings (defaults to the 4 major rendering engines)
+//grails.mime.disable.accept.header.userAgents = ['Gecko', 'WebKit', 'Presto', 'Trident']
 grails.mime.types = [
     all:           '*/*',
     atom:          'application/atom+xml',
@@ -24,6 +27,7 @@ grails.mime.types = [
     multipartForm: 'multipart/form-data',
     rss:           'application/rss+xml',
     text:          'text/plain',
+    hal:           ['application/hal+json','application/hal+xml'],
     xml:           ['text/xml', 'application/xml']
 ]
 
@@ -33,12 +37,34 @@ grails.mime.types = [
 // What URL patterns should be processed by the resources plugin
 grails.resources.adhoc.patterns = ['/images/*', '/css/*', '/js/*', '/plugins/*']
 
-// The default codec used to encode data with ${}
-grails.views.default.codec = "none" // none, html, base64
-grails.views.gsp.encoding = "UTF-8"
+// Legacy setting for codec used to encode data with ${}
+grails.views.default.codec = "html"
+
+// The default scope for controllers. May be prototype, session or singleton.
+// If unspecified, controllers are prototype scoped.
+grails.controllers.defaultScope = 'singleton'
+
+// GSP settings
+grails {
+    views {
+        gsp {
+            encoding = 'UTF-8'
+            htmlcodec = 'xml' // use xml escaping instead of HTML4 escaping
+            codecs {
+                expression = 'html' // escapes values inside ${}
+                scriptlet = 'html' // escapes output from scriptlets in GSPs
+                taglib = 'none' // escapes output from taglibs
+                staticparts = 'none' // escapes output from static template parts
+            }
+        }
+        // escapes all not-encoded output at final stage of outputting
+        filteringCodecForContentType {
+            //'text/html' = 'html'
+        }
+    }
+}
+ 
 grails.converters.encoding = "UTF-8"
-// enable Sitemesh preprocessing of GSP pages
-grails.views.gsp.sitemesh.preprocess = true
 // scaffolding templates configuration
 grails.scaffolding.templates.domainSuffix = 'Instance'
 
@@ -60,6 +86,9 @@ grails.hibernate.cache.queries = false
 environments {
     development {
         grails.logging.jul.usebridge = true
+    }
+    test {
+        dumbster.enabled = true
     }
     production {
         grails.logging.jul.usebridge = false
@@ -86,52 +115,78 @@ log4j = {
            'org.springframework',
            'org.hibernate',
            'net.sf.ehcache.hibernate'
+}
 
-    debug "com.the6hours.grails.springsecurity.twitter",
-            "grails.plugin.jms"
+grails.mail.host="127.0.0.1"
+grails.mail.default.from="hubbub@grailsinaction.com"
+
+grails.plugin.databasemigration.updateOnStart = true
+grails.plugin.databasemigration.updateOnStartFileNames = ['changelog.groovy']
+grails.plugin.databasemigration.forceAutoMigrate = true
+
+grails.cache.config = {
+    defaultCache {
+        maxElementsInMemory 10000
+        eternal false
+        timeToIdleSeconds 120
+        timeToLiveSeconds 120
+        overflowToDisk true
+        maxElementsOnDisk 10000000
+        diskPersistent false
+        diskExpiryThreadIntervalSeconds 120
+        memoryStoreEvictionPolicy 'LRU'
+    }
+
+    cache {
+        name 'myDailyCache'
+        timeToLiveSeconds 60*60*24
+    }
+
+}
+
+searchable {
+    mirrorChanges = false
+    bulkIndexOnStartup = false
 }
 
 // Added by the Spring Security Core plugin:
-grails.plugins.springsecurity.userLookup.userDomainClassName = "com.grailsinaction.User"
-grails.plugins.springsecurity.userLookup.usernamePropertyName = "loginId"
-grails.plugins.springsecurity.userLookup.passwordPropertyName = "passwordHash"
-grails.plugins.springsecurity.userLookup.authorityJoinClassName = "com.grailsinaction.UserRole"
-grails.plugins.springsecurity.authority.className = "com.grailsinaction.Role"
-grails.plugins.springsecurity.successHandler.defaultTargetUrl = "/"
+grails.plugin.springsecurity.userLookup.userDomainClassName = 'com.grailsinaction.User'
+grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'com.grailsinaction.UserRole'
+grails.plugin.springsecurity.authority.className = 'com.grailsinaction.Role'
+grails.plugin.springsecurity.userLookup.usernamePropertyName = "loginId"
+grails.plugin.springsecurity.userLookup.passwordPropertyName = "passwordHash"
 
-grails.plugins.springsecurity.securityConfigType = "InterceptUrlMap"
-grails.plugins.springsecurity.interceptUrlMap = [
-   '/':             ['IS_AUTHENTICATED_ANONYMOUSLY'],
-   '/api/**':       ['IS_AUTHENTICATED_FULLY'],
-   '/user/**':      ['ROLE_ADMIN'],
-   '/role/**':      ['ROLE_ADMIN'],
-   '/secure/**':    ['ROLE_ADMIN'],
-   '/finance/**':   ['ROLE_FINANCE', 'IS_AUTHENTICATED_FULLY'],
-   '/js/**':        ['IS_AUTHENTICATED_ANONYMOUSLY'],
-   '/css/**':       ['IS_AUTHENTICATED_ANONYMOUSLY'],
-   '/images/**':    ['IS_AUTHENTICATED_ANONYMOUSLY'],
-   '/login/auth':   ['IS_AUTHENTICATED_ANONYMOUSLY'],
-   '/logout/**':    ['IS_AUTHENTICATED_ANONYMOUSLY'],
-   '/**':           ['IS_AUTHENTICATED_REMEMBERED']
+grails.plugin.springsecurity.rejectIfNoRule = false
+grails.plugin.springsecurity.securityConfigType = "InterceptUrlMap"
+grails.plugin.springsecurity.interceptUrlMap = [
+	'/':                              ['permitAll'],
+        '/post/global':                   ['permitAll'],
+        '/user/register*':                ['permitAll'],
+        '/login/**':                      ['permitAll'],
+        '/logout/**':                     ['permitAll'],
+	'/**/js/**':                      ['permitAll'],
+	'/**/css/**':                     ['permitAll'],
+	'/**/images/**':                  ['permitAll'],
+        '/user/**':                       ['hasRole("ROLE_ADMIN")'],
+        '/role/**':                       ['hasRole("ROLE_ADMIN")'],
+        '/**':                            ['isAuthenticated()']
 ]
 
-grails.plugins.springsecurity.twitter.autoCreate.active = true
-
-
-grails.plugins.springsecurity.twitter.app.key='Hubbub'
-grails.plugins.springsecurity.twitter.app.consumerKey='JAKUl99V6SSoUTgD9xE2g'
-grails.plugins.springsecurity.twitter.app.consumerSecret='BYmgwzK2d1lM5V3LOk0y8gGrflW2eMWbtxTNxvq0w'
-
-grails.plugins.springsecurity.useBasicAuth = true
-grails.plugins.springsecurity.basic.realmName = "Hubbub"
-grails.plugins.springsecurity.filterChain.chainMap = [
+grails.plugin.springsecurity.useBasicAuth = true
+grails.plugin.springsecurity.basic.realmName = "Hubbub"
+grails.plugin.springsecurity.filterChain.chainMap = [
    '/api/**': 'JOINED_FILTERS',
    '/**': 'JOINED_FILTERS,-basicAuthenticationFilter,-basicExceptionTranslationFilter'
-]
-grails.plugins.springsecurity.useSecurityEventListener = true
-grails.plugins.springsecurity.onAuthenticationSuccessEvent = { evt, appCtx ->
+ ]
+
+grails.plugin.springsecurity.useSecurityEventListener = true
+grails.plugin.springsecurity.onAuthenticationSuccessEvent = { evt, appCtx ->
     appCtx.grailsEvents.event 'security', 'onUserLogin' , evt
 }
+
+
+grails.plugin.springsecurity.auth.loginFormUrl = "/login/form"
+grails.plugin.springsecurity.successHandler.defaultTargetUrl = "/timeline"
 
 grails {
     neo4j {
@@ -139,5 +194,3 @@ grails {
         location = "/data/neo4j"
     }
 }
-
-

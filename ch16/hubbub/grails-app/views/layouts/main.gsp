@@ -1,12 +1,11 @@
 <!doctype html>
-<html>
+<html ${pageProperty(name:'page.htmlAttrs')}>
 <head>
   <title>Hubbub &raquo; <g:layoutTitle default="Welcome" /></title>
-  <g:external dir="css" file="hubbub.css"/>
-  <g:external dir="css" file="main.css"/>
+  <r:require module="baseCss"/>
+  <g:layoutHead />
+  <r:layoutResources />
   <nav:resources/>
-  <g:layoutHead/>
-  <r:layoutResources/>
 </head>
 <body>
   <div>
@@ -23,6 +22,6 @@
       <div id="footerText">Hubbub - Social Networking on Grails</div>
     </div>
   </div>
-  <r:layoutResources/>
+  <r:layoutResources />
 </body>
 </html>
