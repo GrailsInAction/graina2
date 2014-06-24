@@ -16,12 +16,22 @@ class PostServiceSpec extends Specification {
         chuck.passwordHash = "ksadhfkasjdfh"
         chuck.save(failOnError: true)
 
+        and: "a mock event() method"
+        def eventTriggered = false
+        PostService.metaClass.event = { String event, msg ->
+            eventTriggered = true
+            assert event == "onNewPost"
+        }
+
         when: "a new post is created by the service"
         def newPost = service.createPost("chuck_norris", "First Post!")
 
         then: "the post returned and added to the user"
         newPost.content == "First Post!"
         User.findByLoginId("chuck_norris").posts.size() == 1
+
+        and: "the new post event was fired"
+        eventTriggered
 
     }
 
