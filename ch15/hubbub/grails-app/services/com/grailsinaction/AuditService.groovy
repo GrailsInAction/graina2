@@ -16,7 +16,7 @@ class AuditService {
     @grails.events.Listener(namespace = 'gorm')
     void onSaveOrUpdate(User user) {
         if (springSecurityService.isLoggedIn()) {
-            log.error "Changes made to account ${user.loginId} by ${springSecurityService.currentUser}"
+            log.error "Changes made to account ${user?.loginId} by ${springSecurityService.currentUser}"
         }
     }
 

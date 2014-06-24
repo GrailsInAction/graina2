@@ -7,6 +7,7 @@ grails.project.target.level = 1.6
 grails.project.source.level = 1.6
 //grails.project.war.file = "target/${appName}-${appVersion}.war"
 
+/*
 grails.project.fork = [
     // configure settings for compilation JVM, note that if you alter the Groovy version forked compilation is required
     //  compile: [maxMemory: 256, minMemory: 64, debug: false, maxPerm: 256, daemon:true],
@@ -20,6 +21,7 @@ grails.project.fork = [
     // configure settings for the Console UI JVM
     console: [maxMemory: 768, minMemory: 64, debug: false, maxPerm: 256]
 ]
+*/
 
 grails.project.dependency.resolver = "maven" // or ivy
 grails.project.dependency.resolution = {
@@ -81,9 +83,9 @@ grails.project.dependency.resolution = {
         compile ':cache:1.1.1', ":cache-ehcache:1.0.1"
         compile ":searchable:0.6.6"
         compile ":jms:1.3"
-        compile ":quartz:1.0-RC9"
+        compile ":quartz:1.0.2"
 
-        compile ":platform-core:1.0.RC5"
+        compile ":platform-core:1.0.0"
 
         compile ":spring-security-core:2.0-RC2", ":spring-security-ui:1.0-RC1"
         compile ":spring-security-twitter:0.6.2"
