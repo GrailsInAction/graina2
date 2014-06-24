@@ -12,9 +12,6 @@ class PostServiceSpec extends Specification {
     def "Valid posts get saved and added to the user"() {
 
         given: "A new user in the db"
-        def securityService = Mock(SpringSecurityService)
-        securityService.encodePassword(_ as String) >> "skfjhaskfh"
-
         User chuck = new User(loginId: "chuck_norris")
         chuck.passwordHash = "ksadhfkasjdfh"
         chuck.save(failOnError: true)
@@ -31,9 +28,6 @@ class PostServiceSpec extends Specification {
     def "Invalid posts generate exceptional outcomes"() {
 
         given: "A new user in the db"
-        def securityService = Mock(SpringSecurityService)
-        securityService.encodePassword(_ as String) >> "skfjhaskfh"
-
         def chuck = new User(loginId: "chuck_norris")
         chuck.passwordHash = "ksadhfkasjdfh"
         chuck.save(failOnError: true)
