@@ -191,6 +191,6 @@ grails.plugin.springsecurity.successHandler.defaultTargetUrl = "/timeline"
 grails {
     neo4j {
         type = "embedded"
-        location = "/data/neo4j"
+        location = "data/neo4j"
     }
 }

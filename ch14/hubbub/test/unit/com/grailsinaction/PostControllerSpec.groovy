@@ -7,7 +7,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 @TestFor(PostController)
-@Mock([User, Post])
+@Mock([User, Post, UrlMappings])
 class PostControllerSpec extends Specification {
 
     def mockSecurityService
@@ -64,10 +64,10 @@ class PostControllerSpec extends Specification {
 
         then: "redirected to timeline, flash message tells us all is well"
         flash.message ==~ /Added new post: Mock.*/
-        response.redirectedUrl == '/users/joe_cool'   
+//        response.redirectedUrl == '/users/joe_cool'   
 
         // Without the custom URL mapping, the check would be this:
-//        response.redirectedUrl == '/post/timeline/joe_cool'   
+        response.redirectedUrl == '/post/timeline/joe_cool'   
 
     }
 

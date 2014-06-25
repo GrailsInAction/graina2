@@ -57,7 +57,7 @@ grails.project.dependency.resolution = {
     def seleniumVersion = "2.41.0"
 
     dependencies {
-        compile "org.apache.lucene:lucene-spellchecker:2.4.1"
+//        compile "org.apache.lucene:lucene-spellchecker:2.4.1"
         compile "org.apache.activemq:activemq-core:5.7.0", {
             exclude "spring-context"
         }
@@ -87,9 +87,11 @@ grails.project.dependency.resolution = {
         compile ":scaffolding:2.0.1"
         compile ":mail:1.0.1"
         compile ':cache:1.1.1', ":cache-ehcache:1.0.1"
-        compile ":searchable:0.6.6"
         compile ":jms:1.3"
         compile ":quartz:1.0.2"
+
+        // Doesn't work with neo4j plugin due to conflicting Lucene dependencies.
+//        compile ":searchable:0.6.6"
 
         compile ":platform-core:1.0.0"
 

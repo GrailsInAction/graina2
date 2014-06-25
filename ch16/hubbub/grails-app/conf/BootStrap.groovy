@@ -6,7 +6,7 @@ import static java.util.Calendar.*
 
 class BootStrap {
 
-    def searchableService
+//    def searchableService
     def springSecurityService
 
     def init = { servletContext ->
@@ -73,7 +73,7 @@ class BootStrap {
 
         // Search mirroring (where saved domain instances are automatically indexed) is
         // fragile and has problems with the data below.
-        searchableService.stopMirroring()
+//        searchableService.stopMirroring()
 
         def now = new Date()
         def chuck = new User(
@@ -179,8 +179,8 @@ class BootStrap {
         dillon.save(failOnError: true, flush: true)
 
         // Now that the data has been persisted, we can index it and re-enable mirroring.
-        searchableService.index()
-        searchableService.startMirroring()
+//        searchableService.index()
+//        searchableService.startMirroring()
     }
 
     private createAdminUserIfRequired() {

@@ -12,12 +12,16 @@ class PostServiceSpec extends Specification {
     def "Valid posts get saved and added to the user"() {
 
         given: "A new user in the db"
-        def securityService = Mock(SpringSecurityService)
-        securityService.encodePassword(_ as String) >> "skfjhaskfh"
-
         User chuck = new User(loginId: "chuck_norris")
         chuck.passwordHash = "ksadhfkasjdfh"
         chuck.save(failOnError: true)
+
+        and: "a mock event() method"
+        def eventTriggered = false
+        PostService.metaClass.event = { String event, msg ->
+            eventTriggered = true
+            assert event == "onNewPost"
+        }
 
         when: "a new post is created by the service"
         def newPost = service.createPost("chuck_norris", "First Post!")
@@ -26,14 +30,14 @@ class PostServiceSpec extends Specification {
         newPost.content == "First Post!"
         User.findByLoginId("chuck_norris").posts.size() == 1
 
+        and: "the new post event was fired"
+        eventTriggered
+
     }
 
     def "Invalid posts generate exceptional outcomes"() {
 
         given: "A new user in the db"
-        def securityService = Mock(SpringSecurityService)
-        securityService.encodePassword(_ as String) >> "skfjhaskfh"
-
         def chuck = new User(loginId: "chuck_norris")
         chuck.passwordHash = "ksadhfkasjdfh"
         chuck.save(failOnError: true)
