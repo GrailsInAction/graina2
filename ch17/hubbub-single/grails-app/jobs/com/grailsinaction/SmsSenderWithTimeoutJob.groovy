@@ -6,7 +6,7 @@ class SmsSenderWithTimeoutJob {
     def volatility = false
 
     static triggers = {
-      simple repeatInterval: 10000000 // execute job every 10 seconds
+      simple repeatInterval: 100000 // execute job every 100 seconds
     }
 
     def execute(context) {

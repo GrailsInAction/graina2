@@ -115,8 +115,6 @@ log4j = {
            'org.springframework',
            'org.hibernate',
            'net.sf.ehcache.hibernate'
-
-    debug  "grails.plugin.databasemigration"
 }
 
 grails.mail.host="127.0.0.1"
@@ -180,6 +178,11 @@ grails.plugin.springsecurity.filterChain.chainMap = [
    '/api/**': 'JOINED_FILTERS',
    '/**': 'JOINED_FILTERS,-basicAuthenticationFilter,-basicExceptionTranslationFilter'
  ]
+
+grails.plugin.springsecurity.useSecurityEventListener = true
+grails.plugin.springsecurity.onAuthenticationSuccessEvent = { evt, appCtx ->
+    appCtx.grailsEvents.event 'security', 'onUserLogin' , evt
+}
 
 
 grails.plugin.springsecurity.auth.loginFormUrl = "/login/form"

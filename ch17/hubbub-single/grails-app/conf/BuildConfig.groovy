@@ -7,20 +7,21 @@ grails.project.target.level = 1.6
 grails.project.source.level = 1.6
 //grails.project.war.file = "target/${appName}-${appVersion}.war"
 
-// Disable forking when using Maven
+/*
 grails.project.fork = [
     // configure settings for compilation JVM, note that if you alter the Groovy version forked compilation is required
     //  compile: [maxMemory: 256, minMemory: 64, debug: false, maxPerm: 256, daemon:true],
 
     // configure settings for the test-app JVM, uses the daemon by default
-    test: false, //[maxMemory: 768, minMemory: 64, debug: false, maxPerm: 256, daemon:true],
+    test: [maxMemory: 768, minMemory: 64, debug: false, maxPerm: 256, daemon:true],
     // configure settings for the run-app JVM
-    run: false, //[maxMemory: 768, minMemory: 64, debug: false, maxPerm: 256, forkReserve:false],
+    run: [maxMemory: 768, minMemory: 64, debug: false, maxPerm: 256, forkReserve:false],
     // configure settings for the run-war JVM
-    war: false, //[maxMemory: 768, minMemory: 64, debug: false, maxPerm: 256, forkReserve:false],
+    war: [maxMemory: 768, minMemory: 64, debug: false, maxPerm: 256, forkReserve:false],
     // configure settings for the Console UI JVM
-    console: false, //[maxMemory: 768, minMemory: 64, debug: false, maxPerm: 256]
+    console: [maxMemory: 768, minMemory: 64, debug: false, maxPerm: 256]
 ]
+*/
 
 grails.project.dependency.resolver = "maven" // or ivy
 grails.project.dependency.resolution = {
@@ -59,6 +60,9 @@ grails.project.dependency.resolution = {
     dependencies {
         /*
         compile "org.apache.lucene:lucene-spellchecker:2.4.1"
+        compile "org.apache.activemq:activemq-core:5.7.0", {
+            exclude "spring-context"
+        }
 
         test "org.gebish:geb-spock:$gebVersion"
         test "com.github.groovy-wslite:groovy-wslite:0.7.2"
@@ -76,12 +80,16 @@ grails.project.dependency.resolution = {
         // plugins for the build system only
         build ":tomcat:7.0.47"
 
-        // plugins for the compile step
         /*
+        // plugins for the compile step
         compile ":scaffolding:2.0.1"
         compile ":mail:1.0.1"
         compile ':cache:1.1.1', ":cache-ehcache:1.0.1"
         compile ":searchable:0.6.6"
+        compile ":jms:1.3"
+        compile ":quartz:1.0.2"
+
+        compile ":platform-core:1.0.0"
 
         compile ":spring-security-core:2.0-RC2", ":spring-security-ui:1.0-RC1"
         compile ":spring-security-twitter:0.6.2"

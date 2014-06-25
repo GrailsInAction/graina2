@@ -1,7 +1,7 @@
 
 quartz {
-    autoStartup = false
-    jdbcStore = false
+    autoStartup = true
+    jdbcStore = true
     waitForJobsToCompleteOnShutdown = true
     exposeSchedulerInRepository = false
 
