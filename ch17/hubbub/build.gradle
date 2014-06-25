@@ -18,7 +18,10 @@ subprojects {
         }
 
         dependencies {
-            compile "org.grails.plugins:hibernate:3.6.10.6"
+            compile "org.grails.plugins:hibernate:3.6.10.6", {
+                exclude module: "ehcache-core"
+            }
+
             bootstrap "org.grails.plugins:tomcat:7.0.47"
         }
 

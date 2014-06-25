@@ -31,6 +31,7 @@ class PostService {
                 }
             }
 
+            event 'onNewPost', post
             return post
         }
 

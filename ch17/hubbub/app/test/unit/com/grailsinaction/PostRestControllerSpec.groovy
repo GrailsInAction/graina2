@@ -7,7 +7,7 @@ import grails.test.mixin.Mock
 import spock.lang.Specification
 
 @TestFor(PostRestController)
-@Mock([HubbubUser,UserRole,Post])
+@Mock([HubbubUser,User,UserRole,Post])
 class PostRestControllerSpec extends Specification {
 
     void setup() {

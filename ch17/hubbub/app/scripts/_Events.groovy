@@ -1,3 +1,5 @@
+import org.codehaus.groovy.grails.test.spock.GrailsSpecTestType
+
 eventCreateWarStart = { String warName, File stagingDir ->
     println "About to package the WAR file from ${stagingDir}"
 
@@ -31,4 +33,8 @@ eventCreateWarStart = { String warName, File stagingDir ->
     } 
     */
     
+}
+
+eventAllTestsStart = {
+    functionalTests << new GrailsSpecTestType("spock", "functional")
 }

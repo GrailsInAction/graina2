@@ -45,6 +45,15 @@ dependencies {
     compile "org.grails.plugins:platform-core:1.0.0"
 
     test "org.grails.plugins:dumbster:0.2"
+
+    def gebVersion = "0.9.2"
+    def seleniumVersion = "2.41.0"
+    test "org.gebish:geb-spock:$gebVersion"
+    test "com.github.groovy-wslite:groovy-wslite:0.7.2"
+
+    test "org.seleniumhq.selenium:selenium-support:$seleniumVersion"
+    test "org.seleniumhq.selenium:selenium-firefox-driver:$seleniumVersion"
+    test "org.grails.plugins:geb:$gebVersion"
 }
 
 
