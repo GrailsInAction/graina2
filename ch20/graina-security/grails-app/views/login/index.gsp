@@ -1,12 +1,13 @@
+<%@page defaultCodec="HTML" %>
 <html>
 <head>
-  <title>Login Page</title>
-  <g:external dir="js" file="security.js"/>
+  <title>Application Login</title>
 </head>
 <body>
-  <h1>Login page</h1>
-  <g:javascript>
-helloWorld();
-  </g:javascript>
+  <h1>Log in to the application</h1>
+  <g:form controller="login" action="signIn">
+    <div>Username: <input type="text" name="username" value="${params.username}"/></div>
+    <div>Password: <input type="password" name="password"/></div>
+  </g:form>
 </body>
 </html>

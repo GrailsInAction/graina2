@@ -1,3 +1,5 @@
+import com.grailsinaction.security.SecurityData
+
 class GrainaSecurityGrailsPlugin {
     // the plugin version
     def version = "0.1"
@@ -10,11 +12,13 @@ class GrainaSecurityGrailsPlugin {
 
     // TODO Fill in these fields
     def title = "Graina Security Plugin" // Headline display name of the plugin
-    def author = "Your name"
+    def author = "Grails in Action"
     def authorEmail = ""
     def description = '''\
-Brief summary/description of the plugin.
+A simple security plugin - do not use! Just for demonstration purposes.
 '''
+
+    def observe = ["controllers"]
 
     // URL to the plugin's documentation
     def documentation = "http://grails.org/plugin/graina-security"
@@ -22,7 +26,7 @@ Brief summary/description of the plugin.
     // Extra (optional) plugin metadata
 
     // License: one of 'APACHE', 'GPL2', 'GPL3'
-//    def license = "APACHE"
+    def license = "APACHE"
 
     // Details of company behind the plugin (if there is one)
 //    def organization = [ name: "My Company", url: "http://www.my-company.com/" ]
@@ -41,7 +45,7 @@ Brief summary/description of the plugin.
     }
 
     def doWithSpring = {
-        // TODO Implement runtime spring config (optional)
+        grainaSecurityData(SecurityData)
     }
 
     def doWithDynamicMethods = { ctx ->
@@ -49,13 +53,26 @@ Brief summary/description of the plugin.
     }
 
     def doWithApplicationContext = { ctx ->
-        // TODO Implement post initialization spring config (optional)
+        def securityData = ctx.getBean("grainaSecurityData")
+
+        for (controllerClass in application.controllerClasses) {
+            processController(controllerClass, securityData)
+        }
     }
 
     def onChange = { event ->
-        // TODO Implement code that is executed when any artefact that this plugin is
-        // watching is modified and reloaded. The event contains: event.source,
-        // event.application, event.manager, event.ctx, and event.plugin.
+        if (application.isControllerClass(event.source)) {
+            def clsDesc = application.getControllerClass(event.source?.name)
+
+            if (clasDesc == null) {
+                clsDesc = application.addArtefact(
+                        ControllerArtefactHandler.TYPE,
+                        event.source)
+            }
+
+            def securityData = event.ctx.getBean("grainaSecurityData")
+            processController(clsDesc, securityData)
+        }
     }
 
     def onConfigChange = { event ->
@@ -65,5 +82,21 @@ Brief summary/description of the plugin.
 
     def onShutdown = { event ->
         // TODO Implement code that is executed when the application shuts down (optional)
+    }
+
+    private processController(clsDesc, securityData) {
+        def controllerName = controllerClass.logicalPropertyName
+        def actionMap = securityData.authRequiredActions
+        if (actionMap[controllerName] == null) {
+            actionMap[controllerName] = []
+        }
+
+        for (method in controllerClass.clazz.declaredMethods) {
+            def ann = field.getAnnotation(AuthRequired)
+            if (ann != null) {
+                def actionName = method.name
+                actionMap[controllerName] << actionName
+            }
+        }
     }
 }
