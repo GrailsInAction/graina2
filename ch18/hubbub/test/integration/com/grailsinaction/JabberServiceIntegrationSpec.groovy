@@ -1,8 +1,8 @@
 package com.grailsinaction
 
-import grails.plugin.spock.IntegrationSpec
+import spock.lang.Specification
 
-class JabberServiceIntegrationSpec extends IntegrationSpec {
+class JabberServiceIntegrationSpec extends Specification {
 
     def jabberService
     def jmsService
@@ -23,8 +23,6 @@ class JabberServiceIntegrationSpec extends IntegrationSpec {
         jabberService.sendMessage(post, jabberIds)
 
         then:
-        jmsService.browse(jabberService.sendQueue).size() ==
-                msgListBeforeSend.size() + 1
-
+        jmsService.browse(jabberService.sendQueue).size() == msgListBeforeSend.size() + 1
     }
 }

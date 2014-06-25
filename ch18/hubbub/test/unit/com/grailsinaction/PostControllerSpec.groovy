@@ -1,14 +1,15 @@
 package com.grailsinaction
 
-import grails.plugins.springsecurity.SpringSecurityService
+import grails.plugin.springsecurity.SpringSecurityService
 import grails.test.mixin.Mock
 import grails.test.mixin.TestFor
 import spock.lang.Specification
-
+import spock.lang.Unroll
 
 @TestFor(PostController)
-@Mock([User,Post,LameSecurityFilters])
+@Mock([User, Post])
 class PostControllerSpec extends Specification {
+
     def mockSecurityService
 
     def setup() {
@@ -19,8 +20,7 @@ class PostControllerSpec extends Specification {
     def "Get a users timeline given their id"() {
         given: "A user with posts in the db"
         User chuck = new User(loginId: "chuck_norris")
-        chuck.springSecurityService = mockSecurityService
-        chuck.password = "password"
+        chuck.passwordHash = "ksadhfkasjdfh"
         chuck.addToPosts(new Post(content: "A first post"))
         chuck.addToPosts(new Post(content: "A second post"))
         chuck.save(failOnError: true)
@@ -50,70 +50,69 @@ class PostControllerSpec extends Specification {
     }
 
     def "Adding a valid new post to the timeline"() {
-        given: "mock post and security services"
+        given: " mock post and security services"
         def mockPostService = Mock(PostService)
         1 * mockPostService.createPost(_, _) >> new Post(content: "Mock Post")
         controller.postService = mockPostService
 
         def securityService = Mock(SpringSecurityService)
-        _ * securityService.getCurrentUser() >> new User(loginId: "chuck_norris")
+        _ * securityService.getCurrentUser() >> new User(loginId: "joe_cool")
         controller.springSecurityService = securityService
 
-        when: "addPost is invoked with a login ID and some post content"
-        def model = controller.addPost("Mock Post")
+        when:  "controller is invoked"
+        def result = controller.addPost("Mock Post")
 
-        then: "our flash message and redirect confirms the success"
+        then: "redirected to timeline, flash message tells us all is well"
         flash.message ==~ /Added new post: Mock.*/
-        response.redirectedUrl == "/post/timeline/chuck_norris"
+        response.redirectedUrl == '/post/timeline/joe_cool'   
+
+        // Without the custom URL mapping, the check would be this:
+//        response.redirectedUrl == '/post/timeline/joe_cool'   
+
     }
 
-    def "Adding an invalid new post to the timeline trips an error"() {
+    def "Adding an invalid new post to the timeline"() {
         given: "mock post and security services"
+        def errorMsg = "Invalid or empty post"
         def mockPostService = Mock(PostService)
-        1 * mockPostService.createPost(_, _) >> { throw new PostException(message: "Invalid or empty post") }
+        1 * mockPostService.createPost(_, _) >> {
+            throw new PostException(message: errorMsg)
+        }
         controller.postService = mockPostService
 
         def securityService = Mock(SpringSecurityService)
         _ * securityService.getCurrentUser() >> new User(loginId: "chuck_norris")
         controller.springSecurityService = securityService
 
-        when: "addPost is invoked with a login ID but no post content"
+        when: "addPost is invoked"
         def model = controller.addPost(null)
 
         then: "our flash message and redirect confirms the failure"
-        flash.message == "Invalid or empty post"
+        flash.message == errorMsg
         response.redirectedUrl == "/post/timeline/chuck_norris"
+
+        // Without the custom URL mapping, the check would be this:
+//        response.redirectedUrl == "/post/timeline/${chuck.loginId}"
     }
 
-    @spock.lang.Unroll
-    def "Testing id of #suppliedId redirects to #expectedUrl"() {
-
-        given:
-        params.id = suppliedId
-
-        when: "Controller is invoked"
-        controller.index()
-
-        then:
-        response.redirectedUrl == expectedUrl
-
-        where:
-        suppliedId  |   expectedUrl
-        'joe_cool'  |   '/post/timeline/joe_cool'
-        null        |   '/post/timeline/chuck_norris'
-
-    }
-
-    def "Exercising security filter invocation for unauthenticated user"() {
-
-        when:
-        withFilters(action: "addPost") {
-            controller.addPost("glen_a_smith", "A first post")
-        }
-
-        then:
-        response.redirectedUrl == '/login/form'
-
+    @Unroll                                             
+    def "Testing id of #suppliedId redirects to #expectedUrl"() {  
+                                                                   
+        given:                                                     
+        params.id = suppliedId                                     
+                                                                   
+        when: "Controller is invoked"                              
+        controller.home()                                         
+                                                                   
+        then:                                                      
+        response.redirectedUrl == expectedUrl                      
+                                                                   
+        where:                                                     
+        suppliedId  |   expectedUrl                                
+        'joe_cool'  |   '/post/timeline/joe_cool'                  
+        null        |   '/post/timeline/chuck_norris'              
+                                                                   
     }
 
 }
+

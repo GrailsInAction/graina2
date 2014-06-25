@@ -4,22 +4,8 @@
     <facet type="web" name="GrailsWeb">
       <configuration>
         <webroots>
-          <root url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/spring-security-ui-0.2/web-app" relative="/" />
-          <root url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/spring-security-ui-0.2/grails-app/views" relative="/" />
-          <root url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/mail-1.0.1/grails-app/views" relative="/" />
-          <root url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/spring-security-twitter-0.4.4/web-app" relative="/" />
-          <root url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/spring-security-twitter-0.4.4/grails-app/views" relative="/" />
-          <root url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/famfamfam-1.0.1/web-app" relative="/" />
-          <root url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/navigation-1.3.2/web-app" relative="/" />
-          <root url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/jquery-1.7.2/web-app" relative="/" />
-          <root url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/database-migration-1.1/grails-app/views" relative="/" />
-          <root url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/jquery-ui-1.8.24/web-app" relative="/" />
-          <root url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/quartz-1.0-RC9/web-app" relative="/" />
-          <root url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/platform-core-1.0.RC5/web-app" relative="/" />
-          <root url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/platform-core-1.0.RC5/grails-app/views" relative="/" />
-          <root url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/redis-1.3.3/web-app" relative="/" />
-          <root url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/neo4j-1.0.1/web-app" relative="/" />
-          <root url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/neo4j-1.0.1/grails-app/views" relative="/" />
+          <root url="file://$USER_HOME$/.grails/2.1.1/projects/hubbub/plugins/jquery-1.7.2/web-app" relative="/" />
+          <root url="file://$USER_HOME$/.grails/2.1.1/projects/hubbub/plugins/database-migration-1.1/grails-app/views" relative="/" />
         </webroots>
         <sourceRoots />
       </configuration>
@@ -32,192 +18,47 @@
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
-    <content url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/cache-1.0.1">
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/cache-1.0.1/src/java" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/cache-1.0.1/src/groovy" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/cache-1.0.1/grails-app/services" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/cache-1.0.1/grails-app/taglib" isTestSource="false" />
+    <content url="file://$USER_HOME$/.grails/2.1.1/projects/hubbub/plugins/cache-1.0.0">
+      <sourceFolder url="file://$USER_HOME$/.grails/2.1.1/projects/hubbub/plugins/cache-1.0.0/src/java" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/.grails/2.1.1/projects/hubbub/plugins/cache-1.0.0/src/groovy" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/.grails/2.1.1/projects/hubbub/plugins/cache-1.0.0/grails-app/services" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/.grails/2.1.1/projects/hubbub/plugins/cache-1.0.0/grails-app/taglib" isTestSource="false" />
     </content>
-    <content url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/cache-ehcache-1.0.0">
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/cache-ehcache-1.0.0/src/java" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/cache-ehcache-1.0.0/src/groovy" isTestSource="false" />
+    <content url="file://$USER_HOME$/.grails/2.1.1/projects/hubbub/plugins/database-migration-1.1">
+      <sourceFolder url="file://$USER_HOME$/.grails/2.1.1/projects/hubbub/plugins/database-migration-1.1/src/groovy" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/.grails/2.1.1/projects/hubbub/plugins/database-migration-1.1/grails-app/controllers" isTestSource="false" />
     </content>
-    <content url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/database-migration-1.1">
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/database-migration-1.1/src/groovy" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/database-migration-1.1/grails-app/controllers" isTestSource="false" />
+    <content url="file://$USER_HOME$/.grails/2.1.1/projects/hubbub/plugins/hibernate-2.1.1">
+      <sourceFolder url="file://$USER_HOME$/.grails/2.1.1/projects/hubbub/plugins/hibernate-2.1.1/grails-app/i18n" isTestSource="false" />
     </content>
-    <content url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/famfamfam-1.0.1">
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/famfamfam-1.0.1/grails-app/taglib" isTestSource="false" />
+    <content url="file://$USER_HOME$/.grails/2.1.1/projects/hubbub/plugins/jquery-1.7.2">
+      <sourceFolder url="file://$USER_HOME$/.grails/2.1.1/projects/hubbub/plugins/jquery-1.7.2/src/groovy" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/.grails/2.1.1/projects/hubbub/plugins/jquery-1.7.2/grails-app/i18n" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/.grails/2.1.1/projects/hubbub/plugins/jquery-1.7.2/grails-app/services" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/.grails/2.1.1/projects/hubbub/plugins/jquery-1.7.2/grails-app/taglib" isTestSource="false" />
     </content>
-    <content url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/hibernate-2.2.1">
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/hibernate-2.2.1/grails-app/i18n" isTestSource="false" />
+    <content url="file://$USER_HOME$/.grails/2.1.1/projects/hubbub/plugins/resources-1.1.6">
+      <sourceFolder url="file://$USER_HOME$/.grails/2.1.1/projects/hubbub/plugins/resources-1.1.6/src/java" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/.grails/2.1.1/projects/hubbub/plugins/resources-1.1.6/src/groovy" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/.grails/2.1.1/projects/hubbub/plugins/resources-1.1.6/grails-app/i18n" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/.grails/2.1.1/projects/hubbub/plugins/resources-1.1.6/grails-app/taglib" isTestSource="false" />
     </content>
-    <content url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/jms-1.2">
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/jms-1.2/src/java" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/jms-1.2/grails-app/utils" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/jms-1.2/src/groovy" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/jms-1.2/grails-app/services" isTestSource="false" />
-    </content>
-    <content url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/jquery-1.7.2">
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/jquery-1.7.2/src/groovy" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/jquery-1.7.2/grails-app/i18n" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/jquery-1.7.2/grails-app/services" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/jquery-1.7.2/grails-app/taglib" isTestSource="false" />
-    </content>
-    <content url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/jquery-ui-1.8.24">
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/jquery-ui-1.8.24/grails-app/i18n" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/jquery-ui-1.8.24/grails-app/taglib" isTestSource="false" />
-    </content>
-    <content url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/mail-1.0.1">
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/mail-1.0.1/src/groovy" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/mail-1.0.1/grails-app/i18n" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/mail-1.0.1/grails-app/services" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/mail-1.0.1/grails-app/taglib" isTestSource="false" />
-    </content>
-    <content url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/mongodb-1.3.0" />
-    <content url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/navigation-1.3.2">
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/navigation-1.3.2/grails-app/i18n" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/navigation-1.3.2/grails-app/services" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/navigation-1.3.2/grails-app/taglib" isTestSource="false" />
-    </content>
-    <content url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/neo4j-1.0.1">
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/neo4j-1.0.1/grails-app/i18n" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/neo4j-1.0.1/grails-app/controllers" isTestSource="false" />
-    </content>
-    <content url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/platform-core-1.0.RC5">
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/platform-core-1.0.RC5/src/java" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/platform-core-1.0.RC5/src/groovy" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/platform-core-1.0.RC5/grails-app/i18n" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/platform-core-1.0.RC5/grails-app/controllers" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/platform-core-1.0.RC5/grails-app/taglib" isTestSource="false" />
-    </content>
-    <content url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/quartz-1.0-RC9">
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/quartz-1.0-RC9/src/java" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/quartz-1.0-RC9/src/groovy" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/quartz-1.0-RC9/grails-app/i18n" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/quartz-1.0-RC9/grails-app/services" isTestSource="false" />
-    </content>
-    <content url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/redis-1.3.3">
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/redis-1.3.3/src/groovy" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/redis-1.3.3/grails-app/services" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/redis-1.3.3/grails-app/taglib" isTestSource="false" />
-    </content>
-    <content url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/resources-1.2">
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/resources-1.2/src/java" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/resources-1.2/src/groovy" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/resources-1.2/grails-app/i18n" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/resources-1.2/grails-app/taglib" isTestSource="false" />
-    </content>
-    <content url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/spock-0.7" />
-    <content url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/spring-security-core-1.2.7.3">
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/spring-security-core-1.2.7.3/src/java" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/spring-security-core-1.2.7.3/src/groovy" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/spring-security-core-1.2.7.3/grails-app/i18n" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/spring-security-core-1.2.7.3/grails-app/services" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/spring-security-core-1.2.7.3/grails-app/taglib" isTestSource="false" />
-    </content>
-    <content url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/spring-security-twitter-0.4.4">
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/spring-security-twitter-0.4.4/src/groovy" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/spring-security-twitter-0.4.4/grails-app/i18n" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/spring-security-twitter-0.4.4/grails-app/controllers" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/spring-security-twitter-0.4.4/grails-app/taglib" isTestSource="false" />
-    </content>
-    <content url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/spring-security-ui-0.2">
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/spring-security-ui-0.2/grails-app/i18n" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/spring-security-ui-0.2/grails-app/controllers" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/spring-security-ui-0.2/grails-app/domain" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/spring-security-ui-0.2/grails-app/services" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/spring-security-ui-0.2/grails-app/taglib" isTestSource="false" />
-    </content>
-    <content url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/tomcat-2.2.1" />
-    <content url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/webxml-1.4.1">
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/hubbub/plugins/webxml-1.4.1/src/groovy" isTestSource="false" />
+    <content url="file://$USER_HOME$/.grails/2.1.1/projects/hubbub/plugins/spock-0.6" />
+    <content url="file://$USER_HOME$/.grails/2.1.1/projects/hubbub/plugins/tomcat-2.1.1" />
+    <content url="file://$USER_HOME$/.grails/2.1.1/projects/hubbub/plugins/webxml-1.4.1">
+      <sourceFolder url="file://$USER_HOME$/.grails/2.1.1/projects/hubbub/plugins/webxml-1.4.1/src/groovy" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" scope="PROVIDED" name="grails-2.2.1 (2)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="grails-2.1.1" level="application" />
     <orderEntry type="module-library" exported="">
       <library name="Grails User Library (hubbub-grailsPlugins)">
         <CLASSES>
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.twitter4j/twitter4j-core/jars/twitter4j-core-2.2.5.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.springframework.security/spring-security-web/jars/spring-security-web-3.0.7.RELEASE.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.springframework.security/spring-security-core/jars/spring-security-core-3.0.7.RELEASE.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.springframework/spring-test/jars/spring-test-3.1.0.RELEASE.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/javax.activation/activation/jars/activation-1.1.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/javax.mail/mail/jars/mail-1.4.3.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.hamcrest/hamcrest-core/jars/hamcrest-core-1.3.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/junit/junit-dep/jars/junit-dep-4.10.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.spockframework/spock-core/jars/spock-core-0.7-groovy-2.0.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.spockframework/spock-grails-support/jars/spock-grails-support-0.7-groovy-2.0.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/c3p0/c3p0/jars/c3p0-0.9.1.1.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.quartz-scheduler/quartz/jars/quartz-2.1.5.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.geronimo.specs/geronimo-jms_1.1_spec/jars/geronimo-jms_1.1_spec-1.1.1.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.aspectj/aspectjweaver/jars/aspectjweaver-1.6.8.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.aspectj/aspectjrt/jars/aspectjrt-1.6.8.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/commons-logging/commons-logging/jars/commons-logging-1.1.1.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.jasypt/jasypt/jars/jasypt-1.9.0.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/commons-net/commons-net/jars/commons-net-3.1.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.geronimo.specs/geronimo-j2ee-management_1.1_spec/jars/geronimo-j2ee-management_1.1_spec-1.0.1.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.fusesource.hawtbuf/hawtbuf/bundles/hawtbuf-1.9.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.fusesource.hawtdispatch/hawtdispatch/bundles/hawtdispatch-1.11.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.fusesource.hawtdispatch/hawtdispatch-transport/bundles/hawtdispatch-transport-1.11.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.fusesource.mqtt-client/mqtt-client/bundles/mqtt-client-1.3.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.activemq.protobuf/activemq-protobuf/maven-plugins/activemq-protobuf-1.1.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.activemq/kahadb/bundles/kahadb-5.7.0.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.activemq/activemq-core/bundles/activemq-core-5.7.0.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/commons-pool/commons-pool/jars/commons-pool-1.5.5.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/redis.clients/jedis/jars/jedis-2.1.0.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.slf4j/jcl-over-slf4j/jars/jcl-over-slf4j-1.7.1.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.slf4j/slf4j-api/jars/slf4j-api-1.7.1.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.springframework.data/spring-data-commons/jars/spring-data-commons-1.5.1.RELEASE.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/com.gmongo/gmongo/jars/gmongo-1.2.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails/grails-datastore-mongo/jars/grails-datastore-mongo-1.3.0.RELEASE.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails/grails-datastore-gorm-plugin-support/jars/grails-datastore-gorm-plugin-support-1.1.9.RELEASE.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.springframework.data/spring-data-commons-core/jars/spring-data-commons-core-1.4.1.RELEASE.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails/grails-datastore-gorm-mongo/jars/grails-datastore-gorm-mongo-1.3.0.RELEASE.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails/grails-datastore-web/jars/grails-datastore-web-1.1.9.RELEASE.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails/grails-datastore-gorm/jars/grails-datastore-gorm-1.1.9.RELEASE.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails/grails-datastore-core/jars/grails-datastore-core-1.1.9.RELEASE.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.springframework.data/spring-data-mongodb/jars/spring-data-mongodb-1.2.1.RELEASE.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.mongodb/mongo-java-driver/jars/mongo-java-driver-2.11.1.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails/grails-datastore-gorm-test/jars/grails-datastore-gorm-test-1.1.9.RELEASE.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/junit/junit/jars/junit-4.8.1.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.slf4j/jul-to-slf4j/jars/jul-to-slf4j-1.5.8.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails/grails-test/jars/grails-test-1.3.7.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails/grails-datastore-simple/jars/grails-datastore-simple-1.1.9.RELEASE.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.neo4j/neo4j-kernel/jars/neo4j-kernel-1.8.3.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.neo4j/neo4j-community/jars/neo4j-community-1.8.3.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails/grails-datastore-gorm-neo4j/jars/grails-datastore-gorm-neo4j-1.0.1.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.neo4j/neo4j-jmx/jars/neo4j-jmx-1.8.3.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.scala-lang/scala-library/jars/scala-library-2.9.1-1.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.neo4j/neo4j-cypher/jars/neo4j-cypher-1.8.3.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.neo4j/neo4j-graph-matching/jars/neo4j-graph-matching-1.8.3.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.neo4j/neo4j-udc/jars/neo4j-udc-1.8.3.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.neo4j/neo4j-graph-algo/jars/neo4j-graph-algo-1.8.3.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.lucene/lucene-core/jars/lucene-core-3.5.0.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.neo4j/neo4j-lucene-index/jars/neo4j-lucene-index-1.8.3.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.geronimo.specs/geronimo-jta_1.1_spec/jars/geronimo-jta_1.1_spec-1.1.1.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.gebish/geb-implicit-assertions/jars/geb-implicit-assertions-0.9.0.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.gebish/geb-ast/jars/geb-ast-0.9.0.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.gebish/geb-core/jars/geb-core-0.9.0.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.gebish/geb-spock/jars/geb-spock-0.9.0.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/commons-io/commons-io/jars/commons-io-2.2.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.seleniumhq.selenium/selenium-firefox-driver/jars/selenium-firefox-driver-2.31.0.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/net.java.dev.jna/platform/jars/platform-3.4.0.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/net.java.dev.jna/jna/jars/jna-3.4.0.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.commons/commons-exec/jars/commons-exec-1.1.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/commons-codec/commons-codec/jars/commons-codec-1.6.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.httpcomponents/httpcore/jars/httpcore-4.2.1.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.httpcomponents/httpclient/jars/httpclient-4.2.1.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/cglib/cglib-nodep/jars/cglib-nodep-2.1_3.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.seleniumhq.selenium/selenium-remote-driver/jars/selenium-remote-driver-2.31.0.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.seleniumhq.selenium/selenium-chrome-driver/jars/selenium-chrome-driver-2.31.0.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/com.github.detro.ghostdriver/phantomjsdriver/jars/phantomjsdriver-1.0.3.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.json/json/jars/json-20080701.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/com.google.guava/guava/bundles/guava-14.0.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.seleniumhq.selenium/selenium-api/jars/selenium-api-2.31.0.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.seleniumhq.selenium/selenium-support/jars/selenium-support-2.31.0.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/antlr/antlr/jars/antlr-2.7.6.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.spockframework/spock-grails-support/jars/spock-grails-support-0.6-groovy-1.8.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.liquibase/liquibase-core/jars/liquibase-core-2.0.5.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.hamcrest/hamcrest-core/jars/hamcrest-core-1.2.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/junit/junit-dep/jars/junit-dep-4.9.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.spockframework/spock-core/jars/spock-core-0.6-groovy-1.8.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
