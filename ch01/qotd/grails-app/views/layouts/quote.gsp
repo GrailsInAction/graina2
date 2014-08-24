@@ -3,7 +3,7 @@
         <title>QOTD &raquo; <g:layoutTitle/></title>
         <g:external dir="css" file="snazzy.css"/>
         <g:layoutHead />
-        <r:layoutResources />
+        <g:layoutResources />
     </head>
     <body>
         <div id="header">
